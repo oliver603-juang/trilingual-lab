@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0c0c1a">
+<title>三語句型積木</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c1a;--surface:#151528;--card:#1c1c35;--border:#2a2a4a;
+  --text:#e8e6f0;--dim:#8888aa;--muted:#555577;
+  --jp-accent:#ff6b6b;--jp-glow:rgba(255,107,107,0.15);
+  --en-accent:#4ecdc4;--en-glow:rgba(78,205,196,0.15);
+  --gold:#ffd700;--cn-accent:#ffa94d;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Zen Kaku Gothic New','Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;overflow-x:hidden;-webkit-user-select:none;user-select:none;}
+
+/* === Header === */
+.header{padding:16px 20px 8px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);}
+.logo{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,var(--jp-accent),var(--en-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.lang-toggle{margin-left:auto;display:flex;background:var(--surface);border-radius:24px;border:1px solid var(--border);overflow:hidden;}
+.lang-btn{padding:6px 16px;border:none;background:transparent;color:var(--dim);font-family:inherit;font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.3s;}
+.lang-btn.active-jp{background:var(--jp-glow);color:var(--jp-accent);border-color:var(--jp-accent);}
+.lang-btn.active-en{background:var(--en-glow);color:var(--en-accent);border-color:var(--en-accent);}
+.lang-btn.active-vs{background:rgba(255,215,0,0.1);color:var(--gold);}
+.stat-badge{padding:4px 10px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:0.65rem;color:var(--dim);}
+
+/* === Dimension Tabs === */
+.dim-tabs{display:flex;gap:4px;padding:8px 12px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(255,255,255,0.03);}
+.dim-tabs::-webkit-scrollbar{display:none;}
+.dim-tab{padding:5px 12px;border:1px solid var(--border);border-radius:16px;background:transparent;color:var(--dim);font-family:inherit;font-size:0.68rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0;}
+.dim-tab.active{border-color:var(--gold);color:var(--gold);background:rgba(255,215,0,0.08);}
+.dim-tab:hover{border-color:var(--text);color:var(--text);}
+
+/* === Main Card === */
+.main-card{margin:16px;border-radius:20px;background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color 0.3s;}
+.main-card.mode-jp{border-color:rgba(255,107,107,0.3);}
+.main-card.mode-en{border-color:rgba(78,205,196,0.3);}
+.main-card.mode-vs{border-color:rgba(255,215,0,0.3);}
+
+/* Chinese anchor */
+.cn-anchor{padding:20px 24px 12px;text-align:center;}
+.cn-sentence{font-size:1.4rem;font-weight:900;color:var(--cn-accent);letter-spacing:0.05em;margin-bottom:4px;}
+.cn-dim{font-size:0.7rem;color:var(--dim);margin-top:4px;}
+
+/* Block area */
+.block-area{padding:8px 20px 20px;min-height:120px;}
+.block-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:8px 0;animation:fadeUp 0.3s ease;}
+
+/* Individual blocks */
+.block{padding:8px 14px;border-radius:12px;font-weight:700;font-size:0.95rem;transition:all 0.3s;position:relative;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;}
+.block:hover{transform:translateY(-2px);}
+.block-text{font-size:0.95rem;}
+.block-role{font-size:0.55rem;opacity:0.6;font-weight:400;}
+
+/* JP blocks */
+.block-jp{background:rgba(255,107,107,0.1);border:1.5px solid rgba(255,107,107,0.3);color:#ffb4b4;}
+.block-jp:hover{background:rgba(255,107,107,0.2);border-color:rgba(255,107,107,0.5);}
+
+/* EN blocks */
+.block-en{background:rgba(78,205,196,0.1);border:1.5px solid rgba(78,205,196,0.3);color:#a8ece8;}
+.block-en:hover{background:rgba(78,205,196,0.2);border-color:rgba(78,205,196,0.5);}
+
+/* Role colors */
+.role-主角{border-left:3px solid #ff6b6b;}
+.role-動作{border-left:3px solid #4ecdc4;}
+.role-對象{border-left:3px solid #ffd93d;}
+.role-修飾{border-left:3px solid #a78bfa;}
+.role-連接{border-left:3px solid #888;}
+.role-場景{border-left:3px solid #66bb6a;}
+.role-目標{border-left:3px solid #ff9800;}
+.role-時間{border-left:3px solid #42a5f5;}
+.role-語氣{border-left:3px solid #ef5350;}
+
+/* Formula */
+.formula{text-align:center;padding:4px 16px 12px;font-size:0.72rem;color:var(--dim);font-family:monospace;letter-spacing:0.03em;}
+
+/* VS Mode */
+.vs-container{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.vs-side{padding:12px 16px;}
+.vs-side.jp-side{border-right:1px solid var(--border);}
+.vs-label{font-size:0.7rem;font-weight:900;margin-bottom:8px;text-align:center;}
+.vs-label.jp{color:var(--jp-accent);}
+.vs-label.en{color:var(--en-accent);}
+.vs-blocks{display:flex;flex-direction:column;gap:4px;}
+.vs-block{padding:4px 8px;border-radius:6px;font-size:0.75rem;display:flex;justify-content:space-between;align-items:center;}
+.vs-block.jp{background:rgba(255,107,107,0.08);color:#ffb4b4;}
+.vs-block.en{background:rgba(78,205,196,0.08);color:#a8ece8;}
+.vs-role-tag{font-size:0.55rem;opacity:0.5;}
+
+/* Contrast insight */
+.contrast-box{margin:0 20px 16px;padding:12px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:0.75rem;line-height:1.7;color:var(--dim);}
+.contrast-label{font-weight:700;color:var(--cn-accent);margin-right:4px;}
+.contrast-row{margin:4px 0;}
+
+/* Navigation */
+.nav-row{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 20px;border-top:1px solid var(--border);}
+.nav-btn{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;background:var(--surface);color:var(--text);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.nav-btn:hover{background:var(--card);border-color:var(--text);}
+.nav-btn:disabled{opacity:0.3;cursor:not-allowed;}
+.nav-counter{font-size:0.75rem;color:var(--dim);min-width:60px;text-align:center;}
+
+/* Sentence dots */
+.dot-row{display:flex;gap:4px;justify-content:center;padding:0 20px 16px;flex-wrap:wrap;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.2s;}
+.dot.active-jp{background:var(--jp-accent);}
+.dot.active-en{background:var(--en-accent);}
+.dot.active-vs{background:var(--gold);}
+.dot:hover{transform:scale(1.3);}
+
+/* Speak button */
+.speak-btn{position:absolute;top:4px;right:4px;width:18px;height:18px;border:none;border-radius:50%;background:rgba(255,255,255,0.1);color:var(--text);font-size:0.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0.5;transition:opacity 0.2s;}
+.speak-btn:hover{opacity:1;}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 rgba(255,107,107,0);}50%{box-shadow:0 0 20px rgba(255,107,107,0.15);}}
+
+/* Loading */
+.loading{display:flex;align-items:center;justify-content:center;height:60vh;flex-direction:column;gap:12px;}
+.loading-text{color:var(--dim);font-size:0.85rem;}
+.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* Role legend */
+.legend{display:flex;flex-wrap:wrap;gap:6px;padding:0 20px 12px;justify-content:center;}
+.legend-item{display:flex;align-items:center;gap:3px;font-size:0.58rem;color:var(--dim);}
+.legend-dot{width:6px;height:6px;border-radius:2px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">三語句型積木</div>
+  <div class="lang-toggle">
+    <button class="lang-btn active-jp" onclick="setMode('jp')">🇯🇵 日文</button>
+    <button class="lang-btn" onclick="setMode('en')">🇺🇸 英文</button>
+    <button class="lang-btn" onclick="setMode('vs')">⚡ 對比</button>
+  </div>
+  <span class="stat-badge" id="stat-badge">0 句</span>
+</div>
+
+<div class="dim-tabs" id="dim-tabs"></div>
+
+<div id="app">
+  <div class="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">載入規則中…</div>
+  </div>
+</div>
+
+<script>
+let RULES = [];
+let filteredRules = [];
+let currentIdx = 0;
+let mode = 'jp'; // 'jp' | 'en' | 'vs'
+let currentDim = 'all';
+
+// TTS
+const synth = window.speechSynthesis;
+let jpVoice = null, enVoice = null;
+function initVoices() {
+  const voices = synth.getVoices();
+  jpVoice = voices.find(v => v.lang.startsWith('ja'));
+  enVoice = voices.find(v => v.lang.startsWith('en'));
+}
+synth.onvoiceschanged = initVoices;
+initVoices();
+
+function speak(text, lang) {
+  synth.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang === 'jp' ? 'ja-JP' : 'en-US';
+  u.rate = 0.8;
+  if (lang === 'jp' && jpVoice) u.voice = jpVoice;
+  if (lang === 'en' && enVoice) u.voice = enVoice;
+  synth.speak(u);
+}
+
+// Load data
+async function loadData() {
+  try {
+    const res = await fetch('unified-rules.json');
+    if (!res.ok) throw new Error('File not found');
+    const data = await res.json();
+    RULES = data.map(r => ({
+      id: r.id,
+      dim: r.dimension_label || r.dimension,
+      dimKey: r.dimension,
+      cn: r.chinese,
+      lv: r.jlpt || '',
+      jp: r.jp ? {
+        s: r.jp.sentence,
+        b: r.jp.blocks.map(b => [b.text, b.role]),
+        f: r.jp.formula || ''
+      } : null,
+      en: r.en ? {
+        s: r.en.sentence,
+        b: r.en.blocks.map(b => [b.text, b.role]),
+        f: r.en.formula || ''
+      } : null,
+      ct: r.contrast || {},
+      m: r.metrics || {}
+    }));
+  } catch(e) {
+    // Fallback: try compact format or show error
+    document.getElementById('app').innerHTML = '<div class="loading"><div class="loading-text">請將 unified-rules.json 放在同一目錄</div></div>';
+    return;
+  }
+
+  filteredRules = RULES;
+  document.getElementById('stat-badge').textContent = RULES.length + ' 句';
+  renderDimTabs();
+  render();
+}
+
+function renderDimTabs() {
+  const dims = {};
+  RULES.forEach(r => { dims[r.dim] = (dims[r.dim] || 0) + 1; });
+  const sorted = Object.entries(dims).sort((a,b) => b[1] - a[1]);
+
+  let html = '<button class="dim-tab active" onclick="filterDim(\'all\')">全部 ' + RULES.length + '</button>';
+  for (const [dim, count] of sorted) {
+    html += '<button class="dim-tab" onclick="filterDim(\'' + dim.replace(/'/g, "\\'") + '\')">' + dim + ' ' + count + '</button>';
+  }
+  document.getElementById('dim-tabs').innerHTML = html;
+}
+
+function filterDim(dim) {
+  currentDim = dim;
+  currentIdx = 0;
+  filteredRules = dim === 'all' ? RULES : RULES.filter(r => r.dim === dim);
+  document.getElementById('stat-badge').textContent = filteredRules.length + ' 句';
+
+  // Update tab active state
+  document.querySelectorAll('.dim-tab').forEach(t => {
+    const tabDim = t.textContent.replace(/\s*\d+$/, '').trim();
+    t.classList.toggle('active', dim === 'all' ? tabDim.startsWith('全部') : tabDim === dim);
+  });
+  render();
+}
+
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.className = 'lang-btn';
+  });
+  const btns = document.querySelectorAll('.lang-btn');
+  if (m === 'jp') btns[0].classList.add('active-jp');
+  else if (m === 'en') btns[1].classList.add('active-en');
+  else btns[2].classList.add('active-vs');
+  render();
+}
+
+function navigate(delta) {
+  currentIdx = Math.max(0, Math.min(filteredRules.length - 1, currentIdx + delta));
+  render();
+}
+
+function goTo(idx) {
+  currentIdx = idx;
+  render();
+}
+
+function render() {
+  if (filteredRules.length === 0) {
+    document.getElementById('app').innerHTML = '<div class="loading"><div class="loading-text">沒有符合的句子</div></div>';
+    return;
+  }
+
+  const r = filteredRules[currentIdx];
+  const modeClass = 'mode-' + mode;
+
+  let blockHtml = '';
+  if (mode === 'vs') {
+    blockHtml = renderVS(r);
+  } else {
+    const lang = mode;
+    const data = r[lang];
+    if (!data) {
+      blockHtml = '<div style="text-align:center;padding:20px;color:var(--dim);">此句無' + (lang === 'jp' ? '日文' : '英文') + '資料</div>';
+    } else {
+      blockHtml = '<div class="block-row">';
+      data.b.forEach(([text, role]) => {
+        blockHtml += '<div class="block block-' + lang + ' role-' + role + '" onclick="speak(\'' + text.replace(/'/g, "\\'") + '\',\'' + lang + '\')">';
+        blockHtml += '<span class="block-text">' + text + '</span>';
+        blockHtml += '<span class="block-role">' + role + '</span>';
+        blockHtml += '</div>';
+      });
+      blockHtml += '</div>';
+      blockHtml += '<div class="formula">' + escH(data.f) + '</div>';
+
+      // Full sentence speak
+      blockHtml += '<div style="text-align:center;padding:0 0 8px;"><button onclick="speak(\'' + data.s.replace(/'/g, "\\'") + '\',\'' + lang + '\')" style="border:1px solid var(--border);background:var(--surface);color:var(--dim);font-family:inherit;font-size:0.7rem;padding:4px 12px;border-radius:12px;cursor:pointer;">🔊 ' + escH(data.s) + '</button></div>';
+    }
+  }
+
+  // Contrast
+  let contrastHtml = '';
+  if (r.ct && (r.ct.cn_blindspot || r.ct.jp_insight || r.ct.en_insight)) {
+    contrastHtml = '<div class="contrast-box">';
+    if (r.ct.cn_blindspot) contrastHtml += '<div class="contrast-row"><span class="contrast-label">🇹🇼 中文陷阱：</span>' + escH(r.ct.cn_blindspot) + '</div>';
+    if (r.ct.jp_insight) contrastHtml += '<div class="contrast-row"><span class="contrast-label" style="color:var(--jp-accent);">🇯🇵 日文邏輯：</span>' + escH(r.ct.jp_insight) + '</div>';
+    if (r.ct.en_insight) contrastHtml += '<div class="contrast-row"><span class="contrast-label" style="color:var(--en-accent);">🇺🇸 英文邏輯：</span>' + escH(r.ct.en_insight) + '</div>';
+    contrastHtml += '</div>';
+  }
+
+  // Dots
+  const maxDots = Math.min(filteredRules.length, 30);
+  let dotHtml = '<div class="dot-row">';
+  for (let i = 0; i < maxDots; i++) {
+    const dotClass = i === currentIdx ? ' active-' + mode : '';
+    dotHtml += '<div class="dot' + dotClass + '" onclick="goTo(' + i + ')"></div>';
+  }
+  if (filteredRules.length > maxDots) dotHtml += '<span style="color:var(--dim);font-size:0.6rem;align-self:center;">+' + (filteredRules.length - maxDots) + '</span>';
+  dotHtml += '</div>';
+
+  // Legend
+  const legendHtml = '<div class="legend">' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#ff6b6b"></div>主角</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#4ecdc4"></div>動作</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#ffd93d"></div>對象</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>修飾</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#888"></div>連接</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#66bb6a"></div>場景</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#ff9800"></div>目標</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#42a5f5"></div>時間</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#ef5350"></div>語氣</div>' +
+    '</div>';
+
+  document.getElementById('app').innerHTML =
+    '<div class="main-card ' + modeClass + '">' +
+    '<div class="cn-anchor">' +
+    '<div class="cn-sentence">' + escH(r.cn) + '</div>' +
+    '<div class="cn-dim">' + escH(r.dim) + (r.lv ? ' · ' + r.lv : '') + '</div>' +
+    '</div>' +
+    '<div class="block-area">' + blockHtml + '</div>' +
+    contrastHtml +
+    legendHtml +
+    '<div class="nav-row">' +
+    '<button class="nav-btn" onclick="navigate(-1)"' + (currentIdx === 0 ? ' disabled' : '') + '>◀</button>' +
+    '<span class="nav-counter">' + (currentIdx + 1) + ' / ' + filteredRules.length + '</span>' +
+    '<button class="nav-btn" onclick="navigate(1)"' + (currentIdx >= filteredRules.length - 1 ? ' disabled' : '') + '>▶</button>' +
+    '</div>' +
+    dotHtml +
+    '</div>';
+}
+
+function renderVS(r) {
+  let html = '<div class="vs-container">';
+
+  // JP side
+  html += '<div class="vs-side jp-side"><div class="vs-label jp">🇯🇵 日文</div><div class="vs-blocks">';
+  if (r.jp) {
+    r.jp.b.forEach(([text, role]) => {
+      html += '<div class="vs-block jp role-' + role + '" onclick="speak(\'' + text.replace(/'/g, "\\'") + '\',\'jp\')">' +
+        '<span>' + text + '</span><span class="vs-role-tag">' + role + '</span></div>';
+    });
+    html += '</div><div style="font-size:0.6rem;color:var(--dim);margin-top:6px;text-align:center;">' + escH(r.jp.f) + '</div>';
+  } else {
+    html += '<div style="color:var(--dim);font-size:0.7rem;">無資料</div></div>';
+  }
+  html += '</div>';
+
+  // EN side
+  html += '<div class="vs-side"><div class="vs-label en">🇺🇸 英文</div><div class="vs-blocks">';
+  if (r.en) {
+    r.en.b.forEach(([text, role]) => {
+      html += '<div class="vs-block en role-' + role + '" onclick="speak(\'' + text.replace(/'/g, "\\'") + '\',\'en\')">' +
+        '<span>' + text + '</span><span class="vs-role-tag">' + role + '</span></div>';
+    });
+    html += '</div><div style="font-size:0.6rem;color:var(--dim);margin-top:6px;text-align:center;">' + escH(r.en.f) + '</div>';
+  } else {
+    html += '<div style="color:var(--dim);font-size:0.7rem;">無資料</div></div>';
+  }
+  html += '</div></div>';
+  return html;
+}
+
+function escH(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft') navigate(-1);
+  if (e.key === 'ArrowRight') navigate(1);
+  if (e.key === '1') setMode('jp');
+  if (e.key === '2') setMode('en');
+  if (e.key === '3') setMode('vs');
+});
+
+// Touch swipe
+let touchStartX = 0;
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+document.addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(diff) > 60) navigate(diff > 0 ? -1 : 1);
+});
+
+// Init
+loadData();
+</script>
+</body>
+</html>
