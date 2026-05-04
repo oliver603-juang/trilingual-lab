@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#0c0c1a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="三語積木">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
 <title>三語句型積木</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -125,6 +131,7 @@ document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')nv(-1);if(e.key==
 let tX=0;document.addEventListener('touchstart',e=>{tX=e.touches[0].clientX;});
 document.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tX;if(Math.abs(d)>60)nv(d>0?-1:1);});
 lD();
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 </script>
 </body>
 </html>

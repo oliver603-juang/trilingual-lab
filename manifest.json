@@ -1,0 +1,22 @@
+{
+  "name": "三語句型積木",
+  "short_name": "三語積木",
+  "description": "中日英三語句型積木學習工具 — 台灣小學生也能學會日文和英文",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0c0c1a",
+  "theme_color": "#0c0c1a",
+  "orientation": "any",
+  "lang": "zh-TW",
+  "categories": ["education", "language"],
+  "icons": [
+    { "src": "icon-72x72.png", "sizes": "72x72", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-96x96.png", "sizes": "96x96", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-128x128.png", "sizes": "128x128", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-144x144.png", "sizes": "144x144", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-152x152.png", "sizes": "152x152", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-384x384.png", "sizes": "384x384", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
