@@ -155,7 +155,7 @@
         },
         {
           "text": "apples",
-          "role": "動作"
+          "role": "對象"
         }
       ],
       "formula": "[I] + [eat] + [apples]"
@@ -207,7 +207,7 @@
         },
         {
           "text": "cat",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "is",
@@ -215,7 +215,7 @@
         },
         {
           "text": "running",
-          "role": "對象"
+          "role": "動作"
         }
       ],
       "formula": "[The] + [cat] + [is] + [running]"
@@ -275,7 +275,7 @@
         },
         {
           "text": "water",
-          "role": "動作"
+          "role": "對象"
         }
       ],
       "formula": "[I] + [drink] + [water]"
@@ -639,7 +639,7 @@
         },
         {
           "text": "money",
-          "role": "動作"
+          "role": "對象"
         },
         {
           "text": "in",
@@ -707,7 +707,7 @@
         },
         {
           "text": "this",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "a",
@@ -749,7 +749,7 @@
       "blocks": [
         {
           "text": "明日",
-          "role": "修飾"
+          "role": "時間"
         },
         {
           "text": "学校に",
@@ -2061,7 +2061,7 @@
         },
         {
           "text": "人",
-          "role": "動作"
+          "role": "主角"
         }
       ],
       "formula": "[走る] + [人]"
@@ -2117,7 +2117,7 @@
       "blocks": [
         {
           "text": "昨日",
-          "role": "修飾"
+          "role": "時間"
         },
         {
           "text": "買った",
@@ -2125,7 +2125,7 @@
         },
         {
           "text": "本",
-          "role": "動作"
+          "role": "對象"
         }
       ],
       "formula": "[昨日] + [買った] + [本]"
@@ -2193,7 +2193,7 @@
         },
         {
           "text": "料理",
-          "role": "動作"
+          "role": "對象"
         }
       ],
       "formula": "[友達が] + [作った] + [料理]"
@@ -2261,7 +2261,7 @@
         },
         {
           "text": "先生",
-          "role": "動作"
+          "role": "主角"
         }
       ],
       "formula": "[日本語を] + [教える] + [先生]"
@@ -2329,7 +2329,7 @@
         },
         {
           "text": "ケーキ",
-          "role": "動作"
+          "role": "對象"
         }
       ],
       "formula": "[母が] + [焼いた] + [ケーキ]"
@@ -2539,11 +2539,11 @@
       "blocks": [
         {
           "text": "Yesterday's",
-          "role": "動作"
+          "role": "修飾"
         },
         {
           "text": "movie",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "was",
@@ -2551,7 +2551,7 @@
         },
         {
           "text": "interesting",
-          "role": "對象"
+          "role": "動作"
         }
       ],
       "formula": "[Yesterday's] + [movie] + [was] + [interesting]"
@@ -2814,11 +2814,11 @@
       "blocks": [
         {
           "text": "My",
-          "role": "動作"
+          "role": "修飾"
         },
         {
           "text": "friend",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "gave",
@@ -2893,7 +2893,7 @@
         },
         {
           "text": "teacher",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "gave",
@@ -3035,11 +3035,11 @@
       "blocks": [
         {
           "text": "My",
-          "role": "動作"
+          "role": "修飾"
         },
         {
           "text": "friend",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "gave",
@@ -4336,7 +4336,7 @@
       "blocks": [
         {
           "text": "朝",
-          "role": "修飾"
+          "role": "時間"
         },
         {
           "text": "起きて",
@@ -4990,7 +4990,7 @@
       "blocks": [
         {
           "text": "毎日",
-          "role": "修飾"
+          "role": "時間"
         },
         {
           "text": "勉強して",
@@ -7365,7 +7365,7 @@
       "blocks": [
         {
           "text": "今日",
-          "role": "修飾"
+          "role": "時間"
         },
         {
           "text": "ほど",
@@ -9595,7 +9595,7 @@
         },
         {
           "text": "の男",
-          "role": "動作"
+          "role": "主角"
         }
       ],
       "formula": "全部都是…/盡是… → ずくめ"
@@ -9819,7 +9819,7 @@
         },
         {
           "text": "の旅行",
-          "role": "動作"
+          "role": "對象"
         }
       ],
       "formula": "全部都是…/盡是… → ずくめ"
@@ -9887,7 +9887,7 @@
       "blocks": [
         {
           "text": "今日",
-          "role": "修飾"
+          "role": "時間"
         },
         {
           "text": "を限りに",
@@ -9921,7 +9921,7 @@
         },
         {
           "text": "smoking",
-          "role": "對象"
+          "role": "動作"
         }
       ],
       "formula": "[As of] + [today] + [I] + [quit] + [smoking]"
@@ -12233,7 +12233,7 @@
         },
         {
           "text": "suffering",
-          "role": "對象"
+          "role": "動作"
         }
       ],
       "formula": "[It's] + [not] + [hard] + [to] + [imagine] + [the] + [victim's] + [suffering]"
