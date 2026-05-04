@@ -2,405 +2,129 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#0c0c1a">
 <title>三語句型積木</title>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0c0c1a;--surface:#151528;--card:#1c1c35;--border:#2a2a4a;
-  --text:#e8e6f0;--dim:#8888aa;--muted:#555577;
-  --jp-accent:#ff6b6b;--jp-glow:rgba(255,107,107,0.15);
-  --en-accent:#4ecdc4;--en-glow:rgba(78,205,196,0.15);
-  --gold:#ffd700;--cn-accent:#ffa94d;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Zen Kaku Gothic New','Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;overflow-x:hidden;-webkit-user-select:text;user-select:text;}
-
-/* === Header === */
-.header{padding:16px 20px 8px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);}
-.logo{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,var(--jp-accent),var(--en-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.lang-toggle{margin-left:auto;display:flex;background:var(--surface);border-radius:24px;border:1px solid var(--border);overflow:hidden;}
-.lang-btn{padding:6px 16px;border:none;background:transparent;color:var(--dim);font-family:inherit;font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.3s;}
-.lang-btn.active-jp{background:var(--jp-glow);color:var(--jp-accent);border-color:var(--jp-accent);}
-.lang-btn.active-en{background:var(--en-glow);color:var(--en-accent);border-color:var(--en-accent);}
-.lang-btn.active-vs{background:rgba(255,215,0,0.1);color:var(--gold);}
-.stat-badge{padding:4px 10px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:0.65rem;color:var(--dim);}
-
-/* === Dimension Tabs === */
-.dim-tabs{display:flex;gap:4px;padding:8px 12px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(255,255,255,0.03);}
-.dim-tabs::-webkit-scrollbar{display:none;}
-.dim-tab{padding:5px 12px;border:1px solid var(--border);border-radius:16px;background:transparent;color:var(--dim);font-family:inherit;font-size:0.68rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0;}
-.dim-tab.active{border-color:var(--gold);color:var(--gold);background:rgba(255,215,0,0.08);}
-.dim-tab:hover{border-color:var(--text);color:var(--text);}
-
-/* === Main Card === */
-.main-card{margin:16px;border-radius:20px;background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color 0.3s;}
-.main-card.mode-jp{border-color:rgba(255,107,107,0.3);}
-.main-card.mode-en{border-color:rgba(78,205,196,0.3);}
-.main-card.mode-vs{border-color:rgba(255,215,0,0.3);}
-
-/* Chinese anchor */
-.cn-anchor{padding:20px 24px 12px;text-align:center;}
-.cn-sentence{font-size:1.4rem;font-weight:900;color:var(--cn-accent);letter-spacing:0.05em;margin-bottom:4px;}
-.cn-dim{font-size:0.7rem;color:var(--dim);margin-top:4px;}
-
-/* Block area */
-.block-area{padding:8px 20px 20px;min-height:120px;}
-.block-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:8px 0;animation:fadeUp 0.3s ease;}
-
-/* Individual blocks */
-.block{padding:8px 14px;border-radius:12px;font-weight:700;font-size:0.95rem;transition:all 0.3s;position:relative;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;}
-.block:hover{transform:translateY(-2px);}
-.block-text{font-size:0.95rem;}
-.block-role{font-size:0.55rem;opacity:0.6;font-weight:400;}
-
-/* JP blocks */
-.block-jp{background:rgba(255,107,107,0.1);border:1.5px solid rgba(255,107,107,0.3);color:#ffb4b4;}
-.block-jp:hover{background:rgba(255,107,107,0.2);border-color:rgba(255,107,107,0.5);}
-
-/* EN blocks */
-.block-en{background:rgba(78,205,196,0.1);border:1.5px solid rgba(78,205,196,0.3);color:#a8ece8;}
-.block-en:hover{background:rgba(78,205,196,0.2);border-color:rgba(78,205,196,0.5);}
-
-/* Role colors */
-.role-主角{border-left:3px solid #ff6b6b;}
-.role-動作{border-left:3px solid #4ecdc4;}
-.role-對象{border-left:3px solid #ffd93d;}
-.role-修飾{border-left:3px solid #a78bfa;}
-.role-連接{border-left:3px solid #888;}
-.role-場景{border-left:3px solid #66bb6a;}
-.role-目標{border-left:3px solid #ff9800;}
-.role-時間{border-left:3px solid #42a5f5;}
-.role-語氣{border-left:3px solid #ef5350;}
-
-/* Formula */
-.formula{text-align:center;padding:4px 16px 12px;font-size:0.72rem;color:var(--dim);font-family:monospace;letter-spacing:0.03em;}
-
-/* VS Mode */
-.vs-container{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.vs-side{padding:12px 16px;}
-.vs-side.jp-side{border-right:1px solid var(--border);}
-.vs-label{font-size:0.7rem;font-weight:900;margin-bottom:8px;text-align:center;}
-.vs-label.jp{color:var(--jp-accent);}
-.vs-label.en{color:var(--en-accent);}
-.vs-blocks{display:flex;flex-direction:column;gap:4px;}
-.vs-block{padding:4px 8px;border-radius:6px;font-size:0.75rem;display:flex;justify-content:space-between;align-items:center;}
-.vs-block.jp{background:rgba(255,107,107,0.08);color:#ffb4b4;}
-.vs-block.en{background:rgba(78,205,196,0.08);color:#a8ece8;}
-.vs-role-tag{font-size:0.55rem;opacity:0.5;}
-
-/* Contrast insight */
-.contrast-box{margin:0 20px 16px;padding:12px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:0.75rem;line-height:1.7;color:var(--dim);}
-.contrast-label{font-weight:700;color:var(--cn-accent);margin-right:4px;}
-.contrast-row{margin:4px 0;}
-
-/* Navigation */
-.nav-row{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 20px;border-top:1px solid var(--border);}
-.nav-btn{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;background:var(--surface);color:var(--text);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
-.nav-btn:hover{background:var(--card);border-color:var(--text);}
-.nav-btn:disabled{opacity:0.3;cursor:not-allowed;}
-.nav-counter{font-size:0.75rem;color:var(--dim);min-width:60px;text-align:center;}
-
-/* Sentence dots */
-.dot-row{display:flex;gap:4px;justify-content:center;padding:0 20px 16px;flex-wrap:wrap;}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.2s;}
-.dot.active-jp{background:var(--jp-accent);}
-.dot.active-en{background:var(--en-accent);}
-.dot.active-vs{background:var(--gold);}
-.dot:hover{transform:scale(1.3);}
-
-/* Speak button */
-.speak-btn{position:absolute;top:4px;right:4px;width:18px;height:18px;border:none;border-radius:50%;background:rgba(255,255,255,0.1);color:var(--text);font-size:0.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0.5;transition:opacity 0.2s;}
-.speak-btn:hover{opacity:1;}
-
-/* Animations */
-@keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 rgba(255,107,107,0);}50%{box-shadow:0 0 20px rgba(255,107,107,0.15);}}
-
-/* Loading */
-.loading{display:flex;align-items:center;justify-content:center;height:60vh;flex-direction:column;gap:12px;}
-.loading-text{color:var(--dim);font-size:0.85rem;}
-.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg);}}
-
-/* Role legend */
-.legend{display:flex;flex-wrap:wrap;gap:6px;padding:0 20px 12px;justify-content:center;}
-.legend-item{display:flex;align-items:center;gap:3px;font-size:0.58rem;color:var(--dim);}
-.legend-dot{width:6px;height:6px;border-radius:2px;}
+:root{--bg:#0c0c1a;--surface:#151528;--card:#1c1c35;--border:#2a2a4a;--text:#e8e6f0;--dim:#8888aa;--jp:#ff6b6b;--en:#4ecdc4;--gold:#ffd700;--cn:#ffa94d}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);-webkit-user-select:text;user-select:text}
+.header{padding:10px 14px 6px;display:flex;align-items:center;gap:6px;position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.logo{font-size:1rem;font-weight:900;background:linear-gradient(135deg,var(--jp),var(--en));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sw,.lt{display:flex;background:var(--surface);border-radius:18px;border:1px solid var(--border);overflow:hidden}
+.ub,.lb{padding:4px 10px;border:none;background:transparent;color:var(--dim);font-family:inherit;font-size:.68rem;font-weight:700;cursor:pointer}
+.ub.a{background:rgba(255,215,0,.1);color:var(--gold)}.lt{margin-left:auto}
+.lb.a-jp{background:rgba(255,107,107,.12);color:var(--jp)}.lb.a-en{background:rgba(78,205,196,.12);color:var(--en)}.lb.a-vs{background:rgba(255,215,0,.1);color:var(--gold)}
+.badge{padding:2px 7px;border-radius:9px;font-size:.58rem}.sb{background:var(--surface);border:1px solid var(--border);color:var(--dim)}.pb{background:rgba(80,200,120,.1);border:1px solid rgba(80,200,120,.3);color:#50c878}
+.dt{display:flex;gap:3px;padding:5px 10px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(255,255,255,.03)}.dt::-webkit-scrollbar{display:none}
+.tab{padding:3px 9px;border:1px solid var(--border);border-radius:12px;background:transparent;color:var(--dim);font-family:inherit;font-size:.62rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0}.tab.a{border-color:var(--gold);color:var(--gold);background:rgba(255,215,0,.08)}
+.mc{margin:10px;border-radius:14px;background:var(--card);border:1px solid var(--border);overflow:hidden}
+.mc.m-jp{border-color:rgba(255,107,107,.3)}.mc.m-en{border-color:rgba(78,205,196,.3)}.mc.m-vs{border-color:rgba(255,215,0,.3)}
+.ca{padding:14px 18px 6px;text-align:center}.cs{font-size:1.2rem;font-weight:900;color:var(--cn)}.cd{font-size:.62rem;color:var(--dim);margin-top:3px}
+.kt{margin-top:5px;padding:4px 12px;border:1px solid rgba(255,215,0,.3);border-radius:14px;background:rgba(255,215,0,.08);color:var(--gold);font-family:inherit;font-size:.68rem;font-weight:700;cursor:pointer}
+.ba{padding:5px 14px 14px;min-height:70px}.br{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;padding:5px 0;animation:fu .3s ease}
+.bk{padding:5px 10px;border-radius:9px;font-weight:700;font-size:.85rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px}.bk:hover{transform:translateY(-2px)}
+.bk-r{font-size:.48rem;opacity:.45;font-weight:400}
+.bk-jp{background:rgba(255,107,107,.1);border:1.5px solid rgba(255,107,107,.3);color:#ffb4b4}
+.bk-en{background:rgba(78,205,196,.1);border:1.5px solid rgba(78,205,196,.3);color:#a8ece8}
+.r-主角{border-left:3px solid #ff6b6b}.r-動作{border-left:3px solid #4ecdc4}.r-對象{border-left:3px solid #ffd93d}.r-修飾{border-left:3px solid #a78bfa}.r-連接{border-left:3px solid #888}.r-場景{border-left:3px solid #66bb6a}.r-目標{border-left:3px solid #ff9800}.r-時間{border-left:3px solid #42a5f5}.r-語氣{border-left:3px solid #ef5350}
+.fm{text-align:center;padding:2px 10px 6px;font-size:.65rem;color:var(--dim);font-family:monospace}
+.sf{border:1px solid var(--border);background:var(--surface);color:var(--dim);font-family:inherit;font-size:.65rem;padding:3px 10px;border-radius:9px;cursor:pointer}
+.vc{display:grid;grid-template-columns:1fr 1fr}.vs{padding:8px 10px}.vs.js{border-right:1px solid var(--border)}
+.vl{font-size:.62rem;font-weight:900;margin-bottom:5px;text-align:center}.vl.jp{color:var(--jp)}.vl.en{color:var(--en)}
+.vb{padding:2px 5px;border-radius:4px;font-size:.68rem;display:flex;justify-content:space-between;margin:2px 0}.vb.jp{background:rgba(255,107,107,.07);color:#ffb4b4}.vb.en{background:rgba(78,205,196,.07);color:#a8ece8}.vt{font-size:.48rem;opacity:.35}
+.cb{margin:0 14px 10px;padding:8px 12px;border-radius:9px;background:var(--surface);border:1px solid var(--border);font-size:.7rem;line-height:1.7;color:var(--dim)}.cl{font-weight:700;margin-right:3px}
+.nr{display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 14px;border-top:1px solid var(--border)}
+.nb{width:30px;height:30px;border:1px solid var(--border);border-radius:50%;background:var(--surface);color:var(--text);font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center}.nb:disabled{opacity:.3}
+.nc{font-size:.68rem;color:var(--dim);min-width:45px;text-align:center}
+.dr{display:flex;gap:2px;justify-content:center;padding:0 14px 10px;flex-wrap:wrap}
+.d{width:5px;height:5px;border-radius:50%;background:var(--border);cursor:pointer}.d.a-jp{background:var(--jp)}.d.a-en{background:var(--en)}.d.a-vs{background:var(--gold)}.d.sn{background:rgba(80,200,120,.5)}
+.lg{display:flex;flex-wrap:wrap;gap:4px;padding:0 14px 7px;justify-content:center}.li{display:flex;align-items:center;gap:2px;font-size:.48rem;color:var(--dim)}.ld{width:4px;height:4px;border-radius:2px}
+.ko{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}.ko.op{opacity:1;pointer-events:auto}
+.kp{background:#1a1a35;border-radius:18px;max-width:380px;width:90%;box-shadow:0 16px 50px rgba(0,0,0,.5);overflow:hidden;border:2px solid rgba(255,255,255,.08);transform:scale(.8);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}.ko.op .kp{transform:scale(1)}
+.kh{padding:14px 18px 6px;text-align:center}.ms{font-size:2rem;display:block;margin-bottom:2px}.pt{font-size:.72rem;font-weight:900;color:var(--gold)}.mt{font-size:1rem;font-weight:900;margin-top:3px;line-height:1.3}.mt.jt{color:#ff8a8a}.mt.et{color:#7eeae0}
+.bs{margin:0 12px 5px;padding:8px 12px;border-radius:10px;font-size:.78rem;line-height:1.7;font-weight:700}
+.bc{background:rgba(255,169,77,.1);border:1px solid rgba(255,169,77,.2);color:#ffcc88}
+.bj{background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.2);color:#ffb4b4}
+.be{background:rgba(78,205,196,.1);border:1px solid rgba(78,205,196,.2);color:#a8ece8}
+.bf{font-size:.62rem;display:block;margin-bottom:2px;opacity:.55}
+.mi{margin:5px 12px 10px;padding:7px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,169,77,.07));border:1px solid rgba(255,215,0,.2);text-align:center;font-size:.78rem;font-weight:900;color:var(--gold)}
+.kc{margin:0 12px 12px;padding:7px;border:none;border-radius:10px;background:rgba(255,255,255,.05);color:var(--dim);font-family:inherit;font-size:.72rem;font-weight:700;width:calc(100% - 24px);cursor:pointer}.kc:hover{background:rgba(255,255,255,.1);color:#fff}
+.ld-c{display:flex;align-items:center;justify-content:center;height:50vh;flex-direction:column;gap:8px}.ld-t{color:var(--dim);font-size:.78rem}
+.sp{width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes fu{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bn{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}.ko.op .ms{animation:bn 1s ease-in-out .3s}
 </style>
 </head>
 <body>
-
 <div class="header">
-  <div class="logo">三語句型積木</div>
-  <div class="lang-toggle">
-    <button class="lang-btn active-jp" onclick="setMode('jp')">🇯🇵 日文</button>
-    <button class="lang-btn" onclick="setMode('en')">🇺🇸 英文</button>
-    <button class="lang-btn" onclick="setMode('vs')">⚡ 對比</button>
-  </div>
-  <span class="stat-badge" id="stat-badge">0 句</span>
+<div class="logo">三語句型積木</div>
+<div class="sw"><button class="ub a" onclick="sU('iggy')">🐱 Iggy</button><button class="ub" onclick="sU('yoyo')">🐸 Yoyo</button></div>
+<div class="lt"><button class="lb a-jp" onclick="sM('jp')">🇯🇵 日文</button><button class="lb" onclick="sM('en')">🇺🇸 英文</button><button class="lb" onclick="sM('vs')">⚡ 對比</button></div>
+<span class="badge sb" id="sb">0 句</span><span class="badge pb" id="pb">✅ 0</span>
 </div>
-
-<div class="dim-tabs" id="dim-tabs"></div>
-
-<div id="app">
-  <div class="loading">
-    <div class="spinner"></div>
-    <div class="loading-text">載入規則中…</div>
-  </div>
-</div>
-
+<div class="dt" id="dt"></div>
+<div id="app"><div class="ld-c"><div class="sp"></div><div class="ld-t">載入中…</div></div></div>
+<div class="ko" id="ko" onclick="if(event.target===this)cK()"><div class="kp" id="kpp"></div></div>
 <script>
-let RULES = [];
-let filteredRules = [];
-let currentIdx = 0;
-let mode = 'jp'; // 'jp' | 'en' | 'vs'
-let currentDim = 'all';
-
-// TTS
-const synth = window.speechSynthesis;
-let jpVoice = null, enVoice = null;
-function initVoices() {
-  const voices = synth.getVoices();
-  jpVoice = voices.find(v => v.lang.startsWith('ja'));
-  enVoice = voices.find(v => v.lang.startsWith('en'));
-}
-synth.onvoiceschanged = initVoices;
-initVoices();
-
-function speak(text, lang) {
-  synth.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = lang === 'jp' ? 'ja-JP' : 'en-US';
-  u.rate = 0.8;
-  if (lang === 'jp' && jpVoice) u.voice = jpVoice;
-  if (lang === 'en' && enVoice) u.voice = enVoice;
-  synth.speak(u);
-}
-
-// Load data
-async function loadData() {
-  try {
-    const res = await fetch('unified-rules.json');
-    if (!res.ok) throw new Error('File not found');
-    const data = await res.json();
-    RULES = data.map(r => ({
-      id: r.id,
-      dim: r.dimension_label || r.dimension,
-      dimKey: r.dimension,
-      cn: r.chinese,
-      lv: r.jlpt || '',
-      jp: r.jp ? {
-        s: r.jp.sentence,
-        b: r.jp.blocks.map(b => [b.text, b.role]),
-        f: r.jp.formula || ''
-      } : null,
-      en: r.en ? {
-        s: r.en.sentence,
-        b: r.en.blocks.map(b => [b.text, b.role]),
-        f: r.en.formula || ''
-      } : null,
-      ct: r.contrast || {},
-      m: r.metrics || {}
-    }));
-  } catch(e) {
-    // Fallback: try compact format or show error
-    document.getElementById('app').innerHTML = '<div class="loading"><div class="loading-text">請將 unified-rules.json 放在同一目錄</div></div>';
-    return;
-  }
-
-  filteredRules = RULES;
-  document.getElementById('stat-badge').textContent = RULES.length + ' 句';
-  renderDimTabs();
-  render();
-}
-
-function renderDimTabs() {
-  const dims = {};
-  RULES.forEach(r => { dims[r.dim] = (dims[r.dim] || 0) + 1; });
-  const sorted = Object.entries(dims).sort((a,b) => b[1] - a[1]);
-
-  let html = '<button class="dim-tab active" onclick="filterDim(\'all\')">全部 ' + RULES.length + '</button>';
-  for (const [dim, count] of sorted) {
-    html += '<button class="dim-tab" onclick="filterDim(\'' + dim.replace(/'/g, "\\'") + '\')">' + dim + ' ' + count + '</button>';
-  }
-  document.getElementById('dim-tabs').innerHTML = html;
-}
-
-function filterDim(dim) {
-  currentDim = dim;
-  currentIdx = 0;
-  filteredRules = dim === 'all' ? RULES : RULES.filter(r => r.dim === dim);
-  document.getElementById('stat-badge').textContent = filteredRules.length + ' 句';
-
-  // Update tab active state
-  document.querySelectorAll('.dim-tab').forEach(t => {
-    const tabDim = t.textContent.replace(/\s*\d+$/, '').trim();
-    t.classList.toggle('active', dim === 'all' ? tabDim.startsWith('全部') : tabDim === dim);
-  });
-  render();
-}
-
-function setMode(m) {
-  mode = m;
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.className = 'lang-btn';
-  });
-  const btns = document.querySelectorAll('.lang-btn');
-  if (m === 'jp') btns[0].classList.add('active-jp');
-  else if (m === 'en') btns[1].classList.add('active-en');
-  else btns[2].classList.add('active-vs');
-  render();
-}
-
-function navigate(delta) {
-  currentIdx = Math.max(0, Math.min(filteredRules.length - 1, currentIdx + delta));
-  render();
-}
-
-function goTo(idx) {
-  currentIdx = idx;
-  render();
-}
-
-function render() {
-  if (filteredRules.length === 0) {
-    document.getElementById('app').innerHTML = '<div class="loading"><div class="loading-text">沒有符合的句子</div></div>';
-    return;
-  }
-
-  const r = filteredRules[currentIdx];
-  const modeClass = 'mode-' + mode;
-
-  let blockHtml = '';
-  if (mode === 'vs') {
-    blockHtml = renderVS(r);
-  } else {
-    const lang = mode;
-    const data = r[lang];
-    if (!data) {
-      blockHtml = '<div style="text-align:center;padding:20px;color:var(--dim);">此句無' + (lang === 'jp' ? '日文' : '英文') + '資料</div>';
-    } else {
-      blockHtml = '<div class="block-row">';
-      data.b.forEach(([text, role]) => {
-        blockHtml += '<div class="block block-' + lang + ' role-' + role + '" onclick="speak(\'' + text.replace(/'/g, "\\'") + '\',\'' + lang + '\')">';
-        blockHtml += '<span class="block-text">' + text + '</span>';
-        blockHtml += '<span class="block-role">' + role + '</span>';
-        blockHtml += '</div>';
-      });
-      blockHtml += '</div>';
-      blockHtml += '<div class="formula">' + escH(data.f) + '</div>';
-
-      // Full sentence speak
-      blockHtml += '<div style="text-align:center;padding:0 0 8px;"><button onclick="speak(\'' + data.s.replace(/'/g, "\\'") + '\',\'' + lang + '\')" style="border:1px solid var(--border);background:var(--surface);color:var(--dim);font-family:inherit;font-size:0.7rem;padding:4px 12px;border-radius:12px;cursor:pointer;">🔊 ' + escH(data.s) + '</button></div>';
-    }
-  }
-
-  // Contrast
-  let contrastHtml = '';
-  if (r.ct && (r.ct.cn_blindspot || r.ct.jp_insight || r.ct.en_insight)) {
-    contrastHtml = '<div class="contrast-box">';
-    if (r.ct.cn_blindspot) contrastHtml += '<div class="contrast-row"><span class="contrast-label">🇹🇼 中文陷阱：</span>' + escH(r.ct.cn_blindspot) + '</div>';
-    if (r.ct.jp_insight) contrastHtml += '<div class="contrast-row"><span class="contrast-label" style="color:var(--jp-accent);">🇯🇵 日文邏輯：</span>' + escH(r.ct.jp_insight) + '</div>';
-    if (r.ct.en_insight) contrastHtml += '<div class="contrast-row"><span class="contrast-label" style="color:var(--en-accent);">🇺🇸 英文邏輯：</span>' + escH(r.ct.en_insight) + '</div>';
-    contrastHtml += '</div>';
-  }
-
-  // Dots
-  const maxDots = Math.min(filteredRules.length, 30);
-  let dotHtml = '<div class="dot-row">';
-  for (let i = 0; i < maxDots; i++) {
-    const dotClass = i === currentIdx ? ' active-' + mode : '';
-    dotHtml += '<div class="dot' + dotClass + '" onclick="goTo(' + i + ')"></div>';
-  }
-  if (filteredRules.length > maxDots) dotHtml += '<span style="color:var(--dim);font-size:0.6rem;align-self:center;">+' + (filteredRules.length - maxDots) + '</span>';
-  dotHtml += '</div>';
-
-  // Legend
-  const legendHtml = '<div class="legend">' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#ff6b6b"></div>主角</div>' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#4ecdc4"></div>動作</div>' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#ffd93d"></div>對象</div>' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>修飾</div>' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#888"></div>連接</div>' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#66bb6a"></div>場景</div>' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#ff9800"></div>目標</div>' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#42a5f5"></div>時間</div>' +
-    '<div class="legend-item"><div class="legend-dot" style="background:#ef5350"></div>語氣</div>' +
-    '</div>';
-
-  document.getElementById('app').innerHTML =
-    '<div class="main-card ' + modeClass + '">' +
-    '<div class="cn-anchor">' +
-    '<div class="cn-sentence">' + escH(r.cn) + '</div>' +
-    '<div class="cn-dim">' + escH(r.dim) + (r.lv ? ' · ' + r.lv : '') + '</div>' +
-    '</div>' +
-    '<div class="block-area">' + blockHtml + '</div>' +
-    contrastHtml +
-    legendHtml +
-    '<div class="nav-row">' +
-    '<button class="nav-btn" onclick="navigate(-1)"' + (currentIdx === 0 ? ' disabled' : '') + '>◀</button>' +
-    '<span class="nav-counter">' + (currentIdx + 1) + ' / ' + filteredRules.length + '</span>' +
-    '<button class="nav-btn" onclick="navigate(1)"' + (currentIdx >= filteredRules.length - 1 ? ' disabled' : '') + '>▶</button>' +
-    '</div>' +
-    dotHtml +
-    '</div>';
-}
-
-function renderVS(r) {
-  let html = '<div class="vs-container">';
-
-  // JP side
-  html += '<div class="vs-side jp-side"><div class="vs-label jp">🇯🇵 日文</div><div class="vs-blocks">';
-  if (r.jp) {
-    r.jp.b.forEach(([text, role]) => {
-      html += '<div class="vs-block jp role-' + role + '" onclick="speak(\'' + text.replace(/'/g, "\\'") + '\',\'jp\')">' +
-        '<span>' + text + '</span><span class="vs-role-tag">' + role + '</span></div>';
-    });
-    html += '</div><div style="font-size:0.6rem;color:var(--dim);margin-top:6px;text-align:center;">' + escH(r.jp.f) + '</div>';
-  } else {
-    html += '<div style="color:var(--dim);font-size:0.7rem;">無資料</div></div>';
-  }
-  html += '</div>';
-
-  // EN side
-  html += '<div class="vs-side"><div class="vs-label en">🇺🇸 英文</div><div class="vs-blocks">';
-  if (r.en) {
-    r.en.b.forEach(([text, role]) => {
-      html += '<div class="vs-block en role-' + role + '" onclick="speak(\'' + text.replace(/'/g, "\\'") + '\',\'en\')">' +
-        '<span>' + text + '</span><span class="vs-role-tag">' + role + '</span></div>';
-    });
-    html += '</div><div style="font-size:0.6rem;color:var(--dim);margin-top:6px;text-align:center;">' + escH(r.en.f) + '</div>';
-  } else {
-    html += '<div style="color:var(--dim);font-size:0.7rem;">無資料</div></div>';
-  }
-  html += '</div></div>';
-  return html;
-}
-
-function escH(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-// Keyboard navigation
-document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowLeft') navigate(-1);
-  if (e.key === 'ArrowRight') navigate(1);
-  if (e.key === '1') setMode('jp');
-  if (e.key === '2') setMode('en');
-  if (e.key === '3') setMode('vs');
-});
-
-// Touch swipe
-let touchStartX = 0;
-document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-document.addEventListener('touchend', e => {
-  const diff = e.changedTouches[0].clientX - touchStartX;
-  if (Math.abs(diff) > 60) navigate(diff > 0 ? -1 : 1);
-});
-
-// Init
-loadData();
+let R=[],F=[],ci=0,md='jp',cu='iggy';
+const sy=speechSynthesis;let jv=null,ev=null;
+function iV(){const v=sy.getVoices();jv=v.find(v=>v.lang.startsWith('ja'));ev=v.find(v=>v.lang.startsWith('en'));}
+sy.onvoiceschanged=iV;iV();
+function sp(t,l){sy.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=l==='jp'?'ja-JP':'en-US';u.rate=0.8;if(l==='jp'&&jv)u.voice=jv;if(l==='en'&&ev)u.voice=ev;sy.speak(u);}
+function lU(){try{return JSON.parse(localStorage.getItem('tl_'+cu)||'{}');}catch{return {};}}
+function sV(d){localStorage.setItem('tl_'+cu,JSON.stringify(d));}
+function mS(id){const d=lU();if(!d.seen)d.seen={};d.seen[id]=Date.now();sV(d);}
+function iS(id){const d=lU();return d.seen&&d.seen[id];}
+function gS(){const d=lU();return Object.keys(d.seen||{}).length;}
+function sU(u){cu=u;document.querySelectorAll('.ub').forEach(b=>{b.classList.toggle('a',b.textContent.includes(u==='iggy'?'Iggy':'Yoyo'));});uP();rn();}
+function uP(){document.getElementById('pb').textContent='✅ '+gS();}
+async function lD(){try{const r=await fetch('unified-rules.json');if(!r.ok)throw 0;const d=await r.json();
+R=d.map(r=>({id:r.id,dim:r.dimension_label||r.dimension,cn:r.chinese,lv:r.jlpt||'',
+jp:r.jp?{s:r.jp.sentence,b:r.jp.blocks.map(b=>[b.text,b.role]),f:r.jp.formula||''}:null,
+en:r.en?{s:r.en.sentence,b:r.en.blocks.map(b=>[b.text,b.role]),f:r.en.formula||''}:null,
+ct:r.contrast||{}}));}catch{document.getElementById('app').innerHTML='<div class="ld-c"><div class="ld-t">請將 unified-rules.json 放在同目錄</div></div>';return;}
+F=R;document.getElementById('sb').textContent=R.length+' 句';rDT();uP();rn();}
+function rDT(){const ds={};R.forEach(r=>{ds[r.dim]=(ds[r.dim]||0)+1;});const s=Object.entries(ds).sort((a,b)=>b[1]-a[1]);
+let h='<button class="tab a" onclick="fD(\'all\')">全部 '+R.length+'</button>';
+for(const[d,c]of s)h+='<button class="tab" onclick="fD(\''+d.replace(/'/g,"\\'")+'\')">' +d+' '+c+'</button>';
+document.getElementById('dt').innerHTML=h;}
+function fD(d){ci=0;F=d==='all'?R:R.filter(r=>r.dim===d);document.getElementById('sb').textContent=F.length+' 句';
+document.querySelectorAll('.tab').forEach(t=>{const td=t.textContent.replace(/\s*\d+$/,'').trim();t.classList.toggle('a',d==='all'?td.startsWith('全部'):td===d);});rn();}
+function sM(m){md=m;document.querySelectorAll('.lb').forEach(b=>b.className='lb');const bs=document.querySelectorAll('.lb');
+if(m==='jp')bs[0].classList.add('a-jp');else if(m==='en')bs[1].classList.add('a-en');else bs[2].classList.add('a-vs');rn();}
+function nv(d){ci=Math.max(0,Math.min(F.length-1,ci+d));rn();}
+function gT(i){ci=i;rn();}
+function eH(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function rn(){if(!F.length){document.getElementById('app').innerHTML='<div class="ld-c"><div class="ld-t">沒有符合的句子</div></div>';return;}
+const r=F[ci];mS(r.id);uP();const hk=!!KD[r.dim]||(md==='en'&&!!EK[r.dim]);let bh='';
+if(md==='vs'){bh=rVS(r);}else{const d=r[md];if(!d){bh='<div style="text-align:center;padding:14px;color:var(--dim)">此句無'+(md==='jp'?'日文':'英文')+'資料</div>';}
+else{bh='<div class="br">';d.b.forEach(([t,rl])=>{bh+='<div class="bk bk-'+md+' r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\';\''+md+'\')">'+t+'<span class="bk-r">'+rl+'</span></div>';});
+bh+='</div><div class="fm">'+eH(d.f)+'</div><div style="text-align:center;padding:0 0 6px"><button class="sf" onclick="sp(\''+d.s.replace(/'/g,"\\'")+'\';\''+md+'\')">🔊 '+eH(d.s)+'</button></div>';}}
+let ct='';if(r.ct&&(r.ct.cn_blindspot||r.ct.jp_insight||r.ct.en_insight)){ct='<div class="cb">';
+if(r.ct.cn_blindspot)ct+='<div><span class="cl" style="color:var(--cn)">🇹🇼 中文陷阱：</span>'+eH(r.ct.cn_blindspot)+'</div>';
+if(r.ct.jp_insight)ct+='<div><span class="cl" style="color:var(--jp)">🇯🇵 日文邏輯：</span>'+eH(r.ct.jp_insight)+'</div>';
+if(r.ct.en_insight)ct+='<div><span class="cl" style="color:var(--en)">🇺🇸 英文邏輯：</span>'+eH(r.ct.en_insight)+'</div>';ct+='</div>';}
+const mx=Math.min(F.length,30);let dt='<div class="dr">';for(let i=0;i<mx;i++){const dc=i===ci?' a-'+md:'';const sn=iS(F[i].id)?' sn':'';dt+='<div class="d'+dc+sn+'" onclick="gT('+i+')"></div>';}
+if(F.length>mx)dt+='<span style="color:var(--dim);font-size:.48rem;align-self:center">+'+(F.length-mx)+'</span>';dt+='</div>';
+const lg='<div class="lg"><div class="li"><div class="ld" style="background:#ff6b6b"></div>主角</div><div class="li"><div class="ld" style="background:#4ecdc4"></div>動作</div><div class="li"><div class="ld" style="background:#ffd93d"></div>對象</div><div class="li"><div class="ld" style="background:#a78bfa"></div>修飾</div><div class="li"><div class="ld" style="background:#888"></div>連接</div><div class="li"><div class="ld" style="background:#66bb6a"></div>場景</div><div class="li"><div class="ld" style="background:#ff9800"></div>目標</div><div class="li"><div class="ld" style="background:#42a5f5"></div>時間</div><div class="li"><div class="ld" style="background:#ef5350"></div>語氣</div></div>';
+document.getElementById('app').innerHTML='<div class="mc m-'+md+'"><div class="ca"><div class="cs">'+eH(r.cn)+'</div><div class="cd">'+eH(r.dim)+(r.lv?' · '+r.lv:'')+'</div>'+(hk?'<button class="kt" onclick="sK(\''+r.dim.replace(/'/g,"\\'")+'\')" >💡 小學生魔法教室</button>':'')+'</div><div class="ba">'+bh+'</div>'+ct+lg+'<div class="nr"><button class="nb" onclick="nv(-1)"'+(ci===0?' disabled':'')+'>◀</button><span class="nc">'+(ci+1)+' / '+F.length+'</span><button class="nb" onclick="nv(1)"'+(ci>=F.length-1?' disabled':'')+'>▶</button></div>'+dt+'</div>';}
+function rVS(r){let h='<div class="vc"><div class="vs js"><div class="vl jp">🇯🇵 日文</div>';
+if(r.jp){r.jp.b.forEach(([t,rl])=>{h+='<div class="vb jp r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\';\'jp\')"><span>'+t+'</span><span class="vt">'+rl+'</span></div>';});h+='<div style="font-size:.52rem;color:var(--dim);margin-top:3px;text-align:center">'+eH(r.jp.f)+'</div>';}
+else h+='<div style="color:var(--dim);font-size:.62rem">無資料</div>';h+='</div><div class="vs"><div class="vl en">🇺🇸 英文</div>';
+if(r.en){r.en.b.forEach(([t,rl])=>{h+='<div class="vb en r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\';\'en\')"><span>'+t+'</span><span class="vt">'+rl+'</span></div>';});h+='<div style="font-size:.52rem;color:var(--dim);margin-top:3px;text-align:center">'+eH(r.en.f)+'</div>';}
+else h+='<div style="color:var(--dim);font-size:.62rem">無資料</div>';h+='</div></div>';return h;}
+const KD={"基本句型 SVO/SOV": {"m": "🦊", "t": "Iggy", "mt": "🔀 動作搬家大作戰！", "cn": "中文和英文排隊一樣：誰→做什麼→什麼東西。我 吃 蘋果。", "br": "日文的動作超級懶！永遠站在隊伍最後面！私は→りんごを→食べます。「吃」跑到屁股去了！", "tp": "💡 日文的動作永遠排最後一個！", "th": "jp"}, "助詞導航": {"m": "🦊", "t": "Iggy", "mt": "🏷️ 每個人都要戴名牌！", "cn": "中文靠排隊就知道誰做什麼。", "br": "日文可以亂排隊！所以每個字後面要貼名牌。「は」=我是主角！「を」=我是被處理掉的！", "tp": "💡 看到「を」就知道這東西要被處理掉啦！", "th": "jp"}, "て形串連": {"m": "🦊", "t": "Iggy", "mt": "🔗 動作的超級黏黏膠水！", "cn": "中文用逗號串動作：起床，吃飯，出門。", "br": "日文要給每個動作塗上「て」這款強力膠水！起きて→食べて→出かけます。最後一個不用塗。", "tp": "💡 看到「て」就知道後面還有動作！", "th": "jp"}, "存在句": {"m": "🦊", "t": "Iggy", "mt": "🐱 會動的和不會動的分開說！", "cn": "中文不管什麼都說「有」。", "br": "日文兩種！會動的（人、貓）用「います」，不會動的（書、桌子）用「あります」。", "tp": "💡 貓會跑→います，書不會跑→あります！", "th": "jp"}, "被動語態": {"m": "🦊", "t": "Iggy", "mt": "😱 受害者出來告狀！", "cn": "中文加「被」就好。", "br": "日文的「被」還帶著「我好倒霉」的心情！弟弟偷吃蛋糕→ケーキを食べられた。超不爽的！", "tp": "💡 日文的「被」=「被」+生氣的臉😤！", "th": "jp"}, "自他動詞": {"m": "🦊", "t": "Iggy", "mt": "🚪 門自己開 vs 我去開門！", "cn": "中文不分：動作都叫「開」。", "br": "日文有雙胞胎！門自己開=開く(あく)，我去開=開ける(あける)。像自動門vs手動門。", "tp": "💡 自己動的 vs 有人讓它動的 = 不同的字！", "th": "jp"}, "條件句": {"m": "🦊", "t": "Iggy", "mt": "🌧️ 「如果」有四件外套！", "cn": "中文只有一種「如果」。", "br": "日文有四件外套：「たら」最萬用、「ば」正式、「と」自然規律、「なら」聽說的。", "tp": "💡 不知道穿哪件？「たら」最安全！", "th": "jp"}, "禮物流向": {"m": "🦊", "t": "Iggy", "mt": "🎁 送禮物用對包裝紙！", "cn": "中文都說「給」就好。", "br": "日文三種！我送你=あげる，你送我=くれる，我跟你要=もらう。搞混很失禮！", "tp": "💡 往外送=あげる，收到=もらう！", "th": "jp"}, "聚光燈 は vs が": {"m": "🦊", "t": "Iggy", "mt": "🔦 聚光燈照誰？", "cn": "中文不分已知和新發現。", "br": "「は」=大家知道的（說到那人嘛…），「が」=新發現（就是他！）", "tp": "💡 舊消息用は，新發現用が！", "th": "jp"}, "敬語入門": {"m": "🦊", "t": "Iggy", "mt": "👔 動作換穿三種衣服！", "cn": "中文加「請」就夠客氣。", "br": "日文對不同人要換衣服！老闆→華麗衣服，自己→樸素衣服，一般→制服。", "tp": "💡 別人穿華服，自己穿樸素！", "th": "jp"}, "轉述標籤 と": {"m": "🦊", "t": "Iggy", "mt": "💬 別人的話要蓋章！", "cn": "中文用引號包起來。", "br": "日文引號後面要蓋「と」的章！看到「と言う」就知道前面是轉述別人說的！", "tp": "💡「と」就是轉述認證章！", "th": "jp"}, "進行式/持續態": {"m": "🦊", "t": "Iggy", "mt": "⏳ ている 是雙面魔法！", "cn": "中文「正在」很簡單。", "br": "ている 可以是「正在做」→食べている，也可以是「一直是這樣」→結婚している（已婚不是正在辦婚禮）。", "tp": "💡 ている=正在做 或 一直是那個狀態！", "th": "jp"}, "漢字陷阱": {"m": "🦊", "t": "Iggy", "mt": "⚠️ 長得像但意思不同的雙胞胎！", "cn": "看到漢字覺得「我認識！」", "br": "小心！「勉強」日文=讀書，「大丈夫」日文=沒問題。長得一樣意思完全不同！", "tp": "💡 看到漢字不要猜！查字典才安全！", "th": "jp"}, "修飾語/連體": {"m": "🦊", "t": "Iggy", "mt": "🎨 形容的話放東西前面！", "cn": "中文：紅色的花、跑步的男孩。", "br": "日文也放前面！「昨天在學校教我數學的老師」整串都塞在「先生」前面！", "tp": "💡 日文跟中文一樣：形容的話放前面！", "th": "jp"}, "推測 でしょう": {"m": "🦊", "t": "Iggy", "mt": "🤔 「大概吧」的魔法尾巴！", "cn": "中文說「大概」「可能」就好。", "br": "日文在句尾加「でしょう」就變猜測語氣！像加了「大概吧」的尾巴。", "tp": "💡 でしょう=大概吧、應該吧！", "th": "jp"}, "ように 目標": {"m": "🦊", "t": "Iggy", "mt": "🎯 為了變成那個樣子！", "cn": "中文說「為了」就好。", "br": "ように像瞄準目標！「上手になるように」=為了變厲害。先看目標再拉弓！", "tp": "💡 ように=為了變成那個樣子！", "th": "jp"}, "のに 轉折": {"m": "🦊", "t": "Iggy", "mt": "😤 明明就…結果卻…！", "cn": "中文「明明…卻…」", "br": "のに就是不爽！勉強したのに落ちた=明明讀了卻沒過。充滿「好氣」的感覺！", "tp": "💡 のに=明明就…結果卻…（好氣）！", "th": "jp"}, "ので 原因": {"m": "🦊", "t": "Iggy", "mt": "📋 客氣地說理由！", "cn": "中文「因為…所以…」", "br": "ので是很客氣地說理由！比「から」有禮貌，跟老師說話用ので比較好！", "tp": "💡 ので=有禮貌地說「因為」！", "th": "jp"}, "ほど 程度": {"m": "🦊", "t": "Iggy", "mt": "📏 誇張到什麼程度！", "cn": "中文「辣到哭」「累死了」", "br": "ほど=到了…的程度！泣くほど辛い=辣到會哭。像放大鏡把誇張放更大！", "tp": "💡 ほど=到了…的程度！", "th": "jp"}, "使役形": {"m": "🦊", "t": "Iggy", "mt": "👆 叫別人去做！", "cn": "中文「叫他去」「讓他做」", "br": "日文動作可以變身！食べる→食べさせる=叫別人吃。像加了命令貼紙！", "tp": "💡 させる=叫別人去做！", "th": "jp"}, "ために 目的": {"m": "🦊", "t": "Iggy", "mt": "🎯 就是為了這個目的！", "cn": "中文「為了」就好。", "br": "ために比ように更直接！大学に入るために勉強する。目標明確決心堅定！", "tp": "💡 ために=就是為了這個目的！", "th": "jp"}, "工具箱 で": {"m": "🦊", "t": "Iggy", "mt": "🔧 用什麼工具、在哪裡做！", "cn": "中文靠前後文。", "br": "で像工具箱！箸で食べる=用筷子吃。公園で遊ぶ=在公園玩。一個で兩種用法！", "tp": "💡 で=用什麼工具 或 在哪裡！", "th": "jp"}};
+const EK={"基本句型 SVO/SOV": {"m": "🐸", "t": "Yoyo", "mt": "🎯 英文排隊跟中文一樣！", "cn": "中文排隊：誰→做什麼→什麼東西。我 去 學校。", "br": "好消息！英文排隊跟中文幾乎一模一樣！I go to school=我去學校。但英文多了「to」這個帶路小嚮導！", "tp": "💡 英文的 to 是帶路小嚮導！", "th": "en"}, "存在句": {"m": "🐸", "t": "Yoyo", "mt": "👻 There 是佔位子的小幽靈！", "cn": "中文直接說「有」就好。", "br": "英文不能直接說有！要先派幽靈 There 佔位子，再請 is 或 are 幫忙。There is a book=有一本書。", "tp": "💡 一個配 is，很多配 are！", "th": "en"}, "疑問句": {"m": "🐸", "t": "Yoyo", "mt": "🔄 問問題派 Do 去敲門！", "cn": "中文加「嗎」就好。", "br": "英文要派敲門員！Do 或 Does 衝到最前面：Do you like cats? 不派就不算問問題！", "tp": "💡 問問題先派 Do 或 Does 去敲門！", "th": "en"}, "被動語態": {"m": "🐸", "t": "Yoyo", "mt": "🎭 故事換人來說！", "cn": "中文加「被」就好。", "br": "英文被動就是換角度！The cake was eaten=蛋糕被吃了。動作要穿特殊衣服！", "tp": "💡 was/is+動作穿特殊衣服=被動！", "th": "en"}, "條件句": {"m": "🐸", "t": "Yoyo", "mt": "🔮 If 是預言水晶球！", "cn": "中文「如果…就…」動作都不變。", "br": "If 是水晶球！看水晶球用現在樣子（If it rains），預言結果用 will（I will stay）。不能搞混！", "tp": "💡 If 後面用現在樣子，結果用 will！", "th": "en"}, "進行式/持續態": {"m": "🐸", "t": "Yoyo", "mt": "📸 幫動作拍「正在做」的照片！", "cn": "中文加「正在」就好。", "br": "英文要底座(am/is/are)+動作穿-ing衣服。I am eating=正在吃。少了就拍不成！", "tp": "💡 am/is/are+動作加ing=正在做！", "th": "en"}, "修飾語/連體": {"m": "🐸", "t": "Yoyo", "mt": "👈👉 形容的話站哪邊？", "cn": "中文放前面：跑步的男孩。", "br": "英文分兩種！短的站前面(the running boy)，長的用who站後面(the boy who runs fast)。", "tp": "💡 短的前面，長的用 who 站後面！", "th": "en"}, "形容詞述語": {"m": "🐸", "t": "Yoyo", "mt": "🤝 形容詞不能單獨出場！", "cn": "中文直接說「很冷」就好。", "br": "英文形容詞很害羞！一定要找 is/am/are 牽手：It is cold=很冷。沒有is就不成句子！", "tp": "💡 形容詞前面一定要有 is/am/are！", "th": "en"}, "Articles": {"m": "🐸", "t": "Yoyo", "mt": "👕 東西出門要穿外套！", "cn": "中文直接說「一顆蘋果」就好。", "br": "英文的東西超怕冷！第一次見面穿「a」外套，老朋友穿「the」外套。沒穿會被畫紅線！", "tp": "💡 第一次穿 a，老朋友穿 the！", "th": "en"}, "Present Simple": {"m": "🐸", "t": "Yoyo", "mt": "👑 He 和 She 是霸道國王！", "cn": "中文不管誰，動作都一樣。", "br": "He/She/It 是霸道國王！後面的動作要穿「s」制服：I like→She likeS。不穿會被處罰！", "tp": "💡 He/She/It 後面的動作加 s！", "th": "en"}, "Past Tense": {"m": "🐸", "t": "Yoyo", "mt": "⏰ 動作坐時光機回到過去！", "cn": "中文加「了」就好，動作不變。", "br": "英文動作坐時光機要加「ed」尾巴！walk→walked。調皮的會亂變：eat→ate，只能背起來！", "tp": "💡 過去的事加 ed！調皮的要背！", "th": "en"}, "Question": {"m": "🐸", "t": "Yoyo", "mt": "🔄 問問題派 Do 去敲門！", "cn": "中文加「嗎」就好。", "br": "英文要派 Do/Does 當敲門員衝到最前面！Do you like cats?", "tp": "💡 問問題先派 Do/Does 去敲門！", "th": "en"}, "Negative": {"m": "🐸", "t": "Yoyo", "mt": "🛑 don't 是交通紅燈！", "cn": "中文加「不」就好。", "br": "英文的 don't/doesn't 是紅燈喊停！注意：紅燈出現後動作要脫掉 s 制服！She doesn't like。", "tp": "💡 doesn't 後面動作不能穿 s！", "th": "en"}, "Comparative": {"m": "🐸", "t": "Yoyo", "mt": "📏 比高矮要長尾巴！", "cn": "中文用「比」就好。", "br": "短的形容詞長「er」尾巴：tall→taller。長的請「more」幫忙：more beautiful！", "tp": "💡 短的加 er，長的請 more！", "th": "en"}, "Conditional": {"m": "🐸", "t": "Yoyo", "mt": "🔮 If 是預言水晶球！", "cn": "中文「如果…就…」不用變。", "br": "If 是水晶球！看球用現在樣子，結果用 will。前後不能搞混！", "tp": "💡 If 用現在樣子，結果用 will！", "th": "en"}, "Passive": {"m": "🐸", "t": "Yoyo", "mt": "🎭 故事換人來說！", "cn": "中文加「被」就好。", "br": "英文被動換角度說故事！The cake was eaten。動作穿特殊衣服！", "tp": "💡 was/is+特殊衣服=被動！", "th": "en"}};
+function sK(dim){let d=(md==='en'&&EK[dim])?EK[dim]:KD[dim];if(!d)d=EK[dim];if(!d)return;
+const isJP=d.th==='jp',bc=isJP?'bj':'be',bl=isJP?'🇯🇵 日文大腦怎麼想':'🇺🇸 英文大腦怎麼想';
+document.getElementById('kpp').innerHTML='<div class="kh"><span class="ms">'+d.m+'</span><div class="pt">'+d.m+' '+d.t+' 的'+(isJP?'日文':'英文')+'魔法教室</div><div class="mt '+(isJP?'jt':'et')+'">'+d.mt+'</div></div><div class="bs bc"><span class="bf">🇹🇼 中文大腦怎麼想</span>'+d.cn+'</div><div class="bs '+bc+'"><span class="bf">'+bl+'</span>'+d.br+'</div><div class="mi">'+d.tp+'</div><button class="kc" onclick="cK()">知道了！✨</button>';
+document.getElementById('ko').classList.add('op');}
+function cK(){document.getElementById('ko').classList.remove('op');}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')nv(-1);if(e.key==='ArrowRight')nv(1);if(e.key==='1')sM('jp');if(e.key==='2')sM('en');if(e.key==='3')sM('vs');if(e.key==='Escape')cK();});
+let tX=0;document.addEventListener('touchstart',e=>{tX=e.touches[0].clientX;});
+document.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tX;if(Math.abs(d)>60)nv(d>0?-1:1);});
+lD();
 </script>
 </body>
 </html>
