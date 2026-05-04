@@ -2755,7 +2755,7 @@
         },
         {
           "text": "my",
-          "role": "對象"
+          "role": "修飾"
         },
         {
           "text": "friend",
@@ -2901,7 +2901,7 @@
         },
         {
           "text": "my",
-          "role": "對象"
+          "role": "修飾"
         },
         {
           "text": "sister",
@@ -3047,7 +3047,7 @@
         },
         {
           "text": "my",
-          "role": "對象"
+          "role": "修飾"
         },
         {
           "text": "brother",
@@ -3110,7 +3110,7 @@
         },
         {
           "text": "door",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "opened",
@@ -3228,7 +3228,7 @@
         },
         {
           "text": "light",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "turned",
@@ -3354,7 +3354,7 @@
         },
         {
           "text": "window",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "closed",
@@ -8833,7 +8833,7 @@
         },
         {
           "text": "cake",
-          "role": "動作"
+          "role": "主角"
         },
         {
           "text": "is",
