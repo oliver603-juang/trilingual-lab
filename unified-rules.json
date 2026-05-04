@@ -8504,40 +8504,52 @@
     "dimension_label": "Past Tense",
     "chinese": "我昨天踢了球。",
     "jp": {
-      "sentence": "彼女は昼ごはんを食べました。",
+      "sentence": "私は昨日ボールを蹴りました。",
       "blocks": [
         {
-          "text": "彼女は",
+          "text": "私は",
           "role": "主角"
         },
         {
-          "text": "昼ごはんを",
+          "text": "昨日",
+          "role": "時間"
+        },
+        {
+          "text": "ボールを",
           "role": "對象"
         },
         {
-          "text": "食べました",
+          "text": "蹴りました",
           "role": "動作"
         }
       ],
-      "formula": "[彼女は] + [昼ごはんを] + [食べました]"
+      "formula": "[私は] + [昨日] + [ボールを] + [蹴りました]"
     },
     "en": {
-      "sentence": "I played ball.",
+      "sentence": "I kicked a ball yesterday.",
       "blocks": [
         {
           "text": "I",
           "role": "主角"
         },
         {
-          "text": "played",
+          "text": "kicked",
           "role": "動作"
         },
         {
+          "text": "a",
+          "role": "修飾"
+        },
+        {
           "text": "ball",
-          "role": "動作"
+          "role": "對象"
+        },
+        {
+          "text": "yesterday",
+          "role": "時間"
         }
       ],
-      "formula": "S + V-ed + O"
+      "formula": "S + V + O + Time"
     },
     "contrast": {
       "cn_blindspot": "中文：「我踢球」→ 靠「昨天」，動詞不變",
