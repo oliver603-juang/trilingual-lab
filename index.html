@@ -197,7 +197,7 @@ const btn=document.getElementById('diy-go');if(btn){btn.disabled=true;btn.textCo
 const box=document.getElementById('diy-res');if(box)box.innerHTML='<div class="diy-loading">翻譯中（'+usage.count+'/'+DIY_DAILY_LIMIT+'）</div>';
 try{
 const prompt='你是一個翻譯助手。使用者正在學習「'+dim+'」這個句型。請把以下中文翻譯成'+lang+'，要符合這個句型的用法。只回覆翻譯結果，不要解釋。如果是日文請同時附上假名讀音（用括號）。\n\n中文：'+cn+'\n\n'+langCode+'翻譯：';
-const resp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:300}})});
+const resp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:300}})});
 if(!resp.ok){const err=await resp.json().catch(()=>({}));throw new Error(err.error?.message||'API 錯誤 '+resp.status);}
 const data=await resp.json();
 const text=data.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('')||'翻譯失敗';
