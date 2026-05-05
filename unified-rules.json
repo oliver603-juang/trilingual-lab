@@ -2055,33 +2055,37 @@
     }
   },
   {
-    "id": "uni_modifier_031",
+    "id": "uni_modifier_034",
     "dimension": "modifier",
     "dimension_label": "修飾語/連體",
-    "chinese": "跑步的人",
+    "chinese": "教日語的老師",
     "jp": {
-      "sentence": "走る人",
+      "sentence": "日本語を教える先生",
       "blocks": [
         {
-          "text": "走る",
+          "text": "日本語を",
+          "role": "對象"
+        },
+        {
+          "text": "教える",
           "role": "修飾"
         },
         {
-          "text": "人",
+          "text": "先生",
           "role": "主角"
         }
       ],
-      "formula": "[走る] + [人]"
+      "formula": "[日本語を] + [教える] + [先生]"
     },
     "en": {
-      "sentence": "A person who runs.",
+      "sentence": "A teacher who teaches Japanese.",
       "blocks": [
         {
           "text": "A",
           "role": "修飾"
         },
         {
-          "text": "person",
+          "text": "teacher",
           "role": "主角"
         },
         {
@@ -2089,11 +2093,15 @@
           "role": "連接"
         },
         {
-          "text": "runs",
+          "text": "teaches",
           "role": "動作"
+        },
+        {
+          "text": "Japanese",
+          "role": "對象"
         }
       ],
-      "formula": "[A] + [person] + [who] + [runs]"
+      "formula": "[A] + [teacher] + [who] + [teaches] + [Japanese]"
     },
     "contrast": {
       "cn_blindspot": "中文「跑的人」需要加「的」",
@@ -2251,37 +2259,33 @@
     }
   },
   {
-    "id": "uni_modifier_034",
+    "id": "uni_modifier_031",
     "dimension": "modifier",
     "dimension_label": "修飾語/連體",
-    "chinese": "教日語的老師",
+    "chinese": "跑步的人",
     "jp": {
-      "sentence": "日本語を教える先生",
+      "sentence": "走る人",
       "blocks": [
         {
-          "text": "日本語を",
-          "role": "對象"
-        },
-        {
-          "text": "教える",
+          "text": "走る",
           "role": "修飾"
         },
         {
-          "text": "先生",
+          "text": "人",
           "role": "主角"
         }
       ],
-      "formula": "[日本語を] + [教える] + [先生]"
+      "formula": "[走る] + [人]"
     },
     "en": {
-      "sentence": "A teacher who teaches Japanese.",
+      "sentence": "A person who runs.",
       "blocks": [
         {
           "text": "A",
           "role": "修飾"
         },
         {
-          "text": "teacher",
+          "text": "person",
           "role": "主角"
         },
         {
@@ -2289,15 +2293,11 @@
           "role": "連接"
         },
         {
-          "text": "teaches",
+          "text": "runs",
           "role": "動作"
-        },
-        {
-          "text": "Japanese",
-          "role": "對象"
         }
       ],
-      "formula": "[A] + [teacher] + [who] + [teaches] + [Japanese]"
+      "formula": "[A] + [person] + [who] + [runs]"
     },
     "contrast": {
       "cn_blindspot": "中文「跑的人」需要加「的」",
