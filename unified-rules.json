@@ -20562,5 +20562,1635 @@
         "new_concept": 4
       }
     }
+  },
+  {
+    "id": "uni_prodrop_295",
+    "dimension": "prodrop",
+    "dimension_label": "主語省略",
+    "chinese": "（我）好開心。",
+    "jp": {
+      "sentence": "嬉しいです。",
+      "blocks": [
+        {
+          "text": "嬉しいです",
+          "role": "動作"
+        }
+      ],
+      "formula": "[嬉しいです]"
+    },
+    "en": {
+      "sentence": "I am happy.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "am",
+          "role": "動作"
+        },
+        {
+          "text": "happy",
+          "role": "修飾"
+        }
+      ],
+      "formula": "S + be + Adj"
+    },
+    "contrast": {
+      "cn_blindspot": "中文口語也常省主語，但書面語通常不省",
+      "jp_insight": "日文省略主語是常態，不省反而不自然",
+      "en_insight": "英文絕對不能省主語，I/You/He 一定要說出來"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_prodrop_296",
+    "dimension": "prodrop",
+    "dimension_label": "主語省略",
+    "chinese": "（你）要吃嗎？",
+    "jp": {
+      "sentence": "食べますか。",
+      "blocks": [
+        {
+          "text": "食べますか",
+          "role": "動作"
+        }
+      ],
+      "formula": "[食べますか]"
+    },
+    "en": {
+      "sentence": "Do you want to eat?",
+      "blocks": [
+        {
+          "text": "Do",
+          "role": "動作"
+        },
+        {
+          "text": "you",
+          "role": "主角"
+        },
+        {
+          "text": "want",
+          "role": "動作"
+        },
+        {
+          "text": "to",
+          "role": "連接"
+        },
+        {
+          "text": "eat",
+          "role": "動作"
+        }
+      ],
+      "formula": "Do + S + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文口語也常省主語，但書面語通常不省",
+      "jp_insight": "日文省略主語是常態，不省反而不自然",
+      "en_insight": "英文絕對不能省主語，I/You/He 一定要說出來"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_prodrop_297",
+    "dimension": "prodrop",
+    "dimension_label": "主語省略",
+    "chinese": "（我）明天去。",
+    "jp": {
+      "sentence": "明日行きます。",
+      "blocks": [
+        {
+          "text": "明日",
+          "role": "時間"
+        },
+        {
+          "text": "行きます",
+          "role": "動作"
+        }
+      ],
+      "formula": "[明日] + [行きます]"
+    },
+    "en": {
+      "sentence": "I will go tomorrow.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "will",
+          "role": "動作"
+        },
+        {
+          "text": "go",
+          "role": "動作"
+        },
+        {
+          "text": "tomorrow",
+          "role": "時間"
+        }
+      ],
+      "formula": "S + will + V + Time"
+    },
+    "contrast": {
+      "cn_blindspot": "中文口語也常省主語，但書面語通常不省",
+      "jp_insight": "日文省略主語是常態，不省反而不自然",
+      "en_insight": "英文絕對不能省主語，I/You/He 一定要說出來"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_prodrop_298",
+    "dimension": "prodrop",
+    "dimension_label": "主語省略",
+    "chinese": "（我）知道了。",
+    "jp": {
+      "sentence": "分かりました。",
+      "blocks": [
+        {
+          "text": "分かりました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[分かりました]"
+    },
+    "en": {
+      "sentence": "I understand.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "understand",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文口語也常省主語，但書面語通常不省",
+      "jp_insight": "日文省略主語是常態，不省反而不自然",
+      "en_insight": "英文絕對不能省主語，I/You/He 一定要說出來"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_prodrop_299",
+    "dimension": "prodrop",
+    "dimension_label": "主語省略",
+    "chinese": "（你）還好嗎？",
+    "jp": {
+      "sentence": "大丈夫ですか。",
+      "blocks": [
+        {
+          "text": "大丈夫ですか",
+          "role": "動作"
+        }
+      ],
+      "formula": "[大丈夫ですか]"
+    },
+    "en": {
+      "sentence": "Are you okay?",
+      "blocks": [
+        {
+          "text": "Are",
+          "role": "動作"
+        },
+        {
+          "text": "you",
+          "role": "主角"
+        },
+        {
+          "text": "okay",
+          "role": "修飾"
+        }
+      ],
+      "formula": "Be + S + Adj"
+    },
+    "contrast": {
+      "cn_blindspot": "中文口語也常省主語，但書面語通常不省",
+      "jp_insight": "日文省略主語是常態，不省反而不自然",
+      "en_insight": "英文絕對不能省主語，I/You/He 一定要說出來"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_gobi_300",
+    "dimension": "gobi",
+    "dimension_label": "語尾決定",
+    "chinese": "我吃。(肯定)",
+    "jp": {
+      "sentence": "食べます。",
+      "blocks": [
+        {
+          "text": "食べます",
+          "role": "動作"
+        }
+      ],
+      "formula": "V+ます=肯定"
+    },
+    "en": {
+      "sentence": "I eat.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "eat",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文在句子中間就能聽出肯定/否定/過去",
+      "jp_insight": "日文要聽到最後一個字才知道意思！動詞尾巴決定一切",
+      "en_insight": "英文的否定(don't)在中間，過去式動詞變形也在中間"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 2,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_gobi_301",
+    "dimension": "gobi",
+    "dimension_label": "語尾決定",
+    "chinese": "我不吃。(否定)",
+    "jp": {
+      "sentence": "食べません。",
+      "blocks": [
+        {
+          "text": "食べません",
+          "role": "動作"
+        }
+      ],
+      "formula": "V+ません=否定"
+    },
+    "en": {
+      "sentence": "I don't eat.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "don't",
+          "role": "語氣"
+        },
+        {
+          "text": "eat",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + don't + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文在句子中間就能聽出肯定/否定/過去",
+      "jp_insight": "日文要聽到最後一個字才知道意思！動詞尾巴決定一切",
+      "en_insight": "英文的否定(don't)在中間，過去式動詞變形也在中間"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 2,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_gobi_302",
+    "dimension": "gobi",
+    "dimension_label": "語尾決定",
+    "chinese": "我吃了。(過去)",
+    "jp": {
+      "sentence": "食べました。",
+      "blocks": [
+        {
+          "text": "食べました",
+          "role": "動作"
+        }
+      ],
+      "formula": "V+ました=過去"
+    },
+    "en": {
+      "sentence": "I ate.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "ate",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + V(past)"
+    },
+    "contrast": {
+      "cn_blindspot": "中文在句子中間就能聽出肯定/否定/過去",
+      "jp_insight": "日文要聽到最後一個字才知道意思！動詞尾巴決定一切",
+      "en_insight": "英文的否定(don't)在中間，過去式動詞變形也在中間"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 2,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_gobi_303",
+    "dimension": "gobi",
+    "dimension_label": "語尾決定",
+    "chinese": "我想吃。(願望)",
+    "jp": {
+      "sentence": "食べたいです。",
+      "blocks": [
+        {
+          "text": "食べたいです",
+          "role": "動作"
+        }
+      ],
+      "formula": "V+たい=想要"
+    },
+    "en": {
+      "sentence": "I want to eat.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "want",
+          "role": "動作"
+        },
+        {
+          "text": "to",
+          "role": "連接"
+        },
+        {
+          "text": "eat",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + want to + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文在句子中間就能聽出肯定/否定/過去",
+      "jp_insight": "日文要聽到最後一個字才知道意思！動詞尾巴決定一切",
+      "en_insight": "英文的否定(don't)在中間，過去式動詞變形也在中間"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 2,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_gobi_304",
+    "dimension": "gobi",
+    "dimension_label": "語尾決定",
+    "chinese": "請吃。(請求)",
+    "jp": {
+      "sentence": "食べてください。",
+      "blocks": [
+        {
+          "text": "食べてください",
+          "role": "動作"
+        }
+      ],
+      "formula": "V+てください=請"
+    },
+    "en": {
+      "sentence": "Please eat.",
+      "blocks": [
+        {
+          "text": "Please",
+          "role": "語氣"
+        },
+        {
+          "text": "eat",
+          "role": "動作"
+        }
+      ],
+      "formula": "Please + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文在句子中間就能聽出肯定/否定/過去",
+      "jp_insight": "日文要聽到最後一個字才知道意思！動詞尾巴決定一切",
+      "en_insight": "英文的否定(don't)在中間，過去式動詞變形也在中間"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 2,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_aimai_305",
+    "dimension": "aimai",
+    "dimension_label": "曖昧拒絕",
+    "chinese": "有點困難…(=不行)",
+    "jp": {
+      "sentence": "ちょっと難しいですね…",
+      "blocks": [
+        {
+          "text": "ちょっと",
+          "role": "修飾"
+        },
+        {
+          "text": "難しいですね",
+          "role": "動作"
+        }
+      ],
+      "formula": "ちょっと+形容詞=婉拒"
+    },
+    "en": {
+      "sentence": "That's a bit difficult...",
+      "blocks": [
+        {
+          "text": "That's",
+          "role": "主角"
+        },
+        {
+          "text": "a bit",
+          "role": "修飾"
+        },
+        {
+          "text": "difficult",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + is + Adj"
+    },
+    "contrast": {
+      "cn_blindspot": "中文的婉拒比較明確，對方通常聽得懂",
+      "jp_insight": "日文的拒絕幾乎不說「不」，而是用曖昧的話暗示，對方要自己察覺",
+      "en_insight": "英文通常直接說 No thanks 或 I can't"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_aimai_306",
+    "dimension": "aimai",
+    "dimension_label": "曖昧拒絕",
+    "chinese": "讓我考慮一下…(=不要)",
+    "jp": {
+      "sentence": "考えさせてください…",
+      "blocks": [
+        {
+          "text": "考えさせてください",
+          "role": "動作"
+        }
+      ],
+      "formula": "Vさせてください=讓我..."
+    },
+    "en": {
+      "sentence": "Let me think about it...",
+      "blocks": [
+        {
+          "text": "Let",
+          "role": "動作"
+        },
+        {
+          "text": "me",
+          "role": "主角"
+        },
+        {
+          "text": "think",
+          "role": "動作"
+        },
+        {
+          "text": "about it",
+          "role": "對象"
+        }
+      ],
+      "formula": "Let me + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文的婉拒比較明確，對方通常聽得懂",
+      "jp_insight": "日文的拒絕幾乎不說「不」，而是用曖昧的話暗示，對方要自己察覺",
+      "en_insight": "英文通常直接說 No thanks 或 I can't"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_aimai_307",
+    "dimension": "aimai",
+    "dimension_label": "曖昧拒絕",
+    "chinese": "那個嘛…(=猶豫/拒絕)",
+    "jp": {
+      "sentence": "それはちょっと…",
+      "blocks": [
+        {
+          "text": "それは",
+          "role": "主角"
+        },
+        {
+          "text": "ちょっと…",
+          "role": "修飾"
+        }
+      ],
+      "formula": "それは+ちょっと=婉拒"
+    },
+    "en": {
+      "sentence": "Well, that's...",
+      "blocks": [
+        {
+          "text": "Well",
+          "role": "語氣"
+        },
+        {
+          "text": "that's",
+          "role": "主角"
+        }
+      ],
+      "formula": "Well, that's..."
+    },
+    "contrast": {
+      "cn_blindspot": "中文的婉拒比較明確，對方通常聽得懂",
+      "jp_insight": "日文的拒絕幾乎不說「不」，而是用曖昧的話暗示，對方要自己察覺",
+      "en_insight": "英文通常直接說 No thanks 或 I can't"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_aimai_308",
+    "dimension": "aimai",
+    "dimension_label": "曖昧拒絕",
+    "chinese": "我盡量…(=可能不行)",
+    "jp": {
+      "sentence": "できるだけ頑張ります…",
+      "blocks": [
+        {
+          "text": "できるだけ",
+          "role": "修飾"
+        },
+        {
+          "text": "頑張ります",
+          "role": "動作"
+        }
+      ],
+      "formula": "できるだけ+V=盡量"
+    },
+    "en": {
+      "sentence": "I'll try my best...",
+      "blocks": [
+        {
+          "text": "I'll",
+          "role": "主角"
+        },
+        {
+          "text": "try",
+          "role": "動作"
+        },
+        {
+          "text": "my best",
+          "role": "對象"
+        }
+      ],
+      "formula": "S + will try"
+    },
+    "contrast": {
+      "cn_blindspot": "中文的婉拒比較明確，對方通常聽得懂",
+      "jp_insight": "日文的拒絕幾乎不說「不」，而是用曖昧的話暗示，對方要自己察覺",
+      "en_insight": "英文通常直接說 No thanks 或 I can't"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_uchisoto_309",
+    "dimension": "uchisoto",
+    "dimension_label": "內外意識",
+    "chinese": "(對外人)我們社長外出了。",
+    "jp": {
+      "sentence": "社長は外出しております。",
+      "blocks": [
+        {
+          "text": "社長は",
+          "role": "主角"
+        },
+        {
+          "text": "外出しております",
+          "role": "動作"
+        }
+      ],
+      "formula": "自己人用謙讓語"
+    },
+    "en": {
+      "sentence": "Our president is out.",
+      "blocks": [
+        {
+          "text": "Our",
+          "role": "修飾"
+        },
+        {
+          "text": "president",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "out",
+          "role": "場景"
+        }
+      ],
+      "formula": "S + is + out"
+    },
+    "contrast": {
+      "cn_blindspot": "中文不會因為聽眾是誰就改變怎麼稱呼自己的老闆",
+      "jp_insight": "日文對外人提到自己公司的人，要用謙讓語壓低自己人！即使是社長也要壓低",
+      "en_insight": "英文不分內外，Our president 不管對誰都這樣說"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 3,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_uchisoto_310",
+    "dimension": "uchisoto",
+    "dimension_label": "內外意識",
+    "chinese": "(對外人)我來幫您拿。",
+    "jp": {
+      "sentence": "お持ちいたします。",
+      "blocks": [
+        {
+          "text": "お持ちいたします",
+          "role": "動作"
+        }
+      ],
+      "formula": "お+V+いたします=謙讓"
+    },
+    "en": {
+      "sentence": "Let me carry it for you.",
+      "blocks": [
+        {
+          "text": "Let",
+          "role": "動作"
+        },
+        {
+          "text": "me",
+          "role": "主角"
+        },
+        {
+          "text": "carry",
+          "role": "動作"
+        },
+        {
+          "text": "it",
+          "role": "對象"
+        },
+        {
+          "text": "for you",
+          "role": "目標"
+        }
+      ],
+      "formula": "Let me + V + for you"
+    },
+    "contrast": {
+      "cn_blindspot": "中文不會因為聽眾是誰就改變怎麼稱呼自己的老闆",
+      "jp_insight": "日文對外人提到自己公司的人，要用謙讓語壓低自己人！即使是社長也要壓低",
+      "en_insight": "英文不分內外，Our president 不管對誰都這樣說"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 3,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_uchisoto_311",
+    "dimension": "uchisoto",
+    "dimension_label": "內外意識",
+    "chinese": "(對自己人)老闆說要開會。",
+    "jp": {
+      "sentence": "部長が会議だって。",
+      "blocks": [
+        {
+          "text": "部長が",
+          "role": "主角"
+        },
+        {
+          "text": "会議だって",
+          "role": "動作"
+        }
+      ],
+      "formula": "對自己人用普通形"
+    },
+    "en": {
+      "sentence": "The boss said there's a meeting.",
+      "blocks": [
+        {
+          "text": "The boss",
+          "role": "主角"
+        },
+        {
+          "text": "said",
+          "role": "動作"
+        },
+        {
+          "text": "there's",
+          "role": "動作"
+        },
+        {
+          "text": "a meeting",
+          "role": "對象"
+        }
+      ],
+      "formula": "S + said + O"
+    },
+    "contrast": {
+      "cn_blindspot": "中文不會因為聽眾是誰就改變怎麼稱呼自己的老闆",
+      "jp_insight": "日文對外人提到自己公司的人，要用謙讓語壓低自己人！即使是社長也要壓低",
+      "en_insight": "英文不分內外，Our president 不管對誰都這樣說"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 3,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_gendered_312",
+    "dimension": "gendered_speech",
+    "dimension_label": "男女用語",
+    "chinese": "好厲害啊！(女性語氣)",
+    "jp": {
+      "sentence": "すごいわね！",
+      "blocks": [
+        {
+          "text": "すごい",
+          "role": "修飾"
+        },
+        {
+          "text": "わね",
+          "role": "語氣"
+        }
+      ],
+      "formula": "形容詞+わね=女性感嘆"
+    },
+    "en": {
+      "sentence": "That's amazing!",
+      "blocks": [
+        {
+          "text": "That's",
+          "role": "主角"
+        },
+        {
+          "text": "amazing",
+          "role": "動作"
+        }
+      ],
+      "formula": "That's + Adj"
+    },
+    "contrast": {
+      "cn_blindspot": "中文男女說話方式幾乎一樣",
+      "jp_insight": "日文有明確的男性用語（ぞ/ぜ/おれ）和女性用語（わ/のよ/あたし），用錯會很奇怪",
+      "en_insight": "英文男女用語幾乎沒有差異"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 0,
+        "morphology_load": 0,
+        "new_concept": 0
+      }
+    }
+  },
+  {
+    "id": "uni_gendered_313",
+    "dimension": "gendered_speech",
+    "dimension_label": "男女用語",
+    "chinese": "好厲害啊！(男性語氣)",
+    "jp": {
+      "sentence": "すごいぞ！",
+      "blocks": [
+        {
+          "text": "すごい",
+          "role": "修飾"
+        },
+        {
+          "text": "ぞ",
+          "role": "語氣"
+        }
+      ],
+      "formula": "形容詞+ぞ=男性感嘆"
+    },
+    "en": {
+      "sentence": "That's amazing!",
+      "blocks": [
+        {
+          "text": "That's",
+          "role": "主角"
+        },
+        {
+          "text": "amazing",
+          "role": "動作"
+        }
+      ],
+      "formula": "That's + Adj"
+    },
+    "contrast": {
+      "cn_blindspot": "中文男女說話方式幾乎一樣",
+      "jp_insight": "日文有明確的男性用語（ぞ/ぜ/おれ）和女性用語（わ/のよ/あたし），用錯會很奇怪",
+      "en_insight": "英文男女用語幾乎沒有差異"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 0,
+        "morphology_load": 0,
+        "new_concept": 0
+      }
+    }
+  },
+  {
+    "id": "uni_gendered_314",
+    "dimension": "gendered_speech",
+    "dimension_label": "男女用語",
+    "chinese": "你知道嗎？(女性)",
+    "jp": {
+      "sentence": "知ってるの？",
+      "blocks": [
+        {
+          "text": "知ってる",
+          "role": "動作"
+        },
+        {
+          "text": "の",
+          "role": "語氣"
+        }
+      ],
+      "formula": "V+の=女性問句"
+    },
+    "en": {
+      "sentence": "Do you know?",
+      "blocks": [
+        {
+          "text": "Do",
+          "role": "動作"
+        },
+        {
+          "text": "you",
+          "role": "主角"
+        },
+        {
+          "text": "know",
+          "role": "動作"
+        }
+      ],
+      "formula": "Do + S + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文男女說話方式幾乎一樣",
+      "jp_insight": "日文有明確的男性用語（ぞ/ぜ/おれ）和女性用語（わ/のよ/あたし），用錯會很奇怪",
+      "en_insight": "英文男女用語幾乎沒有差異"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 0,
+        "morphology_load": 0,
+        "new_concept": 0
+      }
+    }
+  },
+  {
+    "id": "uni_gendered_315",
+    "dimension": "gendered_speech",
+    "dimension_label": "男女用語",
+    "chinese": "你知道嗎？(男性)",
+    "jp": {
+      "sentence": "知ってるか？",
+      "blocks": [
+        {
+          "text": "知ってる",
+          "role": "動作"
+        },
+        {
+          "text": "か",
+          "role": "語氣"
+        }
+      ],
+      "formula": "V+か=男性問句"
+    },
+    "en": {
+      "sentence": "Do you know?",
+      "blocks": [
+        {
+          "text": "Do",
+          "role": "動作"
+        },
+        {
+          "text": "you",
+          "role": "主角"
+        },
+        {
+          "text": "know",
+          "role": "動作"
+        }
+      ],
+      "formula": "Do + S + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文男女說話方式幾乎一樣",
+      "jp_insight": "日文有明確的男性用語（ぞ/ぜ/おれ）和女性用語（わ/のよ/あたし），用錯會很奇怪",
+      "en_insight": "英文男女用語幾乎沒有差異"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 0,
+        "morphology_load": 0,
+        "new_concept": 0
+      }
+    }
+  },
+  {
+    "id": "uni_onomatope_316",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "心臟噗通噗通跳。",
+    "jp": {
+      "sentence": "心臓がドキドキする。",
+      "blocks": [
+        {
+          "text": "心臓が",
+          "role": "主角"
+        },
+        {
+          "text": "ドキドキ",
+          "role": "修飾"
+        },
+        {
+          "text": "する",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + オノマトペ + する"
+    },
+    "en": {
+      "sentence": "My heart is pounding.",
+      "blocks": [
+        {
+          "text": "My",
+          "role": "修飾"
+        },
+        {
+          "text": "heart",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "pounding",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + is + V-ing"
+    },
+    "contrast": {
+      "cn_blindspot": "中文有一些擬聲詞（嘩啦、噗通）但數量有限",
+      "jp_insight": "日文有上千個擬聲擬態語！不只描述聲音，還能描述感覺、狀態、情緒、質感",
+      "en_insight": "英文擬聲詞很少（boom, splash），多數用形容詞代替"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_onomatope_317",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "興奮期待地等著。",
+    "jp": {
+      "sentence": "ワクワクしながら待つ。",
+      "blocks": [
+        {
+          "text": "ワクワク",
+          "role": "修飾"
+        },
+        {
+          "text": "しながら",
+          "role": "連接"
+        },
+        {
+          "text": "待つ",
+          "role": "動作"
+        }
+      ],
+      "formula": "オノマトペ + しながら + V"
+    },
+    "en": {
+      "sentence": "Waiting excitedly.",
+      "blocks": [
+        {
+          "text": "Waiting",
+          "role": "動作"
+        },
+        {
+          "text": "excitedly",
+          "role": "修飾"
+        }
+      ],
+      "formula": "V + Adv"
+    },
+    "contrast": {
+      "cn_blindspot": "中文有一些擬聲詞（嘩啦、噗通）但數量有限",
+      "jp_insight": "日文有上千個擬聲擬態語！不只描述聲音，還能描述感覺、狀態、情緒、質感",
+      "en_insight": "英文擬聲詞很少（boom, splash），多數用形容詞代替"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_onomatope_318",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "雨嘩啦嘩啦地下。",
+    "jp": {
+      "sentence": "雨がザーザー降る。",
+      "blocks": [
+        {
+          "text": "雨が",
+          "role": "主角"
+        },
+        {
+          "text": "ザーザー",
+          "role": "修飾"
+        },
+        {
+          "text": "降る",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + オノマトペ + V"
+    },
+    "en": {
+      "sentence": "It's raining heavily.",
+      "blocks": [
+        {
+          "text": "It's",
+          "role": "主角"
+        },
+        {
+          "text": "raining",
+          "role": "動作"
+        },
+        {
+          "text": "heavily",
+          "role": "修飾"
+        }
+      ],
+      "formula": "S + V + Adv"
+    },
+    "contrast": {
+      "cn_blindspot": "中文有一些擬聲詞（嘩啦、噗通）但數量有限",
+      "jp_insight": "日文有上千個擬聲擬態語！不只描述聲音，還能描述感覺、狀態、情緒、質感",
+      "en_insight": "英文擬聲詞很少（boom, splash），多數用形容詞代替"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_onomatope_319",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "笑嘻嘻的。",
+    "jp": {
+      "sentence": "ニコニコしている。",
+      "blocks": [
+        {
+          "text": "ニコニコ",
+          "role": "修飾"
+        },
+        {
+          "text": "している",
+          "role": "動作"
+        }
+      ],
+      "formula": "オノマトペ + している=狀態"
+    },
+    "en": {
+      "sentence": "Smiling happily.",
+      "blocks": [
+        {
+          "text": "Smiling",
+          "role": "動作"
+        },
+        {
+          "text": "happily",
+          "role": "修飾"
+        }
+      ],
+      "formula": "V + Adv"
+    },
+    "contrast": {
+      "cn_blindspot": "中文有一些擬聲詞（嘩啦、噗通）但數量有限",
+      "jp_insight": "日文有上千個擬聲擬態語！不只描述聲音，還能描述感覺、狀態、情緒、質感",
+      "en_insight": "英文擬聲詞很少（boom, splash），多數用形容詞代替"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_onomatope_320",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "天氣悶熱黏膩的。",
+    "jp": {
+      "sentence": "ジメジメしている。",
+      "blocks": [
+        {
+          "text": "ジメジメ",
+          "role": "修飾"
+        },
+        {
+          "text": "している",
+          "role": "動作"
+        }
+      ],
+      "formula": "オノマトペ + している=狀態"
+    },
+    "en": {
+      "sentence": "It's hot and humid.",
+      "blocks": [
+        {
+          "text": "It's",
+          "role": "主角"
+        },
+        {
+          "text": "hot",
+          "role": "修飾"
+        },
+        {
+          "text": "and",
+          "role": "連接"
+        },
+        {
+          "text": "humid",
+          "role": "修飾"
+        }
+      ],
+      "formula": "S + is + Adj + and + Adj"
+    },
+    "contrast": {
+      "cn_blindspot": "中文有一些擬聲詞（嘩啦、噗通）但數量有限",
+      "jp_insight": "日文有上千個擬聲擬態語！不只描述聲音，還能描述感覺、狀態、情緒、質感",
+      "en_insight": "英文擬聲詞很少（boom, splash），多數用形容詞代替"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_kuuki_321",
+    "dimension": "kuuki_yomu",
+    "dimension_label": "空氣閱讀",
+    "chinese": "不用了，謝謝。(直接拒絕)",
+    "jp": {
+      "sentence": "お気持ちだけで十分です。",
+      "blocks": [
+        {
+          "text": "お気持ちだけで",
+          "role": "修飾"
+        },
+        {
+          "text": "十分です",
+          "role": "動作"
+        }
+      ],
+      "formula": "お気持ちだけで+十分=只要心意就夠了"
+    },
+    "en": {
+      "sentence": "No thanks, I'm fine.",
+      "blocks": [
+        {
+          "text": "No thanks",
+          "role": "語氣"
+        },
+        {
+          "text": "I'm",
+          "role": "主角"
+        },
+        {
+          "text": "fine",
+          "role": "動作"
+        }
+      ],
+      "formula": "No thanks + S + is + Adj"
+    },
+    "contrast": {
+      "cn_blindspot": "中文比日文直接，但比英文委婉",
+      "jp_insight": "日文有大量「不說出來但對方要懂」的表達方式，聽話要聽弦外之音",
+      "en_insight": "英文通常比較直接表達意思"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_kuuki_322",
+    "dimension": "kuuki_yomu",
+    "dimension_label": "空氣閱讀",
+    "chinese": "我先走了。(想離開)",
+    "jp": {
+      "sentence": "そろそろ失礼します。",
+      "blocks": [
+        {
+          "text": "そろそろ",
+          "role": "時間"
+        },
+        {
+          "text": "失礼します",
+          "role": "動作"
+        }
+      ],
+      "formula": "そろそろ+失礼します=該告辭了"
+    },
+    "en": {
+      "sentence": "I should get going.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "should",
+          "role": "動作"
+        },
+        {
+          "text": "get going",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + should + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文比日文直接，但比英文委婉",
+      "jp_insight": "日文有大量「不說出來但對方要懂」的表達方式，聽話要聽弦外之音",
+      "en_insight": "英文通常比較直接表達意思"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_kuuki_323",
+    "dimension": "kuuki_yomu",
+    "dimension_label": "空氣閱讀",
+    "chinese": "再看看吧。(不想買)",
+    "jp": {
+      "sentence": "もう少し検討します。",
+      "blocks": [
+        {
+          "text": "もう少し",
+          "role": "修飾"
+        },
+        {
+          "text": "検討します",
+          "role": "動作"
+        }
+      ],
+      "formula": "もう少し+検討=再考慮=不買"
+    },
+    "en": {
+      "sentence": "I'll think about it.",
+      "blocks": [
+        {
+          "text": "I'll",
+          "role": "主角"
+        },
+        {
+          "text": "think",
+          "role": "動作"
+        },
+        {
+          "text": "about it",
+          "role": "對象"
+        }
+      ],
+      "formula": "S + will + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文比日文直接，但比英文委婉",
+      "jp_insight": "日文有大量「不說出來但對方要懂」的表達方式，聽話要聽弦外之音",
+      "en_insight": "英文通常比較直接表達意思"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "id": "uni_kuuki_324",
+    "dimension": "kuuki_yomu",
+    "dimension_label": "空氣閱讀",
+    "chinese": "你覺得呢？(暗示你錯了)",
+    "jp": {
+      "sentence": "それはどうでしょうか。",
+      "blocks": [
+        {
+          "text": "それは",
+          "role": "主角"
+        },
+        {
+          "text": "どうでしょうか",
+          "role": "動作"
+        }
+      ],
+      "formula": "それは+どうでしょうか=委婉質疑"
+    },
+    "en": {
+      "sentence": "What do you think?",
+      "blocks": [
+        {
+          "text": "What",
+          "role": "對象"
+        },
+        {
+          "text": "do",
+          "role": "動作"
+        },
+        {
+          "text": "you",
+          "role": "主角"
+        },
+        {
+          "text": "think",
+          "role": "動作"
+        }
+      ],
+      "formula": "What + do + S + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文比日文直接，但比英文委婉",
+      "jp_insight": "日文有大量「不說出來但對方要懂」的表達方式，聽話要聽弦外之音",
+      "en_insight": "英文通常比較直接表達意思"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
   }
 ]
