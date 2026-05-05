@@ -183,48 +183,47 @@
     "id": "uni_basic_sentence_004",
     "dimension": "basic_sentence",
     "dimension_label": "基本句型 SVO/SOV",
-    "chinese": "貓在跑。",
+    "chinese": "我讀書。",
     "jp": {
-      "sentence": "猫が走ります。",
+      "sentence": "私は本を読みます。",
       "blocks": [
         {
-          "text": "猫が",
+          "text": "私は",
           "role": "主角"
         },
         {
-          "text": "走ります",
+          "text": "本を",
+          "role": "對象"
+        },
+        {
+          "text": "読みます",
           "role": "動作"
         }
       ],
-      "formula": "[猫が] + [走ります]"
+      "formula": "[私は] + [本を] + [読みます]"
     },
     "en": {
-      "sentence": "The cat is running.",
+      "sentence": "I read books.",
       "blocks": [
         {
-          "text": "The",
-          "role": "修飾"
-        },
-        {
-          "text": "cat",
+          "text": "I",
           "role": "主角"
         },
         {
-          "text": "is",
+          "text": "read",
           "role": "動作"
         },
         {
-          "text": "running",
-          "role": "動作"
+          "text": "books",
+          "role": "對象"
         }
       ],
-      "formula": "[The] + [cat] + [is] + [running]"
+      "formula": "S + V + O"
     },
     "contrast": {
       "cn_blindspot": "中文靠語序決定誰做什麼",
       "jp_insight": "日文靠助詞標籤決定角色",
-      "en_insight": "英文語序與中文相同 (SVO)",
-      "order_shift": "SVO→SOV"
+      "en_insight": "英文語序與中文相同：誰→做什麼→什麼東西"
     },
     "metrics": {
       "jp": {
