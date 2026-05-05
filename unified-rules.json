@@ -7868,7 +7868,20 @@
     },
     "en": {
       "sentence": "I like apples.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "like",
+          "role": "動作"
+        },
+        {
+          "text": "apples",
+          "role": "對象"
+        }
+      ],
       "formula": "S + V + O"
     },
     "contrast": {
@@ -7914,7 +7927,20 @@
     },
     "en": {
       "sentence": "She likes cats.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "She",
+          "role": "主角"
+        },
+        {
+          "text": "likes",
+          "role": "動作"
+        },
+        {
+          "text": "cats",
+          "role": "對象"
+        }
+      ],
       "formula": "S(第三人稱) + V-s + O"
     },
     "contrast": {
@@ -7960,7 +7986,24 @@
     },
     "en": {
       "sentence": "I have a banana.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "have",
+          "role": "動作"
+        },
+        {
+          "text": "a",
+          "role": "修飾"
+        },
+        {
+          "text": "banana",
+          "role": "對象"
+        }
+      ],
       "formula": "S + have + a + N"
     },
     "contrast": {
@@ -8006,7 +8049,24 @@
     },
     "en": {
       "sentence": "I have an egg.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "have",
+          "role": "動作"
+        },
+        {
+          "text": "an",
+          "role": "修飾"
+        },
+        {
+          "text": "egg",
+          "role": "對象"
+        }
+      ],
       "formula": "S + have + an + N(母音)"
     },
     "contrast": {
@@ -8052,7 +8112,20 @@
     },
     "en": {
       "sentence": "I can swim.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "can",
+          "role": "動作"
+        },
+        {
+          "text": "swim",
+          "role": "動作"
+        }
+      ],
       "formula": "S + can + V(原形)"
     },
     "contrast": {
@@ -8094,7 +8167,20 @@
     },
     "en": {
       "sentence": "It is big.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "It",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "big",
+          "role": "修飾"
+        }
+      ],
       "formula": "S + is + Adj"
     },
     "contrast": {
@@ -8136,7 +8222,24 @@
     },
     "en": {
       "sentence": "This is a dog.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "This",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "a",
+          "role": "修飾"
+        },
+        {
+          "text": "dog",
+          "role": "對象"
+        }
+      ],
       "formula": "This + is + a + N"
     },
     "contrast": {
@@ -8182,7 +8285,24 @@
     },
     "en": {
       "sentence": "Do you like dogs.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "Do",
+          "role": "動作"
+        },
+        {
+          "text": "you",
+          "role": "主角"
+        },
+        {
+          "text": "like",
+          "role": "動作"
+        },
+        {
+          "text": "dogs",
+          "role": "對象"
+        }
+      ],
       "formula": "Do + S + V(原) + O ?"
     },
     "contrast": {
@@ -8224,7 +8344,24 @@
     },
     "en": {
       "sentence": "I want to eat.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "want",
+          "role": "動作"
+        },
+        {
+          "text": "to",
+          "role": "連接"
+        },
+        {
+          "text": "eat",
+          "role": "動作"
+        }
+      ],
       "formula": "S + want + to + V"
     },
     "contrast": {
@@ -8266,7 +8403,24 @@
     },
     "en": {
       "sentence": "There is a cat.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "There",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "a",
+          "role": "修飾"
+        },
+        {
+          "text": "cat",
+          "role": "對象"
+        }
+      ],
       "formula": "There + is + a + N"
     },
     "contrast": {
@@ -8312,7 +8466,24 @@
     },
     "en": {
       "sentence": "I don't like snakes.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "don't",
+          "role": "語氣"
+        },
+        {
+          "text": "like",
+          "role": "動作"
+        },
+        {
+          "text": "snakes",
+          "role": "對象"
+        }
+      ],
       "formula": "S + don't + V(原形) + O"
     },
     "contrast": {
@@ -8358,7 +8529,24 @@
     },
     "en": {
       "sentence": "Does she like cats.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "Does",
+          "role": "動作"
+        },
+        {
+          "text": "she",
+          "role": "主角"
+        },
+        {
+          "text": "like",
+          "role": "動作"
+        },
+        {
+          "text": "cats",
+          "role": "對象"
+        }
+      ],
       "formula": "Does + S(三單) + V(原形) + O ?"
     },
     "contrast": {
@@ -8400,7 +8588,20 @@
     },
     "en": {
       "sentence": "Open the door.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "Open",
+          "role": "動作"
+        },
+        {
+          "text": "the",
+          "role": "修飾"
+        },
+        {
+          "text": "door",
+          "role": "對象"
+        }
+      ],
       "formula": "V(原形) + O"
     },
     "contrast": {
@@ -8438,7 +8639,16 @@
     },
     "en": {
       "sentence": "Don't run.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "Don't",
+          "role": "語氣"
+        },
+        {
+          "text": "run",
+          "role": "動作"
+        }
+      ],
       "formula": "Don't + V(原形)"
     },
     "contrast": {
@@ -8484,7 +8694,24 @@
     },
     "en": {
       "sentence": "She doesn't like snakes.",
-      "blocks": [],
+      "blocks": [
+        {
+          "text": "She",
+          "role": "主角"
+        },
+        {
+          "text": "doesn't",
+          "role": "語氣"
+        },
+        {
+          "text": "like",
+          "role": "動作"
+        },
+        {
+          "text": "snakes",
+          "role": "對象"
+        }
+      ],
       "formula": "S(三單) + doesn't + V(原形) + O"
     },
     "contrast": {
