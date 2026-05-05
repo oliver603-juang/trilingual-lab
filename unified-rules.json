@@ -67,10 +67,14 @@
     "id": "uni_basic_sentence_002",
     "dimension": "basic_sentence",
     "dimension_label": "基本句型 SVO/SOV",
-    "chinese": "問老師。",
+    "chinese": "我問老師。",
     "jp": {
-      "sentence": "先生に聞きます。",
+      "sentence": "私は先生に聞きます。",
       "blocks": [
+        {
+          "text": "私は",
+          "role": "主角"
+        },
         {
           "text": "先生に",
           "role": "目標"
@@ -80,7 +84,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[先生に] + [聞きます]"
+      "formula": "[私は] + [先生に] + [聞きます]"
     },
     "en": {
       "sentence": "I ask the teacher.",
@@ -127,10 +131,14 @@
     "id": "uni_basic_sentence_003",
     "dimension": "basic_sentence",
     "dimension_label": "基本句型 SVO/SOV",
-    "chinese": "吃蘋果。",
+    "chinese": "我吃蘋果。",
     "jp": {
-      "sentence": "りんごを食べます。",
+      "sentence": "私はりんごを食べます。",
       "blocks": [
+        {
+          "text": "私は",
+          "role": "主角"
+        },
         {
           "text": "りんごを",
           "role": "對象"
@@ -140,7 +148,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[りんごを] + [食べます]"
+      "formula": "[私は] + [りんごを] + [食べます]"
     },
     "en": {
       "sentence": "I eat apples.",
