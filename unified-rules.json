@@ -366,7 +366,7 @@
     "contrast": {
       "cn_blindspot": "中文「有」一個字通用",
       "jp_insight": "日文：物品=あります 生物=います",
-      "en_insight": "",
+      "en_insight": "英文用 There is/are，不分生物非生物",
       "order_shift": ""
     },
     "metrics": {
@@ -442,7 +442,7 @@
     "contrast": {
       "cn_blindspot": "中文「有」一個字通用",
       "jp_insight": "日文：物品=あります 生物=います",
-      "en_insight": "",
+      "en_insight": "英文用 There is/are，不分生物非生物",
       "order_shift": ""
     },
     "metrics": {
@@ -518,7 +518,7 @@
     "contrast": {
       "cn_blindspot": "中文「有」一個字通用",
       "jp_insight": "日文：物品=あります 生物=います",
-      "en_insight": "",
+      "en_insight": "英文用 There is/are，不分生物非生物",
       "order_shift": ""
     },
     "metrics": {
@@ -594,7 +594,7 @@
     "contrast": {
       "cn_blindspot": "中文「有」一個字通用",
       "jp_insight": "日文：物品=あります 生物=います",
-      "en_insight": "",
+      "en_insight": "英文用 There is/are，不分生物非生物",
       "order_shift": ""
     },
     "metrics": {
@@ -666,7 +666,7 @@
     "contrast": {
       "cn_blindspot": "中文「有」一個字通用",
       "jp_insight": "日文：物品=あります 生物=います",
-      "en_insight": "",
+      "en_insight": "英文用 There is/are，不分生物非生物",
       "order_shift": ""
     },
     "metrics": {
@@ -730,7 +730,7 @@
     "contrast": {
       "cn_blindspot": "中文問句要加「嗎」或倒裝",
       "jp_insight": "日文只要句尾加 か，語序完全不變",
-      "en_insight": "",
+      "en_insight": "英文要派 Do/Does 或 Is/Are 當敲門員",
       "order_shift": ""
     },
     "metrics": {
@@ -802,7 +802,7 @@
     "contrast": {
       "cn_blindspot": "中文問句要加「嗎」或倒裝",
       "jp_insight": "日文只要句尾加 か，語序完全不變",
-      "en_insight": "",
+      "en_insight": "英文要派 Do/Does 或 Is/Are 當敲門員",
       "order_shift": ""
     },
     "metrics": {
@@ -866,7 +866,7 @@
     "contrast": {
       "cn_blindspot": "中文問句要加「嗎」或倒裝",
       "jp_insight": "日文只要句尾加 か，語序完全不變",
-      "en_insight": "",
+      "en_insight": "英文要派 Do/Does 或 Is/Are 當敲門員",
       "order_shift": ""
     },
     "metrics": {
@@ -930,7 +930,7 @@
     "contrast": {
       "cn_blindspot": "中文問句要加「嗎」或倒裝",
       "jp_insight": "日文只要句尾加 か，語序完全不變",
-      "en_insight": "",
+      "en_insight": "英文要派 Do/Does 或 Is/Are 當敲門員",
       "order_shift": ""
     },
     "metrics": {
@@ -994,7 +994,7 @@
     "contrast": {
       "cn_blindspot": "中文問句要加「嗎」或倒裝",
       "jp_insight": "日文只要句尾加 か，語序完全不變",
-      "en_insight": "",
+      "en_insight": "英文要派 Do/Does 或 Is/Are 當敲門員",
       "order_shift": ""
     },
     "metrics": {
@@ -1066,7 +1066,7 @@
     "contrast": {
       "cn_blindspot": "中文「被」一字搞定",
       "jp_insight": "日文動詞本身要變形（れる/られる）",
-      "en_insight": "",
+      "en_insight": "英文 was/is + 過去分詞，不帶情緒",
       "order_shift": ""
     },
     "metrics": {
@@ -1138,7 +1138,7 @@
     "contrast": {
       "cn_blindspot": "中文「被」一字搞定",
       "jp_insight": "日文動詞本身要變形（れる/られる）",
-      "en_insight": "",
+      "en_insight": "英文 was/is + 過去分詞，不帶情緒",
       "order_shift": ""
     },
     "metrics": {
@@ -1202,7 +1202,7 @@
     "contrast": {
       "cn_blindspot": "中文「被」一字搞定",
       "jp_insight": "日文動詞本身要變形（れる/られる）",
-      "en_insight": "",
+      "en_insight": "英文 was/is + 過去分詞，不帶情緒",
       "order_shift": ""
     },
     "metrics": {
@@ -1274,7 +1274,7 @@
     "contrast": {
       "cn_blindspot": "中文「被」一字搞定",
       "jp_insight": "日文動詞本身要變形（れる/られる）",
-      "en_insight": "",
+      "en_insight": "英文 was/is + 過去分詞，不帶情緒",
       "order_shift": ""
     },
     "metrics": {
@@ -1346,7 +1346,7 @@
     "contrast": {
       "cn_blindspot": "中文「被」一字搞定",
       "jp_insight": "日文動詞本身要變形（れる/られる）",
-      "en_insight": "",
+      "en_insight": "英文 was/is + 過去分詞，不帶情緒",
       "order_shift": ""
     },
     "metrics": {
@@ -1418,7 +1418,7 @@
     "contrast": {
       "cn_blindspot": "中文「如果」放句首就好",
       "jp_insight": "日文要把動詞變成「た形+ら」",
-      "en_insight": "",
+      "en_insight": "英文只有一個 if，比日文簡單",
       "order_shift": ""
     },
     "metrics": {
@@ -1486,7 +1486,7 @@
     "contrast": {
       "cn_blindspot": "中文「如果」放句首就好",
       "jp_insight": "日文要把動詞變成「た形+ら」",
-      "en_insight": "",
+      "en_insight": "英文只有一個 if，比日文簡單",
       "order_shift": ""
     },
     "metrics": {
@@ -1562,7 +1562,7 @@
     "contrast": {
       "cn_blindspot": "中文「如果」放句首就好",
       "jp_insight": "日文要把動詞變成「た形+ら」",
-      "en_insight": "",
+      "en_insight": "英文只有一個 if，比日文簡單",
       "order_shift": ""
     },
     "metrics": {
@@ -1650,7 +1650,7 @@
     "contrast": {
       "cn_blindspot": "中文「如果」放句首就好",
       "jp_insight": "日文要把動詞變成「た形+ら」",
-      "en_insight": "",
+      "en_insight": "英文只有一個 if，比日文簡單",
       "order_shift": ""
     },
     "metrics": {
@@ -1722,7 +1722,7 @@
     "contrast": {
       "cn_blindspot": "中文「如果」放句首就好",
       "jp_insight": "日文要把動詞變成「た形+ら」",
-      "en_insight": "",
+      "en_insight": "英文只有一個 if，比日文簡單",
       "order_shift": ""
     },
     "metrics": {
@@ -1778,7 +1778,7 @@
     "contrast": {
       "cn_blindspot": "中文「正在」只表示進行中",
       "jp_insight": "日文～ている 還包含狀態的持續",
-      "en_insight": "",
+      "en_insight": "英文 is V-ing 只表示「正在做」",
       "order_shift": ""
     },
     "metrics": {
@@ -1842,7 +1842,7 @@
     "contrast": {
       "cn_blindspot": "中文「正在」只表示進行中",
       "jp_insight": "日文～ている 還包含狀態的持續",
-      "en_insight": "",
+      "en_insight": "英文 is V-ing 只表示「正在做」",
       "order_shift": ""
     },
     "metrics": {
@@ -1910,7 +1910,7 @@
     "contrast": {
       "cn_blindspot": "中文「正在」只表示進行中",
       "jp_insight": "日文～ている 還包含狀態的持續",
-      "en_insight": "",
+      "en_insight": "英文 is V-ing 只表示「正在做」",
       "order_shift": ""
     },
     "metrics": {
@@ -1974,7 +1974,7 @@
     "contrast": {
       "cn_blindspot": "中文「正在」只表示進行中",
       "jp_insight": "日文～ている 還包含狀態的持續",
-      "en_insight": "",
+      "en_insight": "英文 is V-ing 只表示「正在做」",
       "order_shift": ""
     },
     "metrics": {
@@ -2038,7 +2038,7 @@
     "contrast": {
       "cn_blindspot": "中文「正在」只表示進行中",
       "jp_insight": "日文～ている 還包含狀態的持續",
-      "en_insight": "",
+      "en_insight": "英文 is V-ing 只表示「正在做」",
       "order_shift": ""
     },
     "metrics": {
@@ -2106,7 +2106,7 @@
     "contrast": {
       "cn_blindspot": "中文「跑的人」需要加「的」",
       "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "",
+      "en_insight": "英文長修飾用 who/that 放後面",
       "order_shift": ""
     },
     "metrics": {
@@ -2174,7 +2174,7 @@
     "contrast": {
       "cn_blindspot": "中文「跑的人」需要加「的」",
       "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "",
+      "en_insight": "英文長修飾用 who/that 放後面",
       "order_shift": ""
     },
     "metrics": {
@@ -2242,7 +2242,7 @@
     "contrast": {
       "cn_blindspot": "中文「跑的人」需要加「的」",
       "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "",
+      "en_insight": "英文長修飾用 who/that 放後面",
       "order_shift": ""
     },
     "metrics": {
@@ -2302,7 +2302,7 @@
     "contrast": {
       "cn_blindspot": "中文「跑的人」需要加「的」",
       "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "",
+      "en_insight": "英文長修飾用 who/that 放後面",
       "order_shift": ""
     },
     "metrics": {
@@ -2370,7 +2370,7 @@
     "contrast": {
       "cn_blindspot": "中文「跑的人」需要加「的」",
       "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "",
+      "en_insight": "英文長修飾用 who/that 放後面",
       "order_shift": ""
     },
     "metrics": {
@@ -2434,7 +2434,7 @@
     "contrast": {
       "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
       "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "",
+      "en_insight": "英文形容詞要找 is/am/are 牽手",
       "order_shift": ""
     },
     "metrics": {
@@ -2502,7 +2502,7 @@
     "contrast": {
       "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
       "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "",
+      "en_insight": "英文形容詞要找 is/am/are 牽手",
       "order_shift": ""
     },
     "metrics": {
@@ -2566,7 +2566,7 @@
     "contrast": {
       "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
       "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "",
+      "en_insight": "英文形容詞要找 is/am/are 牽手",
       "order_shift": ""
     },
     "metrics": {
@@ -2630,7 +2630,7 @@
     "contrast": {
       "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
       "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "",
+      "en_insight": "英文形容詞要找 is/am/are 牽手",
       "order_shift": ""
     },
     "metrics": {
@@ -2694,7 +2694,7 @@
     "contrast": {
       "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
       "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "",
+      "en_insight": "英文形容詞要找 is/am/are 牽手",
       "order_shift": ""
     },
     "metrics": {
@@ -7873,7 +7873,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「我喜歡」「他喜歡」→ 動詞都一樣",
-      "jp_insight": "",
+      "jp_insight": "日文ます形不分人稱，比英文簡單",
       "en_insight": "英文：動詞是主詞的影子！I/you/they → like，He/She/It → likes（影子長出 s 尾巴）"
     },
     "metrics": {
@@ -7919,7 +7919,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「她有」「我有」→「有」永遠不變",
-      "jp_insight": "",
+      "jp_insight": "日文ます形不分人稱，比英文簡單",
       "en_insight": "英文：She 是國王，動詞必須穿上國王規定的制服（加 s）！dogs 是受詞，沒有決定權"
     },
     "metrics": {
@@ -7965,7 +7965,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「我有香蕉」→ 名詞可以光著身子出場",
-      "jp_insight": "",
+      "jp_insight": "日文跟中文一樣沒有冠詞",
       "en_insight": "英文：名詞必須穿衣服！a/an = 一件，the = 那件，-s = 好幾件。裸奔的名詞是違規的！"
     },
     "metrics": {
@@ -8011,7 +8011,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「一個蛋」「一個蘋果」→ 量詞不會因為後面的字改變",
-      "jp_insight": "",
+      "jp_insight": "日文跟中文一樣沒有冠詞",
       "en_insight": "英文：a egg 唸起來卡卡的（母音撞母音），加 n 變 an egg 像潤滑劑！"
     },
     "metrics": {
@@ -8057,7 +8057,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「我會游泳」→「游泳」不用改",
-      "jp_insight": "",
+      "jp_insight": "日文動詞自己變形就能表示「會」",
       "en_insight": "英文：can 像護盾，保護後面的動詞不用變形。有 can 在，動詞就凍結在原形！"
     },
     "metrics": {
@@ -8099,7 +8099,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「我是」「他是」「我們是」→ 都用「是」",
-      "jp_insight": "",
+      "jp_insight": "日文形容詞+です就能結句",
       "en_insight": "英文：Be 動詞有三張臉（am/is/are），每種只配特定主詞，像拼圖一樣！"
     },
     "metrics": {
@@ -8141,7 +8141,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「這是狗」→ 不需要「一隻」也可以",
-      "jp_insight": "",
+      "jp_insight": "日文有これ/それ/あれ三段距離",
       "en_insight": "英文：用手指（This）指東西時，還要說清楚是「一個」（a）！"
     },
     "metrics": {
@@ -8187,7 +8187,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「你喜歡狗嗎？」→ 加「嗎」就好，語序不變",
-      "jp_insight": "",
+      "jp_insight": "日文加「か」就變問句，不用搬家",
       "en_insight": "英文：問問題要拉警報！把 Do 搬到最前面，像發射信號彈告訴對方：問題來了！"
     },
     "metrics": {
@@ -8229,7 +8229,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「我想吃」→ 直接接就好",
-      "jp_insight": "",
+      "jp_insight": "日文動詞+たい就能表示「想要」",
       "en_insight": "英文：want 和 eat 之間需要一扇門（to）。通過門的動詞必須回到原形！"
     },
     "metrics": {
@@ -8271,7 +8271,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「有貓」→ 不需要主詞",
-      "jp_insight": "",
+      "jp_insight": "日文分います（生物）/あります（非生物）",
       "en_insight": "英文：不能無主語！用 There 當假主詞開場，is/are 要看後面名詞的單複數"
     },
     "metrics": {
@@ -8317,7 +8317,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「我不喜歡」→ 加「不」就好，動詞不變",
-      "jp_insight": "",
+      "jp_insight": "日文用ません，比英文的don't簡單",
       "en_insight": "英文：don't 是一面禁止牌，它出現後動詞必須回到原形（跟 can 一樣是護盾！）"
     },
     "metrics": {
@@ -8363,7 +8363,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「她喜歡嗎？」→ 動詞不變",
-      "jp_insight": "",
+      "jp_insight": "日文加「か」就變問句，不用搬家",
       "en_insight": "英文：Does 同時做兩件事：拉警報（問句）+ 擋住 s（護盾）→ 動詞回原形"
     },
     "metrics": {
@@ -8405,7 +8405,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「開門！」→ 本來就沒主詞",
-      "jp_insight": "",
+      "jp_insight": "日文用て形+ください表示請求",
       "en_insight": "英文：其實有主詞（You），但命令時省略掉了。這是唯一允許不寫主詞的句型！"
     },
     "metrics": {
@@ -8443,7 +8443,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「不要跑」→ 加「不要」就好",
-      "jp_insight": "",
+      "jp_insight": "日文用て形+ください表示請求",
       "en_insight": "英文：Don't 是「禁止廣播」，它既是否定又是命令。後面動詞一定是原形"
     },
     "metrics": {
@@ -8489,7 +8489,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「她不喜歡」→ 動詞不變",
-      "jp_insight": "",
+      "jp_insight": "日文用ません，比英文的don't簡單",
       "en_insight": "英文：doesn't = don't 的三單版。它幫 like 扛了 s，所以 like 不用再加 s"
     },
     "metrics": {
@@ -8560,7 +8560,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「我踢球」→ 靠「昨天」，動詞不變",
-      "jp_insight": "",
+      "jp_insight": "日文用ました，變化比英文規律",
       "en_insight": "英文：動詞自己要蓋「已完成」印章（+ed）"
     },
     "metrics": {
@@ -8619,7 +8619,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「她吃了」→「吃」不變",
-      "jp_insight": "",
+      "jp_insight": "日文用ました，變化比英文規律",
       "en_insight": "英文：有些動詞不乖，整個字變形（eat→ate）"
     },
     "metrics": {
@@ -8678,7 +8678,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「他會去」→「去」不變",
-      "jp_insight": "",
+      "jp_insight": "日文ます形同時包含現在和未來",
       "en_insight": "英文：will 是未來標籤＋護盾，後面動詞用原形"
     },
     "metrics": {
@@ -8733,7 +8733,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「我在吃」→ 加「在」就好",
-      "jp_insight": "",
+      "jp_insight": "日文ている有雙重含義",
       "en_insight": "英文：拍快照！需要 be 動詞 + 動詞加 ing 兩個零件"
     },
     "metrics": {
@@ -8792,7 +8792,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「她在讀」→ 不管主詞配什麼",
-      "jp_insight": "",
+      "jp_insight": "日文ている有雙重含義",
       "en_insight": "英文：兩規則同時！拼圖（She→is）+ 快照（+ing）"
     },
     "metrics": {
@@ -8863,7 +8863,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「媽媽做蛋糕」→ 主角在前面",
-      "jp_insight": "",
+      "jp_insight": "日文被動有「迷惑受身」帶不爽情緒",
       "en_insight": "英文：翻轉！蛋糕搬到前面當主角，像照鏡子左右互換"
     },
     "metrics": {
@@ -8934,7 +8934,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「她比較高」→ 加「比較」，形容詞不變",
-      "jp_insight": "",
+      "jp_insight": "日文用「より」，比英文的er/more簡單",
       "en_insight": "英文：形容詞自己要變身！tall → taller（長出 er 尾巴）"
     },
     "metrics": {
@@ -9001,7 +9001,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「他最高」→ 加「最」就好",
-      "jp_insight": "",
+      "jp_insight": "日文用「より」，比英文的er/more簡單",
       "en_insight": "英文：形容詞加 est，前面一定要有 the"
     },
     "metrics": {
@@ -9072,7 +9072,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「跑步的男孩」→ 用「的」就好",
-      "jp_insight": "",
+      "jp_insight": "日文跟中文一樣把修飾語放前面",
       "en_insight": "英文：兩句用 who 膠水黏起來"
     },
     "metrics": {
@@ -9143,7 +9143,7 @@
     },
     "contrast": {
       "cn_blindspot": "中文：「如果下雨我就留下」→ 動詞不變",
-      "jp_insight": "",
+      "jp_insight": "日文有4種「如果」（たら/ば/と/なら）",
       "en_insight": "英文：If 後面用現在式，結果用 will — 兩邊不對稱"
     },
     "metrics": {
