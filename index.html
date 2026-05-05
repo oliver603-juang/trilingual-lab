@@ -78,6 +78,50 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .ki-en{background:rgba(78,205,196,.07);border:1px solid rgba(78,205,196,.12);color:#a8ece8}
 .ki-fl{font-size:.58rem;display:block;margin-bottom:2px;opacity:.5}
 .ki-tp{margin:3px 10px 10px;padding:6px 12px;border-radius:9px;background:linear-gradient(135deg,rgba(255,215,0,.07),rgba(255,169,77,.04));border:1px solid rgba(255,215,0,.12);text-align:center;font-size:.85rem;font-weight:900;color:var(--gold)}
+.diy{margin:0 12px 12px;border-radius:14px;background:#1a1a35;border:1.5px solid rgba(255,215,0,.12);overflow:hidden;padding:10px 14px}
+.diy-h{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:8px}
+.diy-h span:first-child{font-size:1.1rem}.diy-h span:last-child{font-size:.75rem;font-weight:900;color:#ffd700}
+.diy-input{display:flex;gap:6px;margin-bottom:8px}
+.diy-input input{flex:1;padding:8px 12px;border-radius:9px;border:1.5px solid rgba(255,215,0,.2);background:rgba(255,255,255,.05);color:#fff;font-size:.85rem;font-family:inherit}
+.diy-input input::placeholder{color:rgba(255,255,255,.3)}
+.diy-input input:focus{outline:none;border-color:rgba(255,215,0,.5)}
+.diy-btn{padding:8px 16px;border-radius:9px;border:none;font-weight:900;font-size:.78rem;cursor:pointer;font-family:inherit;white-space:nowrap}
+.diy-btn.go{background:linear-gradient(135deg,#ffd700,#ff9800);color:#1a1a2e}
+.diy-btn.go:disabled{opacity:.4;cursor:not-allowed}
+.diy-btn.del{background:rgba(255,80,80,.15);color:#ff8888;border:1px solid rgba(255,80,80,.2);padding:4px 10px;font-size:.68rem}
+.diy-result{padding:8px 12px;border-radius:9px;font-size:.85rem;line-height:1.7;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.diy-result.jp{background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.12);color:#ffb4b4}
+.diy-result.en{background:rgba(78,205,196,.07);border:1px solid rgba(78,205,196,.12);color:#a8ece8}
+.diy-result .diy-text{flex:1}
+.diy-result .diy-speak{cursor:pointer;font-size:1.1rem;opacity:.7;flex-shrink:0}.diy-result .diy-speak:hover{opacity:1}
+.diy-saved{margin-top:6px;border-top:1px solid rgba(255,255,255,.06);padding-top:8px}
+.diy-saved-h{font-size:.62rem;color:rgba(255,255,255,.3);margin-bottom:4px}
+.diy-item{display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.diy-item .diy-cn{font-size:.72rem;color:rgba(255,255,255,.4);min-width:60px}
+.diy-item .diy-tr{font-size:.78rem;font-weight:700;flex:1}
+.diy-item .diy-tr.jp{color:#ffb4b4}.diy-item .diy-tr.en{color:#a8ece8}
+.diy-item .diy-speak{cursor:pointer;font-size:.85rem;opacity:.6}.diy-item .diy-speak:hover{opacity:1}
+.diy-loading{text-align:center;padding:12px;font-size:.75rem;color:rgba(255,215,0,.6)}
+.diy-loading::after{content:'';display:inline-block;width:12px;height:12px;border:2px solid rgba(255,215,0,.3);border-top-color:#ffd700;border-radius:50%;animation:spin .6s linear infinite;margin-left:6px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+.gear-toggle{position:fixed;bottom:12px;right:120px;z-index:9999;padding:6px 14px;border-radius:20px;border:1.5px solid rgba(255,215,0,.3);background:rgba(0,0,0,.7);color:#ffd700;font-family:inherit;font-size:.7rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)}
+.gear-toggle:hover{border-color:rgba(255,215,0,.6)}
+.gear-toggle.has-key{border-color:rgba(80,200,120,.4);color:#50c878}
+.set-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:99998;display:none;align-items:center;justify-content:center}
+.set-overlay.show{display:flex}
+.set-box{background:#1a1a35;border:1.5px solid rgba(255,215,0,.2);border-radius:16px;padding:20px;max-width:360px;width:90%;margin:20px}
+.set-box h3{color:#ffd700;font-size:.85rem;margin-bottom:10px;text-align:center}
+.set-box label{font-size:.68rem;color:rgba(255,255,255,.5);display:block;margin-bottom:4px}
+.set-box input{width:100%;padding:8px 12px;border-radius:9px;border:1.5px solid rgba(255,215,0,.2);background:rgba(255,255,255,.05);color:#fff;font-size:.78rem;font-family:monospace;box-sizing:border-box;margin-bottom:8px}
+.set-box input:focus{outline:none;border-color:rgba(255,215,0,.5)}
+.set-box .set-hint{font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.5;margin-bottom:10px}
+.set-box .set-counter{font-size:.65rem;color:rgba(255,255,255,.4);margin-bottom:10px;padding:6px 10px;background:rgba(255,255,255,.03);border-radius:8px}
+.set-box .set-btns{display:flex;gap:8px;justify-content:center}
+.set-box .set-btns button{padding:8px 20px;border-radius:9px;border:none;font-weight:900;font-size:.75rem;cursor:pointer;font-family:inherit}
+.set-box .set-btns .save{background:linear-gradient(135deg,#ffd700,#ff9800);color:#1a1a2e}
+.set-box .set-btns .cancel{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)}
+.diy-nokey{text-align:center;padding:8px;font-size:.7rem;color:rgba(255,255,255,.3);line-height:1.6}
+.diy-nokey button{background:none;border:none;color:#ffd700;cursor:pointer;text-decoration:underline;font-family:inherit;font-size:.7rem}
 .edit-toggle{position:fixed;bottom:12px;right:12px;z-index:9999;padding:6px 14px;border-radius:20px;border:1.5px solid rgba(255,215,0,.3);background:rgba(0,0,0,.7);color:#ffd700;font-family:inherit;font-size:.7rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)}
 .edit-toggle.active{background:rgba(255,50,50,.8);border-color:rgba(255,50,50,.5);color:#fff}
 .edit-mode .ki-b,.edit-mode .ki-tp,.edit-mode .cb{cursor:text;border:1px dashed rgba(255,215,0,.3)}
@@ -98,6 +142,23 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 <div class="dt" id="dt"></div>
 <div id="app"><div class="ld-c"><div class="sp"></div><div class="ld-t">載入中…</div></div></div>
 <div class="ko" id="ko" onclick="if(event.target===this)cK()"><div class="kp" id="kpp"></div></div>
+<div class="set-overlay" id="setOv" onclick="if(event.target===this)closeSet()">
+<div class="set-box">
+<h3>⚙️ DIY 造句設定</h3>
+<label>Google Gemini API Key</label>
+<input id="set-key" type="password" placeholder="AIzaSy..." value="">
+<div class="set-hint">
+🔑 到 <a href="https://aistudio.google.com/apikey" target="_blank" style="color:#ffd700">aistudio.google.com/apikey</a> 免費建立 API Key<br>
+🆓 免費額度每天 1,500 次（Gemini 2.5 Flash），完全夠用！<br>
+🔒 Key 只存在你自己的瀏覽器，不會上傳
+</div>
+<div class="set-counter" id="set-usage"></div>
+<div class="set-btns">
+<button class="cancel" onclick="closeSet()">取消</button>
+<button class="save" onclick="saveSet()">💾 儲存</button>
+</div>
+</div>
+</div>
 <script>
 const KJ={"私":"わたし","学校":"がっこう","行":"い","先生":"せんせい","聞":"き","食":"た","猫":"ねこ","走":"はし","水":"みず","飲":"の","机":"つくえ","上":"うえ","本":"ほん","公園":"こうえん","友達":"ともだち","花":"はな","弟":"おとうと","彼":"かれ","彼女":"かのじょ","雨":"あめ","降":"ふ","安":"やす","買":"か","時間":"じかん","日本":"にほん","日本語":"にほんご","寿司":"すし","映画":"えいが","昨日":"きのう","明日":"あした","今日":"きょう","勉強":"べんきょう","音楽":"おんがく","電話":"でんわ","手紙":"てがみ","写真":"しゃしん","大学":"だいがく","病気":"びょうき","仕事":"しごと","会社":"かいしゃ","家族":"かぞく","旅行":"りょこう","試験":"しけん","問題":"もんだい","教":"おし","読":"よ","書":"か","話":"はな","見":"み","思":"おも","知":"し","来":"き","出":"で","入":"はい","帰":"かえ","開":"あ","閉":"し","起":"お","寝":"ね","待":"ま","座":"すわ","立":"た","泳":"およ","歩":"ある","作":"つく","使":"つか","持":"も","送":"おく","払":"はら","高":"たか","大":"おお","小":"ちい","新":"あたら","寒":"さむ","暑":"あつ","辛":"から","好":"す","若":"わか","強":"つよ","忙":"いそが","難":"むずか","男":"おとこ","女":"おんな","子":"こ","人":"ひと","犬":"いぬ","店":"みせ","道":"みち","駅":"えき","山":"やま","川":"かわ","海":"うみ","朝":"あさ","昼":"ひる","夜":"よる","夏":"なつ","目":"め","耳":"みみ","口":"くち","手":"て","足":"あし","頭":"あたま","顔":"かお","言":"い","気":"き","声":"こえ","夢":"ゆめ","紙":"かみ","金":"かね","赤":"あか","青":"あお","白":"しろ","黒":"くろ","中":"なか","外":"そと","前":"まえ","後":"うしろ","右":"みぎ","左":"ひだり","年":"とし","毎日":"まいにち","今":"いま","父":"ちち","母":"はは","妹":"いもうと","姉":"あね","兄":"あに","娘":"むすめ","合格":"ごうかく","努力":"どりょく","結果":"けっか","意見":"いけん","練習":"れんしゅう","経験":"けいけん","記録":"きろく","成功":"せいこう","失敗":"しっぱい","予算":"よさん","制約":"せいやく","事情":"じじょう","理由":"りゆう","原因":"げんいん","証拠":"しょうこ","真実":"しんじつ","相談":"そうだん","決断":"けつだん","責任":"せきにん","態度":"たいど","発言":"はつげん","行為":"こうい","社長":"しゃちょう","部下":"ぶか","上司":"じょうし","専門家":"せんもんか","環境":"かんきょう","災害":"さいがい","暴力":"ぼうりょく","犯人":"はんにん","怒":"いか","笑":"わら","泣":"な","驚":"おどろ","窓":"まど","蛇":"へび","虫":"むし","野菜":"やさい","薬":"くすり","飯":"はん","電車":"でんしゃ","髪":"かみ","元気":"げんき","大丈夫":"だいじょうぶ","背":"せ","腹":"はら","図書館":"としょかん","教室":"きょうしつ","冷蔵庫":"れいぞうこ","鉛筆":"えんぴつ","弁当":"べんとう","名前":"なまえ","禁煙":"きんえん","留学":"りゅうがく","健康":"けんこう","洗濯":"せんたく","帰宅":"きたく","就職":"しゅうしょく","転居":"てんきょ","連勝":"れんしょう","優勝":"ゆうしょう","勝利":"しょうり","東京":"とうきょう","北海道":"ほっかいどう","沖縄":"おきなわ","全国":"ぜんこく","全身":"ぜんしん","世界":"せかい","改革":"かいかく","対策":"たいさく","計画":"けいかく","解決":"かいけつ","克服":"こくふく","挑戦":"ちょうせん","観光客":"かんこうきゃく","若者":"わかもの","子供":"こども","推測":"すいそく","報告":"ほうこく","研究":"けんきゅう","怠":"なま","惜":"お","厳":"きび","殺到":"さっとう","渋滞":"じゅうたい","遺産":"いさん","相続":"そうぞく","所有権":"しょゆうけん","土地":"とち","兄弟":"きょうだい","資格":"しかく","残業":"ざんぎょう","例外":"れいがい","服装":"ふくそう","実情":"じつじょう","通信":"つうしん","講座":"こうざ","家事":"かじ","医者":"いしゃ","社会人":"しゃかいじん","指導者":"しどうしゃ","不注意":"ふちゅうい","本物":"ほんもの","完璧":"かんぺき","愛":"あい","心配":"しんぱい","面白":"おもしろ","美味":"おい","動物":"どうぶつ","宿題":"しゅくだい","約束":"やくそく","結婚":"けっこん","出席":"しゅっせき","危険":"きけん","被害者":"ひがいしゃ","被害":"ひがい","地震":"じしん","笑顔":"えがお","国語":"こくご","英語":"えいご","自由":"じゆう","自分":"じぶん","相手":"あいて","皮切":"かわき","否":"いな","即":"そく","至":"いた","極":"きわ","限":"かぎ","基":"もと","増":"ふ","続":"つづ","尽":"つ","眠":"ねむ","吸":"す","嘘":"うそ","非":"ひ","法":"ほう","味方":"みかた","今月":"こんげつ","試合":"しあい","一番":"いちばん","古典":"こてん","親":"おや","友人":"ゆうじん","町":"まち","時代":"じだい","上手":"じょうず","参":"まい","間違":"まちが","注意":"ちゅうい","咲":"さ","育":"そだ","乗":"の","汚":"よご","踏":"ふ","褒":"ほ","謝":"あやま","断":"ことわ","暴":"あば","蹴":"け","切":"き","終":"お","始":"はじ","覚":"おぼ","忘":"わす","取":"と","合":"あ","鳴":"な","飛":"と","曲":"ま","学":"まな","風邪":"かぜ","批評":"ひひょう","同僚":"どうりょう","消極的":"しょうきょくてき","傾向":"けいこう","不快":"ふかい","迷惑":"めいわく","無責任":"むせきにん","失礼":"しつれい","素人":"しろうと","素直":"すなお","勝":"か","受験":"じゅけん","仕方":"しかた","暇":"ひま","協力":"きょうりょく","退会":"たいかい","閉店":"へいてん","来月末":"らいげつまつ","新入社員":"しんにゅうしゃいん","世界中":"せかいじゅう","数学":"すうがく","子育":"こそだ","一勝":"いっしょう","組":"く","関":"かん","求":"もと","散":"ち","練":"ね","込":"こ","直":"なお","付":"つ","引":"ひ","勤":"つと","受":"う","菓子":"かし","新法":"しんぽう","姿勢":"しせい","気持":"きも","苦":"くる","同士":"どうし","見知":"みし","最初":"さいしょ","最後":"さいご","不可":"ふか","禁止":"きんし","温":"あたた","需要":"じゅよう","今期":"こんき"};
 const ks=Object.keys(KJ).sort((a,b)=>b.length-a.length);function furi(t){if(!t)return t;let r='',i=0;while(i<t.length){let m=false;for(const k of ks){if(i+k.length<=t.length&&t.substring(i,i+k.length)===k){r+='<ruby>'+k+'<rp>(</rp><rt>'+KJ[k]+'</rt><rp>)</rp></ruby>';i+=k.length;m=true;break;}}if(!m){r+=t[i];i++;}}return r;}
@@ -112,6 +173,61 @@ function sV(d){try{localStorage.setItem('tl_'+cu,JSON.stringify(d));}catch{}}
 function mS(id){const d=lU();if(!d.seen)d.seen={};d.seen[id]=Date.now();sV(d);}
 function iS(id){const d=lU();return d.seen&&d.seen[id];}
 function gS(){const d=lU();return Object.keys(d.seen||{}).length;}
+function diyKey(dim){return 'diy_'+dim+'_'+md;}
+function getDIY(dim){const d=lU();return (d.diy&&d.diy[diyKey(dim)])||[];}
+function saveDIY(dim,arr){const d=lU();if(!d.diy)d.diy={};d.diy[diyKey(dim)]=arr;sV(d);}
+function delDIY(dim,idx){const arr=getDIY(dim);arr.splice(idx,1);saveDIY(dim,arr);rn();}
+const DIY_DAILY_LIMIT=50;
+function getApiKey(){try{return localStorage.getItem('tl_apikey')||'';}catch{return '';}}
+function setApiKey(k){try{localStorage.setItem('tl_apikey',k);}catch{}}
+function getDiyUsage(){try{const d=JSON.parse(localStorage.getItem('tl_diy_usage')||'{}');const today=new Date().toISOString().slice(0,10);if(d.date!==today)return{date:today,count:0};return d;}catch{return{date:new Date().toISOString().slice(0,10),count:0};}}
+function incDiyUsage(){const u=getDiyUsage();u.count++;try{localStorage.setItem('tl_diy_usage',JSON.stringify(u));}catch{}}
+function openSet(){const ov=document.getElementById('setOv');ov.classList.add('show');document.getElementById('set-key').value=getApiKey();const u=getDiyUsage();document.getElementById('set-usage').textContent='📊 今日已使用 '+u.count+' / '+DIY_DAILY_LIMIT+' 次';}
+function closeSet(){document.getElementById('setOv').classList.remove('show');}
+function saveSet(){const k=document.getElementById('set-key').value.trim();setApiKey(k);closeSet();updGear();rn();}
+function updGear(){const g=document.getElementById('gearBtn');if(g){g.className='gear-toggle'+(getApiKey()?' has-key':'');g.textContent=getApiKey()?'🔑 已設定':'⚙️ API Key';}}
+async function diyGo(dim){
+const apiKey=getApiKey();if(!apiKey){openSet();return;}
+const usage=getDiyUsage();if(usage.count>=DIY_DAILY_LIMIT){const box=document.getElementById('diy-res');if(box)box.innerHTML='<div style="color:#ff9800;font-size:.75rem;padding:6px">⚠️ 今日已達 '+DIY_DAILY_LIMIT+' 次上限，明天再來！</div>';return;}
+const inp=document.getElementById('diy-in');if(!inp)return;
+const cn=inp.value.trim();if(!cn)return;
+const lang=md==='jp'?'日文':'英文';const langCode=md==='jp'?'Japanese':'English';
+const r=F[ci];
+const btn=document.getElementById('diy-go');if(btn){btn.disabled=true;btn.textContent='⏳';}
+const box=document.getElementById('diy-res');if(box)box.innerHTML='<div class="diy-loading">翻譯中（'+usage.count+'/'+DIY_DAILY_LIMIT+'）</div>';
+try{
+const prompt='你是一個翻譯助手。使用者正在學習「'+dim+'」這個句型。請把以下中文翻譯成'+lang+'，要符合這個句型的用法。只回覆翻譯結果，不要解釋。如果是日文請同時附上假名讀音（用括號）。\n\n中文：'+cn+'\n\n'+langCode+'翻譯：';
+const resp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:300}})});
+if(!resp.ok){const err=await resp.json().catch(()=>({}));throw new Error(err.error?.message||'API 錯誤 '+resp.status);}
+const data=await resp.json();
+const text=data.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('')||'翻譯失敗';
+incDiyUsage();
+const arr=getDIY(dim);arr.push({cn,tr:text,ts:Date.now()});saveDIY(dim,arr);
+inp.value='';rn();
+}catch(e){if(box)box.innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">'+(e.message.includes('API_KEY_INVALID')||e.message.includes('400')?'❌ API Key 無效，請到 ⚙️ 重新設定':e.message.includes('429')||e.message.includes('RESOURCE_EXHAUSTED')?'⚠️ 請求太頻繁，請稍等幾秒再試':'❌ '+eH(e.message))+'</div>';}
+if(btn){btn.disabled=false;btn.textContent='✨ 造句';}
+}
+function gDIY(r){
+if(md==='vs')return '';
+const dim=r.dim;const langFlag=md==='jp'?'🇯🇵':'🇺🇸';const langName=md==='jp'?'日文':'英文';const lc=md==='jp'?'jp':'en';
+const saved=getDIY(dim);const hasKey=!!getApiKey();const usage=getDiyUsage();
+let h='<div class="diy"><div class="diy-h"><span>✍️</span><span>DIY 造句練習</span></div>';
+if(!hasKey){
+h+='<div class="diy-nokey">輸入中文，AI 幫你翻成'+langFlag+langName+'！<br>需要先設定 Gemini API Key（🆓 免費）→ <button onclick="openSet()">⚙️ 設定</button></div>';
+} else {
+h+='<div style="font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:6px">用「'+dim+'」句型，造你自己的句子！輸入中文 → 翻成'+langFlag+langName+' <span style="opacity:.6">（今日 '+usage.count+'/'+DIY_DAILY_LIMIT+'）</span></div>';
+h+='<div class="diy-input"><input id="diy-in" type="text" placeholder="輸入中文句子…" onkeydown="if(event.key===\'Enter\')diyGo(\''+dim.replace(/'/g,"\\'")+'\')">';
+h+='<button id="diy-go" class="diy-btn go" onclick="diyGo(\''+dim.replace(/'/g,"\\'")+'\')">✨ 造句</button></div>';
+h+='<div id="diy-res"></div>';
+}
+if(saved.length>0){
+h+='<div class="diy-saved"><div class="diy-saved-h">'+langFlag+' 我的造句（'+saved.length+'）</div>';
+saved.slice().reverse().forEach((s,ri)=>{const idx=saved.length-1-ri;
+h+='<div class="diy-item"><div class="diy-cn">'+eH(s.cn)+'</div><div class="diy-tr '+lc+'">'+eH(s.tr)+'</div>';
+h+='<span class="diy-speak" onclick="sp(\''+s.tr.replace(/[()（）]/g,'').replace(/'/g,"\\'").replace(/\n/g,' ')+'\',\''+lc+'\')">🔊</span>';
+h+='<button class="diy-btn del" onclick="delDIY(\''+dim.replace(/'/g,"\\'")+'\','+idx+')">✕</button></div>';});
+h+='</div>';}
+h+='</div>';return h;}
 function sU(u){cu=u;const names={iggy:'Iggy',yoyo:'Yoyo',yofarn:'Yofarn',oliver:'Oliver'};document.querySelectorAll('.ub').forEach(b=>{b.classList.toggle('a',b.textContent.includes(names[u]||''));});uP();rn();}
 function uP(){document.getElementById('pb').textContent='✅ '+gS();}
 async function lD(){try{const r=await fetch('unified-rules.json');if(!r.ok)throw 0;const d=await r.json();
@@ -143,7 +259,7 @@ if((md==='en'||md==='vs')&&r.ct.en_insight)ct+='<div><span class="cl" style="col
 const mx=Math.min(F.length,30);let dt='<div class="dr">';for(let i=0;i<mx;i++){const dc=i===ci?' a-'+md:'';const sn=iS(F[i].id)?' sn':'';dt+='<div class="d'+dc+sn+'" onclick="gT('+i+')"></div>';}
 if(F.length>mx)dt+='<span style="color:var(--dim);font-size:.48rem;align-self:center">+'+(F.length-mx)+'</span>';dt+='</div>';
 const lg='<div class="lg"><div class="li"><div class="ld" style="background:#ff6b6b"></div>主角</div><div class="li"><div class="ld" style="background:#4ecdc4"></div>動作</div><div class="li"><div class="ld" style="background:#ffd93d"></div>對象</div><div class="li"><div class="ld" style="background:#a78bfa"></div>修飾</div><div class="li"><div class="ld" style="background:#888"></div>連接</div><div class="li"><div class="ld" style="background:#66bb6a"></div>場景</div><div class="li"><div class="ld" style="background:#ff9800"></div>目標</div><div class="li"><div class="ld" style="background:#42a5f5"></div>時間</div><div class="li"><div class="ld" style="background:#ef5350"></div>語氣</div></div>';
-document.getElementById('app').innerHTML='<div class="mc m-'+md+'"><div class="ca"><div class="cs">'+eH(r.cn)+'</div><div class="cd">'+eH(r.dim)+(r.lv?' · '+r.lv:'')+'</div></div><div class="ba">'+bh+'</div>'+ct+lg+'</div>'+gKI(r);document.getElementById('nc').textContent=(ci+1)+'/'+F.length;var nb=document.querySelectorAll('.nb');if(nb[0])nb[0].disabled=ci===0;if(nb[1])nb[1].disabled=ci>=F.length-1;}
+document.getElementById('app').innerHTML='<div class="mc m-'+md+'"><div class="ca"><div class="cs">'+eH(r.cn)+'</div><div class="cd">'+eH(r.dim)+(r.lv?' · '+r.lv:'')+'</div></div><div class="ba">'+bh+'</div>'+ct+lg+'</div>'+gKI(r)+gDIY(r);document.getElementById('nc').textContent=(ci+1)+'/'+F.length;var nb=document.querySelectorAll('.nb');if(nb[0])nb[0].disabled=ci===0;if(nb[1])nb[1].disabled=ci>=F.length-1;}
 function gKI(r){if(md==='vs'){const jp=KD[r.dim],en=EK[r.dim];if(!jp&&!en)return '';let h='<div class="ki"><div style="padding:10px 14px 6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap"><span style="font-size:1.2rem">🦊</span><span style="font-size:1.2rem">🐸</span><span style="font-size:.75rem;font-weight:900;color:#ffd700">三語魔法教室</span></div>';const cn=jp?.cn||en?.cn||'';if(cn)h+='<div class="ki-b ki-cn"><span class="ki-fl">🇹🇼 中文大腦怎麼想</span>'+cn+'</div>';if(jp)h+='<div class="ki-b ki-jp"><span class="ki-fl">🇯🇵 日文大腦怎麼想</span>'+jp.br+'</div>';if(en)h+='<div class="ki-b ki-en"><span class="ki-fl">🇺🇸 英文大腦怎麼想</span>'+en.br+'</div>';if(jp?.tp)h+='<div class="ki-tp" style="margin-bottom:3px">'+jp.tp+'</div>';if(en?.tp)h+='<div class="ki-tp">'+en.tp+'</div>';h+='</div>';return h;}const d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)return '';const isJP=d.th==='jp',bc=isJP?'ki-jp':'ki-en',bl=isJP?'🇯🇵 日文大腦怎麼想':'🇺🇸 英文大腦怎麼想',tc=isJP?'color:#ff8a8a':'color:#7eeae0';return '<div class="ki"><div style="padding:10px 14px 6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap"><span style="font-size:1.4rem">'+d.m+'</span><span style="font-size:.75rem;font-weight:900;color:#ffd700">'+d.m+' '+d.t+' 的'+(isJP?'日文':'英文')+'魔法教室</span><span style="font-size:1rem;font-weight:900;'+tc+'">'+d.mt+'</span></div><div class="ki-b ki-cn"><span class="ki-fl">🇹🇼 中文大腦怎麼想</span>'+d.cn+'</div><div class="ki-b '+bc+'"><span class="ki-fl">'+bl+'</span>'+d.br+'</div><div class="ki-tp">'+d.tp+'</div></div>';}
 function rVS(r){let h='<div class="vc"><div class="vs js"><div class="vl jp">🇯🇵 日文</div>';
 if(r.jp){r.jp.b.forEach(([t,rl])=>{h+='<div class="vb jp r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\',\'jp\')"><span>'+furi(t)+'</span><span class="vt">'+rl+'</span></div>';});h+='<div style="font-size:.52rem;color:var(--dim);margin-top:3px;text-align:center">'+''+'</div>';}
@@ -158,12 +274,13 @@ document.getElementById('kpp').innerHTML='<div class="kh"><span class="ms">'+d.m
 document.getElementById('ko').classList.add('op');}
 function cK(){document.getElementById('ko').classList.remove('op');}
 document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')nv(-1);if(e.key==='ArrowRight')nv(1);if(e.key==='1')sM('jp');if(e.key==='2')sM('en');if(e.key==='3')sM('vs');if(e.key==='Escape')cK();});
-let wT=0;document.addEventListener('wheel',e=>{if(e.target.closest('.ki')||e.target.closest('.cb')||e.target.closest('[contenteditable]'))return;const now=Date.now();if(now-wT<300)return;wT=now;if(e.deltaY<0)nv(1);else if(e.deltaY>0)nv(-1);e.preventDefault();},{passive:false});
+let wT=0;document.addEventListener('wheel',e=>{if(e.target.closest('.ki')||e.target.closest('.cb')||e.target.closest('.diy')||e.target.closest('[contenteditable]'))return;const now=Date.now();if(now-wT<300)return;wT=now;if(e.deltaY<0)nv(1);else if(e.deltaY>0)nv(-1);e.preventDefault();},{passive:false});
 let tX=0;document.addEventListener('touchstart',e=>{tX=e.touches[0].clientX;});
 document.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tX;if(Math.abs(d)>60)nv(d>0?-1:1);});
 lD();
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 let edM=false;const edBtn=document.createElement('button');edBtn.className='edit-toggle';edBtn.textContent='✏️ 編輯模式';edBtn.onclick=function(){edM=!edM;document.body.classList.toggle('edit-mode',edM);edBtn.classList.toggle('active',edM);edBtn.textContent=edM?'🔒 關閉編輯（自動儲存）':'✏️ 編輯模式';if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}};document.body.appendChild(edBtn);
+const gearBtn=document.createElement('button');gearBtn.id='gearBtn';gearBtn.onclick=openSet;document.body.appendChild(gearBtn);updGear();
 function svEd(){const r=F[ci];if(!r)return;const bs=document.querySelectorAll('.ki-b');const tp=document.querySelector('.ki-tp');let d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)d=(md==='en')?KD[r.dim]:EK[r.dim];if(!d)return;if(bs[0]){const t=bs[0].innerText.replace(/^🇹🇼 中文大腦怎麼想\n?/,'');d.cn=t;}if(bs[1]){const t=bs[1].innerText.replace(/^🇯🇵 日文大腦怎麼想\n?/,'').replace(/^🇺🇸 英文大腦怎麼想\n?/,'');d.br=t;}if(tp)d.tp=tp.innerText;const cb=document.querySelector('.cb');if(cb&&r.ct){cb.innerText.split('\n').filter(l=>l.trim()).forEach(l=>{if(l.includes('中文陷阱：'))r.ct.cn_blindspot=l.replace(/.*中文陷阱：\s*/,'');if(l.includes('日文邏輯：'))r.ct.jp_insight=l.replace(/.*日文邏輯：\s*/,'');if(l.includes('英文邏輯：'))r.ct.en_insight=l.replace(/.*英文邏輯：\s*/,'');});}const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 已儲存';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);}
 window.exportEdits=function(){const d={KD,EK,rules:R.map(r=>({id:r.id,dim:r.dim,cn:r.cn,ct:r.ct}))};const b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='trilingual-edits-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(u);};
 </script>
