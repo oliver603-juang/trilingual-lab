@@ -19979,5 +19979,581 @@
         "new_concept": 1
       }
     }
+  },
+  {
+    "id": "uni_this_is_287",
+    "dimension": "this_is",
+    "dimension_label": "This Is",
+    "chinese": "那是一隻貓。",
+    "jp": {
+      "sentence": "あれは猫です。",
+      "blocks": [
+        {
+          "text": "あれは",
+          "role": "主角"
+        },
+        {
+          "text": "猫です",
+          "role": "動作"
+        }
+      ],
+      "formula": "[あれは] + [猫です]"
+    },
+    "en": {
+      "sentence": "That is a cat.",
+      "blocks": [
+        {
+          "text": "That",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "a",
+          "role": "修飾"
+        },
+        {
+          "text": "cat",
+          "role": "對象"
+        }
+      ],
+      "formula": "S + is + O"
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「這」「那」不分遠近程度",
+      "jp_insight": "日文有これ/それ/あれ三段距離",
+      "en_insight": "英文用 this(近)/that(遠)，these/those(複數)"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 2
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "id": "uni_this_is_288",
+    "dimension": "this_is",
+    "dimension_label": "This Is",
+    "chinese": "這些是我的書。",
+    "jp": {
+      "sentence": "これらは私の本です。",
+      "blocks": [
+        {
+          "text": "これらは",
+          "role": "主角"
+        },
+        {
+          "text": "私の",
+          "role": "修飾"
+        },
+        {
+          "text": "本です",
+          "role": "動作"
+        }
+      ],
+      "formula": "[これらは] + [私の] + [本です]"
+    },
+    "en": {
+      "sentence": "These are my books.",
+      "blocks": [
+        {
+          "text": "These",
+          "role": "主角"
+        },
+        {
+          "text": "are",
+          "role": "動作"
+        },
+        {
+          "text": "my",
+          "role": "修飾"
+        },
+        {
+          "text": "books",
+          "role": "對象"
+        }
+      ],
+      "formula": "S + are + O"
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「這」「那」不分遠近程度",
+      "jp_insight": "日文有これ/それ/あれ三段距離",
+      "en_insight": "英文用 this(近)/that(遠)，these/those(複數)"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 2
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "id": "uni_this_is_289",
+    "dimension": "this_is",
+    "dimension_label": "This Is",
+    "chinese": "那是什麼？",
+    "jp": {
+      "sentence": "あれは何ですか。",
+      "blocks": [
+        {
+          "text": "あれは",
+          "role": "主角"
+        },
+        {
+          "text": "何ですか",
+          "role": "動作"
+        }
+      ],
+      "formula": "[あれは] + [何ですか]"
+    },
+    "en": {
+      "sentence": "What is that?",
+      "blocks": [
+        {
+          "text": "What",
+          "role": "對象"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "that",
+          "role": "主角"
+        }
+      ],
+      "formula": "What + is + S"
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「這」「那」不分遠近程度",
+      "jp_insight": "日文有これ/それ/あれ三段距離",
+      "en_insight": "英文用 this(近)/that(遠)，these/those(複數)"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 2
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "id": "uni_there_is_290",
+    "dimension": "there_is",
+    "dimension_label": "There Is",
+    "chinese": "桌上有三本書。",
+    "jp": {
+      "sentence": "机の上に本が三冊あります。",
+      "blocks": [
+        {
+          "text": "机の上に",
+          "role": "場景"
+        },
+        {
+          "text": "本が",
+          "role": "主角"
+        },
+        {
+          "text": "三冊",
+          "role": "修飾"
+        },
+        {
+          "text": "あります",
+          "role": "動作"
+        }
+      ],
+      "formula": "[机の上に] + [本が] + [三冊] + [あります]"
+    },
+    "en": {
+      "sentence": "There are three books on the desk.",
+      "blocks": [
+        {
+          "text": "There",
+          "role": "主角"
+        },
+        {
+          "text": "are",
+          "role": "動作"
+        },
+        {
+          "text": "three",
+          "role": "修飾"
+        },
+        {
+          "text": "books",
+          "role": "對象"
+        },
+        {
+          "text": "on",
+          "role": "連接"
+        },
+        {
+          "text": "the",
+          "role": "修飾"
+        },
+        {
+          "text": "desk",
+          "role": "場景"
+        }
+      ],
+      "formula": "There are + O + on + S"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「有」一個字通用",
+      "jp_insight": "日文：物品=あります 生物=います",
+      "en_insight": "英文：There is/are + 東西 + 地點"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 2,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 4,
+        "morphology_load": 1,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "id": "uni_there_is_291",
+    "dimension": "there_is",
+    "dimension_label": "There Is",
+    "chinese": "冰箱裡沒有牛奶。",
+    "jp": {
+      "sentence": "冷蔵庫に牛乳がありません。",
+      "blocks": [
+        {
+          "text": "冷蔵庫に",
+          "role": "場景"
+        },
+        {
+          "text": "牛乳が",
+          "role": "主角"
+        },
+        {
+          "text": "ありません",
+          "role": "動作"
+        }
+      ],
+      "formula": "[冷蔵庫に] + [牛乳が] + [ありません]"
+    },
+    "en": {
+      "sentence": "There is no milk in the fridge.",
+      "blocks": [
+        {
+          "text": "There",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "no",
+          "role": "語氣"
+        },
+        {
+          "text": "milk",
+          "role": "對象"
+        },
+        {
+          "text": "in",
+          "role": "連接"
+        },
+        {
+          "text": "the",
+          "role": "修飾"
+        },
+        {
+          "text": "fridge",
+          "role": "場景"
+        }
+      ],
+      "formula": "There is no + O + in + S"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「有」一個字通用",
+      "jp_insight": "日文：物品=あります 生物=います",
+      "en_insight": "英文：There is/are + 東西 + 地點"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 2,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 4,
+        "morphology_load": 1,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "id": "uni_relative_292",
+    "dimension": "relative",
+    "dimension_label": "Relative",
+    "chinese": "我認識那個會唱歌的女孩。",
+    "jp": {
+      "sentence": "歌を歌える女の子を知っています。",
+      "blocks": [
+        {
+          "text": "歌を",
+          "role": "對象"
+        },
+        {
+          "text": "歌える",
+          "role": "修飾"
+        },
+        {
+          "text": "女の子を",
+          "role": "對象"
+        },
+        {
+          "text": "知っています",
+          "role": "動作"
+        }
+      ],
+      "formula": "[歌を] + [歌える] + [女の子を] + [知っています]"
+    },
+    "en": {
+      "sentence": "I know the girl who can sing.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "know",
+          "role": "動作"
+        },
+        {
+          "text": "the",
+          "role": "修飾"
+        },
+        {
+          "text": "girl",
+          "role": "對象"
+        },
+        {
+          "text": "who",
+          "role": "連接"
+        },
+        {
+          "text": "can",
+          "role": "動作"
+        },
+        {
+          "text": "sing",
+          "role": "動作"
+        }
+      ],
+      "formula": "S + V + O + who + V"
+    },
+    "contrast": {
+      "cn_blindspot": "中文：「跑步的男孩」→ 用「的」就好",
+      "jp_insight": "日文跟中文一樣放前面：走っている男の子",
+      "en_insight": "英文：兩句用 who 膠水黏起來"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 2,
+        "new_concept": 2
+      },
+      "en": {
+        "transform_distance": 4,
+        "morphology_load": 2,
+        "new_concept": 4
+      }
+    }
+  },
+  {
+    "id": "uni_relative_293",
+    "dimension": "relative",
+    "dimension_label": "Relative",
+    "chinese": "這是我昨天買的書。",
+    "jp": {
+      "sentence": "これは私が昨日買った本です。",
+      "blocks": [
+        {
+          "text": "これは",
+          "role": "主角"
+        },
+        {
+          "text": "私が",
+          "role": "主角"
+        },
+        {
+          "text": "昨日",
+          "role": "時間"
+        },
+        {
+          "text": "買った",
+          "role": "修飾"
+        },
+        {
+          "text": "本です",
+          "role": "動作"
+        }
+      ],
+      "formula": "[これは] + [私が] + [昨日] + [買った] + [本です]"
+    },
+    "en": {
+      "sentence": "This is the book that I bought yesterday.",
+      "blocks": [
+        {
+          "text": "This",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "the",
+          "role": "修飾"
+        },
+        {
+          "text": "book",
+          "role": "對象"
+        },
+        {
+          "text": "that",
+          "role": "連接"
+        },
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "bought",
+          "role": "動作"
+        },
+        {
+          "text": "yesterday",
+          "role": "時間"
+        }
+      ],
+      "formula": "S + is + O + that + S + V + Time"
+    },
+    "contrast": {
+      "cn_blindspot": "中文：「跑步的男孩」→ 用「的」就好",
+      "jp_insight": "日文跟中文一樣放前面：走っている男の子",
+      "en_insight": "英文：兩句用 who 膠水黏起來"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 2,
+        "new_concept": 2
+      },
+      "en": {
+        "transform_distance": 4,
+        "morphology_load": 2,
+        "new_concept": 4
+      }
+    }
+  },
+  {
+    "id": "uni_relative_294",
+    "dimension": "relative",
+    "dimension_label": "Relative",
+    "chinese": "住在隔壁的人很親切。",
+    "jp": {
+      "sentence": "隣に住んでいる人は親切です。",
+      "blocks": [
+        {
+          "text": "隣に",
+          "role": "場景"
+        },
+        {
+          "text": "住んでいる",
+          "role": "修飾"
+        },
+        {
+          "text": "人は",
+          "role": "主角"
+        },
+        {
+          "text": "親切です",
+          "role": "動作"
+        }
+      ],
+      "formula": "[隣に] + [住んでいる] + [人は] + [親切です]"
+    },
+    "en": {
+      "sentence": "The person who lives next door is kind.",
+      "blocks": [
+        {
+          "text": "The",
+          "role": "修飾"
+        },
+        {
+          "text": "person",
+          "role": "主角"
+        },
+        {
+          "text": "who",
+          "role": "連接"
+        },
+        {
+          "text": "lives",
+          "role": "動作"
+        },
+        {
+          "text": "next door",
+          "role": "場景"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "kind",
+          "role": "修飾"
+        }
+      ],
+      "formula": "S + who + V + Place + is + Adj"
+    },
+    "contrast": {
+      "cn_blindspot": "中文：「跑步的男孩」→ 用「的」就好",
+      "jp_insight": "日文跟中文一樣放前面：走っている男の子",
+      "en_insight": "英文：兩句用 who 膠水黏起來"
+    },
+    "metrics": {
+      "jp": {
+        "transform_distance": 2,
+        "morphology_load": 2,
+        "new_concept": 2
+      },
+      "en": {
+        "transform_distance": 4,
+        "morphology_load": 2,
+        "new_concept": 4
+      }
+    }
   }
 ]
