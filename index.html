@@ -124,7 +124,7 @@ function rDT(){const ds={};R.forEach(r=>{ds[r.dim]=(ds[r.dim]||0)+1;});const s=O
 let h='<button class="tab a" onclick="fD(\'all\')">全部 '+R.length+'</button>';
 for(const[d,c]of s)h+='<button class="tab" onclick="fD(\''+d.replace(/'/g,"\\'")+'\')">' +d+' '+c+'</button>';
 document.getElementById('dt').innerHTML=h;}
-function fD(d){ci=0;F=d==='all'?R:R.filter(r=>r.dim===d);
+function fD(d){F=R;if(d==='all'){ci=0;}else{const idx=R.findIndex(r=>r.dim===d);ci=idx>=0?idx:0;}
 document.querySelectorAll('.tab').forEach(t=>{const td=t.textContent.replace(/\s*\d+$/,'').trim();t.classList.toggle('a',d==='all'?td.startsWith('全部'):td===d);});rn();}
 function sM(m){md=m;document.querySelectorAll('.lb').forEach(b=>b.className='lb');const bs=document.querySelectorAll('.lb');
 if(m==='jp')bs[0].classList.add('a-jp');else if(m==='en')bs[1].classList.add('a-en');else bs[2].classList.add('a-vs');rn();}
