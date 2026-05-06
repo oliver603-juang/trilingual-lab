@@ -96,11 +96,13 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .diy-result .diy-speak{cursor:pointer;font-size:1.1rem;opacity:.7;flex-shrink:0}.diy-result .diy-speak:hover{opacity:1}
 .diy-saved{margin-top:6px;border-top:1px solid rgba(255,255,255,.06);padding-top:8px}
 .diy-saved-h{font-size:.62rem;color:rgba(255,255,255,.3);margin-bottom:4px}
-.diy-item{display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.03)}
-.diy-item .diy-cn{font-size:.72rem;color:rgba(255,255,255,.4);min-width:60px}
-.diy-item .diy-tr{font-size:.78rem;font-weight:700;flex:1}
+.diy-item{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.diy-item .diy-speak{cursor:pointer;font-size:.95rem;opacity:.6;flex-shrink:0}.diy-item .diy-speak:hover{opacity:1}
+.diy-item .diy-body{flex:1;min-width:0}
+.diy-item .diy-tr{font-size:.82rem;font-weight:700;line-height:1.8}
 .diy-item .diy-tr.jp{color:#ffb4b4}.diy-item .diy-tr.en{color:#a8ece8}
-.diy-item .diy-speak{cursor:pointer;font-size:.85rem;opacity:.6}.diy-item .diy-speak:hover{opacity:1}
+.diy-item .diy-tr ruby rt{font-size:.48rem;font-weight:400;opacity:.55;color:#ffc0c0}
+.diy-item .diy-cn{font-size:.62rem;color:rgba(255,255,255,.3);margin-top:1px}
 .diy-loading{text-align:center;padding:12px;font-size:.75rem;color:rgba(255,215,0,.6)}
 .diy-loading::after{content:'';display:inline-block;width:12px;height:12px;border:2px solid rgba(255,215,0,.3);border-top-color:#ffd700;border-radius:50%;animation:spin .6s linear infinite;margin-left:6px;vertical-align:middle}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -197,7 +199,7 @@ const r=F[ci];
 const btn=document.getElementById('diy-go');if(btn){btn.disabled=true;btn.textContent='⏳';}
 const box=document.getElementById('diy-res');if(box)box.innerHTML='<div class="diy-loading">翻譯中（'+usage.count+'/'+DIY_DAILY_LIMIT+'）</div>';
 try{
-const prompt='請翻譯以下中文句子成'+lang+'。\n\n規則：\n1. 只輸出翻譯結果，不要加任何解釋、註解或額外文字\n2. 翻譯必須是完整的句子\n3. 如果是日文，在翻譯後面換行加上完整的平假名讀音（用括號包起來）\n例如：\n私は毎日学校に行きます。\n（わたしはまいにちがっこうにいきます。）\n\n中文：'+cn;
+const prompt='請將以下中文翻譯成'+lang+'。只回覆一行翻譯結果，不要加讀音、解釋或任何額外文字。翻譯必須是完整的句子。\n\n中文：'+cn;
 const resp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:300}})});
 if(!resp.ok){const err=await resp.json().catch(()=>({}));throw new Error(err.error?.message||'API 錯誤 '+resp.status);}
 const data=await resp.json();
@@ -224,8 +226,12 @@ h+='<div id="diy-res"></div>';
 if(saved.length>0){
 h+='<div class="diy-saved"><div class="diy-saved-h">'+langFlag+' 我的造句（'+saved.length+'）</div>';
 saved.slice().reverse().forEach((s,ri)=>{const idx=saved.length-1-ri;
-h+='<div class="diy-item"><div class="diy-cn">'+eH(s.cn)+'</div><div class="diy-tr '+lc+'">'+eH(s.tr)+'</div>';
-h+='<span class="diy-speak" onclick="sp(\''+s.tr.replace(/[()（）]/g,'').replace(/'/g,"\\'").replace(/\n/g,' ')+'\',\''+lc+'\')">🔊</span>';
+const main=s.tr.split('\n').filter(l=>l.trim())[0]||s.tr;
+const spText=main.replace(/[()（）]/g,'').replace(/'/g,"\\'");
+const disp=lc==='jp'?furi(eH(main)):eH(main);
+h+='<div class="diy-item">';
+h+='<span class="diy-speak" onclick="sp(\''+spText+'\',\''+lc+'\')">🔊</span>';
+h+='<div class="diy-body"><div class="diy-tr '+lc+'">'+disp+'</div><div class="diy-cn">'+eH(s.cn)+'</div></div>';
 h+='<button class="diy-btn del" onclick="delDIY(\''+dim.replace(/'/g,"\\'")+'\','+idx+')">✕</button></div>';});
 h+='</div>';}
 h+='</div>';return h;}
