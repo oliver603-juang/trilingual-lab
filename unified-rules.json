@@ -22419,5 +22419,2081 @@
         "new_concept": 1
       }
     }
+  },
+  {
+    "cn": "我們已經更新了軟體。",
+    "jp": {
+      "sentence": "私たちはソフトウェアを更新しました。",
+      "blocks": [
+        {
+          "text": "私たちは",
+          "role": "主角"
+        },
+        {
+          "text": "ソフトウェアを",
+          "role": "對象"
+        },
+        {
+          "text": "更新しました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[私たちは] + [ソフトウェアを] + [更新しました]"
+    },
+    "en": {
+      "sentence": "We have updated the software.",
+      "blocks": [
+        {
+          "text": "We",
+          "role": "主角"
+        },
+        {
+          "text": "have updated",
+          "role": "動作"
+        },
+        {
+          "text": "the software",
+          "role": "對象"
+        }
+      ],
+      "formula": "[We] + [have updated] + [the software]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「已經…了」表示完成",
+      "jp_insight": "日文過去式就包含了「已完成」的意思",
+      "en_insight": "英文用 have + 過去分詞表示「到現在為止已完成」"
+    },
+    "id": "uni_toeic_325",
+    "dimension": "present_perfect",
+    "dimension_label": "現在完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 6
+      }
+    }
+  },
+  {
+    "cn": "她在這家公司工作了五年。",
+    "jp": {
+      "sentence": "彼女はこの会社で五年間働いています。",
+      "blocks": [
+        {
+          "text": "彼女は",
+          "role": "主角"
+        },
+        {
+          "text": "この会社で",
+          "role": "場景"
+        },
+        {
+          "text": "五年間",
+          "role": "時間"
+        },
+        {
+          "text": "働いています",
+          "role": "動作"
+        }
+      ],
+      "formula": "[彼女は] + [この会社で] + [五年間] + [働いています]"
+    },
+    "en": {
+      "sentence": "She has worked at this company for five years.",
+      "blocks": [
+        {
+          "text": "She",
+          "role": "主角"
+        },
+        {
+          "text": "has worked",
+          "role": "動作"
+        },
+        {
+          "text": "at this company",
+          "role": "場景"
+        },
+        {
+          "text": "for five years",
+          "role": "時間"
+        }
+      ],
+      "formula": "[She] + [has worked] + [at this company] + [for five years]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文不分「工作了五年（還在做）」和「工作了五年（已離職）」",
+      "jp_insight": "日文用 ている 表示持續狀態",
+      "en_insight": "英文用 has worked + for 表示從過去到現在一直在做"
+    },
+    "id": "uni_toeic_326",
+    "dimension": "present_perfect",
+    "dimension_label": "現在完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 6
+      }
+    }
+  },
+  {
+    "cn": "自從二月以來，銷售額一直在增長。",
+    "jp": {
+      "sentence": "二月から売上が増え続けています。",
+      "blocks": [
+        {
+          "text": "二月から",
+          "role": "時間"
+        },
+        {
+          "text": "売上が",
+          "role": "主角"
+        },
+        {
+          "text": "増え続けています",
+          "role": "動作"
+        }
+      ],
+      "formula": "[二月から] + [売上が] + [増え続けています]"
+    },
+    "en": {
+      "sentence": "Sales have been increasing since February.",
+      "blocks": [
+        {
+          "text": "Sales",
+          "role": "主角"
+        },
+        {
+          "text": "have been increasing",
+          "role": "動作"
+        },
+        {
+          "text": "since February",
+          "role": "時間"
+        }
+      ],
+      "formula": "[Sales] + [have been increasing] + [since February]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「一直在」表示持續",
+      "jp_insight": "日文用 続けている 表示一直持續",
+      "en_insight": "英文用 have been + V-ing 表示「從那時起一直在進行」"
+    },
+    "id": "uni_toeic_327",
+    "dimension": "present_perfect",
+    "dimension_label": "現在完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 6
+      }
+    }
+  },
+  {
+    "cn": "你最近讀過這本報告嗎？",
+    "jp": {
+      "sentence": "最近この報告書を読みましたか？",
+      "blocks": [
+        {
+          "text": "最近",
+          "role": "時間"
+        },
+        {
+          "text": "この報告書を",
+          "role": "對象"
+        },
+        {
+          "text": "読みましたか",
+          "role": "動作"
+        }
+      ],
+      "formula": "[最近] + [この報告書を] + [読みましたか]"
+    },
+    "en": {
+      "sentence": "Have you read this report recently?",
+      "blocks": [
+        {
+          "text": "Have",
+          "role": "連接"
+        },
+        {
+          "text": "you",
+          "role": "主角"
+        },
+        {
+          "text": "read",
+          "role": "動作"
+        },
+        {
+          "text": "this report",
+          "role": "對象"
+        },
+        {
+          "text": "recently",
+          "role": "時間"
+        }
+      ],
+      "formula": "[Have] + [you] + [read] + [this report] + [recently]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「過」表示經驗",
+      "jp_insight": "日文用過去式 + か 就能問經驗",
+      "en_insight": "英文問經驗要把 Have 提到最前面"
+    },
+    "id": "uni_toeic_328",
+    "dimension": "present_perfect",
+    "dimension_label": "現在完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 6
+      }
+    }
+  },
+  {
+    "cn": "我已經寄出邀請函了。",
+    "jp": {
+      "sentence": "私は招待状をもう送りました。",
+      "blocks": [
+        {
+          "text": "私は",
+          "role": "主角"
+        },
+        {
+          "text": "招待状を",
+          "role": "對象"
+        },
+        {
+          "text": "もう",
+          "role": "修飾"
+        },
+        {
+          "text": "送りました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[私は] + [招待状を] + [もう] + [送りました]"
+    },
+    "en": {
+      "sentence": "I have already sent the invitation.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "have already sent",
+          "role": "動作"
+        },
+        {
+          "text": "the invitation",
+          "role": "對象"
+        }
+      ],
+      "formula": "[I] + [have already sent] + [the invitation]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「已經…了」",
+      "jp_insight": "日文用「もう」+ 過去式",
+      "en_insight": "英文用 have already + 過去分詞"
+    },
+    "id": "uni_toeic_329",
+    "dimension": "present_perfect",
+    "dimension_label": "現在完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 6
+      }
+    }
+  },
+  {
+    "cn": "我到達時，會議已經開始了。",
+    "jp": {
+      "sentence": "私が着いた時、会議はもう始まっていました。",
+      "blocks": [
+        {
+          "text": "私が",
+          "role": "主角"
+        },
+        {
+          "text": "着いた時",
+          "role": "時間"
+        },
+        {
+          "text": "会議は",
+          "role": "主角"
+        },
+        {
+          "text": "もう",
+          "role": "修飾"
+        },
+        {
+          "text": "始まっていました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[私が着いた時] + [会議は] + [もう始まっていました]"
+    },
+    "en": {
+      "sentence": "The meeting had already started when I arrived.",
+      "blocks": [
+        {
+          "text": "The meeting",
+          "role": "主角"
+        },
+        {
+          "text": "had already started",
+          "role": "動作"
+        },
+        {
+          "text": "when",
+          "role": "連接"
+        },
+        {
+          "text": "I arrived",
+          "role": "時間"
+        }
+      ],
+      "formula": "[The meeting] + [had already started] + [when I arrived]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「已經…了」不分是過去的過去還是普通過去",
+      "jp_insight": "日文用 ていました 表示那時已經是那個狀態",
+      "en_insight": "英文用 had + 過去分詞表示「過去的更過去」"
+    },
+    "id": "uni_toeic_330",
+    "dimension": "past_perfect",
+    "dimension_label": "過去完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 6,
+        "morphology_load": 6,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "因為沒有預約，他們不讓我進去。",
+    "jp": {
+      "sentence": "予約していなかったので、入れませんでした。",
+      "blocks": [
+        {
+          "text": "予約していなかったので",
+          "role": "修飾"
+        },
+        {
+          "text": "入れませんでした",
+          "role": "動作"
+        }
+      ],
+      "formula": "[予約していなかったので] + [入れませんでした]"
+    },
+    "en": {
+      "sentence": "Because I had not made a reservation, they didn't let me in.",
+      "blocks": [
+        {
+          "text": "Because",
+          "role": "連接"
+        },
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "had not made",
+          "role": "動作"
+        },
+        {
+          "text": "a reservation",
+          "role": "對象"
+        },
+        {
+          "text": "they didn't let me in",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Because] + [I had not made a reservation] + [they didn't let me in]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文不區分兩件事發生的先後",
+      "jp_insight": "日文用 ていなかった 表示當時還沒做",
+      "en_insight": "英文用 had not + V-pp 強調「在那之前就沒做」"
+    },
+    "id": "uni_toeic_331",
+    "dimension": "past_perfect",
+    "dimension_label": "過去完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 6,
+        "morphology_load": 6,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "在他退休之前，他已經訓練好了接班人。",
+    "jp": {
+      "sentence": "退職する前に、彼は後任者を育てていました。",
+      "blocks": [
+        {
+          "text": "退職する前に",
+          "role": "時間"
+        },
+        {
+          "text": "彼は",
+          "role": "主角"
+        },
+        {
+          "text": "後任者を",
+          "role": "對象"
+        },
+        {
+          "text": "育てていました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[退職する前に] + [彼は] + [後任者を] + [育てていました]"
+    },
+    "en": {
+      "sentence": "Before he retired, he had trained his successor.",
+      "blocks": [
+        {
+          "text": "Before",
+          "role": "連接"
+        },
+        {
+          "text": "he retired",
+          "role": "時間"
+        },
+        {
+          "text": "he",
+          "role": "主角"
+        },
+        {
+          "text": "had trained",
+          "role": "動作"
+        },
+        {
+          "text": "his successor",
+          "role": "對象"
+        }
+      ],
+      "formula": "[Before he retired] + [he] + [had trained] + [his successor]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「已經」就夠了",
+      "jp_insight": "日文用 ていました 表示退休前就已完成",
+      "en_insight": "英文用 had trained 表示退休之前就完成了訓練"
+    },
+    "id": "uni_toeic_332",
+    "dimension": "past_perfect",
+    "dimension_label": "過去完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 6,
+        "morphology_load": 6,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "她告訴我她已經交了報告。",
+    "jp": {
+      "sentence": "彼女は報告書をもう提出したと言いました。",
+      "blocks": [
+        {
+          "text": "彼女は",
+          "role": "主角"
+        },
+        {
+          "text": "報告書を",
+          "role": "對象"
+        },
+        {
+          "text": "もう提出したと",
+          "role": "動作"
+        },
+        {
+          "text": "言いました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[彼女は] + [報告書をもう提出したと] + [言いました]"
+    },
+    "en": {
+      "sentence": "She told me she had submitted the report.",
+      "blocks": [
+        {
+          "text": "She",
+          "role": "主角"
+        },
+        {
+          "text": "told me",
+          "role": "動作"
+        },
+        {
+          "text": "she",
+          "role": "主角"
+        },
+        {
+          "text": "had submitted",
+          "role": "動作"
+        },
+        {
+          "text": "the report",
+          "role": "對象"
+        }
+      ],
+      "formula": "[She told me] + [she had submitted the report]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文轉述時動詞不變形",
+      "jp_insight": "日文轉述用 と言いました",
+      "en_insight": "英文轉述過去的事要退一步用 had + V-pp"
+    },
+    "id": "uni_toeic_333",
+    "dimension": "past_perfect",
+    "dimension_label": "過去完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 6,
+        "morphology_load": 6,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "到截止日期時，我們將已經完成了專案。",
+    "jp": {
+      "sentence": "締め切りまでに、プロジェクトを完了しているでしょう。",
+      "blocks": [
+        {
+          "text": "締め切りまでに",
+          "role": "時間"
+        },
+        {
+          "text": "プロジェクトを",
+          "role": "對象"
+        },
+        {
+          "text": "完了しているでしょう",
+          "role": "動作"
+        }
+      ],
+      "formula": "[締め切りまでに] + [プロジェクトを] + [完了しているでしょう]"
+    },
+    "en": {
+      "sentence": "By the deadline, we will have completed the project.",
+      "blocks": [
+        {
+          "text": "By the deadline",
+          "role": "時間"
+        },
+        {
+          "text": "we",
+          "role": "主角"
+        },
+        {
+          "text": "will have completed",
+          "role": "動作"
+        },
+        {
+          "text": "the project",
+          "role": "對象"
+        }
+      ],
+      "formula": "[By the deadline] + [we] + [will have completed] + [the project]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「將已經」很不自然",
+      "jp_insight": "日文用 ているでしょう 表示到那時將已完成",
+      "en_insight": "英文用 will have + V-pp 表示未來某時間點之前完成"
+    },
+    "id": "uni_toeic_334",
+    "dimension": "past_perfect",
+    "dimension_label": "過去完成式",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 6,
+        "morphology_load": 6,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "因為想省錢，湯姆走路上班。",
+    "jp": {
+      "sentence": "お金を節約したいので、トムは歩いて通勤しています。",
+      "blocks": [
+        {
+          "text": "お金を",
+          "role": "對象"
+        },
+        {
+          "text": "節約したいので",
+          "role": "修飾"
+        },
+        {
+          "text": "トムは",
+          "role": "主角"
+        },
+        {
+          "text": "歩いて",
+          "role": "修飾"
+        },
+        {
+          "text": "通勤しています",
+          "role": "動作"
+        }
+      ],
+      "formula": "[お金を節約したいので] + [トムは] + [歩いて通勤しています]"
+    },
+    "en": {
+      "sentence": "Wanting to save money, Tom walks to work.",
+      "blocks": [
+        {
+          "text": "Wanting to save money",
+          "role": "修飾"
+        },
+        {
+          "text": "Tom",
+          "role": "主角"
+        },
+        {
+          "text": "walks",
+          "role": "動作"
+        },
+        {
+          "text": "to work",
+          "role": "目標"
+        }
+      ],
+      "formula": "[Wanting to save money] + [Tom] + [walks to work]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「因為想…」完整說",
+      "jp_insight": "日文用 たいので 完整接原因",
+      "en_insight": "英文用 V-ing 開頭把整個「因為」句縮短成修飾語"
+    },
+    "id": "uni_toeic_335",
+    "dimension": "participle",
+    "dimension_label": "分詞構句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 6,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "附在這封信裡的報告是機密的。",
+    "jp": {
+      "sentence": "このメールに添付された報告書は機密です。",
+      "blocks": [
+        {
+          "text": "このメールに",
+          "role": "場景"
+        },
+        {
+          "text": "添付された",
+          "role": "修飾"
+        },
+        {
+          "text": "報告書は",
+          "role": "主角"
+        },
+        {
+          "text": "機密です",
+          "role": "動作"
+        }
+      ],
+      "formula": "[このメールに添付された] + [報告書は] + [機密です]"
+    },
+    "en": {
+      "sentence": "The report attached to this email is confidential.",
+      "blocks": [
+        {
+          "text": "The report",
+          "role": "主角"
+        },
+        {
+          "text": "attached to this email",
+          "role": "修飾"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "confidential",
+          "role": "修飾"
+        }
+      ],
+      "formula": "[The report] + [attached to this email] + [is confidential]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文把修飾放前面「附在…的報告」",
+      "jp_insight": "日文也放前面 添付された報告書",
+      "en_insight": "英文 attached 放在名詞後面修飾，省略了 which is"
+    },
+    "id": "uni_toeic_336",
+    "dimension": "participle",
+    "dimension_label": "分詞構句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 6,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "寫完報告後，她離開了辦公室。",
+    "jp": {
+      "sentence": "報告書を書き終えてから、彼女はオフィスを出ました。",
+      "blocks": [
+        {
+          "text": "報告書を",
+          "role": "對象"
+        },
+        {
+          "text": "書き終えてから",
+          "role": "時間"
+        },
+        {
+          "text": "彼女は",
+          "role": "主角"
+        },
+        {
+          "text": "オフィスを",
+          "role": "場景"
+        },
+        {
+          "text": "出ました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[報告書を書き終えてから] + [彼女は] + [オフィスを出ました]"
+    },
+    "en": {
+      "sentence": "Having finished the report, she left the office.",
+      "blocks": [
+        {
+          "text": "Having finished the report",
+          "role": "時間"
+        },
+        {
+          "text": "she",
+          "role": "主角"
+        },
+        {
+          "text": "left",
+          "role": "動作"
+        },
+        {
+          "text": "the office",
+          "role": "場景"
+        }
+      ],
+      "formula": "[Having finished the report] + [she] + [left the office]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「…後」完整表達",
+      "jp_insight": "日文用 てから 表示做完之後",
+      "en_insight": "英文用 Having + V-pp 開頭表示「先做完這件事之後」"
+    },
+    "id": "uni_toeic_337",
+    "dimension": "participle",
+    "dimension_label": "分詞構句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 6,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "如果正確使用的話，這個工具可以省很多時間。",
+    "jp": {
+      "sentence": "正しく使えば、このツールは時間を大幅に節約できます。",
+      "blocks": [
+        {
+          "text": "正しく",
+          "role": "修飾"
+        },
+        {
+          "text": "使えば",
+          "role": "修飾"
+        },
+        {
+          "text": "このツールは",
+          "role": "主角"
+        },
+        {
+          "text": "時間を",
+          "role": "對象"
+        },
+        {
+          "text": "大幅に",
+          "role": "修飾"
+        },
+        {
+          "text": "節約できます",
+          "role": "動作"
+        }
+      ],
+      "formula": "[正しく使えば] + [このツールは] + [時間を大幅に節約できます]"
+    },
+    "en": {
+      "sentence": "Used correctly, this tool can save a lot of time.",
+      "blocks": [
+        {
+          "text": "Used correctly",
+          "role": "修飾"
+        },
+        {
+          "text": "this tool",
+          "role": "主角"
+        },
+        {
+          "text": "can save",
+          "role": "動作"
+        },
+        {
+          "text": "a lot of time",
+          "role": "對象"
+        }
+      ],
+      "formula": "[Used correctly] + [this tool] + [can save] + [a lot of time]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「如果…的話」完整說",
+      "jp_insight": "日文用 ば 條件句",
+      "en_insight": "英文用 V-pp 開頭把「如果被…」縮成兩個字"
+    },
+    "id": "uni_toeic_338",
+    "dimension": "participle",
+    "dimension_label": "分詞構句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 6,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "預計下週會下雨，活動改到室內。",
+    "jp": {
+      "sentence": "来週は雨の予報なので、イベントは屋内に変更されました。",
+      "blocks": [
+        {
+          "text": "来週は",
+          "role": "時間"
+        },
+        {
+          "text": "雨の予報なので",
+          "role": "修飾"
+        },
+        {
+          "text": "イベントは",
+          "role": "主角"
+        },
+        {
+          "text": "屋内に",
+          "role": "目標"
+        },
+        {
+          "text": "変更されました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[来週は雨の予報なので] + [イベントは] + [屋内に変更されました]"
+    },
+    "en": {
+      "sentence": "Rain being expected next week, the event was moved indoors.",
+      "blocks": [
+        {
+          "text": "Rain being expected",
+          "role": "修飾"
+        },
+        {
+          "text": "next week",
+          "role": "時間"
+        },
+        {
+          "text": "the event",
+          "role": "主角"
+        },
+        {
+          "text": "was moved",
+          "role": "動作"
+        },
+        {
+          "text": "indoors",
+          "role": "目標"
+        }
+      ],
+      "formula": "[Rain being expected next week] + [the event] + [was moved indoors]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用逗號並列兩件事",
+      "jp_insight": "日文用 なので 接原因",
+      "en_insight": "英文用獨立分詞構句，主詞不同時要寫出來"
+    },
+    "id": "uni_toeic_339",
+    "dimension": "participle",
+    "dimension_label": "分詞構句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 3
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 6,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "雖然下雨了，活動還是很成功。",
+    "jp": {
+      "sentence": "雨が降ったにもかかわらず、イベントは成功しました。",
+      "blocks": [
+        {
+          "text": "雨が",
+          "role": "主角"
+        },
+        {
+          "text": "降った",
+          "role": "動作"
+        },
+        {
+          "text": "にもかかわらず",
+          "role": "連接"
+        },
+        {
+          "text": "イベントは",
+          "role": "主角"
+        },
+        {
+          "text": "成功しました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[雨が降ったにもかかわらず] + [イベントは成功しました]"
+    },
+    "en": {
+      "sentence": "Although it rained, the event was successful.",
+      "blocks": [
+        {
+          "text": "Although",
+          "role": "連接"
+        },
+        {
+          "text": "it rained",
+          "role": "動作"
+        },
+        {
+          "text": "the event",
+          "role": "主角"
+        },
+        {
+          "text": "was successful",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Although it rained] + [the event was successful]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「雖然」後面接句子或名詞都可以",
+      "jp_insight": "日文 にもかかわらず 後面接句子",
+      "en_insight": "Although 是火車頭，後面一定要拖一整節車廂（主詞+動詞）"
+    },
+    "id": "uni_toeic_340",
+    "dimension": "conj_vs_prep",
+    "dimension_label": "連接詞 vs 介係詞",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "儘管下雨，活動還是很成功。",
+    "jp": {
+      "sentence": "雨にもかかわらず、イベントは成功しました。",
+      "blocks": [
+        {
+          "text": "雨にもかかわらず",
+          "role": "連接"
+        },
+        {
+          "text": "イベントは",
+          "role": "主角"
+        },
+        {
+          "text": "成功しました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[雨にもかかわらず] + [イベントは成功しました]"
+    },
+    "en": {
+      "sentence": "Despite the rain, the event was successful.",
+      "blocks": [
+        {
+          "text": "Despite",
+          "role": "連接"
+        },
+        {
+          "text": "the rain",
+          "role": "對象"
+        },
+        {
+          "text": "the event",
+          "role": "主角"
+        },
+        {
+          "text": "was successful",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Despite the rain] + [the event was successful]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「儘管」跟「雖然」用法一樣",
+      "jp_insight": "日文 にもかかわらず 接名詞或句子都行",
+      "en_insight": "Despite 是背包客，後面只能背一個名詞，不能接句子！"
+    },
+    "id": "uni_toeic_341",
+    "dimension": "conj_vs_prep",
+    "dimension_label": "連接詞 vs 介係詞",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "因為暴風雨，航班延誤了。",
+    "jp": {
+      "sentence": "暴風雨のため、フライトが遅延しました。",
+      "blocks": [
+        {
+          "text": "暴風雨のため",
+          "role": "修飾"
+        },
+        {
+          "text": "フライトが",
+          "role": "主角"
+        },
+        {
+          "text": "遅延しました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[暴風雨のため] + [フライトが遅延しました]"
+    },
+    "en": {
+      "sentence": "Due to the storm, the flight was delayed.",
+      "blocks": [
+        {
+          "text": "Due to",
+          "role": "連接"
+        },
+        {
+          "text": "the storm",
+          "role": "對象"
+        },
+        {
+          "text": "the flight",
+          "role": "主角"
+        },
+        {
+          "text": "was delayed",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Due to the storm] + [the flight was delayed]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「因為」後面接什麼都行",
+      "jp_insight": "日文 のため 接名詞",
+      "en_insight": "Due to 後面只能接名詞，不能接句子（要接句子用 Because）"
+    },
+    "id": "uni_toeic_342",
+    "dimension": "conj_vs_prep",
+    "dimension_label": "連接詞 vs 介係詞",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "因為暴風雨來了，航班延誤了。",
+    "jp": {
+      "sentence": "暴風雨が来たので、フライトが遅延しました。",
+      "blocks": [
+        {
+          "text": "暴風雨が来たので",
+          "role": "修飾"
+        },
+        {
+          "text": "フライトが",
+          "role": "主角"
+        },
+        {
+          "text": "遅延しました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[暴風雨が来たので] + [フライトが遅延しました]"
+    },
+    "en": {
+      "sentence": "Because the storm hit, the flight was delayed.",
+      "blocks": [
+        {
+          "text": "Because",
+          "role": "連接"
+        },
+        {
+          "text": "the storm hit",
+          "role": "動作"
+        },
+        {
+          "text": "the flight",
+          "role": "主角"
+        },
+        {
+          "text": "was delayed",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Because the storm hit] + [the flight was delayed]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「因為」不分名詞版和句子版",
+      "jp_insight": "日文 ので 接句子",
+      "en_insight": "Because 後面必須接完整句子（主詞+動詞），不能只接名詞"
+    },
+    "id": "uni_toeic_343",
+    "dimension": "conj_vs_prep",
+    "dimension_label": "連接詞 vs 介係詞",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "除了價格以外，品質也很重要。",
+    "jp": {
+      "sentence": "価格に加えて、品質も重要です。",
+      "blocks": [
+        {
+          "text": "価格に加えて",
+          "role": "連接"
+        },
+        {
+          "text": "品質も",
+          "role": "主角"
+        },
+        {
+          "text": "重要です",
+          "role": "動作"
+        }
+      ],
+      "formula": "[価格に加えて] + [品質も重要です]"
+    },
+    "en": {
+      "sentence": "In addition to the price, quality is also important.",
+      "blocks": [
+        {
+          "text": "In addition to",
+          "role": "連接"
+        },
+        {
+          "text": "the price",
+          "role": "對象"
+        },
+        {
+          "text": "quality",
+          "role": "主角"
+        },
+        {
+          "text": "is also important",
+          "role": "動作"
+        }
+      ],
+      "formula": "[In addition to the price] + [quality is also important]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「除了…以外」很靈活",
+      "jp_insight": "日文用 に加えて",
+      "en_insight": "In addition to 後面接名詞；要接句子用 Moreover / Furthermore"
+    },
+    "id": "uni_toeic_344",
+    "dimension": "conj_vs_prep",
+    "dimension_label": "連接詞 vs 介係詞",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 3,
+        "morphology_load": 3,
+        "new_concept": 4
+      },
+      "en": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 7
+      }
+    }
+  },
+  {
+    "cn": "我從來沒有見過這麼好的產品。",
+    "jp": {
+      "sentence": "こんなに良い製品は見たことがありません。",
+      "blocks": [
+        {
+          "text": "こんなに良い",
+          "role": "修飾"
+        },
+        {
+          "text": "製品は",
+          "role": "對象"
+        },
+        {
+          "text": "見たことがありません",
+          "role": "動作"
+        }
+      ],
+      "formula": "[こんなに良い製品は] + [見たことがありません]"
+    },
+    "en": {
+      "sentence": "Never have I seen such a great product.",
+      "blocks": [
+        {
+          "text": "Never",
+          "role": "修飾"
+        },
+        {
+          "text": "have I",
+          "role": "主角"
+        },
+        {
+          "text": "seen",
+          "role": "動作"
+        },
+        {
+          "text": "such a great product",
+          "role": "對象"
+        }
+      ],
+      "formula": "[Never] + [have I] + [seen] + [such a great product]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「從來沒有」放在動詞前面，語序不變",
+      "jp_insight": "日文用 ことがありません 在句尾否定",
+      "en_insight": "Never 搬到句首時，主詞和助動詞要倒裝：I have → have I"
+    },
+    "id": "uni_toeic_345",
+    "dimension": "inversion",
+    "dimension_label": "倒裝句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 8,
+        "morphology_load": 7,
+        "new_concept": 9
+      }
+    }
+  },
+  {
+    "cn": "他不僅完成了報告，還做了簡報。",
+    "jp": {
+      "sentence": "彼は報告書を完成させただけでなく、プレゼンもしました。",
+      "blocks": [
+        {
+          "text": "彼は",
+          "role": "主角"
+        },
+        {
+          "text": "報告書を",
+          "role": "對象"
+        },
+        {
+          "text": "完成させただけでなく",
+          "role": "動作"
+        },
+        {
+          "text": "プレゼンも",
+          "role": "對象"
+        },
+        {
+          "text": "しました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[彼は] + [報告書を完成させただけでなく] + [プレゼンもしました]"
+    },
+    "en": {
+      "sentence": "Not only did he finish the report, but he also presented it.",
+      "blocks": [
+        {
+          "text": "Not only",
+          "role": "連接"
+        },
+        {
+          "text": "did he finish",
+          "role": "動作"
+        },
+        {
+          "text": "the report",
+          "role": "對象"
+        },
+        {
+          "text": "but he also",
+          "role": "連接"
+        },
+        {
+          "text": "presented it",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Not only did he finish the report] + [but he also presented it]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「不僅…還…」語序正常",
+      "jp_insight": "日文用 だけでなく…も",
+      "en_insight": "Not only 在句首時要倒裝：he did → did he"
+    },
+    "id": "uni_toeic_346",
+    "dimension": "inversion",
+    "dimension_label": "倒裝句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 8,
+        "morphology_load": 7,
+        "new_concept": 9
+      }
+    }
+  },
+  {
+    "cn": "只有完成培訓後，員工才能操作機器。",
+    "jp": {
+      "sentence": "研修を終えて初めて、従業員は機械を操作できます。",
+      "blocks": [
+        {
+          "text": "研修を終えて初めて",
+          "role": "時間"
+        },
+        {
+          "text": "従業員は",
+          "role": "主角"
+        },
+        {
+          "text": "機械を",
+          "role": "對象"
+        },
+        {
+          "text": "操作できます",
+          "role": "動作"
+        }
+      ],
+      "formula": "[研修を終えて初めて] + [従業員は] + [機械を操作できます]"
+    },
+    "en": {
+      "sentence": "Only after completing the training can employees operate the machines.",
+      "blocks": [
+        {
+          "text": "Only after",
+          "role": "連接"
+        },
+        {
+          "text": "completing the training",
+          "role": "時間"
+        },
+        {
+          "text": "can employees",
+          "role": "主角"
+        },
+        {
+          "text": "operate",
+          "role": "動作"
+        },
+        {
+          "text": "the machines",
+          "role": "對象"
+        }
+      ],
+      "formula": "[Only after completing the training] + [can employees] + [operate the machines]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「只有…才能」語序正常",
+      "jp_insight": "日文用 初めて 強調「這才第一次能…」",
+      "en_insight": "Only 開頭的句子後面要倒裝：employees can → can employees"
+    },
+    "id": "uni_toeic_347",
+    "dimension": "inversion",
+    "dimension_label": "倒裝句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 8,
+        "morphology_load": 7,
+        "new_concept": 9
+      }
+    }
+  },
+  {
+    "cn": "如果我早知道截止日期，我就會做得更快。",
+    "jp": {
+      "sentence": "締め切りを知っていたら、もっと速くやっていたのに。",
+      "blocks": [
+        {
+          "text": "締め切りを",
+          "role": "對象"
+        },
+        {
+          "text": "知っていたら",
+          "role": "修飾"
+        },
+        {
+          "text": "もっと速く",
+          "role": "修飾"
+        },
+        {
+          "text": "やっていたのに",
+          "role": "動作"
+        }
+      ],
+      "formula": "[締め切りを知っていたら] + [もっと速くやっていたのに]"
+    },
+    "en": {
+      "sentence": "Had I known the deadline, I would have worked faster.",
+      "blocks": [
+        {
+          "text": "Had I known",
+          "role": "修飾"
+        },
+        {
+          "text": "the deadline",
+          "role": "對象"
+        },
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "would have worked",
+          "role": "動作"
+        },
+        {
+          "text": "faster",
+          "role": "修飾"
+        }
+      ],
+      "formula": "[Had I known the deadline] + [I would have worked faster]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「如果早知道」語序正常",
+      "jp_insight": "日文用 たら 假設",
+      "en_insight": "省略 If 時要倒裝：If I had → Had I（TOEIC 殺手題！）"
+    },
+    "id": "uni_toeic_348",
+    "dimension": "inversion",
+    "dimension_label": "倒裝句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 8,
+        "morphology_load": 7,
+        "new_concept": 9
+      }
+    }
+  },
+  {
+    "cn": "我一到辦公室就會通知你。",
+    "jp": {
+      "sentence": "オフィスに着いたら、すぐにお知らせします。",
+      "blocks": [
+        {
+          "text": "オフィスに",
+          "role": "場景"
+        },
+        {
+          "text": "着いたら",
+          "role": "時間"
+        },
+        {
+          "text": "すぐに",
+          "role": "修飾"
+        },
+        {
+          "text": "お知らせします",
+          "role": "動作"
+        }
+      ],
+      "formula": "[オフィスに着いたら] + [すぐにお知らせします]"
+    },
+    "en": {
+      "sentence": "No sooner will I arrive at the office than I will notify you.",
+      "blocks": [
+        {
+          "text": "No sooner",
+          "role": "連接"
+        },
+        {
+          "text": "will I arrive",
+          "role": "動作"
+        },
+        {
+          "text": "at the office",
+          "role": "場景"
+        },
+        {
+          "text": "than I will notify you",
+          "role": "動作"
+        }
+      ],
+      "formula": "[No sooner will I arrive] + [than I will notify you]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「一…就…」語序正常",
+      "jp_insight": "日文用 たら すぐに",
+      "en_insight": "No sooner 在句首要倒裝，搭配 than 使用"
+    },
+    "id": "uni_toeic_349",
+    "dimension": "inversion",
+    "dimension_label": "倒裝句",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 4,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 8,
+        "morphology_load": 7,
+        "new_concept": 9
+      }
+    }
+  },
+  {
+    "cn": "如果我是經理，我會雇用他。",
+    "jp": {
+      "sentence": "もし私がマネージャーなら、彼を雇うでしょう。",
+      "blocks": [
+        {
+          "text": "もし",
+          "role": "連接"
+        },
+        {
+          "text": "私が",
+          "role": "主角"
+        },
+        {
+          "text": "マネージャーなら",
+          "role": "修飾"
+        },
+        {
+          "text": "彼を",
+          "role": "對象"
+        },
+        {
+          "text": "雇うでしょう",
+          "role": "動作"
+        }
+      ],
+      "formula": "[もし私がマネージャーなら] + [彼を雇うでしょう]"
+    },
+    "en": {
+      "sentence": "If I were the manager, I would hire him.",
+      "blocks": [
+        {
+          "text": "If",
+          "role": "連接"
+        },
+        {
+          "text": "I were",
+          "role": "主角"
+        },
+        {
+          "text": "the manager",
+          "role": "修飾"
+        },
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "would hire",
+          "role": "動作"
+        },
+        {
+          "text": "him",
+          "role": "對象"
+        }
+      ],
+      "formula": "[If I were the manager] + [I would hire him]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「如果我是」不改動詞",
+      "jp_insight": "日文用 なら 表示假設",
+      "en_insight": "與現在相反的假設用 were（不是 was！），結果用 would"
+    },
+    "id": "uni_toeic_350",
+    "dimension": "subjunctive",
+    "dimension_label": "假設語氣",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 7,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "如果她有更多時間，她會去旅行。",
+    "jp": {
+      "sentence": "もし彼女にもっと時間があれば、旅行に行くでしょう。",
+      "blocks": [
+        {
+          "text": "もし",
+          "role": "連接"
+        },
+        {
+          "text": "彼女にもっと時間があれば",
+          "role": "修飾"
+        },
+        {
+          "text": "旅行に",
+          "role": "目標"
+        },
+        {
+          "text": "行くでしょう",
+          "role": "動作"
+        }
+      ],
+      "formula": "[もし彼女にもっと時間があれば] + [旅行に行くでしょう]"
+    },
+    "en": {
+      "sentence": "If she had more time, she would travel.",
+      "blocks": [
+        {
+          "text": "If",
+          "role": "連接"
+        },
+        {
+          "text": "she had",
+          "role": "主角"
+        },
+        {
+          "text": "more time",
+          "role": "對象"
+        },
+        {
+          "text": "she",
+          "role": "主角"
+        },
+        {
+          "text": "would travel",
+          "role": "動作"
+        }
+      ],
+      "formula": "[If she had more time] + [she would travel]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「如果有」不改動詞形態",
+      "jp_insight": "日文用 あれば（ば形）假設",
+      "en_insight": "與現在相反用過去式 had（不是 has），結果用 would"
+    },
+    "id": "uni_toeic_351",
+    "dimension": "subjunctive",
+    "dimension_label": "假設語氣",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 7,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "如果我昨天有讀書，我就會通過考試了。",
+    "jp": {
+      "sentence": "もし昨日勉強していたら、試験に合格していたでしょう。",
+      "blocks": [
+        {
+          "text": "もし",
+          "role": "連接"
+        },
+        {
+          "text": "昨日",
+          "role": "時間"
+        },
+        {
+          "text": "勉強していたら",
+          "role": "修飾"
+        },
+        {
+          "text": "試験に",
+          "role": "目標"
+        },
+        {
+          "text": "合格していたでしょう",
+          "role": "動作"
+        }
+      ],
+      "formula": "[もし昨日勉強していたら] + [試験に合格していたでしょう]"
+    },
+    "en": {
+      "sentence": "If I had studied yesterday, I would have passed the exam.",
+      "blocks": [
+        {
+          "text": "If",
+          "role": "連接"
+        },
+        {
+          "text": "I had studied",
+          "role": "動作"
+        },
+        {
+          "text": "yesterday",
+          "role": "時間"
+        },
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "would have passed",
+          "role": "動作"
+        },
+        {
+          "text": "the exam",
+          "role": "對象"
+        }
+      ],
+      "formula": "[If I had studied yesterday] + [I would have passed the exam]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「如果有…就會…了」不改動詞",
+      "jp_insight": "日文用 ていたら…ていたでしょう",
+      "en_insight": "與過去相反用 had + V-pp，結果用 would have + V-pp"
+    },
+    "id": "uni_toeic_352",
+    "dimension": "subjunctive",
+    "dimension_label": "假設語氣",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 7,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "我希望我能說流利的英文。",
+    "jp": {
+      "sentence": "英語が流暢に話せたらいいのに。",
+      "blocks": [
+        {
+          "text": "英語が",
+          "role": "對象"
+        },
+        {
+          "text": "流暢に",
+          "role": "修飾"
+        },
+        {
+          "text": "話せたらいいのに",
+          "role": "動作"
+        }
+      ],
+      "formula": "[英語が] + [流暢に話せたらいいのに]"
+    },
+    "en": {
+      "sentence": "I wish I could speak English fluently.",
+      "blocks": [
+        {
+          "text": "I wish",
+          "role": "動作"
+        },
+        {
+          "text": "I could speak",
+          "role": "動作"
+        },
+        {
+          "text": "English",
+          "role": "對象"
+        },
+        {
+          "text": "fluently",
+          "role": "修飾"
+        }
+      ],
+      "formula": "[I wish] + [I could speak English fluently]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「希望能」不改動詞",
+      "jp_insight": "日文用 たらいいのに 表示遺憾的願望",
+      "en_insight": "I wish 後面用過去式 could（不是 can），表示現在做不到的願望"
+    },
+    "id": "uni_toeic_353",
+    "dimension": "subjunctive",
+    "dimension_label": "假設語氣",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 7,
+        "new_concept": 8
+      }
+    }
+  },
+  {
+    "cn": "經理建議我們提早準備。",
+    "jp": {
+      "sentence": "マネージャーは早めに準備するよう提案しました。",
+      "blocks": [
+        {
+          "text": "マネージャーは",
+          "role": "主角"
+        },
+        {
+          "text": "早めに",
+          "role": "修飾"
+        },
+        {
+          "text": "準備するよう",
+          "role": "動作"
+        },
+        {
+          "text": "提案しました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[マネージャーは] + [早めに準備するよう提案しました]"
+    },
+    "en": {
+      "sentence": "The manager suggested that we prepare early.",
+      "blocks": [
+        {
+          "text": "The manager",
+          "role": "主角"
+        },
+        {
+          "text": "suggested",
+          "role": "動作"
+        },
+        {
+          "text": "that",
+          "role": "連接"
+        },
+        {
+          "text": "we prepare",
+          "role": "動作"
+        },
+        {
+          "text": "early",
+          "role": "時間"
+        }
+      ],
+      "formula": "[The manager suggested] + [that we prepare early]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「建議」後面動詞不變形",
+      "jp_insight": "日文用 するよう提案する",
+      "en_insight": "suggest/recommend 後面用原形動詞 prepare（不是 prepares），這是隱藏的假設語氣！"
+    },
+    "id": "uni_toeic_354",
+    "dimension": "subjunctive",
+    "dimension_label": "假設語氣",
+    "jlpt": "TOEIC",
+    "metrics": {
+      "jp": {
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 7,
+        "morphology_load": 7,
+        "new_concept": 8
+      }
+    }
   }
 ]
