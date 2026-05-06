@@ -289,12 +289,12 @@ function rDT(){const ds={};R.forEach(r=>{ds[r.dim]=(ds[r.dim]||0)+1;});const s=O
 let h='<button class="tab a" onclick="fD(\'all\')">全部 '+R.length+'</button>';
 for(const[d,c]of s)h+='<button class="tab" onclick="fD(\''+d.replace(/'/g,"\\'")+'\')">' +d+' '+c+'</button>';
 document.getElementById('dt').innerHTML=h;}
-function fD(d){F=R;if(d==='all'){ci=0;}else{const idx=R.findIndex(r=>r.dim===d);ci=idx>=0?idx:0;}
+function fD(d){if(edM)svEd();F=R;if(d==='all'){ci=0;}else{const idx=R.findIndex(r=>r.dim===d);ci=idx>=0?idx:0;}
 document.querySelectorAll('.tab').forEach(t=>{const td=t.textContent.replace(/\s*\d+$/,'').trim();t.classList.toggle('a',d==='all'?td.startsWith('全部'):td===d);});rn();}
-function sM(m){md=m;document.querySelectorAll('.lb').forEach(b=>b.className='lb');const bs=document.querySelectorAll('.lb');
+function sM(m){if(edM)svEd();md=m;document.querySelectorAll('.lb').forEach(b=>b.className='lb');const bs=document.querySelectorAll('.lb');
 if(m==='jp')bs[0].classList.add('a-jp');else if(m==='en')bs[1].classList.add('a-en');else bs[2].classList.add('a-vs');rn();}
-function nv(d){ci=Math.max(0,Math.min(F.length-1,ci+d));rn();}
-function gT(i){ci=i;rn();}
+function nv(d){if(edM)svEd();ci=Math.max(0,Math.min(F.length-1,ci+d));rn();}
+function gT(i){if(edM)svEd();ci=i;rn();}
 function eH(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function rn(){if(!F.length){document.getElementById('app').innerHTML='<div class="ld-c"><div class="ld-t">沒有符合的句子</div></div>';return;}
 const r=F[ci];mS(r.id);uP();const hk=!!KD[r.dim]||(md==='en'&&!!EK[r.dim]);let bh='';
