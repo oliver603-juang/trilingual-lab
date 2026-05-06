@@ -2772,9 +2772,9 @@
       "formula": "[I] + [gave] + [a] + [book] + [to] + [my] + [friend]"
     },
     "contrast": {
-      "cn_blindspot": "中文「給」一個字通吃",
-      "jp_insight": "日文：送出去=あげる 收進來=くれる",
-      "en_insight": "英文不需要這個文法概念"
+      "cn_blindspot": "中文「給」不分方向，我給你、你給我都一樣",
+      "jp_insight": "あげる＝向外射出的箭頭 ➡️ 主角是「送的人」",
+      "en_insight": "英文也不分方向，永遠用 give"
     },
     "metrics": {
       "jp": {
@@ -2847,9 +2847,9 @@
       "formula": "[My] + [friend] + [gave] + [me] + [a] + [present]"
     },
     "contrast": {
-      "cn_blindspot": "中文「給」一個字通吃",
-      "jp_insight": "日文：送出去=あげる 收進來=くれる",
-      "en_insight": "英文不需要這個文法概念"
+      "cn_blindspot": "中文「給我」主角還是對方，不用換動詞",
+      "jp_insight": "くれる＝向內射進來的箭頭 ⬅️ 主角必須是「送的人」，不能是我！",
+      "en_insight": "英文也用 give，只是變成 gave me"
     },
     "metrics": {
       "jp": {
@@ -3139,9 +3139,9 @@
       "formula": "[I] + [received] + [a book] + [from my friend]"
     },
     "contrast": {
-      "cn_blindspot": "中文用「收到」就好",
-      "jp_insight": "もらう＝我主動去收，感謝對方！跟くれる方向一樣，但主角不同",
-      "en_insight": "英文用 received from，不分主動被動收"
+      "cn_blindspot": "中文「收到」不分主動被動",
+      "jp_insight": "もらう＝我伸手去接 🤲 主角是「收的人（我）」。跟 くれる 方向一樣，但主角不同！",
+      "en_insight": "英文用 received from，不用區分是主動收還是被動給"
     }
   },
   {
@@ -24549,6 +24549,468 @@
         "morphology_load": 7,
         "new_concept": 8
       }
+    }
+  },
+  {
+    "id": "uni_giving_356",
+    "dimension": "giving",
+    "dimension_label": "禮物流向",
+    "chinese": "她幫了我的忙。（洩漏：我跟她很親近）",
+    "jp": {
+      "sentence": "彼女が手伝ってくれました。",
+      "blocks": [
+        {
+          "text": "彼女が",
+          "role": "主角"
+        },
+        {
+          "text": "手伝って",
+          "role": "動作"
+        },
+        {
+          "text": "くれました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[彼女が] + [手伝ってくれました]"
+    },
+    "en": {
+      "sentence": "She helped me.",
+      "blocks": [
+        {
+          "text": "She",
+          "role": "主角"
+        },
+        {
+          "text": "helped",
+          "role": "動作"
+        },
+        {
+          "text": "me",
+          "role": "對象"
+        }
+      ],
+      "formula": "[She] + [helped] + [me]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「她幫了我」聽不出親疏關係",
+      "jp_insight": "🔍 偵探級洩漏：くれる 自帶「我很感謝」的心情，暴露了說話者跟她很親近！如果嫌疑犯對「不認識的人」用了くれた，偵探就知道他在說謊",
+      "en_insight": "英文 helped me 完全中性，聽不出任何親疏關係"
+    }
+  },
+  {
+    "id": "uni_continuous_357",
+    "dimension": "continuous",
+    "dimension_label": "進行式/持續態",
+    "chinese": "門是鎖著的。（洩漏：你怎麼知道？）",
+    "jp": {
+      "sentence": "鍵がかかっていました。",
+      "blocks": [
+        {
+          "text": "鍵が",
+          "role": "主角"
+        },
+        {
+          "text": "かかっていました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[鍵が] + [かかっていました]"
+    },
+    "en": {
+      "sentence": "The door was locked.",
+      "blocks": [
+        {
+          "text": "The door",
+          "role": "主角"
+        },
+        {
+          "text": "was locked",
+          "role": "動作"
+        }
+      ],
+      "formula": "[The door] + [was locked]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「門鎖著」不分現在狀態和過去狀態",
+      "jp_insight": "🔍 偵探級洩漏：ていました（過去狀態）暴露了說話者當時在場！如果警方沒說過門鎖的事，嫌疑犯卻用了ていた → 你怎麼知道門當時是鎖著的？",
+      "en_insight": "🔍 偵探級洩漏：was locked（過去式）也會洩漏！如果被害人還沒確認死亡，嫌疑犯卻說 She was kind → 你怎麼知道她已經死了？"
+    }
+  },
+  {
+    "id": "uni_keigo_358",
+    "dimension": "keigo",
+    "dimension_label": "敬語入門",
+    "chinese": "那個人昨天來了。（洩漏：你跟他什麼關係？）",
+    "jp": {
+      "sentence": "あの人、昨日来たよ。",
+      "blocks": [
+        {
+          "text": "あの人",
+          "role": "主角"
+        },
+        {
+          "text": "昨日",
+          "role": "時間"
+        },
+        {
+          "text": "来たよ",
+          "role": "動作"
+        }
+      ],
+      "formula": "[あの人] + [昨日] + [来たよ]"
+    },
+    "en": {
+      "sentence": "That person came yesterday.",
+      "blocks": [
+        {
+          "text": "That person",
+          "role": "主角"
+        },
+        {
+          "text": "came",
+          "role": "動作"
+        },
+        {
+          "text": "yesterday",
+          "role": "時間"
+        }
+      ],
+      "formula": "[That person] + [came] + [yesterday]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文不管對誰都用同一種說法",
+      "jp_insight": "🔍 偵探級洩漏：對「陌生被害者」卻用了普通形（来た）而不是敬語（いらっしゃった）→ 暴露了其實認識！反過來，突然對被害者用尊敬語 → 暴露有上下級關係",
+      "en_insight": "英文沒有敬語系統，came 對老闆和朋友都一樣，無法從語法判斷關係"
+    }
+  },
+  {
+    "id": "uni_noni_359",
+    "dimension": "noni",
+    "dimension_label": "のに 轉折",
+    "chinese": "明明約好了卻…（洩漏：我知道有約定，而且我很不滿）",
+    "jp": {
+      "sentence": "約束したのに、来なかった。",
+      "blocks": [
+        {
+          "text": "約束したのに",
+          "role": "修飾"
+        },
+        {
+          "text": "来なかった",
+          "role": "動作"
+        }
+      ],
+      "formula": "[約束したのに] + [来なかった]"
+    },
+    "en": {
+      "sentence": "Even though we promised, he didn't come.",
+      "blocks": [
+        {
+          "text": "Even though",
+          "role": "連接"
+        },
+        {
+          "text": "we promised",
+          "role": "動作"
+        },
+        {
+          "text": "he didn't come",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Even though we promised] + [he didn't come]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「明明約好了」帶點不滿但不明顯",
+      "jp_insight": "🔍 偵探級洩漏：のに 自帶強烈的「不滿/怨恨」情緒！嫌疑犯無意中說出のに → 暴露了①他知道有約定 ②他有期待落空的怨恨，這就是動機！",
+      "en_insight": "英文 even though 比較中性，不像日文 のに 那樣帶有強烈的不滿情緒"
+    }
+  },
+  {
+    "id": "uni_passive_360",
+    "dimension": "passive",
+    "dimension_label": "被動語態",
+    "chinese": "他被看了日記。（洩漏：我知道日記的事，而且我覺得被侵犯）",
+    "jp": {
+      "sentence": "日記を読まれた。",
+      "blocks": [
+        {
+          "text": "日記を",
+          "role": "對象"
+        },
+        {
+          "text": "読まれた",
+          "role": "動作"
+        }
+      ],
+      "formula": "[日記を] + [読まれた]"
+    },
+    "en": {
+      "sentence": "Someone read my diary.",
+      "blocks": [
+        {
+          "text": "Someone",
+          "role": "主角"
+        },
+        {
+          "text": "read",
+          "role": "動作"
+        },
+        {
+          "text": "my diary",
+          "role": "對象"
+        }
+      ],
+      "formula": "[Someone] + [read] + [my diary]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「被看了日記」只是描述事實",
+      "jp_insight": "🔍 偵探級洩漏：迷惑受身（読まれた）自帶「我是受害者」的語氣！嫌疑犯用了迷惑受身 → 暴露了①他知道日記被看 ②他覺得自己是受害者 — 但沒人問他日記的事！",
+      "en_insight": "英文 Someone read my diary 只是客觀描述，沒有日文那種「我被侵犯了」的受害感"
+    }
+  },
+  {
+    "id": "uni_detective_361",
+    "dimension": "detective",
+    "dimension_label": "偵探級語法洩漏",
+    "chinese": "她是個善良的人。（洩漏：你用了過去式，你怎麼知道她已經死了？）",
+    "jp": {
+      "sentence": "彼女は優しい人でした。",
+      "blocks": [
+        {
+          "text": "彼女は",
+          "role": "主角"
+        },
+        {
+          "text": "優しい",
+          "role": "修飾"
+        },
+        {
+          "text": "人でした",
+          "role": "動作"
+        }
+      ],
+      "formula": "[彼女は] + [優しい] + [人でした]"
+    },
+    "en": {
+      "sentence": "She was a kind person.",
+      "blocks": [
+        {
+          "text": "She",
+          "role": "主角"
+        },
+        {
+          "text": "was",
+          "role": "動作"
+        },
+        {
+          "text": "a kind person",
+          "role": "修飾"
+        }
+      ],
+      "formula": "[She] + [was] + [a kind person]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「她是好人」不分現在式和過去式，不會洩漏",
+      "jp_insight": "🔍 でした（過去式）洩漏了說話者認為她已經不在了！如果警方還沒公布死訊，嫌疑犯卻用了でした → 你怎麼知道？",
+      "en_insight": "🔍 was（過去式）是經典偵探陷阱！She was kind ← 為什麼用過去式？你已經知道她死了？"
+    }
+  },
+  {
+    "id": "uni_detective_362",
+    "dimension": "detective",
+    "dimension_label": "偵探級語法洩漏",
+    "chinese": "我不知道她住在哪裡。（洩漏：你用了現在式，你知道她還活著？）",
+    "jp": {
+      "sentence": "彼女がどこに住んでいるか知りません。",
+      "blocks": [
+        {
+          "text": "彼女が",
+          "role": "主角"
+        },
+        {
+          "text": "どこに",
+          "role": "場景"
+        },
+        {
+          "text": "住んでいるか",
+          "role": "動作"
+        },
+        {
+          "text": "知りません",
+          "role": "動作"
+        }
+      ],
+      "formula": "[彼女がどこに住んでいるか] + [知りません]"
+    },
+    "en": {
+      "sentence": "I don't know where she lives.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "don't know",
+          "role": "動作"
+        },
+        {
+          "text": "where she lives",
+          "role": "對象"
+        }
+      ],
+      "formula": "[I don't know] + [where she lives]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「住在哪裡」不分時態",
+      "jp_insight": "🔍 住んでいる（現在持續）vs 住んでいた（過去持續）：用了「いる」表示說話者認為她現在還在住 → 暴露他知道她還活著或最近的狀況",
+      "en_insight": "🔍 lives（現在式）vs lived（過去式）：偵探會注意嫌疑犯用哪個時態來判斷他知道多少"
+    }
+  },
+  {
+    "id": "uni_detective_363",
+    "dimension": "detective",
+    "dimension_label": "偵探級語法洩漏",
+    "chinese": "那個人給了我很多照顧。（洩漏：くれた 暴露親密關係）",
+    "jp": {
+      "sentence": "あの方にはお世話になりました。",
+      "blocks": [
+        {
+          "text": "あの方には",
+          "role": "主角"
+        },
+        {
+          "text": "お世話に",
+          "role": "對象"
+        },
+        {
+          "text": "なりました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[あの方には] + [お世話になりました]"
+    },
+    "en": {
+      "sentence": "That person took care of me.",
+      "blocks": [
+        {
+          "text": "That person",
+          "role": "主角"
+        },
+        {
+          "text": "took care of",
+          "role": "動作"
+        },
+        {
+          "text": "me",
+          "role": "對象"
+        }
+      ],
+      "formula": "[That person] + [took care of] + [me]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「照顧我」聽不出感情深度",
+      "jp_insight": "🔍 お世話になりました 是很正式的感謝，但如果嫌疑犯對「不認識的人」說出這麼深的感謝 → 暴露了其實受過很大恩惠，有更深的關係",
+      "en_insight": "🔍 took care of me 在英文很中性，但如果加了 always 或 really → 暴露了長期親密關係"
+    }
+  },
+  {
+    "id": "uni_detective_364",
+    "dimension": "detective",
+    "dimension_label": "偵探級語法洩漏",
+    "chinese": "要是我當時在場就好了。（洩漏：你知道發生了什麼事？）",
+    "jp": {
+      "sentence": "あの時そこにいれば良かったのに。",
+      "blocks": [
+        {
+          "text": "あの時",
+          "role": "時間"
+        },
+        {
+          "text": "そこに",
+          "role": "場景"
+        },
+        {
+          "text": "いれば良かったのに",
+          "role": "動作"
+        }
+      ],
+      "formula": "[あの時] + [そこに] + [いれば良かったのに]"
+    },
+    "en": {
+      "sentence": "If only I had been there at that time.",
+      "blocks": [
+        {
+          "text": "If only",
+          "role": "連接"
+        },
+        {
+          "text": "I had been",
+          "role": "動作"
+        },
+        {
+          "text": "there",
+          "role": "場景"
+        },
+        {
+          "text": "at that time",
+          "role": "時間"
+        }
+      ],
+      "formula": "[If only] + [I had been there] + [at that time]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「要是在場就好了」聽起來像遺憾",
+      "jp_insight": "🔍 のに 結尾洩漏了強烈的遺憾和悔恨！但偵探會想：你怎麼知道「那個時間」「那個地點」發生了事？沒人告訴你啊！",
+      "en_insight": "🔍 had been（過去完成式假設）暴露了嫌疑犯知道「過去某個時間點發生了什麼」，而且他不在場 — 但他怎麼知道具體時間？"
+    }
+  },
+  {
+    "id": "uni_detective_365",
+    "dimension": "detective",
+    "dimension_label": "偵探級語法洩漏",
+    "chinese": "她不會做那種事的。（洩漏：你為什麼替她辯護？）",
+    "jp": {
+      "sentence": "彼女がそんなことをするはずがない。",
+      "blocks": [
+        {
+          "text": "彼女が",
+          "role": "主角"
+        },
+        {
+          "text": "そんなことを",
+          "role": "對象"
+        },
+        {
+          "text": "するはずがない",
+          "role": "動作"
+        }
+      ],
+      "formula": "[彼女が] + [そんなことを] + [するはずがない]"
+    },
+    "en": {
+      "sentence": "There's no way she would do something like that.",
+      "blocks": [
+        {
+          "text": "There's no way",
+          "role": "連接"
+        },
+        {
+          "text": "she would do",
+          "role": "動作"
+        },
+        {
+          "text": "something like that",
+          "role": "對象"
+        }
+      ],
+      "formula": "[There's no way] + [she would do] + [something like that]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「不會做那種事」像是在辯護",
+      "jp_insight": "🔍 はずがない（不可能）洩漏了說話者非常了解她的為人！偵探會問：你怎麼這麼確定？你們到底什麼關係？為什麼還沒調查你就急著否定？",
+      "en_insight": "🔍 would do（假設語氣）暴露了說話者在替嫌疑人辯護，而且用了 no way 這麼強烈的否定 → 關係不一般"
     }
   }
 ]
