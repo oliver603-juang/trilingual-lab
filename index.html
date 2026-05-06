@@ -147,15 +147,22 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 <div class="ko" id="ko" onclick="if(event.target===this)cK()"><div class="kp" id="kpp"></div></div>
 <div class="set-overlay" id="setOv" onclick="if(event.target===this)closeSet()">
 <div class="set-box">
-<h3>⚙️ DIY 造句設定</h3>
+<h3>⚙️ 設定</h3>
 <label>Google Gemini API Key</label>
 <input id="set-key" type="password" placeholder="AIzaSy..." value="">
 <div class="set-hint">
 🔑 到 <a href="https://aistudio.google.com/apikey" target="_blank" style="color:#ffd700">aistudio.google.com/apikey</a> 免費建立 API Key<br>
-🆓 免費額度每天 1,500 次（Gemini 2.5 Flash），完全夠用！<br>
-🔒 Key 只存在你自己的瀏覽器，不會上傳
+🆓 免費額度每天 1,500 次，完全夠用！
+</div>
+<label style="margin-top:8px">Firebase 雲端同步（選填）</label>
+<input id="set-fb" type="text" placeholder="https://your-project.firebaseio.com" value="">
+<div class="set-hint">
+☁️ 到 <a href="https://console.firebase.google.com" target="_blank" style="color:#ffd700">Firebase Console</a> 建立專案 → Realtime Database<br>
+🆓 免費 1GB 存儲，4個帳號綽綽有餘<br>
+🔄 開啟後學習進度 + DIY 造句自動雲端備份
 </div>
 <div class="set-counter" id="set-usage"></div>
+<div id="set-fb-status"></div>
 <div class="set-btns">
 <button class="cancel" onclick="closeSet()">取消</button>
 <button class="save" onclick="saveSet()">💾 儲存</button>
@@ -172,7 +179,26 @@ sy.onvoiceschanged=iV;iV();
 function sp(t,l){sy.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=l==='jp'?'ja-JP':'en-US';u.rate=0.8;if(l==='jp'&&jv)u.voice=jv;if(l==='en'&&ev)u.voice=ev;sy.speak(u);}
 document.addEventListener('click',function _unlock(){const u=new SpeechSynthesisUtterance('');u.volume=0;sy.speak(u);document.removeEventListener('click',_unlock);},{once:true});
 function lU(){try{return JSON.parse(localStorage.getItem('tl_'+cu)||'{}');}catch{return {};}}
-function sV(d){try{localStorage.setItem('tl_'+cu,JSON.stringify(d));}catch{}}
+function sV(d){try{localStorage.setItem('tl_'+cu,JSON.stringify(d));}catch{} fbPush(cu,d);}
+function getFbUrl(){try{return localStorage.getItem('tl_fburl')||'';}catch{return '';}}
+function setFbUrl(u){try{localStorage.setItem('tl_fburl',u);}catch{}}
+function fbPush(user,data){const url=getFbUrl();if(!url)return;
+fetch(url.replace(/\/$/,'')+'/users/'+user+'.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(()=>{});}
+async function fbPull(user){const url=getFbUrl();if(!url)return null;
+try{const r=await fetch(url.replace(/\/$/,'')+'/users/'+user+'.json');if(!r.ok)return null;const d=await r.json();return d;}catch{return null;}}
+async function fbSync(){const url=getFbUrl();if(!url)return;
+try{const remote=await fbPull(cu);if(!remote)return;
+const local=lU();const merged={seen:{...(remote.seen||{}),...(local.seen||{})}};
+const localDiy=local.diy||{};const remoteDiy=remote.diy||{};const mergedDiy={};
+const allKeys=new Set([...Object.keys(localDiy),...Object.keys(remoteDiy)]);
+for(const k of allKeys){const la=localDiy[k]||[];const ra=remoteDiy[k]||[];
+const byKey=new Map();la.forEach(s=>byKey.set(s.cn+'_'+s.ts,s));ra.forEach(s=>byKey.set(s.cn+'_'+s.ts,s));
+mergedDiy[k]=[...byKey.values()].sort((a,b)=>a.ts-b.ts);}
+merged.diy=mergedDiy;
+try{localStorage.setItem('tl_'+cu,JSON.stringify(merged));}catch{}
+fbPush(cu,merged);
+}catch{}}
+
 function mS(id){const d=lU();if(!d.seen)d.seen={};d.seen[id]=Date.now();sV(d);}
 function iS(id){const d=lU();return d.seen&&d.seen[id];}
 function gS(){const d=lU();return Object.keys(d.seen||{}).length;}
@@ -185,10 +211,10 @@ function getApiKey(){try{return localStorage.getItem('tl_apikey')||'';}catch{ret
 function setApiKey(k){try{localStorage.setItem('tl_apikey',k);}catch{}}
 function getDiyUsage(){try{const d=JSON.parse(localStorage.getItem('tl_diy_usage')||'{}');const today=new Date().toISOString().slice(0,10);if(d.date!==today)return{date:today,count:0};return d;}catch{return{date:new Date().toISOString().slice(0,10),count:0};}}
 function incDiyUsage(){const u=getDiyUsage();u.count++;try{localStorage.setItem('tl_diy_usage',JSON.stringify(u));}catch{}}
-function openSet(){const ov=document.getElementById('setOv');ov.classList.add('show');document.getElementById('set-key').value=getApiKey();const u=getDiyUsage();document.getElementById('set-usage').textContent='📊 今日已使用 '+u.count+' / '+DIY_DAILY_LIMIT+' 次';}
+function openSet(){const ov=document.getElementById('setOv');ov.classList.add('show');document.getElementById('set-key').value=getApiKey();document.getElementById('set-fb').value=getFbUrl();const u=getDiyUsage();document.getElementById('set-usage').textContent='📊 今日造句 '+u.count+' / '+DIY_DAILY_LIMIT+' 次';const st=document.getElementById('set-fb-status');st.textContent=getFbUrl()?'☁️ 雲端同步已啟用':'';st.style.cssText='font-size:.6rem;color:#50c878;margin-bottom:6px';}
 function closeSet(){document.getElementById('setOv').classList.remove('show');}
-function saveSet(){const k=document.getElementById('set-key').value.trim();setApiKey(k);closeSet();updGear();rn();}
-function updGear(){const g=document.getElementById('gearBtn');if(g){g.className='gear-icon'+(getApiKey()?' has-key':'');g.textContent=getApiKey()?'🔑':'⚙️';}}
+function saveSet(){const k=document.getElementById('set-key').value.trim();setApiKey(k);const fb=document.getElementById('set-fb').value.trim();setFbUrl(fb);if(fb)fbSync().then(()=>{uP();rn();});closeSet();updGear();rn();}
+function updGear(){const g=document.getElementById('gearBtn');if(g){const hasKey=!!getApiKey();const hasFb=!!getFbUrl();g.className='gear-icon'+(hasKey||hasFb?' has-key':'');g.textContent=hasFb?'☁️':(hasKey?'🔑':'⚙️');}}
 async function diyGo(dim){
 const apiKey=getApiKey();if(!apiKey){openSet();return;}
 const usage=getDiyUsage();if(usage.count>=DIY_DAILY_LIMIT){const box=document.getElementById('diy-res');if(box)box.innerHTML='<div style="color:#ff9800;font-size:.75rem;padding:6px">⚠️ 今日已達 '+DIY_DAILY_LIMIT+' 次上限，明天再來！</div>';return;}
@@ -238,14 +264,14 @@ h+='<div class="diy-body"><div class="diy-tr '+lc+'">'+disp+'</div><div class="d
 h+='<button class="diy-btn del" onclick="delDIY(\''+dim.replace(/'/g,"\\'")+'\','+idx+')">✕</button></div>';});
 h+='</div>';}
 h+='</div>';return h;}
-function sU(u){cu=u;const names={iggy:'Iggy',yoyo:'Yoyo',yofarn:'Yofarn',oliver:'Oliver'};document.querySelectorAll('.ub').forEach(b=>{b.classList.toggle('a',b.textContent.includes(names[u]||''));});uP();rn();}
+function sU(u){cu=u;const names={iggy:'Iggy',yoyo:'Yoyo',yofarn:'Yofarn',oliver:'Oliver'};document.querySelectorAll('.ub').forEach(b=>{b.classList.toggle('a',b.textContent.includes(names[u]||''));});fbSync().then(()=>{uP();rn();});}
 function uP(){document.getElementById('pb').textContent='✅ '+gS();}
 async function lD(){try{const r=await fetch('unified-rules.json');if(!r.ok)throw 0;const d=await r.json();
 R=d.map(r=>({id:r.id,dim:r.dimension_label||r.dimension,cn:r.chinese,lv:r.jlpt||'',
 jp:r.jp?{s:r.jp.sentence,b:r.jp.blocks.map(b=>[b.text,b.role]),f:r.jp.formula||''}:null,
 en:r.en?{s:r.en.sentence,b:r.en.blocks.map(b=>[b.text,b.role]),f:r.en.formula||''}:null,
 ct:r.contrast||{}}));}catch{document.getElementById('app').innerHTML='<div class="ld-c"><div class="ld-t">請將 unified-rules.json 放在同目錄</div></div>';return;}
-F=R;document.getElementById('nc').textContent='1/'+R.length;rDT();uP();rn();}
+F=R;document.getElementById('nc').textContent='1/'+R.length;rDT();fbSync().then(()=>{uP();rn();});}
 function rDT(){const ds={};R.forEach(r=>{ds[r.dim]=(ds[r.dim]||0)+1;});const s=Object.entries(ds).sort((a,b)=>b[1]-a[1]);
 let h='<button class="tab a" onclick="fD(\'all\')">全部 '+R.length+'</button>';
 for(const[d,c]of s)h+='<button class="tab" onclick="fD(\''+d.replace(/'/g,"\\'")+'\')">' +d+' '+c+'</button>';
