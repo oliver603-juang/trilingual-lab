@@ -3090,6 +3090,61 @@
     }
   },
   {
+    "id": "uni_giving_355",
+    "dimension": "giving",
+    "dimension_label": "禮物流向",
+    "chinese": "我從朋友那裡收到了書。",
+    "jp": {
+      "sentence": "私は友達に本をもらいました。",
+      "blocks": [
+        {
+          "text": "私は",
+          "role": "主角"
+        },
+        {
+          "text": "友達に",
+          "role": "對象"
+        },
+        {
+          "text": "本を",
+          "role": "對象"
+        },
+        {
+          "text": "もらいました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[私は] + [友達に] + [本を] + [もらいました]"
+    },
+    "en": {
+      "sentence": "I received a book from my friend.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "received",
+          "role": "動作"
+        },
+        {
+          "text": "a book",
+          "role": "對象"
+        },
+        {
+          "text": "from my friend",
+          "role": "對象"
+        }
+      ],
+      "formula": "[I] + [received] + [a book] + [from my friend]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「收到」就好",
+      "jp_insight": "もらう＝我主動去收，感謝對方！跟くれる方向一樣，但主角不同",
+      "en_insight": "英文用 received from，不分主動被動收"
+    }
+  },
+  {
     "id": "uni_jita_046",
     "dimension": "jita",
     "dimension_label": "自他動詞",
