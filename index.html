@@ -67,7 +67,7 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .sp{width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes fu{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 @keyframes bn{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}.ko.op .ms{animation:bn 1s ease-in-out .3s}
-.ki{margin:0 12px 12px;border-radius:14px;background:#1a1a35;border:1.5px solid rgba(255,215,0,.12);overflow:hidden;animation:fu .3s ease}
+.ki{margin:0 12px 12px;border-radius:14px;background:#1a1a35;border:1.5px solid rgba(255,215,0,.12);overflow:hidden;animation:fu .3s ease;position:relative}
 .ki-h{padding:10px 14px 4px;display:flex;align-items:center;justify-content:center;gap:6px}
 .ki-ms{font-size:1.6rem}.ki-tt{font-size:.78rem;font-weight:900;color:var(--gold)}
 .ki-mt{text-align:center;padding:0 14px 6px;font-size:1.05rem;font-weight:900;line-height:1.3}
@@ -104,9 +104,9 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .diy-loading{text-align:center;padding:12px;font-size:.75rem;color:rgba(255,215,0,.6)}
 .diy-loading::after{content:'';display:inline-block;width:12px;height:12px;border:2px solid rgba(255,215,0,.3);border-top-color:#ffd700;border-radius:50%;animation:spin .6s linear infinite;margin-left:6px;vertical-align:middle}
 @keyframes spin{to{transform:rotate(360deg)}}
-.gear-toggle{position:fixed;bottom:12px;right:120px;z-index:9999;padding:6px 14px;border-radius:20px;border:1.5px solid rgba(255,215,0,.3);background:rgba(0,0,0,.7);color:#ffd700;font-family:inherit;font-size:.7rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)}
-.gear-toggle:hover{border-color:rgba(255,215,0,.6)}
-.gear-toggle.has-key{border-color:rgba(80,200,120,.4);color:#50c878}
+.gear-icon{padding:3px 8px;border:1px solid var(--border);border-radius:12px;background:transparent;color:var(--dim);font-size:.68rem;cursor:pointer;font-family:inherit;white-space:nowrap}
+.gear-icon:hover{border-color:rgba(255,215,0,.4);color:var(--gold)}
+.gear-icon.has-key{border-color:rgba(80,200,120,.3);color:#50c878}
 .set-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:99998;display:none;align-items:center;justify-content:center}
 .set-overlay.show{display:flex}
 .set-box{background:#1a1a35;border:1.5px solid rgba(255,215,0,.2);border-radius:16px;padding:20px;max-width:360px;width:90%;margin:20px}
@@ -122,8 +122,8 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .set-box .set-btns .cancel{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)}
 .diy-nokey{text-align:center;padding:8px;font-size:.7rem;color:rgba(255,255,255,.3);line-height:1.6}
 .diy-nokey button{background:none;border:none;color:#ffd700;cursor:pointer;text-decoration:underline;font-family:inherit;font-size:.7rem}
-.edit-toggle{position:fixed;bottom:12px;right:12px;z-index:9999;padding:6px 14px;border-radius:20px;border:1.5px solid rgba(255,215,0,.3);background:rgba(0,0,0,.7);color:#ffd700;font-family:inherit;font-size:.7rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)}
-.edit-toggle.active{background:rgba(255,50,50,.8);border-color:rgba(255,50,50,.5);color:#fff}
+.edit-toggle{padding:3px 8px;border-radius:10px;border:1px solid rgba(255,215,0,.2);background:rgba(255,215,0,.05);color:var(--gold);font-family:inherit;font-size:.58rem;font-weight:700;cursor:pointer;white-space:nowrap;position:absolute;right:10px;top:10px}
+.edit-toggle.active{background:rgba(255,50,50,.15);border-color:rgba(255,50,50,.3);color:#ff8888}
 .edit-mode .ki-b,.edit-mode .ki-tp,.edit-mode .cb{cursor:text;border:1px dashed rgba(255,215,0,.3)}
 .edit-mode .ki-b:hover,.edit-mode .ki-tp:hover,.edit-mode .cb:hover{border-color:rgba(255,215,0,.6)}
 .edit-mode .ki-b:focus,.edit-mode .ki-tp:focus,.edit-mode .cb:focus{outline:none;border-color:#ffd700;background:rgba(255,215,0,.05)}
@@ -138,6 +138,7 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 <div class="hn" id="hn"><button class="nb" onclick="nv(-1)">◀</button><span class="nc" id="nc">1/1</span><button class="nb" onclick="nv(1)">▶</button></div>
 <div class="lt"><button class="lb a-jp" onclick="sM('jp')">🇯🇵 日文</button><button class="lb" onclick="sM('en')">🇺🇸 英文</button><button class="lb" onclick="sM('vs')">⚡ 對比</button></div>
 <span class="badge pb" id="pb">✅ 0</span>
+<button class="gear-icon" id="gearBtn" onclick="openSet()">⚙️</button>
 </div>
 <div class="dt" id="dt"></div>
 <div id="app"><div class="ld-c"><div class="sp"></div><div class="ld-t">載入中…</div></div></div>
@@ -185,7 +186,7 @@ function incDiyUsage(){const u=getDiyUsage();u.count++;try{localStorage.setItem(
 function openSet(){const ov=document.getElementById('setOv');ov.classList.add('show');document.getElementById('set-key').value=getApiKey();const u=getDiyUsage();document.getElementById('set-usage').textContent='📊 今日已使用 '+u.count+' / '+DIY_DAILY_LIMIT+' 次';}
 function closeSet(){document.getElementById('setOv').classList.remove('show');}
 function saveSet(){const k=document.getElementById('set-key').value.trim();setApiKey(k);closeSet();updGear();rn();}
-function updGear(){const g=document.getElementById('gearBtn');if(g){g.className='gear-toggle'+(getApiKey()?' has-key':'');g.textContent=getApiKey()?'🔑 已設定':'⚙️ API Key';}}
+function updGear(){const g=document.getElementById('gearBtn');if(g){g.className='gear-icon'+(getApiKey()?' has-key':'');g.textContent=getApiKey()?'🔑':'⚙️';}}
 async function diyGo(dim){
 const apiKey=getApiKey();if(!apiKey){openSet();return;}
 const usage=getDiyUsage();if(usage.count>=DIY_DAILY_LIMIT){const box=document.getElementById('diy-res');if(box)box.innerHTML='<div style="color:#ff9800;font-size:.75rem;padding:6px">⚠️ 今日已達 '+DIY_DAILY_LIMIT+' 次上限，明天再來！</div>';return;}
@@ -196,7 +197,7 @@ const r=F[ci];
 const btn=document.getElementById('diy-go');if(btn){btn.disabled=true;btn.textContent='⏳';}
 const box=document.getElementById('diy-res');if(box)box.innerHTML='<div class="diy-loading">翻譯中（'+usage.count+'/'+DIY_DAILY_LIMIT+'）</div>';
 try{
-const prompt='你是一個翻譯助手。使用者正在學習「'+dim+'」這個句型。請把以下中文翻譯成'+lang+'，要符合這個句型的用法。只回覆翻譯結果，不要解釋。如果是日文請同時附上假名讀音（用括號）。\n\n中文：'+cn+'\n\n'+langCode+'翻譯：';
+const prompt='請翻譯以下中文句子成'+lang+'。\n\n規則：\n1. 只輸出翻譯結果，不要加任何解釋、註解或額外文字\n2. 翻譯必須是完整的句子\n3. 如果是日文，在翻譯後面換行加上完整的平假名讀音（用括號包起來）\n例如：\n私は毎日学校に行きます。\n（わたしはまいにちがっこうにいきます。）\n\n中文：'+cn;
 const resp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:300}})});
 if(!resp.ok){const err=await resp.json().catch(()=>({}));throw new Error(err.error?.message||'API 錯誤 '+resp.status);}
 const data=await resp.json();
@@ -260,7 +261,7 @@ const mx=Math.min(F.length,30);let dt='<div class="dr">';for(let i=0;i<mx;i++){c
 if(F.length>mx)dt+='<span style="color:var(--dim);font-size:.48rem;align-self:center">+'+(F.length-mx)+'</span>';dt+='</div>';
 const lg='<div class="lg"><div class="li"><div class="ld" style="background:#ff6b6b"></div>主角</div><div class="li"><div class="ld" style="background:#4ecdc4"></div>動作</div><div class="li"><div class="ld" style="background:#ffd93d"></div>對象</div><div class="li"><div class="ld" style="background:#a78bfa"></div>修飾</div><div class="li"><div class="ld" style="background:#888"></div>連接</div><div class="li"><div class="ld" style="background:#66bb6a"></div>場景</div><div class="li"><div class="ld" style="background:#ff9800"></div>目標</div><div class="li"><div class="ld" style="background:#42a5f5"></div>時間</div><div class="li"><div class="ld" style="background:#ef5350"></div>語氣</div></div>';
 document.getElementById('app').innerHTML='<div class="mc m-'+md+'"><div class="ca"><div class="cs">'+eH(r.cn)+'</div><div class="cd">'+eH(r.dim)+(r.lv?' · '+r.lv:'')+'</div></div><div class="ba">'+bh+'</div>'+ct+lg+'</div>'+gKI(r)+gDIY(r);document.getElementById('nc').textContent=(ci+1)+'/'+F.length;var nb=document.querySelectorAll('.nb');if(nb[0])nb[0].disabled=ci===0;if(nb[1])nb[1].disabled=ci>=F.length-1;}
-function gKI(r){if(md==='vs'){const jp=KD[r.dim],en=EK[r.dim];if(!jp&&!en)return '';let h='<div class="ki"><div style="padding:10px 14px 6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap"><span style="font-size:1.2rem">🦊</span><span style="font-size:1.2rem">🐸</span><span style="font-size:.75rem;font-weight:900;color:#ffd700">三語魔法教室</span></div>';const cn=jp?.cn||en?.cn||'';if(cn)h+='<div class="ki-b ki-cn"><span class="ki-fl">🇹🇼 中文大腦怎麼想</span>'+cn+'</div>';if(jp)h+='<div class="ki-b ki-jp"><span class="ki-fl">🇯🇵 日文大腦怎麼想</span>'+jp.br+'</div>';if(en)h+='<div class="ki-b ki-en"><span class="ki-fl">🇺🇸 英文大腦怎麼想</span>'+en.br+'</div>';if(jp?.tp)h+='<div class="ki-tp" style="margin-bottom:3px">'+jp.tp+'</div>';if(en?.tp)h+='<div class="ki-tp">'+en.tp+'</div>';h+='</div>';return h;}const d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)return '';const isJP=d.th==='jp',bc=isJP?'ki-jp':'ki-en',bl=isJP?'🇯🇵 日文大腦怎麼想':'🇺🇸 英文大腦怎麼想',tc=isJP?'color:#ff8a8a':'color:#7eeae0';return '<div class="ki"><div style="padding:10px 14px 6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap"><span style="font-size:1.4rem">'+d.m+'</span><span style="font-size:.75rem;font-weight:900;color:#ffd700">'+d.m+' '+d.t+' 的'+(isJP?'日文':'英文')+'魔法教室</span><span style="font-size:1rem;font-weight:900;'+tc+'">'+d.mt+'</span></div><div class="ki-b ki-cn"><span class="ki-fl">🇹🇼 中文大腦怎麼想</span>'+d.cn+'</div><div class="ki-b '+bc+'"><span class="ki-fl">'+bl+'</span>'+d.br+'</div><div class="ki-tp">'+d.tp+'</div></div>';}
+function gKI(r){if(md==='vs'){const jp=KD[r.dim],en=EK[r.dim];if(!jp&&!en)return '';let h='<div class="ki"><div style="padding:10px 14px 6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap"><span style="font-size:1.2rem">🦊</span><span style="font-size:1.2rem">🐸</span><span style="font-size:.75rem;font-weight:900;color:#ffd700">三語魔法教室</span></div>';const cn=jp?.cn||en?.cn||'';if(cn)h+='<div class="ki-b ki-cn"><span class="ki-fl">🇹🇼 中文大腦怎麼想</span>'+cn+'</div>';if(jp)h+='<div class="ki-b ki-jp"><span class="ki-fl">🇯🇵 日文大腦怎麼想</span>'+jp.br+'</div>';if(en)h+='<div class="ki-b ki-en"><span class="ki-fl">🇺🇸 英文大腦怎麼想</span>'+en.br+'</div>';if(jp?.tp)h+='<div class="ki-tp" style="margin-bottom:3px">'+jp.tp+'</div>';if(en?.tp)h+='<div class="ki-tp">'+en.tp+'</div>';h+='</div>';return h;}const d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)return '';const isJP=d.th==='jp',bc=isJP?'ki-jp':'ki-en',bl=isJP?'🇯🇵 日文大腦怎麼想':'🇺🇸 英文大腦怎麼想',tc=isJP?'color:#ff8a8a':'color:#7eeae0';return '<div class="ki"><button class="edit-toggle'+(edM?' active':'')+'" onclick="toggleEdit()">'+(edM?'🔒 關閉編輯':'✏️ 編輯')+'</button><div style="padding:10px 14px 6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap"><span style="font-size:1.4rem">'+d.m+'</span><span style="font-size:.75rem;font-weight:900;color:#ffd700">'+d.m+' '+d.t+' 的'+(isJP?'日文':'英文')+'魔法教室</span><span style="font-size:1rem;font-weight:900;'+tc+'">'+d.mt+'</span></div><div class="ki-b ki-cn"><span class="ki-fl">🇹🇼 中文大腦怎麼想</span>'+d.cn+'</div><div class="ki-b '+bc+'"><span class="ki-fl">'+bl+'</span>'+d.br+'</div><div class="ki-tp">'+d.tp+'</div></div>';}
 function rVS(r){let h='<div class="vc"><div class="vs js"><div class="vl jp">🇯🇵 日文</div>';
 if(r.jp){r.jp.b.forEach(([t,rl])=>{h+='<div class="vb jp r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\',\'jp\')"><span>'+furi(t)+'</span><span class="vt">'+rl+'</span></div>';});h+='<div style="font-size:.52rem;color:var(--dim);margin-top:3px;text-align:center">'+''+'</div>';}
 else h+='<div style="color:var(--dim);font-size:.62rem">無資料</div>';h+='</div><div class="vs"><div class="vl en">🇺🇸 英文</div>';
@@ -279,8 +280,9 @@ let tX=0;document.addEventListener('touchstart',e=>{tX=e.touches[0].clientX;});
 document.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tX;if(Math.abs(d)>60)nv(d>0?-1:1);});
 lD();
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
-let edM=false;const edBtn=document.createElement('button');edBtn.className='edit-toggle';edBtn.textContent='✏️ 編輯模式';edBtn.onclick=function(){edM=!edM;document.body.classList.toggle('edit-mode',edM);edBtn.classList.toggle('active',edM);edBtn.textContent=edM?'🔒 關閉編輯（自動儲存）':'✏️ 編輯模式';if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}};document.body.appendChild(edBtn);
-const gearBtn=document.createElement('button');gearBtn.id='gearBtn';gearBtn.onclick=openSet;document.body.appendChild(gearBtn);updGear();
+let edM=false;
+function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
+const gearBtn=document.getElementById('gearBtn');updGear();
 function svEd(){const r=F[ci];if(!r)return;const bs=document.querySelectorAll('.ki-b');const tp=document.querySelector('.ki-tp');let d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)d=(md==='en')?KD[r.dim]:EK[r.dim];if(!d)return;if(bs[0]){const t=bs[0].innerText.replace(/^🇹🇼 中文大腦怎麼想\n?/,'');d.cn=t;}if(bs[1]){const t=bs[1].innerText.replace(/^🇯🇵 日文大腦怎麼想\n?/,'').replace(/^🇺🇸 英文大腦怎麼想\n?/,'');d.br=t;}if(tp)d.tp=tp.innerText;const cb=document.querySelector('.cb');if(cb&&r.ct){cb.innerText.split('\n').filter(l=>l.trim()).forEach(l=>{if(l.includes('中文陷阱：'))r.ct.cn_blindspot=l.replace(/.*中文陷阱：\s*/,'');if(l.includes('日文邏輯：'))r.ct.jp_insight=l.replace(/.*日文邏輯：\s*/,'');if(l.includes('英文邏輯：'))r.ct.en_insight=l.replace(/.*英文邏輯：\s*/,'');});}const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 已儲存';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);}
 window.exportEdits=function(){const d={KD,EK,rules:R.map(r=>({id:r.id,dim:r.dim,cn:r.cn,ct:r.ct}))};const b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='trilingual-edits-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(u);};
 </script>
