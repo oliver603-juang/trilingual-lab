@@ -198,7 +198,20 @@ merged.diy=mergedDiy;
 try{localStorage.setItem('tl_'+cu,JSON.stringify(merged));}catch{}
 fbPush(cu,merged);
 }catch{}}
-
+function fbPushEdits(){const url=getFbUrl();if(!url)return;
+const edits={};
+for(const[k,v] of Object.entries(KD)){edits['KD_'+k]={cn:v.cn,br:v.br,tp:v.tp};}
+for(const[k,v] of Object.entries(EK)){edits['EK_'+k]={cn:v.cn,br:v.br,tp:v.tp};}
+const cbEdits={};R.forEach(r=>{if(r.ct){cbEdits[r.id]=r.ct;}});
+edits._contrast=cbEdits;edits._ts=Date.now();
+fetch(url.replace(/\/$/,'')+'/shared/edits.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(edits)}).catch(()=>{});}
+async function fbPullEdits(){const url=getFbUrl();if(!url)return;
+try{const r=await fetch(url.replace(/\/$/,'')+'/shared/edits.json');if(!r.ok)return;const edits=await r.json();if(!edits)return;
+for(const[k,v] of Object.entries(edits)){
+if(k.startsWith('KD_')&&KD[k.slice(3)]){const d=KD[k.slice(3)];if(v.cn)d.cn=v.cn;if(v.br)d.br=v.br;if(v.tp)d.tp=v.tp;}
+if(k.startsWith('EK_')&&EK[k.slice(3)]){const d=EK[k.slice(3)];if(v.cn)d.cn=v.cn;if(v.br)d.br=v.br;if(v.tp)d.tp=v.tp;}}
+if(edits._contrast){for(const[id,ct] of Object.entries(edits._contrast)){const rule=R.find(r=>r.id===id);if(rule)rule.ct=ct;}}
+}catch{}}
 function mS(id){const d=lU();if(!d.seen)d.seen={};d.seen[id]=Date.now();sV(d);}
 function iS(id){const d=lU();return d.seen&&d.seen[id];}
 function gS(){const d=lU();return Object.keys(d.seen||{}).length;}
@@ -213,7 +226,7 @@ function getDiyUsage(){try{const d=JSON.parse(localStorage.getItem('tl_diy_usage
 function incDiyUsage(){const u=getDiyUsage();u.count++;try{localStorage.setItem('tl_diy_usage',JSON.stringify(u));}catch{}}
 function openSet(){const ov=document.getElementById('setOv');ov.classList.add('show');document.getElementById('set-key').value=getApiKey();document.getElementById('set-fb').value=getFbUrl();const u=getDiyUsage();document.getElementById('set-usage').textContent='📊 今日造句 '+u.count+' / '+DIY_DAILY_LIMIT+' 次';const st=document.getElementById('set-fb-status');st.textContent=getFbUrl()?'☁️ 雲端同步已啟用':'';st.style.cssText='font-size:.6rem;color:#50c878;margin-bottom:6px';}
 function closeSet(){document.getElementById('setOv').classList.remove('show');}
-function saveSet(){const k=document.getElementById('set-key').value.trim();setApiKey(k);const fb=document.getElementById('set-fb').value.trim();setFbUrl(fb);if(fb)fbSync().then(()=>{uP();rn();});closeSet();updGear();rn();}
+function saveSet(){const k=document.getElementById('set-key').value.trim();setApiKey(k);const fb=document.getElementById('set-fb').value.trim();setFbUrl(fb);if(fb)fbPullEdits().then(()=>fbSync()).then(()=>{uP();rn();});closeSet();updGear();rn();}
 function updGear(){const g=document.getElementById('gearBtn');if(g){const hasKey=!!getApiKey();const hasFb=!!getFbUrl();g.className='gear-icon'+(hasKey||hasFb?' has-key':'');g.textContent=hasFb?'☁️':(hasKey?'🔑':'⚙️');}}
 async function diyGo(dim){
 const apiKey=getApiKey();if(!apiKey){openSet();return;}
@@ -271,7 +284,7 @@ R=d.map(r=>({id:r.id,dim:r.dimension_label||r.dimension,cn:r.chinese,lv:r.jlpt||
 jp:r.jp?{s:r.jp.sentence,b:r.jp.blocks.map(b=>[b.text,b.role]),f:r.jp.formula||''}:null,
 en:r.en?{s:r.en.sentence,b:r.en.blocks.map(b=>[b.text,b.role]),f:r.en.formula||''}:null,
 ct:r.contrast||{}}));}catch{document.getElementById('app').innerHTML='<div class="ld-c"><div class="ld-t">請將 unified-rules.json 放在同目錄</div></div>';return;}
-F=R;document.getElementById('nc').textContent='1/'+R.length;rDT();fbSync().then(()=>{uP();rn();});}
+F=R;document.getElementById('nc').textContent='1/'+R.length;rDT();fbPullEdits().then(()=>fbSync()).then(()=>{uP();rn();});}
 function rDT(){const ds={};R.forEach(r=>{ds[r.dim]=(ds[r.dim]||0)+1;});const s=Object.entries(ds).sort((a,b)=>b[1]-a[1]);
 let h='<button class="tab a" onclick="fD(\'all\')">全部 '+R.length+'</button>';
 for(const[d,c]of s)h+='<button class="tab" onclick="fD(\''+d.replace(/'/g,"\\'")+'\')">' +d+' '+c+'</button>';
@@ -318,7 +331,7 @@ if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
-function svEd(){const r=F[ci];if(!r)return;const bs=document.querySelectorAll('.ki-b');const tp=document.querySelector('.ki-tp');let d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)d=(md==='en')?KD[r.dim]:EK[r.dim];if(!d)return;if(bs[0]){const t=bs[0].innerText.replace(/^🇹🇼 中文大腦怎麼想\n?/,'');d.cn=t;}if(bs[1]){const t=bs[1].innerText.replace(/^🇯🇵 日文大腦怎麼想\n?/,'').replace(/^🇺🇸 英文大腦怎麼想\n?/,'');d.br=t;}if(tp)d.tp=tp.innerText;const cb=document.querySelector('.cb');if(cb&&r.ct){cb.innerText.split('\n').filter(l=>l.trim()).forEach(l=>{if(l.includes('中文陷阱：'))r.ct.cn_blindspot=l.replace(/.*中文陷阱：\s*/,'');if(l.includes('日文邏輯：'))r.ct.jp_insight=l.replace(/.*日文邏輯：\s*/,'');if(l.includes('英文邏輯：'))r.ct.en_insight=l.replace(/.*英文邏輯：\s*/,'');});}const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 已儲存';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);}
+function svEd(){const r=F[ci];if(!r)return;const bs=document.querySelectorAll('.ki-b');const tp=document.querySelector('.ki-tp');let d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)d=(md==='en')?KD[r.dim]:EK[r.dim];if(!d)return;if(bs[0]){const t=bs[0].innerText.replace(/^🇹🇼 中文大腦怎麼想\n?/,'');d.cn=t;}if(bs[1]){const t=bs[1].innerText.replace(/^🇯🇵 日文大腦怎麼想\n?/,'').replace(/^🇺🇸 英文大腦怎麼想\n?/,'');d.br=t;}if(tp)d.tp=tp.innerText;const cb=document.querySelector('.cb');if(cb&&r.ct){cb.innerText.split('\n').filter(l=>l.trim()).forEach(l=>{if(l.includes('中文陷阱：'))r.ct.cn_blindspot=l.replace(/.*中文陷阱：\s*/,'');if(l.includes('日文邏輯：'))r.ct.jp_insight=l.replace(/.*日文邏輯：\s*/,'');if(l.includes('英文邏輯：'))r.ct.en_insight=l.replace(/.*英文邏輯：\s*/,'');});}fbPushEdits();const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 已儲存（☁️ 已同步）';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);}
 window.exportEdits=function(){const d={KD,EK,rules:R.map(r=>({id:r.id,dim:r.dim,cn:r.cn,ct:r.ct}))};const b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='trilingual-edits-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(u);};
 </script>
 </body>
