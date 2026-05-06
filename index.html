@@ -199,11 +199,14 @@ const r=F[ci];
 const btn=document.getElementById('diy-go');if(btn){btn.disabled=true;btn.textContent='⏳';}
 const box=document.getElementById('diy-res');if(box)box.innerHTML='<div class="diy-loading">翻譯中（'+usage.count+'/'+DIY_DAILY_LIMIT+'）</div>';
 try{
-const prompt='請將以下中文翻譯成'+lang+'。只回覆一行翻譯結果，不要加讀音、解釋或任何額外文字。翻譯必須是完整的句子。\n\n中文：'+cn;
-const resp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:300}})});
+const jpExtra='如果是日文：使用丁寧體（です/ます形）。句子必須有完整的結尾（句號前不能斷掉）。特別注意形容詞和動詞的時態變形要完整。';
+const enExtra='如果是英文：注意時態、冠詞(a/the)、單複數要正確。';
+const prompt='你是翻譯助手。將中文翻譯成完整的'+lang+'句子。\n\n嚴格規則：\n1. 只回覆一行完整的翻譯，不加任何解釋\n2. 句子必須完整，有明確的結尾（日文要有。句號，英文要有.句號）\n3. '+(md==='jp'?jpExtra:enExtra)+'\n\n中文：'+cn;
+const resp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:500,temperature:0.3}})});
 if(!resp.ok){const err=await resp.json().catch(()=>({}));throw new Error(err.error?.message||'API 錯誤 '+resp.status);}
 const data=await resp.json();
-const text=data.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('')||'翻譯失敗';
+const raw=data.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('')||'';
+const text=raw.split('\n').map(l=>l.trim()).filter(l=>l&&!l.startsWith('*')&&!l.startsWith('-')&&!l.startsWith('#')&&!l.startsWith('（')&&!l.startsWith('(')&&l.length>1)[0]||raw.trim()||'翻譯失敗';
 incDiyUsage();
 const arr=getDIY(dim);arr.push({cn,tr:text,ts:Date.now()});saveDIY(dim,arr);
 inp.value='';rn();
