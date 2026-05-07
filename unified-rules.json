@@ -3666,19 +3666,19 @@
       "sentence": "あ、雨が降っています！",
       "blocks": [
         {
+          "text": "あ、",
+          "role": "語氣"
+        },
+        {
           "text": "雨が",
           "role": "主角"
         },
         {
-          "text": "降って",
-          "role": "修飾"
-        },
-        {
-          "text": "います",
+          "text": "降っています",
           "role": "動作"
         }
       ],
-      "formula": "[雨が] + [降って] + [います]"
+      "formula": "[あ、] + [雨が] + [降っています]"
     },
     "en": {
       "sentence": "Oh, it's raining!",
@@ -6887,19 +6887,23 @@
       "sentence": "明日テストがあるので、勉強します。",
       "blocks": [
         {
-          "text": "テストがある",
-          "role": "修飾"
+          "text": "明日",
+          "role": "時間"
         },
         {
-          "text": "ので",
-          "role": "場景"
+          "text": "テストが",
+          "role": "主角"
+        },
+        {
+          "text": "あるので、",
+          "role": "連接"
         },
         {
           "text": "勉強します",
           "role": "動作"
         }
       ],
-      "formula": "[テストがある] + [ので] + [勉強します]"
+      "formula": "[明日] + [テストが] + [あるので、] + [勉強します]"
     },
     "en": {
       "sentence": "There's a test tomorrow, so I'll study.",
@@ -7333,23 +7337,23 @@
       "sentence": "日本語は勉強すればするほど面白いです。",
       "blocks": [
         {
+          "text": "日本語は",
+          "role": "主角"
+        },
+        {
           "text": "勉強すれば",
+          "role": "修飾"
+        },
+        {
+          "text": "するほど",
           "role": "連接"
-        },
-        {
-          "text": "する",
-          "role": "修飾"
-        },
-        {
-          "text": "ほど",
-          "role": "修飾"
         },
         {
           "text": "面白いです",
           "role": "動作"
         }
       ],
-      "formula": "[勉強すれば] + [する] + [ほど] + [面白いです]"
+      "formula": "[日本語は] + [勉強すれば] + [するほど] + [面白いです]"
     },
     "en": {
       "sentence": "The more you study Japanese, the more interesting it gets.",
@@ -9593,15 +9597,15 @@
       "sentence": "若者は努力を避けるきらいがある。",
       "blocks": [
         {
-          "text": "彼は",
+          "text": "若者は",
           "role": "主角"
         },
         {
-          "text": "何でも",
-          "role": "修飾"
+          "text": "努力を",
+          "role": "對象"
         },
         {
-          "text": "先延ばしにする",
+          "text": "避ける",
           "role": "動作"
         },
         {
@@ -9609,7 +9613,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[彼は] + [何でも] + [先延ばしにする] + [きらいがある]"
+      "formula": "[若者は] + [努力を] + [避ける] + [きらいがある]"
     },
     "en": {
       "sentence": "Young people tend to avoid hard work.",
@@ -9981,19 +9985,19 @@
       "sentence": "異例ずくめの大会だった。",
       "blocks": [
         {
-          "text": "異例",
+          "text": "異例ずくめの",
           "role": "修飾"
         },
         {
-          "text": "ずくめ",
-          "role": "修飾"
+          "text": "大会",
+          "role": "主角"
         },
         {
-          "text": "の大会",
+          "text": "だった",
           "role": "動作"
         }
       ],
-      "formula": "[異例] + [ずくめ] + [の大会]"
+      "formula": "[異例ずくめの] + [大会] + [だった]"
     },
     "en": {
       "sentence": "It was a tournament full of exceptions.",
@@ -10129,19 +10133,19 @@
       "sentence": "初めてずくめの旅行だった。",
       "blocks": [
         {
-          "text": "初めて",
+          "text": "初めてずくめの",
           "role": "修飾"
         },
         {
-          "text": "ずくめ",
-          "role": "修飾"
+          "text": "旅行",
+          "role": "主角"
         },
         {
-          "text": "の旅行",
-          "role": "對象"
+          "text": "だった",
+          "role": "動作"
         }
       ],
-      "formula": "[初めて] + [ずくめ] + [の旅行]"
+      "formula": "[初めてずくめの] + [旅行] + [だった]"
     },
     "en": {
       "sentence": "It was a trip of all firsts.",
@@ -11009,15 +11013,19 @@
       "sentence": "大学生ともなると、自分で判断すべきだ。",
       "blocks": [
         {
-          "text": "大学生ともなると、自分で",
-          "role": "修飾"
+          "text": "大学生ともなると、",
+          "role": "連接"
+        },
+        {
+          "text": "自分で",
+          "role": "場景"
         },
         {
           "text": "判断すべきだ",
-          "role": "修飾"
+          "role": "動作"
         }
       ],
-      "formula": "[大学生ともなると、自分で] + [判断すべきだ]"
+      "formula": "[大学生ともなると、] + [自分で] + [判断すべきだ]"
     },
     "en": {
       "sentence": "As a college student, you should make your own decisions.",
@@ -11165,15 +11173,23 @@
       "sentence": "親ともなると、子供の心配が絶えない。",
       "blocks": [
         {
-          "text": "親ともなると、子供の心配が",
-          "role": "修飾"
+          "text": "親",
+          "role": "主角"
+        },
+        {
+          "text": "ともなると、",
+          "role": "連接"
+        },
+        {
+          "text": "子供の心配が",
+          "role": "對象"
         },
         {
           "text": "絶えない",
           "role": "動作"
         }
       ],
-      "formula": "[親ともなると、子供の心配が] + [絶えない]"
+      "formula": "[親] + [ともなると、] + [子供の心配が] + [絶えない]"
     },
     "en": {
       "sentence": "Once you become a parent, you never stop worrying about your kids.",
@@ -11921,15 +11937,19 @@
           "role": "對象"
         },
         {
-          "text": "見ると",
+          "text": "見ると、",
           "role": "修飾"
         },
         {
-          "text": "、感動せずにはいられない",
+          "text": "感動せ",
+          "role": "修飾"
+        },
+        {
+          "text": "ずにはいられない",
           "role": "動作"
         }
       ],
-      "formula": "[この景色を] + [見ると] + [、感動せずにはいられない]"
+      "formula": "[この景色を] + [見ると、] + [感動せ] + [ずにはいられない]"
     },
     "en": {
       "sentence": "I can't help but be moved by this scenery.",
@@ -11993,15 +12013,19 @@
           "role": "對象"
         },
         {
-          "text": "聞くと",
+          "text": "聞くと、",
           "role": "修飾"
         },
         {
-          "text": "、同情せずにはいられない",
+          "text": "同情せ",
+          "role": "修飾"
+        },
+        {
+          "text": "ずにはいられない",
           "role": "動作"
         }
       ],
-      "formula": "[彼女の話を] + [聞くと] + [、同情せずにはいられない]"
+      "formula": "[彼女の話を] + [聞くと、] + [同情せ] + [ずにはいられない]"
     },
     "en": {
       "sentence": "I can't help but feel sympathy when I hear her story.",
@@ -12077,11 +12101,15 @@
           "role": "目標"
         },
         {
-          "text": "より、参加せざるを得ない",
+          "text": "より、",
+          "role": "修飾"
+        },
+        {
+          "text": "参加せざるを得ない",
           "role": "動作"
         }
       ],
-      "formula": "[事情に] + [より、参加せざるを得ない]"
+      "formula": "[事情に] + [より、] + [参加せざるを得ない]"
     },
     "en": {
       "sentence": "Due to circumstances, I have no choice but to attend.",
@@ -12309,11 +12337,15 @@
           "role": "主角"
         },
         {
-          "text": "ある以上、認めざるを得ない",
+          "text": "ある以上、",
+          "role": "連接"
+        },
+        {
+          "text": "認めざるを得ない",
           "role": "動作"
         }
       ],
-      "formula": "[証拠が] + [ある以上、認めざるを得ない]"
+      "formula": "[証拠が] + [ある以上、] + [認めざるを得ない]"
     },
     "en": {
       "sentence": "Given the evidence, I have no choice but to admit it.",
@@ -13318,18 +13350,26 @@
       "blocks": [
         {
           "text": "会社に",
-          "role": "目標"
+          "role": "場景"
         },
         {
-          "text": "勤めるかたわら、ボランティア活動を",
-          "role": "修飾"
+          "text": "勤める",
+          "role": "動作"
+        },
+        {
+          "text": "かたわら、",
+          "role": "連接"
+        },
+        {
+          "text": "ボランティア活動を",
+          "role": "對象"
         },
         {
           "text": "している",
           "role": "動作"
         }
       ],
-      "formula": "[会社に] + [勤めるかたわら、ボランティア活動を] + [している]"
+      "formula": "[会社に] + [勤める] + [かたわら、] + [ボランティア活動を] + [している]"
     },
     "en": {
       "sentence": "She works at a company while doing volunteer activities.",
@@ -13405,11 +13445,23 @@
           "role": "對象"
         },
         {
-          "text": "するかたわら、後輩の指導もしている",
-          "role": "修飾"
+          "text": "する",
+          "role": "動作"
+        },
+        {
+          "text": "かたわら、",
+          "role": "連接"
+        },
+        {
+          "text": "後輩の指導も",
+          "role": "對象"
+        },
+        {
+          "text": "している",
+          "role": "動作"
         }
       ],
-      "formula": "[研究を] + [するかたわら、後輩の指導もしている]"
+      "formula": "[研究を] + [する] + [かたわら、] + [後輩の指導も] + [している]"
     },
     "en": {
       "sentence": "He does research while also mentoring juniors.",
@@ -13545,15 +13597,23 @@
       "sentence": "家事のかたわら、通信教育を受けている。",
       "blocks": [
         {
-          "text": "家事のかたわら、通信教育を",
+          "text": "家事の",
           "role": "修飾"
+        },
+        {
+          "text": "かたわら、",
+          "role": "連接"
+        },
+        {
+          "text": "通信教育を",
+          "role": "對象"
         },
         {
           "text": "受けている",
           "role": "動作"
         }
       ],
-      "formula": "[家事のかたわら、通信教育を] + [受けている]"
+      "formula": "[家事の] + [かたわら、] + [通信教育を] + [受けている]"
     },
     "en": {
       "sentence": "She takes correspondence courses while doing housework.",
@@ -14425,15 +14485,27 @@
       "sentence": "相談すればよかったものを、一人で決めた。",
       "blocks": [
         {
-          "text": "相談すればよかったものを、一人で",
+          "text": "相談すれば",
+          "role": "修飾"
+        },
+        {
+          "text": "よかった",
+          "role": "動作"
+        },
+        {
+          "text": "ものを、",
           "role": "連接"
+        },
+        {
+          "text": "一人で",
+          "role": "修飾"
         },
         {
           "text": "決めた",
           "role": "動作"
         }
       ],
-      "formula": "[相談すればよかったものを、一人で] + [決めた]"
+      "formula": "[相談すれば] + [よかった] + [ものを、] + [一人で] + [決めた]"
     },
     "en": {
       "sentence": "He should have consulted someone, but he decided alone.",
@@ -14501,15 +14573,23 @@
       "sentence": "もう少し待てばよかったものを。",
       "blocks": [
         {
-          "text": "もう少し待てばよかった",
+          "text": "もう少し",
           "role": "修飾"
         },
         {
+          "text": "待てば",
+          "role": "修飾"
+        },
+        {
+          "text": "よかった",
+          "role": "動作"
+        },
+        {
           "text": "ものを",
-          "role": "對象"
+          "role": "連接"
         }
       ],
-      "formula": "[もう少し待てばよかった] + [ものを]"
+      "formula": "[もう少し] + [待てば] + [よかった] + [ものを]"
     },
     "en": {
       "sentence": "If only he had waited a little longer...",
@@ -14701,15 +14781,23 @@
       "sentence": "専門家といえども、間違えることはある。",
       "blocks": [
         {
-          "text": "専門家といえども、間違えることは",
+          "text": "専門家",
+          "role": "主角"
+        },
+        {
+          "text": "といえども、",
           "role": "連接"
+        },
+        {
+          "text": "間違えることは",
+          "role": "對象"
         },
         {
           "text": "ある",
           "role": "動作"
         }
       ],
-      "formula": "[専門家といえども、間違えることは] + [ある]"
+      "formula": "[専門家] + [といえども、] + [間違えることは] + [ある]"
     },
     "en": {
       "sentence": "Even an expert can make mistakes.",
@@ -14769,15 +14857,23 @@
       "sentence": "法律といえども、完璧ではない。",
       "blocks": [
         {
-          "text": "法律といえども、完璧では",
+          "text": "法律",
+          "role": "主角"
+        },
+        {
+          "text": "といえども、",
           "role": "連接"
+        },
+        {
+          "text": "完璧では",
+          "role": "修飾"
         },
         {
           "text": "ない",
           "role": "動作"
         }
       ],
-      "formula": "[法律といえども、完璧では] + [ない]"
+      "formula": "[法律] + [といえども、] + [完璧では] + [ない]"
     },
     "en": {
       "sentence": "Even the law is not perfect.",
@@ -15785,15 +15881,23 @@
       "sentence": "子供から大人に至るまで、誰もが楽しめる。",
       "blocks": [
         {
-          "text": "子供から大人に至るまで、誰もが",
+          "text": "子供から",
           "role": "修飾"
+        },
+        {
+          "text": "大人に至るまで、",
+          "role": "連接"
+        },
+        {
+          "text": "誰もが",
+          "role": "主角"
         },
         {
           "text": "楽しめる",
           "role": "動作"
         }
       ],
-      "formula": "[子供から大人に至るまで、誰もが] + [楽しめる]"
+      "formula": "[子供から] + [大人に至るまで、] + [誰もが] + [楽しめる]"
     },
     "en": {
       "sentence": "Everyone from children to adults can enjoy it.",
@@ -15934,18 +16038,26 @@
       "blocks": [
         {
           "text": "社長から",
-          "role": "場景"
+          "role": "修飾"
         },
         {
-          "text": "新入社員に至るまで",
-          "role": "場景"
+          "text": "新入社員に",
+          "role": "目標"
         },
         {
-          "text": "全員参加",
+          "text": "至るまで、",
+          "role": "連接"
+        },
+        {
+          "text": "全員",
+          "role": "主角"
+        },
+        {
+          "text": "参加した",
           "role": "動作"
         }
       ],
-      "formula": "[社長から] + [新入社員に至るまで] + [全員参加]"
+      "formula": "[社長から] + [新入社員に] + [至るまで、] + [全員] + [参加した]"
     },
     "en": {
       "sentence": "Everyone from the CEO to new hires participated.",
@@ -16093,7 +16205,19 @@
       "sentence": "北海道から沖縄に至るまで、被害が広がった。",
       "blocks": [
         {
-          "text": "北海道から沖縄に至るまで、被害が",
+          "text": "北海道から沖縄に",
+          "role": "修飾"
+        },
+        {
+          "text": "至るまで",
+          "role": "修飾"
+        },
+        {
+          "text": "、",
+          "role": "修飾"
+        },
+        {
+          "text": "被害が",
           "role": "修飾"
         },
         {
@@ -16105,7 +16229,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[北海道から沖縄に至るまで、被害が] + [広が] + [った]"
+      "formula": "[北海道から沖縄に] + [至るまで] + [、] + [被害が] + [広が] + [った]"
     },
     "en": {
       "sentence": "The damage spread from Hokkaido all the way to Okinawa.",
@@ -17037,11 +17161,15 @@
           "role": "對象"
         },
         {
-          "text": "聞いたものの、よくわからない",
-          "role": "連接"
+          "text": "聞いたものの、",
+          "role": "修飾"
+        },
+        {
+          "text": "よくわからない",
+          "role": "修飾"
         }
       ],
-      "formula": "[説明を] + [聞いたものの、よくわからない]"
+      "formula": "[説明を] + [聞いたものの、] + [よくわからない]"
     },
     "en": {
       "sentence": "I heard the explanation, but I still don't understand.",
@@ -17605,15 +17733,19 @@
       "sentence": "努力したからこそ、今の自分がある。",
       "blocks": [
         {
-          "text": "努力したからこそ、今の自分が",
-          "role": "連接"
+          "text": "努力したからこそ、",
+          "role": "修飾"
+        },
+        {
+          "text": "今の自分が",
+          "role": "修飾"
         },
         {
           "text": "ある",
           "role": "動作"
         }
       ],
-      "formula": "[努力したからこそ、今の自分が] + [ある]"
+      "formula": "[努力したからこそ、] + [今の自分が] + [ある]"
     },
     "en": {
       "sentence": "It's precisely because I worked hard that I am who I am.",
@@ -18109,11 +18241,15 @@
           "role": "主角"
         },
         {
-          "text": "努力の結果にほかならない",
+          "text": "努力の結果",
           "role": "修飾"
+        },
+        {
+          "text": "にほかならない",
+          "role": "動作"
         }
       ],
-      "formula": "[成功は] + [努力の結果にほかならない]"
+      "formula": "[成功は] + [努力の結果] + [にほかならない]"
     },
     "en": {
       "sentence": "Success is nothing other than the result of effort.",
@@ -18181,11 +18317,15 @@
           "role": "主角"
         },
         {
-          "text": "彼の努力のたまものにほかならない",
+          "text": "彼の努力のたまものに",
+          "role": "修飾"
+        },
+        {
+          "text": "ほかならない",
           "role": "修飾"
         }
       ],
-      "formula": "[これは] + [彼の努力のたまものにほかならない]"
+      "formula": "[これは] + [彼の努力のたまものに] + [ほかならない]"
     },
     "en": {
       "sentence": "This is none other than the fruit of his effort.",
@@ -18257,11 +18397,15 @@
           "role": "主角"
         },
         {
-          "text": "人間の責任にほかならない",
+          "text": "人間の責任",
           "role": "修飾"
+        },
+        {
+          "text": "にほかならない",
+          "role": "動作"
         }
       ],
-      "formula": "[環境問題は] + [人間の責任にほかならない]"
+      "formula": "[環境問題は] + [人間の責任] + [にほかならない]"
     },
     "en": {
       "sentence": "Environmental issues are none other than human responsibility.",
@@ -18329,11 +18473,19 @@
           "role": "主角"
         },
         {
-          "text": "、心配しているからにほかならない",
+          "text": "、",
+          "role": "修飾"
+        },
+        {
+          "text": "心配しているからに",
+          "role": "修飾"
+        },
+        {
+          "text": "ほかならない",
           "role": "修飾"
         }
       ],
-      "formula": "[彼女が] + [怒るのは] + [、心配しているからにほかならない]"
+      "formula": "[彼女が] + [怒るのは] + [、] + [心配しているからに] + [ほかならない]"
     },
     "en": {
       "sentence": "She's angry precisely because she's worried.",
@@ -18397,11 +18549,15 @@
           "role": "主角"
         },
         {
-          "text": "練習不足にほかならない",
+          "text": "練習不足",
           "role": "修飾"
+        },
+        {
+          "text": "にほかならない",
+          "role": "動作"
         }
       ],
-      "formula": "[この結果は] + [練習不足にほかならない]"
+      "formula": "[この結果は] + [練習不足] + [にほかならない]"
     },
     "en": {
       "sentence": "This result is nothing other than a lack of practice.",
@@ -18469,7 +18625,15 @@
       "sentence": "この問題をめぐって、議論が続いている。",
       "blocks": [
         {
-          "text": "この問題をめぐって、議論が",
+          "text": "この問題を",
+          "role": "修飾"
+        },
+        {
+          "text": "めぐって、",
+          "role": "修飾"
+        },
+        {
+          "text": "議論が",
           "role": "修飾"
         },
         {
@@ -18477,7 +18641,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[この問題をめぐって、議論が] + [続いている]"
+      "formula": "[この問題を] + [めぐって、] + [議論が] + [続いている]"
     },
     "en": {
       "sentence": "Debate continues surrounding this issue.",
@@ -18533,7 +18697,15 @@
       "sentence": "土地の所有権をめぐって、裁判になった。",
       "blocks": [
         {
-          "text": "土地の所有権をめぐって、裁判に",
+          "text": "土地の所有権を",
+          "role": "修飾"
+        },
+        {
+          "text": "めぐって、",
+          "role": "修飾"
+        },
+        {
+          "text": "裁判に",
           "role": "修飾"
         },
         {
@@ -18541,7 +18713,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[土地の所有権をめぐって、裁判に] + [なった]"
+      "formula": "[土地の所有権を] + [めぐって、] + [裁判に] + [なった]"
     },
     "en": {
       "sentence": "They went to court over land ownership.",
@@ -18605,7 +18777,15 @@
       "sentence": "新しい法律をめぐって、意見が対立している。",
       "blocks": [
         {
-          "text": "新しい法律をめぐって、意見が",
+          "text": "新しい法律を",
+          "role": "修飾"
+        },
+        {
+          "text": "めぐって、",
+          "role": "修飾"
+        },
+        {
+          "text": "意見が",
           "role": "修飾"
         },
         {
@@ -18613,7 +18793,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[新しい法律をめぐって、意見が] + [対立している]"
+      "formula": "[新しい法律を] + [めぐって、] + [意見が] + [対立している]"
     },
     "en": {
       "sentence": "Opinions are divided regarding the new law.",
@@ -19497,7 +19677,19 @@
       "sentence": "東京を皮切りに、全国ツアーが始まった。",
       "blocks": [
         {
-          "text": "東京を皮切りに、全国ツアーが",
+          "text": "東京を",
+          "role": "修飾"
+        },
+        {
+          "text": "皮切りに",
+          "role": "修飾"
+        },
+        {
+          "text": "、",
+          "role": "修飾"
+        },
+        {
+          "text": "全国ツアーが",
           "role": "修飾"
         },
         {
@@ -19505,7 +19697,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[東京を皮切りに、全国ツアーが] + [始まった]"
+      "formula": "[東京を] + [皮切りに] + [、] + [全国ツアーが] + [始まった]"
     },
     "en": {
       "sentence": "Starting with Tokyo, a national tour began.",
@@ -19653,7 +19845,19 @@
       "sentence": "日本を皮切りに、アジア各国で発売された。",
       "blocks": [
         {
-          "text": "日本を皮切りに、アジア各国で",
+          "text": "日本を",
+          "role": "修飾"
+        },
+        {
+          "text": "皮切りに",
+          "role": "修飾"
+        },
+        {
+          "text": "、",
+          "role": "修飾"
+        },
+        {
+          "text": "アジア各国で",
           "role": "修飾"
         },
         {
@@ -19661,7 +19865,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[日本を皮切りに、アジア各国で] + [発売された]"
+      "formula": "[日本を] + [皮切りに] + [、] + [アジア各国で] + [発売された]"
     },
     "en": {
       "sentence": "Starting with Japan, it was released across Asia.",
@@ -19725,15 +19929,23 @@
       "sentence": "初勝利を皮切りに、連勝が続いた。",
       "blocks": [
         {
-          "text": "初勝利を皮切りに、連勝が",
-          "role": "修飾"
+          "text": "初勝利を",
+          "role": "對象"
+        },
+        {
+          "text": "皮切りに、",
+          "role": "連接"
+        },
+        {
+          "text": "連勝が",
+          "role": "主角"
         },
         {
           "text": "続いた",
           "role": "動作"
         }
       ],
-      "formula": "[初勝利を皮切りに、連勝が] + [続いた]"
+      "formula": "[初勝利を] + [皮切りに、] + [連勝が] + [続いた]"
     },
     "en": {
       "sentence": "Starting with the first win, a winning streak followed.",
@@ -19805,7 +20017,19 @@
       "sentence": "彼の発言を皮切りに、批判が相次いだ。",
       "blocks": [
         {
-          "text": "彼の発言を皮切りに、批判が",
+          "text": "彼の発言を",
+          "role": "修飾"
+        },
+        {
+          "text": "皮切りに",
+          "role": "修飾"
+        },
+        {
+          "text": "、",
+          "role": "修飾"
+        },
+        {
+          "text": "批判が",
           "role": "修飾"
         },
         {
@@ -19813,7 +20037,7 @@
           "role": "修飾"
         }
       ],
-      "formula": "[彼の発言を皮切りに、批判が] + [相次いだ]"
+      "formula": "[彼の発言を] + [皮切りに] + [、] + [批判が] + [相次いだ]"
     },
     "en": {
       "sentence": "Starting from his remarks, criticism poured in.",
@@ -21262,11 +21486,11 @@
           "role": "修飾"
         },
         {
-          "text": "難しいですね",
+          "text": "難しいですね…",
           "role": "動作"
         }
       ],
-      "formula": "[ちょっと] + [難しいですね]"
+      "formula": "[ちょっと] + [難しいですね…]"
     },
     "en": {
       "sentence": "That's a bit difficult...",
@@ -21313,11 +21537,11 @@
       "sentence": "考えさせてください…",
       "blocks": [
         {
-          "text": "考えさせてください",
+          "text": "考えさせてください…",
           "role": "動作"
         }
       ],
-      "formula": "[考えさせてください]"
+      "formula": "[考えさせてください…]"
     },
     "en": {
       "sentence": "Let me think about it...",
@@ -21423,11 +21647,11 @@
           "role": "修飾"
         },
         {
-          "text": "頑張ります",
+          "text": "頑張ります…",
           "role": "動作"
         }
       ],
-      "formula": "[できるだけ] + [頑張ります]"
+      "formula": "[できるだけ] + [頑張ります…]"
     },
     "en": {
       "sentence": "I'll try my best...",
@@ -22763,15 +22987,19 @@
       "sentence": "予約していなかったので、入れませんでした。",
       "blocks": [
         {
-          "text": "予約していなかったので",
-          "role": "修飾"
+          "text": "予約して",
+          "role": "動作"
+        },
+        {
+          "text": "いなかったので、",
+          "role": "連接"
         },
         {
           "text": "入れませんでした",
           "role": "動作"
         }
       ],
-      "formula": "[予約していなかったので] + [入れませんでした]"
+      "formula": "[予約して] + [いなかったので、] + [入れませんでした]"
     },
     "en": {
       "sentence": "Because I had not made a reservation, they didn't let me in.",
@@ -24163,7 +24391,15 @@
           "role": "連接"
         },
         {
-          "text": "彼女にもっと時間があれば",
+          "text": "彼女に",
+          "role": "主角"
+        },
+        {
+          "text": "もっと",
+          "role": "修飾"
+        },
+        {
+          "text": "時間があれば、",
           "role": "修飾"
         },
         {
@@ -24175,7 +24411,7 @@
           "role": "動作"
         }
       ],
-      "formula": "[もし彼女にもっと時間があれば] + [旅行に行くでしょう]"
+      "formula": "[もし] + [彼女に] + [もっと] + [時間があれば、] + [旅行に] + [行くでしょう]"
     },
     "en": {
       "sentence": "If she had more time, she would travel.",
@@ -24909,7 +25145,7 @@
     "dimension_label": "動詞變形金剛",
     "chinese": "我每天吃早餐。→ 我不吃早餐。",
     "jp": {
-      "sentence": "毎日朝ご飯を食べます。→ 食べません。",
+      "sentence": "毎日朝ご飯を食べます。",
       "blocks": [
         {
           "text": "毎日",
@@ -24922,13 +25158,9 @@
         {
           "text": "食べます",
           "role": "動作"
-        },
-        {
-          "text": "→ 食べません",
-          "role": "動作"
         }
       ],
-      "formula": "[食べる] → [食べます/食べません]（懶惰家族：砍る換裝）"
+      "formula": "[毎日] + [朝ご飯を] + [食べます]"
     },
     "en": {
       "sentence": "I eat breakfast every day. → I don't eat breakfast.",
@@ -24973,7 +25205,7 @@
     "dimension_label": "動詞變形金剛",
     "chinese": "我每天喝水。→ 我昨天喝了水。",
     "jp": {
-      "sentence": "毎日水を飲みます。→ 昨日飲みました。",
+      "sentence": "毎日水を飲みます。",
       "blocks": [
         {
           "text": "毎日",
@@ -24986,13 +25218,9 @@
         {
           "text": "飲みます",
           "role": "動作"
-        },
-        {
-          "text": "→ 飲みました",
-          "role": "動作"
         }
       ],
-      "formula": "[飲む] → [飲みます/飲みました]（勤勞家族：む滑到み段）"
+      "formula": "[毎日] + [水を] + [飲みます]"
     },
     "en": {
       "sentence": "I drink water every day. → I drank water yesterday.",
@@ -25037,26 +25265,18 @@
     "dimension_label": "動詞變形金剛",
     "chinese": "我買了書。→ 我喝了水。→ 我寫了信。",
     "jp": {
-      "sentence": "本を買った。水を飲んだ。手紙を書いた。",
+      "sentence": "本を買った。",
       "blocks": [
         {
           "text": "本を",
           "role": "對象"
         },
         {
-          "text": "買った水を",
-          "role": "對象"
-        },
-        {
-          "text": "飲んだ手紙を",
-          "role": "對象"
-        },
-        {
-          "text": "書いた",
+          "text": "買った",
           "role": "動作"
         }
       ],
-      "formula": "[本を] + [買った水を] + [飲んだ手紙を] + [書いた]"
+      "formula": "[本を] + [買った]"
     },
     "en": {
       "sentence": "I bought a book. I drank water. I wrote a letter.",
@@ -25101,7 +25321,7 @@
     "dimension_label": "動詞變形金剛",
     "chinese": "我做功課。→ 朋友來了。",
     "jp": {
-      "sentence": "宿題をします。→ 友達が来ました。",
+      "sentence": "宿題をします。",
       "blocks": [
         {
           "text": "宿題を",
@@ -25110,13 +25330,9 @@
         {
           "text": "します",
           "role": "動作"
-        },
-        {
-          "text": "→ 来ました",
-          "role": "動作"
         }
       ],
-      "formula": "[宿題を] + [します] + [→ 来ました]"
+      "formula": "[宿題を] + [します]"
     },
     "en": {
       "sentence": "I do homework. → My friend came.",
@@ -25161,7 +25377,7 @@
     "dimension_label": "動詞變形金剛",
     "chinese": "我不買這個。→ 我不喝酒。",
     "jp": {
-      "sentence": "これを買わない。→ お酒を飲まない。",
+      "sentence": "これを買わない。",
       "blocks": [
         {
           "text": "これを",
@@ -25170,13 +25386,9 @@
         {
           "text": "買わない",
           "role": "動作"
-        },
-        {
-          "text": "→ 飲まない",
-          "role": "動作"
         }
       ],
-      "formula": "[これを] + [買わない] + [→ 飲まない]"
+      "formula": "[これを] + [買わない]"
     },
     "en": {
       "sentence": "I don't buy this. → I don't drink alcohol.",
