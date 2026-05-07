@@ -25002,5 +25002,321 @@
       "jp_insight": "🔍 はずがない（不可能）洩漏了說話者非常了解她的為人！偵探會問：你怎麼這麼確定？你們到底什麼關係？為什麼還沒調查你就急著否定？",
       "en_insight": "🔍 would do（假設語氣）暴露了說話者在替嫌疑人辯護，而且用了 no way 這麼強烈的否定 → 關係不一般"
     }
+  },
+  {
+    "id": "uni_verb_366",
+    "dimension": "verb_conjugation",
+    "dimension_label": "動詞變形金剛",
+    "chinese": "我每天吃早餐。→ 我不吃早餐。",
+    "jp": {
+      "sentence": "毎日朝ご飯を食べます。→ 食べません。",
+      "blocks": [
+        {
+          "text": "毎日",
+          "role": "時間"
+        },
+        {
+          "text": "朝ご飯を",
+          "role": "對象"
+        },
+        {
+          "text": "食べます",
+          "role": "動作"
+        },
+        {
+          "text": "→ 食べません",
+          "role": "動作"
+        }
+      ],
+      "formula": "[食べる] → [食べます/食べません]（懶惰家族：砍る換裝）"
+    },
+    "en": {
+      "sentence": "I eat breakfast every day. → I don't eat breakfast.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "eat",
+          "role": "動作"
+        },
+        {
+          "text": "breakfast",
+          "role": "對象"
+        },
+        {
+          "text": "→ don't eat",
+          "role": "動作"
+        }
+      ],
+      "formula": "[eat] → [don't eat]（英文動詞不變，加 don't）"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「吃」永遠不變形，加「不」就否定",
+      "jp_insight": "🤖 食べる 是懶惰家族（G2）！砍掉る → 食べ + ます/ません。最簡單的變形！",
+      "en_insight": "英文 eat 本身也不變，靠 don't 幫忙否定"
+    },
+    "jlpt": "N5-N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 6,
+        "morphology_load": 8,
+        "new_concept": 7
+      },
+      "en": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 3
+      }
+    }
+  },
+  {
+    "id": "uni_verb_367",
+    "dimension": "verb_conjugation",
+    "dimension_label": "動詞變形金剛",
+    "chinese": "我每天喝水。→ 我昨天喝了水。",
+    "jp": {
+      "sentence": "毎日水を飲みます。→ 昨日飲みました。",
+      "blocks": [
+        {
+          "text": "毎日",
+          "role": "時間"
+        },
+        {
+          "text": "水を",
+          "role": "對象"
+        },
+        {
+          "text": "飲みます",
+          "role": "動作"
+        },
+        {
+          "text": "→ 飲みました",
+          "role": "動作"
+        }
+      ],
+      "formula": "[飲む] → [飲みます/飲みました]（勤勞家族：む滑到み段）"
+    },
+    "en": {
+      "sentence": "I drink water every day. → I drank water yesterday.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "drink",
+          "role": "動作"
+        },
+        {
+          "text": "water",
+          "role": "對象"
+        },
+        {
+          "text": "→ drank",
+          "role": "動作"
+        }
+      ],
+      "formula": "[drink] → [drank]（英文不規則變化）"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「喝」不變，加「了」表示過去",
+      "jp_insight": "🤖 飲む 是勤勞家族（G1）！む滑到い段 → 飲み + ます。五段動詞字尾會在あいうえお軌道上滑動！",
+      "en_insight": "英文 drink→drank 也要變形！跟日文一樣頭痛"
+    },
+    "jlpt": "N5-N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 6,
+        "morphology_load": 8,
+        "new_concept": 7
+      },
+      "en": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 3
+      }
+    }
+  },
+  {
+    "id": "uni_verb_368",
+    "dimension": "verb_conjugation",
+    "dimension_label": "動詞變形金剛",
+    "chinese": "我買了書。→ 我喝了水。→ 我寫了信。",
+    "jp": {
+      "sentence": "本を買った。水を飲んだ。手紙を書いた。",
+      "blocks": [
+        {
+          "text": "買った",
+          "role": "動作"
+        },
+        {
+          "text": "飲んだ",
+          "role": "動作"
+        },
+        {
+          "text": "書いた",
+          "role": "動作"
+        }
+      ],
+      "formula": "買う→買った（促音便）/ 飲む→飲んだ（撥音便）/ 書く→書いた（い音便）"
+    },
+    "en": {
+      "sentence": "I bought a book. I drank water. I wrote a letter.",
+      "blocks": [
+        {
+          "text": "bought",
+          "role": "動作"
+        },
+        {
+          "text": "drank",
+          "role": "動作"
+        },
+        {
+          "text": "wrote",
+          "role": "動作"
+        }
+      ],
+      "formula": "buy→bought / drink→drank / write→wrote"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「買了、喝了、寫了」全部加「了」就好，超簡單",
+      "jp_insight": "🤖 G1 的た形音便：う/つ/る→った（促音便）、む/ぶ/ぬ→んだ（撥音便）、く→いた（い音便）。這是日文最難的部分！",
+      "en_insight": "英文也有不規則過去式：bought/drank/wrote，只能硬背"
+    },
+    "jlpt": "N5-N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 6,
+        "morphology_load": 8,
+        "new_concept": 7
+      },
+      "en": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 3
+      }
+    }
+  },
+  {
+    "id": "uni_verb_369",
+    "dimension": "verb_conjugation",
+    "dimension_label": "動詞變形金剛",
+    "chinese": "我做功課。→ 朋友來了。",
+    "jp": {
+      "sentence": "宿題をします。→ 友達が来ました。",
+      "blocks": [
+        {
+          "text": "宿題を",
+          "role": "對象"
+        },
+        {
+          "text": "します",
+          "role": "動作"
+        },
+        {
+          "text": "→ 来ました",
+          "role": "動作"
+        }
+      ],
+      "formula": "する→します / くる→きます（例外家族：沒有規則，直接背！）"
+    },
+    "en": {
+      "sentence": "I do homework. → My friend came.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "do homework",
+          "role": "動作"
+        },
+        {
+          "text": "→ came",
+          "role": "動作"
+        }
+      ],
+      "formula": "do→did / come→came（英文也是不規則）"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「做」「來」都不變形",
+      "jp_insight": "🤖 する和くる是例外家族（G3）！只有兩個成員，變形完全不規則，する→します/した/しない、くる→きます/きた/こない。直接背！",
+      "en_insight": "英文 do→did、come→came 也是不規則，跟日文 G3 一樣只能背"
+    },
+    "jlpt": "N5-N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 6,
+        "morphology_load": 8,
+        "new_concept": 7
+      },
+      "en": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 3
+      }
+    }
+  },
+  {
+    "id": "uni_verb_370",
+    "dimension": "verb_conjugation",
+    "dimension_label": "動詞變形金剛",
+    "chinese": "我不買這個。→ 我不喝酒。",
+    "jp": {
+      "sentence": "これを買わない。→ お酒を飲まない。",
+      "blocks": [
+        {
+          "text": "これを",
+          "role": "對象"
+        },
+        {
+          "text": "買わない",
+          "role": "動作"
+        },
+        {
+          "text": "→ 飲まない",
+          "role": "動作"
+        }
+      ],
+      "formula": "買う→買わない（う→わ＋ない）/ 飲む→飲まない（む→ま＋ない）"
+    },
+    "en": {
+      "sentence": "I don't buy this. → I don't drink alcohol.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "don't buy",
+          "role": "動作"
+        },
+        {
+          "text": "→ don't drink",
+          "role": "動作"
+        }
+      ],
+      "formula": "don't + 原形（英文動詞不變）"
+    },
+    "contrast": {
+      "cn_blindspot": "中文加「不」就好，動詞完全不動",
+      "jp_insight": "🤖 G1 否定：字尾滑到あ段 + ない。飲む→飲まない。⚠️ 陷阱：買う→買わない（不是買あない！う要變成わ）",
+      "en_insight": "英文加 don't 就好，動詞保持原形，比日文簡單多了"
+    },
+    "jlpt": "N5-N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 6,
+        "morphology_load": 8,
+        "new_concept": 7
+      },
+      "en": {
+        "transform_distance": 3,
+        "morphology_load": 4,
+        "new_concept": 3
+      }
+    }
   }
 ]
