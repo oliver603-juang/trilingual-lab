@@ -2427,10 +2427,9 @@
       "formula": "[It] + [was] + [hot] + [yesterday]"
     },
     "contrast": {
-      "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
-      "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "英文形容詞要找 is/am/are 牽手",
-      "order_shift": ""
+      "cn_blindspot": "中文形容詞不會變形（很冷→不冷→昨天冷），加字就好",
+      "jp_insight": "🦎 い家族自己切尾巴變身！寒い→寒くない→寒かった。⚠️ きれい是な家族間諜，不能切尾！",
+      "en_insight": "英文形容詞不動（hot→not hot→was hot），靠 is/was/not 保鑣處理"
     },
     "metrics": {
       "jp": {
@@ -2495,10 +2494,9 @@
       "formula": "[This] + [book] + [is] + [not] + [interesting]"
     },
     "contrast": {
-      "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
-      "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "英文形容詞要找 is/am/are 牽手",
-      "order_shift": ""
+      "cn_blindspot": "中文形容詞不會變形（很冷→不冷→昨天冷），加字就好",
+      "jp_insight": "🦎 い家族自己切尾巴變身！寒い→寒くない→寒かった。⚠️ きれい是な家族間諜，不能切尾！",
+      "en_insight": "英文形容詞不動（hot→not hot→was hot），靠 is/was/not 保鑣處理"
     },
     "metrics": {
       "jp": {
@@ -2559,10 +2557,9 @@
       "formula": "[Yesterday's] + [movie] + [was] + [interesting]"
     },
     "contrast": {
-      "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
-      "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "英文形容詞要找 is/am/are 牽手",
-      "order_shift": ""
+      "cn_blindspot": "中文形容詞不會變形（很冷→不冷→昨天冷），加字就好",
+      "jp_insight": "🦎 い家族自己切尾巴變身！寒い→寒くない→寒かった。⚠️ きれい是な家族間諜，不能切尾！",
+      "en_insight": "英文形容詞不動（hot→not hot→was hot），靠 is/was/not 保鑣處理"
     },
     "metrics": {
       "jp": {
@@ -2623,10 +2620,9 @@
       "formula": "[It's] + [not] + [cold] + [today]"
     },
     "contrast": {
-      "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
-      "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "英文形容詞要找 is/am/are 牽手",
-      "order_shift": ""
+      "cn_blindspot": "中文形容詞不會變形（很冷→不冷→昨天冷），加字就好",
+      "jp_insight": "🦎 い家族自己切尾巴變身！寒い→寒くない→寒かった。⚠️ きれい是な家族間諜，不能切尾！",
+      "en_insight": "英文形容詞不動（hot→not hot→was hot），靠 is/was/not 保鑣處理"
     },
     "metrics": {
       "jp": {
@@ -2687,10 +2683,9 @@
       "formula": "[That] + [store] + [was] + [expensive]"
     },
     "contrast": {
-      "cn_blindspot": "中文形容詞不會變形（很美→以前很美）",
-      "jp_insight": "日文 い形容詞自己變時態（美しい→美しかった）",
-      "en_insight": "英文形容詞要找 is/am/are 牽手",
-      "order_shift": ""
+      "cn_blindspot": "中文形容詞不會變形（很冷→不冷→昨天冷），加字就好",
+      "jp_insight": "🦎 い家族自己切尾巴變身！寒い→寒くない→寒かった。⚠️ きれい是な家族間諜，不能切尾！",
+      "en_insight": "英文形容詞不動（hot→not hot→was hot），靠 is/was/not 保鑣處理"
     },
     "metrics": {
       "jp": {
