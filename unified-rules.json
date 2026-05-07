@@ -25318,5 +25318,513 @@
         "new_concept": 3
       }
     }
+  },
+  {
+    "cn": "我會說日語。",
+    "jp": {
+      "sentence": "日本語が話せます。",
+      "blocks": [
+        {
+          "text": "日本語が",
+          "role": "對象"
+        },
+        {
+          "text": "話せます",
+          "role": "動作"
+        }
+      ],
+      "formula": "[日本語が] + [話せます]（話す→話せる→話せます）"
+    },
+    "en": {
+      "sentence": "I can speak Japanese.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "can speak",
+          "role": "動作"
+        },
+        {
+          "text": "Japanese",
+          "role": "對象"
+        }
+      ],
+      "formula": "[I] + [can speak] + [Japanese]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「會」表示能力，動詞不變",
+      "jp_insight": "🤖 可能形：話す→話せる（す滑到え段＋る）。動詞自己變身表示「能做到」！",
+      "en_insight": "英文加 can 就好，動詞不變"
+    },
+    "id": "uni_potential_371",
+    "dimension": "potential",
+    "dimension_label": "可能形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 5,
+        "morphology_load": 6,
+        "new_concept": 6
+      },
+      "en": {
+        "transform_distance": 2,
+        "morphology_load": 2,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "cn": "這裡看得到富士山。",
+    "jp": {
+      "sentence": "ここから富士山が見えます。",
+      "blocks": [
+        {
+          "text": "ここから",
+          "role": "場景"
+        },
+        {
+          "text": "富士山が",
+          "role": "對象"
+        },
+        {
+          "text": "見えます",
+          "role": "動作"
+        }
+      ],
+      "formula": "[ここから] + [富士山が] + [見えます]"
+    },
+    "en": {
+      "sentence": "You can see Mt. Fuji from here.",
+      "blocks": [
+        {
+          "text": "You",
+          "role": "主角"
+        },
+        {
+          "text": "can see",
+          "role": "動作"
+        },
+        {
+          "text": "Mt. Fuji",
+          "role": "對象"
+        },
+        {
+          "text": "from here",
+          "role": "場景"
+        }
+      ],
+      "formula": "[You] + [can see] + [Mt. Fuji] + [from here]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「看得到」用「得到」表示可能",
+      "jp_insight": "🤖 見る→見える（自然能看到）vs 見られる（有能力看）。⚠️ 見える是特殊的自發動詞！",
+      "en_insight": "英文 can see 不分自然看到還是有能力看"
+    },
+    "id": "uni_potential_372",
+    "dimension": "potential",
+    "dimension_label": "可能形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 5,
+        "morphology_load": 6,
+        "new_concept": 6
+      },
+      "en": {
+        "transform_distance": 2,
+        "morphology_load": 2,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "cn": "小孩不能喝酒。",
+    "jp": {
+      "sentence": "子供はお酒が飲めません。",
+      "blocks": [
+        {
+          "text": "子供は",
+          "role": "主角"
+        },
+        {
+          "text": "お酒が",
+          "role": "對象"
+        },
+        {
+          "text": "飲めません",
+          "role": "動作"
+        }
+      ],
+      "formula": "[子供は] + [お酒が] + [飲めません]（飲む→飲める→飲めません）"
+    },
+    "en": {
+      "sentence": "Children cannot drink alcohol.",
+      "blocks": [
+        {
+          "text": "Children",
+          "role": "主角"
+        },
+        {
+          "text": "cannot drink",
+          "role": "動作"
+        },
+        {
+          "text": "alcohol",
+          "role": "對象"
+        }
+      ],
+      "formula": "[Children] + [cannot drink] + [alcohol]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「不能喝」用「不能」＋動詞原形",
+      "jp_insight": "🤖 飲む→飲める（可能形）→飲めません（可能形否定）。⚠️ 對象用が不用を！",
+      "en_insight": "英文 cannot + 原形，動詞不變"
+    },
+    "id": "uni_potential_373",
+    "dimension": "potential",
+    "dimension_label": "可能形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 5,
+        "morphology_load": 6,
+        "new_concept": 6
+      },
+      "en": {
+        "transform_distance": 2,
+        "morphology_load": 2,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "cn": "我們一起吃飯吧！",
+    "jp": {
+      "sentence": "一緒にご飯を食べよう！",
+      "blocks": [
+        {
+          "text": "一緒に",
+          "role": "修飾"
+        },
+        {
+          "text": "ご飯を",
+          "role": "對象"
+        },
+        {
+          "text": "食べよう",
+          "role": "動作"
+        }
+      ],
+      "formula": "[一緒に] + [ご飯を] + [食べよう]（食べる→食べよう）"
+    },
+    "en": {
+      "sentence": "Let's eat together!",
+      "blocks": [
+        {
+          "text": "Let's",
+          "role": "連接"
+        },
+        {
+          "text": "eat",
+          "role": "動作"
+        },
+        {
+          "text": "together",
+          "role": "修飾"
+        }
+      ],
+      "formula": "[Let's] + [eat] + [together]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文加「吧」表示提議",
+      "jp_insight": "🤖 意向形：食べる→食べよう（G2 砍る加よう）。表示「一起做吧！」的邀請",
+      "en_insight": "英文用 Let's + 原形，動詞不變"
+    },
+    "id": "uni_volitional_374",
+    "dimension": "volitional",
+    "dimension_label": "意向形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "cn": "明天早點起床吧。",
+    "jp": {
+      "sentence": "明日は早く起きよう。",
+      "blocks": [
+        {
+          "text": "明日は",
+          "role": "時間"
+        },
+        {
+          "text": "早く",
+          "role": "修飾"
+        },
+        {
+          "text": "起きよう",
+          "role": "動作"
+        }
+      ],
+      "formula": "[明日は] + [早く] + [起きよう]（起きる→起きよう）"
+    },
+    "en": {
+      "sentence": "Let's wake up early tomorrow.",
+      "blocks": [
+        {
+          "text": "Let's",
+          "role": "連接"
+        },
+        {
+          "text": "wake up",
+          "role": "動作"
+        },
+        {
+          "text": "early",
+          "role": "修飾"
+        },
+        {
+          "text": "tomorrow",
+          "role": "時間"
+        }
+      ],
+      "formula": "[Let's] + [wake up early] + [tomorrow]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文加「吧」就好",
+      "jp_insight": "🤖 自己的決心也用意向形：起きよう＝我要早起！不只是邀請別人",
+      "en_insight": "英文自己的決心用 I will / I'm going to，Let's 只用於邀請"
+    },
+    "id": "uni_volitional_375",
+    "dimension": "volitional",
+    "dimension_label": "意向形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "cn": "去看電影吧！",
+    "jp": {
+      "sentence": "映画を見に行こう！",
+      "blocks": [
+        {
+          "text": "映画を",
+          "role": "對象"
+        },
+        {
+          "text": "見に",
+          "role": "目標"
+        },
+        {
+          "text": "行こう",
+          "role": "動作"
+        }
+      ],
+      "formula": "[映画を見に] + [行こう]（行く→行こう）"
+    },
+    "en": {
+      "sentence": "Let's go see a movie!",
+      "blocks": [
+        {
+          "text": "Let's",
+          "role": "連接"
+        },
+        {
+          "text": "go see",
+          "role": "動作"
+        },
+        {
+          "text": "a movie",
+          "role": "對象"
+        }
+      ],
+      "formula": "[Let's] + [go see] + [a movie]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「去看吧」加「吧」",
+      "jp_insight": "🤖 G1 意向形：行く→行こう（く滑到お段＋う）。飲む→飲もう、書く→書こう",
+      "en_insight": "英文 Let's go，超簡單"
+    },
+    "id": "uni_volitional_376",
+    "dimension": "volitional",
+    "dimension_label": "意向形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 5
+      },
+      "en": {
+        "transform_distance": 2,
+        "morphology_load": 1,
+        "new_concept": 2
+      }
+    }
+  },
+  {
+    "cn": "快跑！（緊急）",
+    "jp": {
+      "sentence": "走れ！",
+      "blocks": [
+        {
+          "text": "走れ",
+          "role": "動作"
+        }
+      ],
+      "formula": "[走れ]（走る→走れ）"
+    },
+    "en": {
+      "sentence": "Run!",
+      "blocks": [
+        {
+          "text": "Run",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Run!]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「快跑」語氣靠「快」和「！」",
+      "jp_insight": "🤖 命令形：走る→走れ（る滑到え段）。⚠️ 非常粗魯！只有緊急狀況、軍隊、或上對下才用",
+      "en_insight": "英文用原形就是命令：Run! Eat! Stop!"
+    },
+    "id": "uni_imperative_377",
+    "dimension": "imperative_jp",
+    "dimension_label": "命令形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 6
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "cn": "不准進來！",
+    "jp": {
+      "sentence": "入るな！",
+      "blocks": [
+        {
+          "text": "入るな",
+          "role": "動作"
+        }
+      ],
+      "formula": "[入るな]（原形＋な＝禁止）"
+    },
+    "en": {
+      "sentence": "Don't come in!",
+      "blocks": [
+        {
+          "text": "Don't",
+          "role": "連接"
+        },
+        {
+          "text": "come in",
+          "role": "動作"
+        }
+      ],
+      "formula": "[Don't] + [come in]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「不准」靠加詞",
+      "jp_insight": "🤖 禁止命令：動詞原形＋な！入るな＝不准進！⚠️ 跟「〜な」的親暱語尾完全不同，語氣天差地別",
+      "en_insight": "英文 Don't + 原形"
+    },
+    "id": "uni_imperative_378",
+    "dimension": "imperative_jp",
+    "dimension_label": "命令形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 6
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
+  },
+  {
+    "cn": "給我安靜！",
+    "jp": {
+      "sentence": "静かにしろ！",
+      "blocks": [
+        {
+          "text": "静かに",
+          "role": "修飾"
+        },
+        {
+          "text": "しろ",
+          "role": "動作"
+        }
+      ],
+      "formula": "[静かにしろ]（する→しろ）"
+    },
+    "en": {
+      "sentence": "Be quiet!",
+      "blocks": [
+        {
+          "text": "Be",
+          "role": "動作"
+        },
+        {
+          "text": "quiet",
+          "role": "修飾"
+        }
+      ],
+      "formula": "[Be] + [quiet]"
+    },
+    "contrast": {
+      "cn_blindspot": "中文「給我安靜」靠語氣",
+      "jp_insight": "🤖 G3 命令形：する→しろ（或せよ）、くる→こい。完全不規則！⚠️ 日常幾乎不用，用了會吵架",
+      "en_insight": "英文 Be quiet! 也是命令形，但不像日文那麼粗魯"
+    },
+    "id": "uni_imperative_379",
+    "dimension": "imperative_jp",
+    "dimension_label": "命令形",
+    "jlpt": "N4",
+    "metrics": {
+      "jp": {
+        "transform_distance": 4,
+        "morphology_load": 5,
+        "new_concept": 6
+      },
+      "en": {
+        "transform_distance": 1,
+        "morphology_load": 1,
+        "new_concept": 1
+      }
+    }
   }
 ]
