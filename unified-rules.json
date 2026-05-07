@@ -15638,18 +15638,18 @@
       "blocks": [
         {
           "text": "生きんがために、",
-          "role": "目標"
+          "role": "連接"
         },
         {
-          "text": "何で",
-          "role": "場景"
+          "text": "何でも",
+          "role": "修飾"
         },
         {
-          "text": "もした",
+          "text": "した",
           "role": "動作"
         }
       ],
-      "formula": "[生きんがために、] + [何で] + [もした]"
+      "formula": "[生きんがために、] + [何でも] + [した]"
     },
     "en": {
       "sentence": "I did everything to survive.",
@@ -16185,15 +16185,19 @@
           "role": "場景"
         },
         {
-          "text": "言葉遣いに至るまで",
-          "role": "場景"
+          "text": "言葉遣いに",
+          "role": "目標"
+        },
+        {
+          "text": "至るまで、",
+          "role": "連接"
         },
         {
           "text": "注意された",
           "role": "動作"
         }
       ],
-      "formula": "[服装から] + [言葉遣いに至るまで] + [注意された]"
+      "formula": "[服装から] + [言葉遣いに] + [至るまで、] + [注意された]"
     },
     "en": {
       "sentence": "I was corrected on everything from dress to language.",
@@ -16261,27 +16265,27 @@
       "sentence": "北海道から沖縄に至るまで、被害が広がった。",
       "blocks": [
         {
-          "text": "北海道から沖縄に",
-          "role": "修飾"
+          "text": "北海道から",
+          "role": "場景"
+        },
+        {
+          "text": "沖縄に",
+          "role": "目標"
         },
         {
           "text": "至るまで、",
-          "role": "修飾"
+          "role": "連接"
         },
         {
           "text": "被害が",
-          "role": "修飾"
-        },
-        {
-          "text": "広が",
           "role": "主角"
         },
         {
-          "text": "った",
+          "text": "広がった",
           "role": "動作"
         }
       ],
-      "formula": "[北海道から沖縄に] + [至るまで、] + [被害が] + [広が] + [った]"
+      "formula": "[北海道から] + [沖縄に] + [至るまで、] + [被害が] + [広がった]"
     },
     "en": {
       "sentence": "The damage spread from Hokkaido all the way to Okinawa.",
@@ -23117,11 +23121,15 @@
           "role": "對象"
         },
         {
-          "text": "they didn't let me in",
+          "text": "they didn't",
           "role": "動作"
+        },
+        {
+          "text": "let me in",
+          "role": "修飾"
         }
       ],
-      "formula": "[Because] + [I had not made a reservation] + [they didn't let me in]"
+      "formula": "[Because] + [I] + [had not made] + [a reservation] + [they didn't] + [let me in]"
     },
     "contrast": {
       "cn_blindspot": "中文不區分兩件事發生的先後",
@@ -24361,7 +24369,15 @@
           "role": "連接"
         },
         {
-          "text": "will I arrive",
+          "text": "will",
+          "role": "動作"
+        },
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "arrive",
           "role": "動作"
         },
         {
@@ -24369,11 +24385,19 @@
           "role": "場景"
         },
         {
-          "text": "than I will notify you",
+          "text": "than",
+          "role": "連接"
+        },
+        {
+          "text": "I will",
+          "role": "主角"
+        },
+        {
+          "text": "notify you",
           "role": "動作"
         }
       ],
-      "formula": "[No sooner will I arrive] + [than I will notify you]"
+      "formula": "[No sooner] + [will] + [I] + [arrive] + [at the office] + [than] + [I will] + [notify you]"
     },
     "contrast": {
       "cn_blindspot": "中文「一…就…」語序正常",
@@ -25417,7 +25441,7 @@
     "dimension_label": "動詞變形金剛",
     "chinese": "我做功課。→ 朋友來了。",
     "jp": {
-      "sentence": "宿題をします。",
+      "sentence": "宿題をします。→ 友達が来ました。",
       "blocks": [
         {
           "text": "宿題を",
@@ -25438,15 +25462,15 @@
           "role": "主角"
         },
         {
-          "text": "do homework",
+          "text": "do",
           "role": "動作"
         },
         {
-          "text": "→ came",
-          "role": "動作"
+          "text": "homework",
+          "role": "對象"
         }
       ],
-      "formula": "[I] + [do homework] + [→ came]"
+      "formula": "[I] + [do] + [homework]"
     },
     "contrast": {
       "cn_blindspot": "中文「做」「來」都不變形",
@@ -25473,7 +25497,7 @@
     "dimension_label": "動詞變形金剛",
     "chinese": "我不買這個。→ 我不喝酒。",
     "jp": {
-      "sentence": "これを買わない。",
+      "sentence": "これを買わない。→ お酒を飲まない。",
       "blocks": [
         {
           "text": "これを",
@@ -25498,11 +25522,11 @@
           "role": "動作"
         },
         {
-          "text": "→ don't drink",
-          "role": "動作"
+          "text": "this",
+          "role": "對象"
         }
       ],
-      "formula": "[I] + [don't buy] + [→ don't drink]"
+      "formula": "[I] + [don't buy] + [this]"
     },
     "contrast": {
       "cn_blindspot": "中文加「不」就好，動詞完全不動",
