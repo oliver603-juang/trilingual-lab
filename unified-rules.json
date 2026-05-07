@@ -2104,10 +2104,9 @@
       "formula": "[A] + [teacher] + [who] + [teaches] + [Japanese]"
     },
     "contrast": {
-      "cn_blindspot": "中文「跑的人」需要加「的」",
-      "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "英文長修飾用 who/that 放後面",
-      "order_shift": ""
+      "cn_blindspot": "中文一定要加「的」：教日語的老師、跑步的人",
+      "jp_insight": "🧲 動詞直接黏名詞！⚠️ 絕對不能加の！❌教えるの先生 ⭕教える先生",
+      "en_insight": "英文長修飾放後面用 who/that，短修飾（一個字）放前面"
     },
     "metrics": {
       "jp": {
@@ -2172,10 +2171,9 @@
       "formula": "[A] + [book] + [I] + [bought] + [yesterday]"
     },
     "contrast": {
-      "cn_blindspot": "中文「跑的人」需要加「的」",
-      "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "英文長修飾用 who/that 放後面",
-      "order_shift": ""
+      "cn_blindspot": "中文一定要加「的」：教日語的老師、跑步的人",
+      "jp_insight": "🧲 動詞直接黏名詞！⚠️ 絕對不能加の！❌教えるの先生 ⭕教える先生",
+      "en_insight": "英文長修飾放後面用 who/that，短修飾（一個字）放前面"
     },
     "metrics": {
       "jp": {
@@ -2240,10 +2238,9 @@
       "formula": "[A] + [dish] + [my] + [friend] + [made]"
     },
     "contrast": {
-      "cn_blindspot": "中文「跑的人」需要加「的」",
-      "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "英文長修飾用 who/that 放後面",
-      "order_shift": ""
+      "cn_blindspot": "中文一定要加「的」：教日語的老師、跑步的人",
+      "jp_insight": "🧲 動詞直接黏名詞！⚠️ 絕對不能加の！❌教えるの先生 ⭕教える先生",
+      "en_insight": "英文長修飾放後面用 who/that，短修飾（一個字）放前面"
     },
     "metrics": {
       "jp": {
@@ -2300,10 +2297,9 @@
       "formula": "[A] + [person] + [who] + [runs]"
     },
     "contrast": {
-      "cn_blindspot": "中文「跑的人」需要加「的」",
-      "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "英文長修飾用 who/that 放後面",
-      "order_shift": ""
+      "cn_blindspot": "中文一定要加「的」：教日語的老師、跑步的人",
+      "jp_insight": "🧲 動詞直接黏名詞！⚠️ 絕對不能加の！❌教えるの先生 ⭕教える先生",
+      "en_insight": "英文長修飾放後面用 who/that，短修飾（一個字）放前面"
     },
     "metrics": {
       "jp": {
@@ -2368,10 +2364,9 @@
       "formula": "[A] + [cake] + [that] + [Mom] + [baked]"
     },
     "contrast": {
-      "cn_blindspot": "中文「跑的人」需要加「的」",
-      "jp_insight": "日文「走る人」動詞直接黏名詞",
-      "en_insight": "英文長修飾用 who/that 放後面",
-      "order_shift": ""
+      "cn_blindspot": "中文一定要加「的」：教日語的老師、跑步的人",
+      "jp_insight": "🧲 動詞直接黏名詞！⚠️ 絕對不能加の！❌教えるの先生 ⭕教える先生",
+      "en_insight": "英文長修飾放後面用 who/that，短修飾（一個字）放前面"
     },
     "metrics": {
       "jp": {
