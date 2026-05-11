@@ -336,27 +336,63 @@ const iDan='いきしちにひみり';const eDan='えけせてねへめれ';
 const uMap={'い':'う','き':'く','し':'す','ち':'つ','に':'ぬ','ひ':'ふ','み':'む','り':'る','ぎ':'ぐ','び':'ぶ','じ':'ず','ぢ':'づ','ぴ':'ぷ'};
 function restoreOrig(stem,hint){
 if(hint==='る')return stem+'る';
-if(hint==='っ→う/つ/る'){return stem.length>0?(stem+'う'):(stem+'る');}
-if(hint==='ん→む/ぶ/ぬ')return stem+'む';
+if(hint==='っ→う/つ/る'){
+// Try る first (most common), then つ, then う
+for(const s of ['る','つ','う']){const t=stem+s;if(conjugate(t))return t;}
+return stem+'る';}
+if(hint==='ん→む/ぶ/ぬ'){
+for(const s of ['む','ぶ','ぬ']){const t=stem+s;if(conjugate(t))return t;}
+return stem+'む';}
 if(hint==='い→く')return stem+'く';
 if(hint==='い→ぐ')return stem+'ぐ';
 if(hint==='し→す')return stem+'す';
 if(hint==='i→う段'){const last=stem.slice(-1);return stem.slice(0,-1)+(uMap[last]||last);}
 if(hint==='a→う段'){const last=stem.slice(-1);const aToU={'あ':'う','か':'く','さ':'す','た':'つ','な':'ぬ','ま':'む','ら':'る','が':'ぐ','ば':'ぶ','わ':'う'};return stem.slice(0,-1)+(aToU[last]||last);}
 return stem+'る';}
-// Tokenize: split by particles and punctuation
+// Tokenize: smart split that respects verb/adjective conjugations
+const isKanji=c=>/[\u4e00-\u9fff]/.test(c);
+const isKata=c=>/[\u30a0-\u30ff]/.test(c);
+const isHira=c=>/[\u3040-\u309f]/.test(c);
+const allEndings=[].concat(VE.map(e=>e[0]),IA.map(e=>e[0]),['です','ました','ません','ている','ていた','ています','てください','てくれた','ませんでした','かです','かった','かったら','くない','くなかった','くて']);
+function canSplitBefore(s,i){
+// Can we treat s[i] as a particle? Only if previous char is kanji/katakana
+if(i<=0)return false;const prev=s[i-1];
+if(!isKanji(prev)&&!isKata(prev))return false;
+// Also check: would splitting here leave a valid ending on the right?
+const right=s.substring(i+1);const left=s.substring(0,i);
+// Don't split if the particle is part of a longer ending (e.g., で in です)
+for(const e of allEndings){if(right.length>0&&(s[i]+right).startsWith(e))return false;}
+return true;}
 const tokens=[];let buf='';
 for(let i=0;i<s.length;i++){
-const c2=s.substring(i,i+2);const c1=s[i];
+const c1=s[i];const c2=s.substring(i,i+2);
 if(c1==='、'||c1==='。'||c1==='！'||c1==='？'){if(buf)tokens.push(buf);tokens.push(c1);buf='';continue;}
-// Check 2-char particles first
-if(PA[c2]&&buf){tokens.push(buf);tokens.push(c2);buf='';i++;continue;}
-// Check 1-char particles (but only if buf has content and next char isn't part of a word)
-if(PA[c1]&&buf&&c1!=='の'){tokens.push(buf);tokens.push(c1);buf='';continue;}
+// Check 2-char particles (から、まで) — only at kanji/kata boundary
+if(PA[c2]&&buf&&canSplitBefore(s,i)){tokens.push(buf);tokens.push(c2);buf='';i++;continue;}
+// Check 1-char particles — only at kanji/kata boundary, not の
+if(PA[c1]&&c1!=='の'&&buf&&canSplitBefore(s,i)){tokens.push(buf);tokens.push(c1);buf='';continue;}
 buf+=c1;}
 if(buf)tokens.push(buf);
+// Post-split: break apart tokens like "行ったら寿司" → "行ったら" + "寿司"
+const tokens2=[];
+for(const tk of tokens){
+if(PA[tk]||tk.length<=1||/^[、。！？]$/.test(tk)){tokens2.push(tk);continue;}
+// Try to find a split point where a conjugation ending meets a new kanji
+let split=false;
+for(const e of allEndings.sort((a,b)=>b.length-a.length)){
+const idx=tk.indexOf(e);
+if(idx>0&&idx+e.length<tk.length){
+const after=tk[idx+e.length];
+if(isKanji(after)||isKata(after)){
+tokens2.push(tk.substring(0,idx+e.length));
+// Recursively handle the rest (might have more particles)
+const rest=tk.substring(idx+e.length);
+tokens2.push(rest);
+split=true;break;}}}
+if(!split)tokens2.push(tk);}
+const finalTokens=tokens2;
 const result=[];
-for(const w of tokens){
+for(const w of finalTokens){
 if(w==='、'||w==='。'){result.push({text:w,type:'標點',desc:'逗號/句號',color:'#888'});continue;}
 if(PA[w]){result.push({text:w,type:'助詞',role:PA[w][0],desc:PA[w][1],color:'#7eeae0'});continue;}
 // Try verb endings
