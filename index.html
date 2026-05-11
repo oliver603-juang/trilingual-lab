@@ -329,135 +329,104 @@ function stripRuby(t){let r=t;const keys=Object.keys(KJ).sort((a,b)=>b.length-a.
 function pasteXray(){navigator.clipboard.readText().then(function(t){const inp=document.getElementById('xray-in');if(inp){inp.value=stripRuby(t.trim());xrayParse();}}).catch(function(){});}
 function pasteVerb(){navigator.clipboard.readText().then(function(t){const inp=document.getElementById('verb-in');if(inp){inp.value=stripRuby(t.trim());showConj();}}).catch(function(){});}
 function xrayParse(){const inp=document.getElementById('xray-in');if(!inp)return;const raw=inp.value.trim().replace(/。$/,'');if(!raw)return;const s=stripRuby(raw);inp.value=s;
-const PA={'は':['主題','說到○○嘛…'],'が':['主角','就是這個！'],'を':['對象','被處理的東西'],'に':['方向/目標','往這裡去'],'で':['場景/工具','在這裡/用這個'],'と':['一起/引用','跟誰/說什麼'],'から':['起點','從這裡開始'],'まで':['終點','到這裡為止'],'へ':['方向','朝那邊去'],'も':['也','也是'],'の':['的','誰的'],'よ':['語氣','告知強調'],'ね':['語氣','對吧？'],'か':['疑問','嗎？']};
-const VE=[['たいです','たい+です','想要…（禮貌）','る'],['たくない','たい+否定','不想…','る'],['たかった','たい+過去','以前想…','る'],['たい','たい形','想要…','る'],['ったら','た形+ら','如果…的話','っ→う/つ/る'],['んだら','た形+ら','如果…的話','ん→む/ぶ/ぬ'],['いたら','た形+ら','如果…的話','い→く'],['いだら','た形+ら','如果…的話','い→ぐ'],['したら','た形+ら','如果…的話','し→す'],['たら','た形+ら','如果…的話','る'],['ています','て+いる+ます','正在…（禮貌）','る'],['ている','て+いる','正在…','る'],['ていた','て+いた','當時正在…','る'],['てください','て+ください','請…','る'],['てくれた','て+くれた','幫我…','る'],['ません','ます+否定','不…（禮貌）','i→う段'],['ませんでした','ます+否定+過去','沒…（禮貌）','i→う段'],['ました','ます+過去','…了（禮貌）','i→う段'],['ます','ます形','…（禮貌）','i→う段'],['なかった','ない+過去','以前沒…','a→う段'],['ない','ない形','不…','a→う段'],['られる','可能/被動','能…or被…','る'],['させる','使役形','讓別人…','る'],['せる','使役形','讓別人…','a→う段'],['れる','被動形','被…','a→う段'],['った','た形','…了','っ→う/つ/る'],['んだ','た形','…了','ん→む/ぶ/ぬ'],['いだ','た形','…了','い→ぐ'],['いた','た形','…了','い→く'],['した','た形','…了','し→す'],['って','て形','然後/請','っ→う/つ/る'],['んで','て形','然後/請','ん→む/ぶ/ぬ'],['いで','て形','然後','い→ぐ'],['いて','て形','然後','い→く'],['して','て形','然後','し→す'],['よう','意向形','…吧！','る'],['おう','意向形','…吧！','う段→お段+う'],['れば','ば形','如果…','う段→え段+ば'],['えば','ば形','如果…','る'],['た','た形','…了','る'],['て','て形','然後','る'],['ろ','命令形','快…！','る']];
-const IA=[['かったら','過去+条件','如果以前…'],['くなかった','否定+過去','以前不…'],['かった','過去形','以前…'],['くない','否定形','不…'],['くて','て形','…而且'],['く','副詞形','…地'],['さ','名詞化','…程度']];
-const iDan='いきしちにひみり';const eDan='えけせてねへめれ';
-const uMap={'い':'う','き':'く','し':'す','ち':'つ','に':'ぬ','ひ':'ふ','み':'む','り':'る','ぎ':'ぐ','び':'ぶ','じ':'ず','ぢ':'づ','ぴ':'ぷ'};
-function restoreOrig(stem,hint){
-if(hint==='る')return stem+'る';
-if(hint==='っ→う/つ/る'){
-// Try る first (most common), then つ, then う
-for(const s of ['る','つ','う']){const t=stem+s;if(conjugate(t))return t;}
-return stem+'る';}
-if(hint==='ん→む/ぶ/ぬ'){
-for(const s of ['む','ぶ','ぬ']){const t=stem+s;if(conjugate(t))return t;}
-return stem+'む';}
-if(hint==='い→く')return stem+'く';
-if(hint==='い→ぐ')return stem+'ぐ';
-if(hint==='し→す')return stem+'す';
-if(hint==='i→う段'){const last=stem.slice(-1);return stem.slice(0,-1)+(uMap[last]||last);}
-if(hint==='a→う段'){const last=stem.slice(-1);const aToU={'あ':'う','か':'く','さ':'す','た':'つ','な':'ぬ','ま':'む','ら':'る','が':'ぐ','ば':'ぶ','わ':'う'};return stem.slice(0,-1)+(aToU[last]||last);}
-return stem+'る';}
-// Tokenize: smart split that respects verb/adjective conjugations
-const isKanji=c=>/[\u4e00-\u9fff]/.test(c);
-const isKata=c=>/[\u30a0-\u30ff]/.test(c);
-const isHira=c=>/[\u3040-\u309f]/.test(c);
-const allEndings=[].concat(VE.map(e=>e[0]),IA.map(e=>e[0]),['です','ました','ません','ている','ていた','ています','てください','てくれた','ませんでした','かです','かった','かったら','くない','くなかった','くて']);
-function canSplitBefore(s,i){
-// Can we treat s[i] as a particle? Only if previous char is kanji/katakana
-if(i<=0)return false;const prev=s[i-1];
-if(!isKanji(prev)&&!isKata(prev))return false;
-// Also check: would splitting here leave a valid ending on the right?
-const right=s.substring(i+1);const left=s.substring(0,i);
-// Don't split if the particle is part of a longer ending (e.g., で in です)
-for(const e of allEndings){if(right.length>0&&(s[i]+right).startsWith(e))return false;}
-return true;}
-const tokens=[];let buf='';
-for(let i=0;i<s.length;i++){
-const c1=s[i];const c2=s.substring(i,i+2);
-if(c1==='、'||c1==='。'||c1==='！'||c1==='？'){if(buf)tokens.push(buf);tokens.push(c1);buf='';continue;}
-// Check 2-char particles (から、まで) — only at kanji/kata boundary
-if(PA[c2]&&buf&&canSplitBefore(s,i)){tokens.push(buf);tokens.push(c2);buf='';i++;continue;}
-// Check 1-char particles — only at kanji/kata boundary, not の
-if(PA[c1]&&c1!=='の'&&buf&&canSplitBefore(s,i)){tokens.push(buf);tokens.push(c1);buf='';continue;}
-buf+=c1;}
-if(buf)tokens.push(buf);
-// Post-split: break apart tokens like "行ったら寿司" → "行ったら" + "寿司"
-const tokens2=[];
-for(const tk of tokens){
-if(PA[tk]||tk.length<=1||/^[、。！？]$/.test(tk)){tokens2.push(tk);continue;}
-// Try to find a split point where a conjugation ending meets a new kanji
-let split=false;
-for(const e of allEndings.sort((a,b)=>b.length-a.length)){
-const idx=tk.indexOf(e);
-if(idx>0&&idx+e.length<tk.length){
-const after=tk[idx+e.length];
-if(isKanji(after)||isKata(after)){
-tokens2.push(tk.substring(0,idx+e.length));
-// Recursively handle the rest (might have more particles)
-const rest=tk.substring(idx+e.length);
-tokens2.push(rest);
-split=true;break;}}}
-if(!split)tokens2.push(tk);}
-const finalTokens=tokens2;
-const result=[];
-for(const w of finalTokens){
-if(w==='、'||w==='。'){result.push({text:w,type:'標點',desc:'逗號/句號',color:'#888'});continue;}
-if(PA[w]){result.push({text:w,type:'助詞',role:PA[w][0],desc:PA[w][1],color:'#7eeae0'});continue;}
-// Check for です ending with adj: 高くないです, 安いです etc
-if(w.endsWith('です')&&w.length>2){const base=w.slice(0,-2);
-let adjFound=false;
-for(const[ending,form,meaning] of IA){if(base.endsWith(ending)&&base.length>ending.length){
-result.push({text:w,type:'い形容詞變形',orig:base.slice(0,-ending.length)+'い',form:form+'+です',meaning:meaning+'（禮貌）',color:'#ffb347'});adjFound=true;break;}}
-if(!adjFound&&base.endsWith('い')&&base.length>=2){result.push({text:w,type:'い形容詞',orig:base,form:'原形+です',meaning:'現在肯定（禮貌）',color:'#ffb347'});adjFound=true;}
-if(!adjFound&&base.length>=1&&!base.endsWith('ま')){result.push({text:w,type:'丁寧語尾',orig:base,form:'です',meaning:'禮貌結尾',color:'#c4b5fd'});}
-if(adjFound)continue;continue;}
-// Check for する compound verbs: 結婚している, 勉強します etc
-let suruFound=false;
-for(const[ending,form,meaning,hint] of VE){const suruEnd='し'+ending.replace(/^ま/,'ま').replace(/^な/,'な');
-if(w.endsWith('している')&&w.length>4){const stem=w.slice(0,-4);
-result.push({text:w,type:'動詞變形',orig:stem+'する',form:'て+いる',meaning:'正在…/持續…',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}
-if(w.endsWith('します')&&w.length>3){const stem=w.slice(0,-3);
-result.push({text:w,type:'動詞變形',orig:stem+'する',form:'ます形',meaning:'…（禮貌）',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}
-if(w.endsWith('しました')&&w.length>4){const stem=w.slice(0,-4);
-result.push({text:w,type:'動詞變形',orig:stem+'する',form:'ます+過去',meaning:'…了（禮貌）',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}
-if(w.endsWith('しない')&&w.length>3){const stem=w.slice(0,-3);
-result.push({text:w,type:'動詞變形',orig:stem+'する',form:'ない形',meaning:'不…',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}
-if(w.endsWith('した')&&w.length>2&&!w.endsWith('ました')){const stem=w.slice(0,-2);if(stem.length>=2){
-result.push({text:w,type:'動詞變形',orig:stem+'する',form:'た形',meaning:'…了',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}}
-break;}
-if(suruFound)continue;
-// Try verb endings
-let found=false;
-for(const[ending,form,meaning,hint] of VE){
-if(w.endsWith(ending)&&w.length>ending.length){
-const stem=w.slice(0,-ending.length);
-const orig=restoreOrig(stem,hint);
-const conj=conjugate(orig);
-result.push({text:w,type:'動詞變形',orig:orig,form:form,meaning:meaning,group:conj?conj.group:'',color:'#ff8a8a'});
-found=true;break;}}
-if(found)continue;
-// Try i-adj endings
-for(const[ending,form,meaning] of IA){
-if(w.endsWith(ending)&&w.length>ending.length){
-result.push({text:w,type:'い形容詞變形',orig:w.slice(0,-ending.length)+'い',form:form,meaning:meaning,color:'#ffb347'});
-found=true;break;}}
-if(found)continue;
-// Check if it's an i-adjective in base form
-if(w.endsWith('い')&&w.length>=2){result.push({text:w,type:'い形容詞',orig:w,form:'原形',meaning:'現在肯定',color:'#ffb347'});continue;}
-// Check if ends with です/だ
-if(w.endsWith('です')){const base=w.slice(0,-2);result.push({text:w,type:'丁寧語尾',orig:base||'',form:'です',meaning:'禮貌結尾',color:'#c4b5fd'});continue;}
-if(w.endsWith('だ')&&w.length>=2){const base=w.slice(0,-1);result.push({text:w,type:'斷定',orig:base,form:'だ',meaning:'普通體結尾',color:'#c4b5fd'});continue;}
-result.push({text:w,type:'名詞/其他',color:'#ffd700'});}
+const apiKey=getApiKey();
+if(apiKey){xrayParseGemini(s,apiKey);}else{xrayParseLocal(s);}}
+function xrayParseGemini(s,apiKey){
+const res=document.getElementById('xray-res');
+res.innerHTML='<div class="diy-loading">🤖 AI 深度解析中</div>';
+const prompt='你是專門教台灣小學生日文的文法X光機。請將以下日文句子拆解成「積木」。\n\n【嚴格切割規則】\n1. 每個名詞獨立一塊（「昨日友達」→「昨日」和「友達」兩塊）\n2. 助詞必須獨立一塊（は、が、を、に、で、と、から、まで、へ、も、の、よ、ね、か）\n3. 動詞/形容詞如果有變形，整個變形後的詞為一塊，但要標出原形和變形過程\n4. 複合表現如「ことにする」「なければならない」要保持完整\n5. 標點符號獨立一塊\n\n【type 分類】只能用以下值：\n- 名詞（一般名詞、專有名詞、代名詞、時間詞）\n- 助詞（は、が、を、に、で、と、の、から、まで、へ、も、よ、ね、か等）\n- 動詞變形（有活用變化的動詞）\n- い形容詞 / い形容詞變形\n- な形容詞\n- 副詞\n- 連體詞（この、その、あの等）\n- 接續詞（しかし、だから等）\n- 感動詞\n- 標點\n- 補助動詞（ている、てしまう、ことにする 等複合表現的輔助部分）\n\n【role 分類】用小學生懂的語言：\n主角、動作、對象、修飾、場景、目標、時間、起點、終點、語氣、連接、主題標記、陪伴、方向、所屬\n\n【助詞的 desc 說明】用生活化比喻：\nは=說到○○嘛… が=就是這個！ を=被處理的東西 に=往這裡去/在這裡 で=在這裡做/用這個做 と=跟誰一起/說什麼 から=從這裡開始 まで=到這裡為止 へ=朝那邊去 も=也是 の=誰的 よ=告知強調 ね=對吧？ か=嗎？\n\n【動詞 group 標記】\nG1 勤勞家族（五段）、G2 懶惰家族（砍る）、G3 例外（する/くる）、G3（する複合）\n\n請嚴格回覆純 JSON 陣列，不加 markdown 標記、不加```、不加解釋：\n[{"text":"詞","type":"分類","role":"角色","desc":"說明","orig":"原形或null","form":"變形過程或null","meaning":"變形意思或null","group":"動詞分類或null"}]\n\n日文句子：'+s;
+fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:2000,temperature:0.1,thinkingConfig:{thinkingBudget:0}}})}).then(function(r){return r.json();}).then(function(data){
+const raw=data.candidates&&data.candidates[0]&&data.candidates[0].content&&data.candidates[0].content.parts&&data.candidates[0].content.parts.map(function(p){return p.text||'';}).join('')||'';
+const cleaned=raw.replace(/```json\s*/g,'').replace(/```\s*/g,'').trim();
+try{const blocks=JSON.parse(cleaned);renderXray(blocks,true);}
+catch(e){console.warn('Gemini JSON parse failed, falling back to local:',e,cleaned);xrayParseLocal(s);}
+}).catch(function(e){console.warn('Gemini API error, falling back to local:',e);xrayParseLocal(s);});}
+function renderXray(blocks,isAI){
+const colorMap={'名詞':'#ffd700','助詞':'#7eeae0','動詞變形':'#ff8a8a','い形容詞':'#ffb347','い形容詞變形':'#ffb347','な形容詞':'#c4b5fd','副詞':'#a8d8ea','連體詞':'#d4a5ff','接續詞':'#88d9a8','補助動詞':'#ff8a8a','感動詞':'#ffb4b4','標點':'#888','丁寧語尾':'#c4b5fd','斷定':'#c4b5fd'};
 let h='<div style="padding:8px 0">';
-for(const r of result){
+if(isAI)h+='<div style="font-size:.5rem;color:rgba(255,255,255,.25);margin-bottom:6px;text-align:right">🤖 Gemini AI 解析</div>';
+for(var i=0;i<blocks.length;i++){var r=blocks[i];
+var c=colorMap[r.type]||'#ffd700';
 h+='<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05)">';
 h+='<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">';
-h+='<span style="font-size:1rem;font-weight:800;color:'+r.color+'">'+furi(eH(r.text))+'</span>';
-h+='<span style="font-size:.55rem;padding:2px 6px;border-radius:4px;background:'+r.color+'22;color:'+r.color+';font-weight:700">'+r.type+'</span>';
-if(r.orig){h+='<span class="diy-speak" onclick="sp(\''+eH(r.text).replace(/'/g,"\\'")+'\',\'jp\')" style="cursor:pointer;font-size:.8rem;opacity:.5">🔊</span>';}
+h+='<span style="font-size:1rem;font-weight:800;color:'+c+'">'+furi(eH(r.text))+'</span>';
+h+='<span style="font-size:.55rem;padding:2px 6px;border-radius:4px;background:'+c+'22;color:'+c+';font-weight:700">'+eH(r.type)+'</span>';
+if(r.orig&&r.orig!=='null'){h+='<span class="diy-speak" onclick="sp(\''+eH(r.text).replace(/'/g,"\\'")+'\',\'jp\')" style="cursor:pointer;font-size:.8rem;opacity:.5">🔊</span>';}
 h+='</div>';
-if(r.orig){
+if(r.orig&&r.orig!=='null'&&r.orig!==r.text){
 h+='<div style="font-size:.65rem;color:rgba(255,255,255,.55);margin-top:3px">📍 原形：<span style="color:#ffd700;font-weight:700">'+furi(eH(r.orig))+'</span>';
-if(r.group)h+=' <span style="color:rgba(255,255,255,.35)">（'+r.group+'）</span>';
-h+='</div>';
-h+='<div style="font-size:.65rem;color:rgba(255,255,255,.4)">🔄 變形：'+eH(r.form)+' → <span style="color:#50c878">'+eH(r.meaning)+'</span></div>';}
-if(r.role)h+='<div style="font-size:.65rem;color:rgba(255,255,255,.5)">🏷️ 角色：<span style="color:#7eeae0">'+eH(r.role)+'</span> → '+eH(r.desc)+'</div>';
-if(r.desc&&!r.role)h+='<div style="font-size:.65rem;color:rgba(255,255,255,.35)">'+eH(r.desc)+'</div>';
+if(r.group&&r.group!=='null')h+=' <span style="color:rgba(255,255,255,.35)">（'+eH(r.group)+'）</span>';
+h+='</div>';}
+if(r.form&&r.form!=='null'){
+h+='<div style="font-size:.65rem;color:rgba(255,255,255,.4)">🔄 變形：'+eH(r.form);
+if(r.meaning&&r.meaning!=='null')h+=' → <span style="color:#50c878">'+eH(r.meaning)+'</span>';
+h+='</div>';}
+if(r.role&&r.role!=='null'&&r.type==='助詞'){
+h+='<div style="font-size:.65rem;color:rgba(255,255,255,.5)">🏷️ 角色：<span style="color:#7eeae0">'+eH(r.role)+'</span>';
+if(r.desc&&r.desc!=='null')h+=' → '+eH(r.desc);
+h+='</div>';}
+else if(r.role&&r.role!=='null'){
+h+='<div style="font-size:.65rem;color:rgba(255,255,255,.35)">🏷️ '+eH(r.role)+'</div>';}
 h+='</div>';}
 h+='</div>';
 document.getElementById('xray-res').innerHTML=h;}
+function xrayParseLocal(s){
+const PA={'は':['主題','說到○○嘛…'],'が':['主角','就是這個！'],'を':['對象','被處理的東西'],'に':['方向/目標','往這裡去'],'で':['場景/工具','在這裡/用這個'],'と':['一起/引用','跟誰/說什麼'],'から':['起點','從這裡開始'],'まで':['終點','到這裡為止'],'へ':['方向','朝那邊去'],'も':['也','也是'],'の':['的','誰的'],'よ':['語氣','告知強調'],'ね':['語氣','對吧？'],'か':['疑問','嗎？']};
+const VE=[['たいです','たい+です','想要…（禮貌）','る'],['たくない','たい+否定','不想…','る'],['たかった','たい+過去','以前想…','る'],['たい','たい形','想要…','る'],['ったら','た形+ら','如果…的話','っ→う/つ/る'],['んだら','た形+ら','如果…的話','ん→む/ぶ/ぬ'],['いたら','た形+ら','如果…的話','い→く'],['いだら','た形+ら','如果…的話','い→ぐ'],['したら','た形+ら','如果…的話','し→す'],['たら','た形+ら','如果…的話','る'],['ています','て+いる+ます','正在…（禮貌）','る'],['ている','て+いる','正在…','る'],['ていた','て+いた','當時正在…','る'],['てください','て+ください','請…','る'],['てくれた','て+くれた','幫我…','る'],['ません','ます+否定','不…（禮貌）','i→う段'],['ませんでした','ます+否定+過去','沒…（禮貌）','i→う段'],['ました','ます+過去','…了（禮貌）','i→う段'],['ます','ます形','…（禮貌）','i→う段'],['なかった','ない+過去','以前沒…','a→う段'],['ない','ない形','不…','a→う段'],['られる','可能/被動','能…or被…','る'],['させる','使役形','讓別人…','る'],['せる','使役形','讓別人…','a→う段'],['れる','被動形','被…','a→う段'],['った','た形','…了','っ→う/つ/る'],['んだ','た形','…了','ん→む/ぶ/ぬ'],['いだ','た形','…了','い→ぐ'],['いた','た形','…了','い→く'],['した','た形','…了','し→す'],['って','て形','然後/請','っ→う/つ/る'],['んで','て形','然後/請','ん→む/ぶ/ぬ'],['いで','て形','然後','い→ぐ'],['いて','て形','然後','い→く'],['して','て形','然後','し→す'],['よう','意向形','…吧！','る'],['おう','意向形','…吧！','う段→お段+う'],['れば','ば形','如果…','う段→え段+ば'],['えば','ば形','如果…','る'],['た','た形','…了','る'],['て','て形','然後','る'],['ろ','命令形','快…！','る']];
+const IA=[['かったら','過去+条件','如果以前…'],['くなかった','否定+過去','以前不…'],['かった','過去形','以前…'],['くない','否定形','不…'],['くて','て形','…而且'],['く','副詞形','…地'],['さ','名詞化','…程度']];
+const uMap={'い':'う','き':'く','し':'す','ち':'つ','に':'ぬ','ひ':'ふ','み':'む','り':'る','ぎ':'ぐ','び':'ぶ','じ':'ず','ぢ':'づ','ぴ':'ぷ'};
+function restoreOrig(stem,hint){
+if(hint==='る')return stem+'る';
+if(hint==='っ→う/つ/る'){for(const s2 of ['る','つ','う']){const t=stem+s2;if(conjugate(t))return t;}return stem+'る';}
+if(hint==='ん→む/ぶ/ぬ'){for(const s2 of ['む','ぶ','ぬ']){const t=stem+s2;if(conjugate(t))return t;}return stem+'む';}
+if(hint==='い→く')return stem+'く';if(hint==='い→ぐ')return stem+'ぐ';if(hint==='し→す')return stem+'す';
+if(hint==='i→う段'){const last=stem.slice(-1);return stem.slice(0,-1)+(uMap[last]||last);}
+if(hint==='a→う段'){const last=stem.slice(-1);const aToU={'あ':'う','か':'く','さ':'す','た':'つ','な':'ぬ','ま':'む','ら':'る','が':'ぐ','ば':'ぶ','わ':'う'};return stem.slice(0,-1)+(aToU[last]||last);}
+return stem+'る';}
+const isKanji=c=>/[\u4e00-\u9fff]/.test(c);const isKata=c=>/[\u30a0-\u30ff]/.test(c);
+const allEndings=[].concat(VE.map(e=>e[0]),IA.map(e=>e[0]),['です','ました','ません','ている','ていた','ています','てください','てくれた','ませんでした','かです','かった','かったら','くない','くなかった','くて']);
+function canSplitBefore(s2,i){if(i<=0)return false;const prev=s2[i-1];if(!isKanji(prev)&&!isKata(prev))return false;const right=s2.substring(i+1);for(const e of allEndings){if(right.length>0&&(s2[i]+right).startsWith(e))return false;}return true;}
+const tokens=[];let buf='';
+for(let i=0;i<s.length;i++){const c1=s[i];const c2=s.substring(i,i+2);
+if(c1==='、'||c1==='。'||c1==='！'||c1==='？'){if(buf)tokens.push(buf);tokens.push(c1);buf='';continue;}
+if(PA[c2]&&buf&&canSplitBefore(s,i)){tokens.push(buf);tokens.push(c2);buf='';i++;continue;}
+if(PA[c1]&&c1!=='の'&&buf&&canSplitBefore(s,i)){tokens.push(buf);tokens.push(c1);buf='';continue;}
+buf+=c1;}
+if(buf)tokens.push(buf);
+const tokens2=[];
+for(const tk of tokens){
+if(PA[tk]||tk.length<=1||/^[、。！？]$/.test(tk)){tokens2.push(tk);continue;}
+let split=false;
+for(const e of allEndings.sort((a,b)=>b.length-a.length)){const idx=tk.indexOf(e);
+if(idx>0&&idx+e.length<tk.length){const after=tk[idx+e.length];
+if(isKanji(after)||isKata(after)){tokens2.push(tk.substring(0,idx+e.length));tokens2.push(tk.substring(idx+e.length));split=true;break;}}}
+if(!split)tokens2.push(tk);}
+const result=[];
+for(const w of tokens2){
+if(w==='、'||w==='。'){result.push({text:w,type:'標點',desc:'逗號/句號'});continue;}
+if(PA[w]){result.push({text:w,type:'助詞',role:PA[w][0],desc:PA[w][1]});continue;}
+if(w.endsWith('です')&&w.length>2){const base=w.slice(0,-2);let adjFound=false;
+for(const[ending,form,meaning] of IA){if(base.endsWith(ending)&&base.length>ending.length){result.push({text:w,type:'い形容詞變形',orig:base.slice(0,-ending.length)+'い',form:form+'+です',meaning:meaning+'（禮貌）'});adjFound=true;break;}}
+if(!adjFound&&base.endsWith('い')&&base.length>=2){result.push({text:w,type:'い形容詞',orig:base,form:'原形+です',meaning:'現在肯定（禮貌）'});adjFound=true;}
+if(!adjFound&&base.length>=1&&!base.endsWith('ま')){result.push({text:w,type:'丁寧語尾',orig:base,form:'です',meaning:'禮貌結尾'});}
+if(adjFound)continue;continue;}
+let suruFound=false;
+if(w.endsWith('している')&&w.length>4){result.push({text:w,type:'動詞變形',orig:w.slice(0,-4)+'する',form:'て+いる',meaning:'正在…/持續…',group:'G3（する複合）'});suruFound=true;}
+if(!suruFound&&w.endsWith('します')&&w.length>3){result.push({text:w,type:'動詞變形',orig:w.slice(0,-3)+'する',form:'ます形',meaning:'…（禮貌）',group:'G3（する複合）'});suruFound=true;}
+if(!suruFound&&w.endsWith('しました')&&w.length>4){result.push({text:w,type:'動詞變形',orig:w.slice(0,-4)+'する',form:'ます+過去',meaning:'…了（禮貌）',group:'G3（する複合）'});suruFound=true;}
+if(!suruFound&&w.endsWith('しない')&&w.length>3){result.push({text:w,type:'動詞變形',orig:w.slice(0,-3)+'する',form:'ない形',meaning:'不…',group:'G3（する複合）'});suruFound=true;}
+if(!suruFound&&w.endsWith('した')&&w.length>2&&!w.endsWith('ました')){const stem=w.slice(0,-2);if(stem.length>=2){result.push({text:w,type:'動詞變形',orig:stem+'する',form:'た形',meaning:'…了',group:'G3（する複合）'});suruFound=true;}}
+if(suruFound)continue;
+let found=false;
+for(const[ending,form,meaning,hint] of VE){if(w.endsWith(ending)&&w.length>ending.length){const stem=w.slice(0,-ending.length);const orig=restoreOrig(stem,hint);const conj=conjugate(orig);result.push({text:w,type:'動詞變形',orig:orig,form:form,meaning:meaning,group:conj?conj.group:''});found=true;break;}}
+if(found)continue;
+for(const[ending,form,meaning] of IA){if(w.endsWith(ending)&&w.length>ending.length){result.push({text:w,type:'い形容詞變形',orig:w.slice(0,-ending.length)+'い',form:form,meaning:meaning});found=true;break;}}
+if(found)continue;
+if(w.endsWith('い')&&w.length>=2){result.push({text:w,type:'い形容詞',orig:w,form:'原形',meaning:'現在肯定'});continue;}
+if(w.endsWith('です')){result.push({text:w,type:'丁寧語尾',orig:w.slice(0,-2)||'',form:'です',meaning:'禮貌結尾'});continue;}
+if(w.endsWith('だ')&&w.length>=2){result.push({text:w,type:'斷定',orig:w.slice(0,-1),form:'だ',meaning:'普通體結尾'});continue;}
+result.push({text:w,type:'名詞/其他'});}
+renderXray(result,false);}
 function showConj(){const inp=document.getElementById('verb-in');if(!inp)return;const v=inp.value.trim();if(!v)return;
 const isJP=/[\u3040-\u309f\u30a0-\u30ff]/.test(v);
 if(isJP){const r=conjugate(v);if(!r){document.getElementById('verb-res').innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">無法辨識，請輸入原形（如：食べる、安い、静か）</div>';return;}showConjResult(r);}
