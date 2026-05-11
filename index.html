@@ -296,17 +296,28 @@ h+='<div id="verb-res"></div></div>';
 return h;}
 function showConj(){const inp=document.getElementById('verb-in');if(!inp)return;const v=inp.value.trim();if(!v)return;
 const isJP=/[\u3040-\u309f\u30a0-\u30ff]/.test(v);
-if(isJP){const r=conjugate(v);if(!r){document.getElementById('verb-res').innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">無法辨識這個動詞，請輸入原形（如：食べる）</div>';return;}showConjResult(r);}
+if(isJP){const r=conjugate(v);if(!r){document.getElementById('verb-res').innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">無法辨識，請輸入原形（如：食べる、安い、静か）</div>';return;}showConjResult(r);}
 else{const apiKey=getApiKey();if(!apiKey){document.getElementById('verb-res').innerHTML='<div style="color:#ff9800;font-size:.75rem;padding:6px">中文→日文需要 Gemini API Key，請到 ⚙️ 設定</div>';return;}
 document.getElementById('verb-res').innerHTML='<div class="diy-loading">翻譯中</div>';
-fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:'請將以下中文動詞翻譯成日文辭書形（原形）。只回覆一個日文動詞原形，例如：食べる、飲む、行く。不要加任何解釋。\n\n中文：'+v}]}],generationConfig:{maxOutputTokens:200,temperature:0.1,thinkingConfig:{thinkingBudget:0}}})}).then(r=>r.json()).then(data=>{const jp=data.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||'';if(!jp){document.getElementById('verb-res').innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">翻譯失敗</div>';return;}
+fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(apiKey),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:'請將以下中文翻譯成日文的辭書形（原形）。可能是動詞或形容詞。只回覆一個日文單詞，不要加任何解釋。\n範例：吃→食べる、喝→飲む、便宜→安い、安靜→静か、漂亮→きれい\n\n中文：'+v}]}],generationConfig:{maxOutputTokens:200,temperature:0.1,thinkingConfig:{thinkingBudget:0}}})}).then(r=>r.json()).then(data=>{const jp=data.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||'';if(!jp){document.getElementById('verb-res').innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">翻譯失敗</div>';return;}
 const r=conjugate(jp);if(!r){document.getElementById('verb-res').innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">「'+eH(v)+'」→「'+eH(jp)+'」無法辨識</div>';return;}
 r.cn=v;showConjResult(r);}).catch(()=>{document.getElementById('verb-res').innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">翻譯失敗，請稍後再試</div>';});}}
 function showConjResult(r){
 let h='<div style="padding:6px 0"><div style="font-size:.7rem;color:#ffd700;font-weight:700;margin-bottom:6px">'+(r.cn?eH(r.cn)+' → ':'')+furi(eH(r.orig))+' → '+r.group+'</div>';
-const labels={ます:'禮貌形',ない:'否定形',た:'過去形',て:'て形',可能:'可能形',意向:'意向形',命令:'命令形',ば:'假設形',です:'丁寧形',否定:'否定形',過去:'過去形',過去否定:'過去否定',条件:'條件形',副詞:'副詞形'};
+const labels={ます:'禮貌形',ない:'否定形',た:'過去形',て:'て形',可能:'可能形',意向:'意向形',命令:'命令形',ば:'假設形',です:'禮貌形',否定:'否定形',過去:'過去形',過去否定:'過去否定',条件:'條件形',副詞:'副詞形'};
+const examples={
+ます:'（跟不熟的人說話）',ない:'（不做/沒有）',た:'（做了/完成了）',て:'（做完然後…/請…）',
+可能:'（能夠做到）',意向:'（一起做吧！）',命令:'（快做！⚠️很粗魯）',ば:'（如果做的話）',
+です:'（禮貌地說）',否定:'（不是這樣）',過去:'（以前是這樣）',
+過去否定:'（以前不是這樣）',条件:'（如果是的話）',副詞:'（變成修飾語）'
+};
 for(const[k,v2] of Object.entries(r.forms)){
-h+='<div style="display:flex;align-items:center;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.04)"><span style="font-size:.6rem;color:rgba(255,255,255,.4);min-width:50px">'+labels[k]+'</span><span style="font-size:.82rem;font-weight:700;color:#ffb4b4">'+furi(eH(v2))+'</span><span class="diy-speak" onclick="sp(\''+v2.replace(/'/g,"\\'")+'\',\'jp\')" style="cursor:pointer;font-size:.85rem;opacity:.6">🔊</span></div>';}
+h+='<div style="display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04)">';
+h+='<span style="font-size:.58rem;color:rgba(255,255,255,.4);min-width:52px">'+labels[k]+'</span>';
+h+='<span style="font-size:.82rem;font-weight:700;color:#ffb4b4">'+furi(eH(v2))+'</span>';
+h+='<span class="diy-speak" onclick="sp(\''+v2.replace(/'/g,"\\'")+'\',\'jp\')" style="cursor:pointer;font-size:.85rem;opacity:.6">🔊</span>';
+h+='<span style="font-size:.52rem;color:rgba(255,255,255,.25)">'+( examples[k]||'')+'</span>';
+h+='</div>';}
 h+='</div>';document.getElementById('verb-res').innerHTML=h;}
 function gDIY(r){
 if(md==='vs')return '';
