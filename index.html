@@ -308,7 +308,7 @@ ov.innerHTML='<div class="verb-modal"><div class="verb-modal-h"><span>🤖 日�
 +'<div class="diy-input"><input id="xray-in" type="text" placeholder="日文句子（如：日本に行ったら寿司を食べたいです）" onkeydown="if(event.key===\'Enter\')xrayParse()"><button class="diy-btn" onclick="pasteXray()" title="從剪貼簿貼上">📋</button><button class="diy-btn go" onclick="xrayParse()">🔍 解析</button></div>'
 +'<div id="xray-res"></div></div>'
 +'</div>';
-ov.addEventListener('click',function(e){if(e.target===ov&&Date.now()-window._verbOpenTime>300)closeVerbTool();});
+ov.addEventListener('click',function(e){if(e.target===ov&&Date.now()-window._verbOpenTime>800)closeVerbTool();});
 document.body.appendChild(ov);}
 function switchVTab(n){document.querySelectorAll('.vtab').forEach((b,i)=>{b.classList.toggle('a',i===n);});document.querySelectorAll('.vtab-p').forEach((p,i)=>{p.style.display=i===n?'block':'none';});}
 function closeVerbTool(){const ov=document.getElementById('verb-overlay');if(ov)ov.classList.remove('show');}
