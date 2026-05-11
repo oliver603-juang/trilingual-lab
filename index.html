@@ -293,6 +293,7 @@ res.forms={ます:stem+m[0]+'ます',ない:stem+m[1]+'ない',た:stem+m[2]+ta_
 return res;}
 function gVerbTool(r){return '';}
 function openVerbTool(){
+window._verbOpenTime=Date.now();
 let ov=document.getElementById('verb-overlay');
 if(ov){ov.classList.add('show');return;}
 ov=document.createElement('div');ov.id='verb-overlay';ov.className='verb-overlay show';
@@ -307,7 +308,7 @@ ov.innerHTML='<div class="verb-modal"><div class="verb-modal-h"><span>🤖 日�
 +'<div class="diy-input"><input id="xray-in" type="text" placeholder="日文句子（如：日本に行ったら寿司を食べたいです）" onkeydown="if(event.key===\'Enter\')xrayParse()"><button class="diy-btn" onclick="pasteXray()" title="從剪貼簿貼上">📋</button><button class="diy-btn go" onclick="xrayParse()">🔍 解析</button></div>'
 +'<div id="xray-res"></div></div>'
 +'</div>';
-ov.addEventListener('click',function(e){if(e.target===ov)closeVerbTool();});
+ov.addEventListener('click',function(e){if(e.target===ov&&Date.now()-window._verbOpenTime>300)closeVerbTool();});
 document.body.appendChild(ov);}
 function switchVTab(n){document.querySelectorAll('.vtab').forEach((b,i)=>{b.classList.toggle('a',i===n);});document.querySelectorAll('.vtab-p').forEach((p,i)=>{p.style.display=i===n?'block':'none';});}
 function closeVerbTool(){const ov=document.getElementById('verb-overlay');if(ov)ov.classList.remove('show');}
@@ -320,8 +321,10 @@ fb.textContent='🔍 X光解析';document.body.appendChild(fb);}
 const range=sel.getRangeAt(0);const rect=range.getBoundingClientRect();
 fb.style.left=Math.min(rect.left+rect.width/2-40,window.innerWidth-100)+'px';
 fb.style.top=(rect.bottom+6)+'px';
-fb.onclick=function(){const cleaned=stripRuby(text);openVerbTool();switchVTab(1);setTimeout(function(){const inp=document.getElementById('xray-in');if(inp){inp.value=cleaned;xrayParse();}},200);fb.remove();sel.removeAllRanges();};});
-document.addEventListener('mousedown',function(e){if(e.target.id!=='xray-float'){const fb=document.getElementById('xray-float');if(fb)fb.remove();}});
+fb.onclick=fb.ontouchend=function(ev){ev.preventDefault();ev.stopPropagation();const cleaned=stripRuby(text);fb.remove();openVerbTool();switchVTab(1);setTimeout(function(){const inp=document.getElementById('xray-in');if(inp){inp.value=cleaned;xrayParse();}},300);};});
+function dismissXrayFloat(e){const fb=document.getElementById('xray-float');if(fb&&!fb.contains(e.target)){fb.remove();}}
+document.addEventListener('mousedown',dismissXrayFloat);
+document.addEventListener('touchstart',dismissXrayFloat,{passive:true});
 function stripRuby(t){let r=t;const keys=Object.keys(KJ).sort((a,b)=>b.length-a.length);for(const k of keys){const p=k+KJ[k];while(r.includes(p))r=r.replace(p,k);}return r;}
 function pasteXray(){navigator.clipboard.readText().then(function(t){const inp=document.getElementById('xray-in');if(inp){inp.value=stripRuby(t.trim());xrayParse();}}).catch(function(){});}
 function pasteVerb(){navigator.clipboard.readText().then(function(t){const inp=document.getElementById('verb-in');if(inp){inp.value=stripRuby(t.trim());showConj();}}).catch(function(){});}

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'trilingual-lab-v70';
+const CACHE_NAME = 'trilingual-lab-v72';
 const ASSETS = [
   './',
   './index.html',
