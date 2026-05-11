@@ -395,6 +395,29 @@ const result=[];
 for(const w of finalTokens){
 if(w==='、'||w==='。'){result.push({text:w,type:'標點',desc:'逗號/句號',color:'#888'});continue;}
 if(PA[w]){result.push({text:w,type:'助詞',role:PA[w][0],desc:PA[w][1],color:'#7eeae0'});continue;}
+// Check for です ending with adj: 高くないです, 安いです etc
+if(w.endsWith('です')&&w.length>2){const base=w.slice(0,-2);
+let adjFound=false;
+for(const[ending,form,meaning] of IA){if(base.endsWith(ending)&&base.length>ending.length){
+result.push({text:w,type:'い形容詞變形',orig:base.slice(0,-ending.length)+'い',form:form+'+です',meaning:meaning+'（禮貌）',color:'#ffb347'});adjFound=true;break;}}
+if(!adjFound&&base.endsWith('い')&&base.length>=2){result.push({text:w,type:'い形容詞',orig:base,form:'原形+です',meaning:'現在肯定（禮貌）',color:'#ffb347'});adjFound=true;}
+if(!adjFound&&base.length>=1&&!base.endsWith('ま')){result.push({text:w,type:'丁寧語尾',orig:base,form:'です',meaning:'禮貌結尾',color:'#c4b5fd'});}
+if(adjFound)continue;continue;}
+// Check for する compound verbs: 結婚している, 勉強します etc
+let suruFound=false;
+for(const[ending,form,meaning,hint] of VE){const suruEnd='し'+ending.replace(/^ま/,'ま').replace(/^な/,'な');
+if(w.endsWith('している')&&w.length>4){const stem=w.slice(0,-4);
+result.push({text:w,type:'動詞變形',orig:stem+'する',form:'て+いる',meaning:'正在…/持續…',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}
+if(w.endsWith('します')&&w.length>3){const stem=w.slice(0,-3);
+result.push({text:w,type:'動詞變形',orig:stem+'する',form:'ます形',meaning:'…（禮貌）',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}
+if(w.endsWith('しました')&&w.length>4){const stem=w.slice(0,-4);
+result.push({text:w,type:'動詞變形',orig:stem+'する',form:'ます+過去',meaning:'…了（禮貌）',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}
+if(w.endsWith('しない')&&w.length>3){const stem=w.slice(0,-3);
+result.push({text:w,type:'動詞變形',orig:stem+'する',form:'ない形',meaning:'不…',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}
+if(w.endsWith('した')&&w.length>2&&!w.endsWith('ました')){const stem=w.slice(0,-2);if(stem.length>=2){
+result.push({text:w,type:'動詞變形',orig:stem+'する',form:'た形',meaning:'…了',group:'G3（する複合）',color:'#ff8a8a'});suruFound=true;break;}}
+break;}
+if(suruFound)continue;
 // Try verb endings
 let found=false;
 for(const[ending,form,meaning,hint] of VE){
