@@ -115,6 +115,7 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .verb-overlay.show{display:flex}
 .verb-modal{background:var(--card);border-radius:16px;padding:16px 18px;max-width:420px;width:100%;max-height:85vh;overflow:auto;border:1px solid rgba(255,215,0,.2);box-shadow:0 10px 40px rgba(0,0,0,.5)}
 .verb-modal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.verb-modal-h span{font-size:.85rem;font-weight:900;color:#ffd700}.verb-modal-h button{background:none;border:none;color:rgba(255,255,255,.5);font-size:1.1rem;cursor:pointer;padding:4px 8px;border-radius:6px}.verb-modal-h button:hover{color:#fff;background:rgba(255,255,255,.1)}
+.vtab-bar{display:flex;gap:4px;margin-bottom:10px}.vtab{flex:1;padding:6px 0;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:transparent;color:rgba(255,255,255,.4);font-size:.7rem;font-weight:700;cursor:pointer;font-family:inherit}.vtab.a{background:rgba(255,215,0,.15);color:#ffd700;border-color:rgba(255,215,0,.3)}
 .set-box{background:#1a1a35;border:1.5px solid rgba(255,215,0,.2);border-radius:16px;padding:20px;max-width:360px;width:90%;margin:20px}
 .set-box h3{color:#ffd700;font-size:.85rem;margin-bottom:10px;text-align:center}
 .set-box label{font-size:.68rem;color:rgba(255,255,255,.5);display:block;margin-bottom:4px}
@@ -295,13 +296,81 @@ function openVerbTool(){
 let ov=document.getElementById('verb-overlay');
 if(ov){ov.classList.add('show');return;}
 ov=document.createElement('div');ov.id='verb-overlay';ov.className='verb-overlay show';
-ov.innerHTML='<div class="verb-modal"><div class="verb-modal-h"><span>🤖 動詞形容詞變形金剛</span><button onclick="closeVerbTool()">✕</button></div>'
-+'<div style="font-size:.62rem;color:rgba(255,255,255,.35);margin-bottom:6px">輸入動詞（食べる）、形容詞（安い、静か）或中文（便宜）</div>'
-+'<div class="diy-input"><input id="verb-in" type="text" placeholder="動詞/形容詞/中文…" onkeydown="if(event.key===\'Enter\')showConj()"><button class="diy-btn go" onclick="showConj()">🤖 變形</button></div>'
-+'<div id="verb-res"></div></div>';
+ov.innerHTML='<div class="verb-modal"><div class="verb-modal-h"><span>🤖 日文變形金剛</span><button onclick="closeVerbTool()">✕</button></div>'
++'<div class="vtab-bar"><button class="vtab a" onclick="switchVTab(0)">🔄 變形</button><button class="vtab" onclick="switchVTab(1)">🔍 X光解析</button></div>'
++'<div id="vtab0" class="vtab-p">'
++'<div style="font-size:.62rem;color:rgba(255,255,255,.35);margin-bottom:6px">輸入動詞（食べる）、形容詞（安い、静か）或中文</div>'
++'<div class="diy-input"><input id="verb-in" type="text" placeholder="動詞/形容詞/中文…" onkeydown="if(event.key===\'Enter\')showConj()"><button class="diy-btn go" onclick="showConj()">🔄 變形</button></div>'
++'<div id="verb-res"></div></div>'
++'<div id="vtab1" class="vtab-p" style="display:none">'
++'<div style="font-size:.62rem;color:rgba(255,255,255,.35);margin-bottom:6px">輸入日文句子 → 自動拆解每個零件的原形和變形過程</div>'
++'<div class="diy-input"><input id="xray-in" type="text" placeholder="日文句子（如：日本に行ったら寿司を食べたいです）" onkeydown="if(event.key===\'Enter\')xrayParse()"><button class="diy-btn go" onclick="xrayParse()">🔍 解析</button></div>'
++'<div id="xray-res"></div></div>'
++'</div>';
 ov.addEventListener('click',function(e){if(e.target===ov)closeVerbTool();});
 document.body.appendChild(ov);}
+function switchVTab(n){document.querySelectorAll('.vtab').forEach((b,i)=>{b.classList.toggle('a',i===n);});document.querySelectorAll('.vtab-p').forEach((p,i)=>{p.style.display=i===n?'block':'none';});}
 function closeVerbTool(){const ov=document.getElementById('verb-overlay');if(ov)ov.classList.remove('show');}
+function xrayParse(){const inp=document.getElementById('xray-in');if(!inp)return;const s=inp.value.trim();if(!s)return;
+const particles={'は':['主題','說到○○嘛…'],'が':['主角','就是這個！'],'を':['對象','被處理的東西'],'に':['方向/目標','往這裡去'],'で':['場景/工具','在這裡/用這個'],'と':['一起/引用','跟誰/說什麼'],'から':['起點','從這裡開始'],'まで':['終點','到這裡為止'],'へ':['方向','朝那邊去'],'も':['也','也是'],'の':['的','誰的'],'よ':['語氣','告知強調'],'ね':['語氣','對吧？'],'か':['疑問','嗎？']};
+const vEndings=[['たいです','たい形+です','想要…（禮貌）'],['たくない','たい形+否定','不想…'],['たかった','たい形+過去','以前想…'],['たい','たい形','想要…'],['ったら','た形+ら','如果…（促音便）'],['んだら','た形+ら','如果…（撥音便）'],['したら','た形+ら','如果…'],['たら','た形+ら','如果…'],['ています','て+いる+ます','正在…（禮貌）'],['ている','て+いる','正在…'],['ていた','て+いた','當時正在…'],['てください','て+ください','請…'],['てくれた','て+くれた','幫我…（感謝）'],['てもらう','て+もらう','請人幫我…'],['ません','ます+否定','不…（禮貌）'],['ました','ます+過去','…了（禮貌）'],['ませんでした','ます+否定+過去','沒…（禮貌）'],['ます','ます形','…（禮貌）'],['なかった','ない+過去','以前沒…'],['ない','ない形','不…'],['られる','可能/被動','能…or被…'],['れる','可能/被動','能…or被…'],['させる','使役形','讓別人…'],['せる','使役形','讓別人…'],['った','た形','…了（促音便）'],['んだ','た形','…了（撥音便）'],['いだ','た形','…了（い音便濁）'],['いた','た形','…了（い音便）'],['した','た形','…了'],['って','て形','然後（促音便）'],['んで','て形','然後（撥音便）'],['いで','て形','然後（い音便濁）'],['いて','て形','然後（い音便）'],['して','て形','然後'],['よう','意向形','…吧！'],['おう','意向形','…吧！'],['れば','ば形','如果…'],['えば','ば形','如果…'],['ろ','命令形','快…！']];
+const iAdjEndings=[['かったら','過去+条件','如果以前…的話'],['くなかった','否定+過去','以前不…'],['かった','過去形','以前…'],['くない','否定形','不…'],['くて','て形','…而且'],['く','副詞形','…地'],['さ','名詞化','…程度']];
+const tokens=[];let i=0;const raw=s.replace(/。/g,'').replace(/、/g,' 、 ').replace(/！/g,'').replace(/？/g,'');const chars=raw;
+const words=[];let buf='';
+for(let c=0;c<chars.length;c++){const ch=chars[c];
+if(ch===' '||ch==='、'||ch==='。'||ch==='！'||ch==='？'){if(buf)words.push(buf);if(ch==='、')words.push('、');buf='';}
+else{buf+=ch;}}
+if(buf)words.push(buf);
+const result=[];
+for(const w of words){
+if(w==='、'){result.push({text:'、',type:'標點',desc:'逗號（前後分隔）',color:'#888'});continue;}
+let found=false;
+for(const[ending,form,meaning] of vEndings){
+if(w.endsWith(ending)&&w.length>ending.length){
+const stem=w.slice(0,-ending.length);
+let orig=stem;
+if(ending.startsWith('った')||ending==='って')orig+='う';
+else if(ending.startsWith('んだ')||ending==='んで')orig+='む';
+else if(ending.startsWith('いた')||ending==='いて')orig+='く';
+else if(ending.startsWith('いだ')||ending==='いで')orig+='ぐ';
+else if(ending.startsWith('した')||ending==='して')orig+='す';
+else if(ending.startsWith('ま')||ending.startsWith('み'))orig+='む';
+else orig+='る';
+const conj=conjugate(orig);
+const groupName=conj?conj.group:'';
+result.push({text:w,type:'動詞變形',orig:orig,form:form,meaning:meaning,group:groupName,color:'#ff8a8a'});
+found=true;break;}}
+if(found)continue;
+for(const[ending,form,meaning] of iAdjEndings){
+if(w.endsWith(ending)&&w.length>ending.length){
+const stem=w.slice(0,-ending.length);
+result.push({text:w,type:'い形容詞變形',orig:stem+'い',form:form,meaning:meaning,color:'#ffb347'});
+found=true;break;}}
+if(found)continue;
+if(w.endsWith('い')&&w.length>=2){result.push({text:w,type:'い形容詞',orig:w,form:'原形',meaning:'現在肯定',color:'#ffb347'});continue;}
+let pFound=false;
+for(const[p,info] of Object.entries(particles)){
+if(w===p){result.push({text:w,type:'助詞',role:info[0],desc:info[1],color:'#7eeae0'});pFound=true;break;}}
+if(pFound)continue;
+if(w.endsWith('です')){result.push({text:w,type:'です（丁寧）',orig:w.replace('です',''),form:'名詞/な形容詞+です',meaning:'…是（禮貌）',color:'#c4b5fd'});continue;}
+result.push({text:w,type:'名詞/其他',color:'#ffd700'});}
+let h='<div style="padding:8px 0">';
+for(const r of result){
+h+='<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)">';
+h+='<div style="display:flex;align-items:center;gap:8px">';
+h+='<span style="font-size:.95rem;font-weight:800;color:'+r.color+'">'+furi(eH(r.text))+'</span>';
+h+='<span style="font-size:.58rem;padding:1px 6px;border-radius:4px;background:'+r.color+'22;color:'+r.color+'">'+r.type+'</span>';
+h+='</div>';
+if(r.orig){
+h+='<div style="font-size:.65rem;color:rgba(255,255,255,.5);margin-top:2px">原形：<span style="color:#ffd700;font-weight:700">'+furi(eH(r.orig))+'</span>';
+if(r.group)h+=' （'+r.group+'）';
+h+='</div>';
+h+='<div style="font-size:.65rem;color:rgba(255,255,255,.4)">變形：'+eH(r.form)+' → '+eH(r.meaning)+'</div>';}
+if(r.role)h+='<div style="font-size:.65rem;color:rgba(255,255,255,.5)">角色：'+eH(r.role)+' → '+eH(r.desc)+'</div>';
+if(r.desc&&!r.role)h+='<div style="font-size:.65rem;color:rgba(255,255,255,.4)">'+eH(r.desc)+'</div>';
+h+='</div>';}
+h+='</div>';
+document.getElementById('xray-res').innerHTML=h;}
 function showConj(){const inp=document.getElementById('verb-in');if(!inp)return;const v=inp.value.trim();if(!v)return;
 const isJP=/[\u3040-\u309f\u30a0-\u30ff]/.test(v);
 if(isJP){const r=conjugate(v);if(!r){document.getElementById('verb-res').innerHTML='<div style="color:#ff6b6b;font-size:.75rem;padding:6px">無法辨識，請輸入原形（如：食べる、安い、静か）</div>';return;}showConjResult(r);}
