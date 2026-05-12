@@ -313,18 +313,19 @@ document.body.appendChild(ov);}
 function switchVTab(n){document.querySelectorAll('.vtab').forEach((b,i)=>{b.classList.toggle('a',i===n);});document.querySelectorAll('.vtab-p').forEach((p,i)=>{p.style.display=i===n?'block':'none';});}
 function closeVerbTool(){const ov=document.getElementById('verb-overlay');if(ov)ov.classList.remove('show');}
 document.addEventListener('mouseup',function(e){
+if(e.target.id==='xray-float')return;
 const sel=window.getSelection();const text=sel.toString().trim();
 let fb=document.getElementById('xray-float');
 if(!text||text.length<2||!/[\u3040-\u309f\u30a0-\u30ff\u4e00-\u9fff]/.test(text)){if(fb)fb.remove();return;}
+window._xraySelectedText=text;
 if(!fb){fb=document.createElement('button');fb.id='xray-float';fb.style.cssText='position:fixed;z-index:99999;padding:4px 10px;border-radius:8px;border:1px solid rgba(255,215,0,.4);background:rgba(26,26,53,.95);color:#ffd700;font-size:.72rem;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.5);backdrop-filter:blur(6px)';
 fb.textContent='🔍 X光解析';document.body.appendChild(fb);}
 const range=sel.getRangeAt(0);const rect=range.getBoundingClientRect();
 fb.style.left=Math.min(rect.left+rect.width/2-40,window.innerWidth-100)+'px';
-fb.style.top=(rect.bottom+6)+'px';
-fb.onclick=fb.ontouchend=function(ev){ev.preventDefault();ev.stopPropagation();const cleaned=stripRuby(text);fb.remove();openVerbTool();switchVTab(1);setTimeout(function(){const inp=document.getElementById('xray-in');if(inp){inp.value=cleaned;xrayParse();}},300);};});
-function dismissXrayFloat(e){const fb=document.getElementById('xray-float');if(fb&&!fb.contains(e.target)){fb.remove();}}
-document.addEventListener('mousedown',dismissXrayFloat);
-document.addEventListener('touchstart',dismissXrayFloat,{passive:true});
+fb.style.top=(rect.bottom+6)+'px';});
+function dismissXrayFloat(e){const fb=document.getElementById('xray-float');if(!fb)return;if(e.target===fb||fb.contains(e.target)){e.preventDefault();e.stopImmediatePropagation();const saved=window._xraySelectedText||'';const cleaned=stripRuby(saved).replace(/^🔊\s*/,'');fb.remove();openVerbTool();switchVTab(1);const inp=document.getElementById('xray-in');if(inp){inp.value=cleaned;xrayParse();}return;}fb.remove();}
+document.addEventListener('mousedown',dismissXrayFloat,true);
+document.addEventListener('touchstart',function(e){const fb=document.getElementById('xray-float');if(!fb)return;if(e.target===fb||fb.contains(e.target)){e.preventDefault();const saved=window._xraySelectedText||'';const cleaned=stripRuby(saved).replace(/^🔊\s*/,'');fb.remove();openVerbTool();switchVTab(1);const inp=document.getElementById('xray-in');if(inp){inp.value=cleaned;xrayParse();}return;}fb.remove();},true);
 function stripRuby(t){let r=t;const keys=Object.keys(KJ).sort((a,b)=>b.length-a.length);for(const k of keys){const p=k+KJ[k];while(r.includes(p))r=r.replace(p,k);}return r;}
 function pasteXray(){navigator.clipboard.readText().then(function(t){const inp=document.getElementById('xray-in');if(inp){inp.value=stripRuby(t.trim());xrayParse();}}).catch(function(){});}
 function pasteVerb(){navigator.clipboard.readText().then(function(t){const inp=document.getElementById('verb-in');if(inp){inp.value=stripRuby(t.trim());showConj();}}).catch(function(){});}
