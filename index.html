@@ -509,10 +509,7 @@ function nv(d){if(edM)svEd();ci=Math.max(0,Math.min(F.length-1,ci+d));rn();}
 let aP=false;let aPTimer=null;
 function toggleAutoPlay(){if(aP){stopAutoPlay();}else{startAutoPlay();}}
 function startAutoPlay(){aP=true;const b=document.getElementById('ap');if(b){b.textContent='⏸';b.style.background='rgba(255,215,0,.2)';b.style.borderColor='var(--gold)';b.title='暫停自動播放';}
-const data=lU();const seen=data.seen||{};
-let resumeIdx=-1;for(let i=0;i<F.length;i++){if(!seen[F[i].id]){resumeIdx=i;break;}}
-if(resumeIdx===-1)resumeIdx=ci;
-if(resumeIdx!==ci){ci=resumeIdx;rn();aPTimer=setTimeout(playCurrentAndAdvance,500);}else{playCurrentAndAdvance();}}
+playCurrentAndAdvance();}
 function stopAutoPlay(){aP=false;sy.cancel();if(aPTimer){clearTimeout(aPTimer);aPTimer=null;}const b=document.getElementById('ap');if(b){b.textContent='🔊';b.style.background='';b.style.borderColor='';b.title='自動播放（接續學習進度）';}}
 function playCurrentAndAdvance(){if(!aP)return;const r=F[ci];if(!r)return stopAutoPlay();
 mS(r.id);uP();
