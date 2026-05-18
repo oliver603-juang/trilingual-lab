@@ -8946,7 +8946,8 @@
         "morphology_load": 5,
         "new_concept": 6
       }
-    }
+    },
+    "chinese": "我們已經更新軟體了。"
   },
   {
     "cn": "她在這家公司工作了五年。",
@@ -9014,7 +9015,8 @@
         "morphology_load": 5,
         "new_concept": 6
       }
-    }
+    },
+    "chinese": "她在這家公司工作五年了。"
   },
   {
     "cn": "自從二月以來，銷售額一直在增長。",
@@ -9074,7 +9076,8 @@
         "morphology_load": 5,
         "new_concept": 6
       }
-    }
+    },
+    "chinese": "從二月開始銷售額一直在增加。"
   },
   {
     "cn": "你最近讀過這本報告嗎？",
@@ -9142,7 +9145,8 @@
         "morphology_load": 5,
         "new_concept": 6
       }
-    }
+    },
+    "chinese": "你最近讀過這份報告嗎？"
   },
   {
     "cn": "我已經寄出邀請函了。",
@@ -9206,7 +9210,8 @@
         "morphology_load": 5,
         "new_concept": 6
       }
-    }
+    },
+    "chinese": "我已經寄出邀請函了。"
   },
   {
     "cn": "我到達時，會議已經開始了。",
@@ -9278,7 +9283,8 @@
         "morphology_load": 6,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "我到達時，會議已經開始了。"
   },
   {
     "cn": "因為沒有預約，他們不讓我進去。",
@@ -9350,7 +9356,8 @@
         "morphology_load": 6,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "因為我沒預約，他們不讓我進去。"
   },
   {
     "cn": "在他退休之前，他已經訓練好了接班人。",
@@ -9422,7 +9429,8 @@
         "morphology_load": 6,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "他退休前，已經培訓好接班人了。"
   },
   {
     "cn": "她告訴我她已經交了報告。",
@@ -9494,7 +9502,8 @@
         "morphology_load": 6,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "她告訴我她已經提交報告了。"
   },
   {
     "cn": "到截止日期時，我們將已經完成了專案。",
@@ -9558,7 +9567,8 @@
         "morphology_load": 6,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "在截止日期前，我們將會完成這個專案。"
   },
   {
     "cn": "因為想省錢，湯姆走路上班。",
@@ -9630,7 +9640,8 @@
         "morphology_load": 6,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "因為想省錢，Tom 走路上班。"
   },
   {
     "cn": "附在這封信裡的報告是機密的。",
@@ -9698,7 +9709,8 @@
         "morphology_load": 6,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "這封信附加的報告是機密的。"
   },
   {
     "cn": "寫完報告後，她離開了辦公室。",
@@ -9770,7 +9782,8 @@
         "morphology_load": 6,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "寫完報告後，她離開了辦公室。"
   },
   {
     "cn": "如果正確使用的話，這個工具可以省很多時間。",
@@ -9846,7 +9859,8 @@
         "morphology_load": 6,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "如果正確使用，這個工具可以節省很多時間。"
   },
   {
     "cn": "預計下週會下雨，活動改到室內。",
@@ -9922,7 +9936,8 @@
         "morphology_load": 6,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "因為下週預報有雨，活動改到室內舉行。"
   },
   {
     "id": "uni_aimai_305",
@@ -24306,7 +24321,8 @@
         "morphology_load": 5,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "雖然下雨，活動仍然很成功。"
   },
   {
     "cn": "儘管下雨，活動還是很成功。",
@@ -24370,7 +24386,8 @@
         "morphology_load": 5,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "儘管下雨，活動仍然很成功。"
   },
   {
     "cn": "因為暴風雨，航班延誤了。",
@@ -24434,7 +24451,8 @@
         "morphology_load": 5,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "由於暴風雨，航班延誤了。"
   },
   {
     "cn": "因為暴風雨來了，航班延誤了。",
@@ -24498,7 +24516,8 @@
         "morphology_load": 5,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "因為暴風雨來襲，航班延誤了。"
   },
   {
     "cn": "除了價格以外，品質也很重要。",
@@ -24562,7 +24581,8 @@
         "morphology_load": 5,
         "new_concept": 7
       }
-    }
+    },
+    "chinese": "除了價格之外，品質也很重要。"
   },
   {
     "cn": "我從來沒有見過這麼好的產品。",
@@ -24626,7 +24646,8 @@
         "morphology_load": 7,
         "new_concept": 9
       }
-    }
+    },
+    "chinese": "我從沒看過這麼棒的產品。"
   },
   {
     "cn": "他不僅完成了報告，還做了簡報。",
@@ -24702,7 +24723,8 @@
         "morphology_load": 7,
         "new_concept": 9
       }
-    }
+    },
+    "chinese": "他不只完成了報告，還做了簡報。"
   },
   {
     "cn": "只有完成培訓後，員工才能操作機器。",
@@ -24774,7 +24796,8 @@
         "morphology_load": 7,
         "new_concept": 9
       }
-    }
+    },
+    "chinese": "只有完成訓練後，員工才能操作機器。"
   },
   {
     "cn": "如果我早知道截止日期，我就會做得更快。",
@@ -24846,7 +24869,8 @@
         "morphology_load": 7,
         "new_concept": 9
       }
-    }
+    },
+    "chinese": "如果我早知道截止日期，我會做得更快。"
   },
   {
     "cn": "我一到辦公室就會通知你。",
@@ -24930,7 +24954,8 @@
         "morphology_load": 7,
         "new_concept": 9
       }
-    }
+    },
+    "chinese": "我一到辦公室就會通知你。"
   },
   {
     "cn": "如果我是經理，我會雇用他。",
@@ -25010,7 +25035,8 @@
         "morphology_load": 7,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "如果我是經理，我會錄用他。"
   },
   {
     "cn": "如果她有更多時間，她會去旅行。",
@@ -25090,7 +25116,8 @@
         "morphology_load": 7,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "如果她有更多時間，她會去旅行。"
   },
   {
     "cn": "如果我昨天有讀書，我就會通過考試了。",
@@ -25170,7 +25197,8 @@
         "morphology_load": 7,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "如果我昨天有讀書，我就會通過考試了。"
   },
   {
     "cn": "我希望我能說流利的英文。",
@@ -25234,7 +25262,8 @@
         "morphology_load": 7,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "我希望我能流暢地說英文。"
   },
   {
     "cn": "經理建議我們提早準備。",
@@ -25306,7 +25335,8 @@
         "morphology_load": 7,
         "new_concept": 8
       }
-    }
+    },
+    "chinese": "經理建議我們提早準備。"
   },
   {
     "id": "uni_detective_361",
@@ -25893,7 +25923,8 @@
         "morphology_load": 2,
         "new_concept": 2
       }
-    }
+    },
+    "chinese": "我會說日語。"
   },
   {
     "cn": "這裡看得到富士山。",
@@ -25957,7 +25988,8 @@
         "morphology_load": 2,
         "new_concept": 2
       }
-    }
+    },
+    "chinese": "從這裡可以看到富士山。"
   },
   {
     "cn": "小孩不能喝酒。",
@@ -26017,7 +26049,8 @@
         "morphology_load": 2,
         "new_concept": 2
       }
-    }
+    },
+    "chinese": "小孩子不能喝酒。"
   },
   {
     "cn": "我們一起吃飯吧！",
@@ -26077,7 +26110,8 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "chinese": "一起吃飯吧！"
   },
   {
     "cn": "明天早點起床吧。",
@@ -26141,7 +26175,8 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "chinese": "明天早點起床吧。"
   },
   {
     "cn": "去看電影吧！",
@@ -26201,7 +26236,8 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "chinese": "去看電影吧！"
   },
   {
     "cn": "快跑！（緊急）",
@@ -26245,7 +26281,8 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "chinese": "快跑！"
   },
   {
     "cn": "不准進來！",
@@ -26293,7 +26330,8 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "chinese": "不要進來！"
   },
   {
     "cn": "給我安靜！",
@@ -26345,6 +26383,7 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "chinese": "安靜！"
   }
 ]
