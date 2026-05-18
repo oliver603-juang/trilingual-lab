@@ -142,7 +142,7 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 <div class="header">
 <div class="logo">三語句型積木</div>
 <div class="sw"><button class="ub a" onclick="sU('iggy')">🐱 Iggy</button><button class="ub" onclick="sU('yoyo')">🐸 Yoyo</button><button class="ub" onclick="sU('yofarn')">🦉 Yofarn</button><button class="ub" onclick="sU('oliver')">🦊 Oliver</button></div>
-<div class="hn" id="hn"><button class="nb" onclick="nv(-1)">◀</button><input class="nc" id="nc" value="1/1" onclick="this.select()" onkeydown="if(event.key==='Enter')jumpTo(this.value)"><button class="nb" onclick="nv(1)">▶</button></div>
+<div class="hn" id="hn"><button class="nb" onclick="nv(-1)">◀</button><input class="nc" id="nc" value="1/1" onclick="this.select()" onkeydown="if(event.key==='Enter')jumpTo(this.value)"><button class="nb" onclick="nv(1)">▶</button><button class="nb" id="ap" onclick="toggleAutoPlay()" title="自動播放（接續學習進度）">🔊</button></div>
 <div class="lt"><button class="lb a-jp" onclick="sM('jp')">🇯🇵 日文</button><button class="lb" onclick="sM('en')">🇺🇸 英文</button><button class="lb" onclick="sM('vs')">⚡ 對比</button></div>
 <span class="badge pb" id="pb">✅ 0</span>
 <button class="gear-icon" id="verbBtn" onclick="openVerbTool()" title="動詞形容詞變形金剛">🤖</button><button class="gear-icon" id="gearBtn" onclick="openSet()">⚙️</button>
@@ -506,6 +506,24 @@ function sM(m){if(edM)svEd();md=m;document.querySelectorAll('.lb').forEach(b=>b.
 if(m==='jp')bs[0].classList.add('a-jp');else if(m==='en')bs[1].classList.add('a-en');else bs[2].classList.add('a-vs');rn();}
 function jumpTo(val){const m=val.match(/(\d+)/);if(m){const n=parseInt(m[1]);if(n>=1&&n<=F.length){if(edM)svEd();ci=n-1;rn();}}document.getElementById('nc').blur();}
 function nv(d){if(edM)svEd();ci=Math.max(0,Math.min(F.length-1,ci+d));rn();}
+let aP=false;let aPTimer=null;
+function toggleAutoPlay(){if(aP){stopAutoPlay();}else{startAutoPlay();}}
+function startAutoPlay(){aP=true;const b=document.getElementById('ap');if(b){b.textContent='⏸';b.style.background='rgba(255,215,0,.2)';b.style.borderColor='var(--gold)';b.title='暫停自動播放';}
+const data=lU();const seen=data.seen||{};
+let resumeIdx=-1;for(let i=0;i<F.length;i++){if(!seen[F[i].id]){resumeIdx=i;break;}}
+if(resumeIdx===-1)resumeIdx=ci;
+if(resumeIdx!==ci){ci=resumeIdx;rn();aPTimer=setTimeout(playCurrentAndAdvance,500);}else{playCurrentAndAdvance();}}
+function stopAutoPlay(){aP=false;sy.cancel();if(aPTimer){clearTimeout(aPTimer);aPTimer=null;}const b=document.getElementById('ap');if(b){b.textContent='🔊';b.style.background='';b.style.borderColor='';b.title='自動播放（接續學習進度）';}}
+function playCurrentAndAdvance(){if(!aP)return;const r=F[ci];if(!r)return stopAutoPlay();
+mS(r.id);uP();
+const onEnd=function(){if(!aP)return;aPTimer=setTimeout(function(){if(!aP)return;if(ci>=F.length-1){stopAutoPlay();return;}ci++;rn();aPTimer=setTimeout(playCurrentAndAdvance,300);},800);};
+sy.cancel();
+if(md==='vs'){const jpData=r.jp,enData=r.en;if(!jpData&&!enData)return onEnd();
+let phase=0;const playNext=function(){if(!aP)return;if(phase===0&&jpData){phase=1;const u=new SpeechSynthesisUtterance(jpData.s);u.lang='ja-JP';u.rate=0.8;if(jv)u.voice=jv;u.onend=playNext;u.onerror=playNext;sy.speak(u);}else if(phase<=1&&enData){phase=2;const u=new SpeechSynthesisUtterance(enData.s);u.lang='en-US';u.rate=0.8;if(ev)u.voice=ev;u.onend=onEnd;u.onerror=onEnd;sy.speak(u);}else{onEnd();}};playNext();
+}else{const data=r[md];if(!data)return onEnd();
+const u=new SpeechSynthesisUtterance(data.s);u.lang=md==='jp'?'ja-JP':'en-US';u.rate=0.8;
+if(md==='jp'&&jv)u.voice=jv;if(md==='en'&&ev)u.voice=ev;
+u.onend=onEnd;u.onerror=onEnd;sy.speak(u);}}
 function gT(i){if(edM)svEd();ci=i;rn();}
 function eH(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function nl2br(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
