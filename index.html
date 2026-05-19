@@ -45,6 +45,19 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .sf{border:1px solid var(--border);background:var(--surface);color:var(--dim);font-family:inherit;font-size:.75rem;padding:4px 12px;border-radius:9px;cursor:pointer}
 .xtbox{margin:6px auto 8px;max-width:90%;padding:8px 12px;background:rgba(196,181,253,.06);border:1px dashed rgba(196,181,253,.25);border-radius:8px;font-size:.78rem;color:#e0d4ff;text-align:center;font-weight:600;line-height:1.6}
 .xtbox .xtlbl{font-size:.55rem;color:rgba(196,181,253,.7);margin-bottom:3px;font-weight:500;letter-spacing:0.5px}
+.lit-tag{display:inline-block;padding:0 5px;margin:0 1px;border:1px solid;border-radius:4px;cursor:pointer;font-size:.72rem;font-weight:700;transition:transform .1s}
+.lit-tag:hover{transform:scale(1.1)}
+.lit-tag:active{transform:scale(.95)}
+#tag-mask{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:99999;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.tag-pop{background:#1a1a35;border:2px solid #c4b5fd;border-radius:16px;padding:18px 22px;max-width:380px;width:100%;color:#fff;position:relative;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.tag-pop-close{position:absolute;top:8px;right:12px;background:none;border:none;color:#aaa;font-size:1.5rem;cursor:pointer;line-height:1}
+.tag-pop-close:hover{color:#fff}
+.tag-pop-tag{font-size:2rem;font-weight:900;text-align:center;margin-bottom:10px;line-height:1}
+.tag-pop-jp{font-size:.95rem;color:#c4b5fd;text-align:center;margin-bottom:8px}
+.tag-pop-jp b{color:#ffd700;font-size:1.1rem}
+.tag-pop-mean{font-size:1rem;color:#e0d4ff;text-align:center;font-weight:600;margin-bottom:10px;background:rgba(196,181,253,.1);padding:8px 12px;border-radius:8px}
+.tag-pop-ex{font-size:.8rem;color:#ffd700;text-align:center;margin:10px 0;font-style:italic}
+.tag-pop-hint{font-size:.85rem;color:#94a3b8;text-align:center;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(196,181,253,.2)}
 /* 不規則動詞透視鏡 popup */
 .bk-irr{position:absolute;top:-6px;right:-6px;background:#ff6b6b;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:.6rem;cursor:pointer;z-index:5;border:2px solid var(--bg);box-shadow:0 0 0 1px #ff6b6b}
 .bk-irr:hover{transform:scale(1.15)}
@@ -210,6 +223,111 @@ function iV(){const v=sy.getVoices();jv=v.find(v=>v.lang.startsWith('ja'));ev=v.
 sy.onvoiceschanged=iV;iV();
 /* 漢字 → 假名轉換 (給 TTS 用，確保發音符合 KJ 辭典) */
 function kanjiToKana(t){let r='',i=0;const keys=Object.keys(KJ).sort((a,b)=>b.length-a.length);while(i<t.length){let m=false;for(const k of keys){if(i+k.length<=t.length&&t.substring(i,i+k.length)===k){r+=KJ[k];i+=k.length;m=true;break;}}if(!m){r+=t[i];i++;}}return r;}
+/* === 直譯標籤資料庫 === */
+const TAG_INFO={
+'題':{jp:'は (wa)',mean:'說到○○嘛…',ex:'私は…→「說到我啊…」',hint:'🎤 拿麥克風的人（要講的話題）',color:'#ff9bd0'},
+'主':{jp:'が (ga)',mean:'就是這個！',ex:'雨が降る→「就是雨在下」',hint:'👈 用手指出來的（強調是誰）',color:'#ffd700'},
+'受':{jp:'を (o)',mean:'被處理的東西',ex:'本を読む→「處理書（讀）」',hint:'🎯 動作的目標物',color:'#ffd93d'},
+'向':{jp:'に (ni)',mean:'朝向／在某時／給某人',ex:'学校に行く→「往學校（去）」',hint:'➡️ 箭頭指的方向',color:'#7eeae0'},
+'在/用':{jp:'で (de)',mean:'在這裡做 / 用這個',ex:'公園で遊ぶ→「在公園（玩）」',hint:'🏠 動作發生的場所/工具',color:'#a78bfa'},
+'和':{jp:'と (to)',mean:'和...一起 / 引用',ex:'友達と話す→「和朋友（聊）」',hint:'👥 同伴或引號',color:'#fbbf24'},
+'從':{jp:'から (kara)',mean:'從這裡開始 / 因為',ex:'家から学校まで→「從家到學校」',hint:'🚀 起點',color:'#fb923c'},
+'到':{jp:'まで (made)',mean:'到這裡為止',ex:'5時まで待つ→「等到5點」',hint:'🏁 終點',color:'#fb923c'},
+'往':{jp:'へ (e)',mean:'往哪個方向',ex:'東京へ行く→「往東京（去）」',hint:'➡️ 方向（比 に 更廣）',color:'#7eeae0'},
+'的':{jp:'の (no)',mean:'誰的 / 連接',ex:'私の本→「我的書」',hint:'🔗 連接所有格',color:'#94a3b8'},
+'或':{jp:'や (ya)',mean:'或之類（列舉不完）',ex:'本やペン→「書啦筆啦…」',hint:'📚 列舉一部份',color:'#94a3b8'},
+'引':{jp:'と (to)',mean:'引用（說…）',ex:'「来る」と言った→「說『會來』」',hint:'💬 引號的箭頭',color:'#fbbf24'},
+'感':{jp:'ね (ne)',mean:'尋求認同',ex:'いいですね→「不錯吧～」',hint:'😊 期待對方點頭',color:'#f0abfc'},
+'告':{jp:'よ (yo)',mean:'告訴你哦',ex:'危ないよ→「危險哦！」',hint:'📢 告知對方',color:'#f0abfc'},
+'女':{jp:'わ (wa)',mean:'女性語氣',ex:'素敵だわ→「真棒呀」',hint:'👩 女性說話',color:'#f0abfc'},
+'男':{jp:'ぞ (zo)/ぜ (ze)',mean:'男性語氣',ex:'行くぞ→「走啦！」',hint:'👨 男性說話',color:'#f0abfc'},
+'問':{jp:'の (no)/か (ka)',mean:'疑問結尾',ex:'行くの？→「要去嗎？」',hint:'❓ 問句語尾',color:'#f0abfc'},
+'尊敬':{jp:'敬語',mean:'尊敬對方（拉高對方）',ex:'召し上がる→「(您)用餐」',hint:'⬆️ 對長輩/客戶用',color:'#e9d5ff'},
+'謙讓':{jp:'敬語',mean:'謙虛自己（拉低自己）',ex:'いただく→「(我)收下」',hint:'⬇️ 把自己縮小',color:'#e9d5ff'},
+'男感':{jp:'男性感嘆',mean:'男生用的感嘆',ex:'',hint:'👨',color:'#f0abfc'},
+'女感':{jp:'女性感嘆',mean:'女生用的感嘆',ex:'',hint:'👩',color:'#f0abfc'},
+'女問':{jp:'女性疑問',mean:'女生用的問句',ex:'',hint:'👩❓',color:'#f0abfc'},
+'男問':{jp:'男性疑問',mean:'男生用的問句',ex:'',hint:'👨❓',color:'#f0abfc'},
+'肯定':{jp:'',mean:'肯定句',ex:'',hint:'✅',color:'#86efac'},
+'否定':{jp:'',mean:'否定句',ex:'',hint:'❌',color:'#fda4af'},
+'過去':{jp:'〜た / 〜ました',mean:'已經發生',ex:'',hint:'⏪',color:'#86efac'},
+'願望':{jp:'〜たい',mean:'想要做',ex:'',hint:'💭',color:'#86efac'},
+'請求':{jp:'〜てください',mean:'請對方做',ex:'',hint:'🙏',color:'#86efac'},
+'一':{jp:'a / an',mean:'一個（不特定）',ex:'a book→[一]本書',hint:'🎲 隨便一本',color:'#94a3b8'},
+'那':{jp:'the',mean:'那個（特定）',ex:'the book→[那]本書',hint:'👆 大家都知道哪本',color:'#94a3b8'},
+'關係':{jp:'who/that/which',mean:'關係代名詞',ex:'the man who runs→那個[關係]誰跑',hint:'🔗 連接子句',color:'#a78bfa'},
+'盡是':{jp:'〜ずくめ',mean:'清一色都是',ex:'黒ずくめ→「一身黑」',hint:'🎨',color:'#ddd6fe'},
+'盡是的':{jp:'〜ずくめの',mean:'清一色都是的',ex:'',hint:'🎨',color:'#ddd6fe'},
+'忍不住':{jp:'〜ずにはいられない',mean:'忍不住要…',ex:'',hint:'😤',color:'#ddd6fe'},
+'偏不':{jp:'〜ものを',mean:'明明…就好',ex:'',hint:'😒',color:'#ddd6fe'},
+'即使':{jp:'〜といえども',mean:'即使是…',ex:'',hint:'⚖️',color:'#ddd6fe'},
+'自己的方式':{jp:'〜なりに',mean:'按自己的方式',ex:'',hint:'🎒',color:'#ddd6fe'},
+'之後不再':{jp:'〜を限りに',mean:'從某點之後不再',ex:'',hint:'🚫',color:'#ddd6fe'},
+'到了':{jp:'〜ともなると',mean:'到了某階段',ex:'',hint:'📈',color:'#ddd6fe'},
+'不該有':{jp:'〜まじき',mean:'不該有的（強烈譴責）',ex:'',hint:'⛔',color:'#ddd6fe'},
+'不該':{jp:'〜まじき',mean:'不該的',ex:'',hint:'⛔',color:'#ddd6fe'},
+'一就':{jp:'〜や否や / 〜なり',mean:'一…就立刻…',ex:'',hint:'⚡',color:'#ddd6fe'},
+'才剛':{jp:'〜そばから',mean:'才剛…就又…',ex:'',hint:'🔁',color:'#ddd6fe'},
+'雖然':{jp:'〜ものの',mean:'雖然',ex:'',hint:'↩️',color:'#ddd6fe'},
+'因為才':{jp:'〜からこそ',mean:'正因為才',ex:'',hint:'💯',color:'#ddd6fe'},
+'明明':{jp:'〜のに',mean:'明明...卻',ex:'',hint:'😤',color:'#ddd6fe'},
+'因為':{jp:'〜ので / 〜から',mean:'因為',ex:'',hint:'➡️',color:'#86efac'},
+'為了':{jp:'〜ように / 〜ために',mean:'為了',ex:'',hint:'🎯',color:'#86efac'},
+'之中':{jp:'〜中',mean:'之中',ex:'',hint:'📍',color:'#94a3b8'},
+'程度':{jp:'〜ほど',mean:'達到某程度',ex:'',hint:'📊',color:'#ddd6fe'},
+'相違':{jp:'〜に相違ない',mean:'肯定是',ex:'',hint:'💯',color:'#ddd6fe'},
+'只不過':{jp:'〜にすぎない',mean:'只不過是',ex:'',hint:'➖',color:'#ddd6fe'},
+'不外乎':{jp:'〜にほかならない',mean:'正是不外乎',ex:'',hint:'💯',color:'#ddd6fe'},
+'圍繞':{jp:'〜をめぐって',mean:'圍繞著',ex:'',hint:'🔄',color:'#ddd6fe'},
+'皮切':{jp:'〜を皮切りに',mean:'以...為開端',ex:'',hint:'🎬',color:'#ddd6fe'},
+'限度':{jp:'〜を限りに',mean:'從...為界限',ex:'',hint:'🚫',color:'#ddd6fe'},
+'即合':{jp:'〜に即して',mean:'按照',ex:'',hint:'📏',color:'#ddd6fe'},
+'除了':{jp:'〜に加えて',mean:'除此之外',ex:'',hint:'➕',color:'#86efac'},
+'儘管':{jp:'〜にもかかわらず',mean:'儘管',ex:'',hint:'🙅',color:'#86efac'},
+'已':{jp:'have/has done',mean:'已經（現在完成式）',ex:'',hint:'✅',color:'#86efac'},
+'曾':{jp:'had done',mean:'更早就（過去完成式）',ex:'',hint:'⏪',color:'#86efac'},
+'將':{jp:'will',mean:'未來會',ex:'',hint:'⏩',color:'#86efac'},
+'引用':{jp:'と',mean:'引用內容',ex:'',hint:'💬',color:'#fbbf24'},
+'省略主詞':{jp:'',mean:'日文常省略主詞',ex:'',hint:'👻',color:'#94a3b8'},
+'肯定':{jp:'',mean:'肯定句',ex:'',hint:'✅',color:'#86efac'},
+'否定':{jp:'',mean:'否定句',ex:'',hint:'❌',color:'#fda4af'},
+'過去':{jp:'',mean:'過去式',ex:'',hint:'⏪',color:'#86efac'},
+'願望':{jp:'',mean:'願望句',ex:'',hint:'💭',color:'#86efac'},
+'請求':{jp:'',mean:'請求句',ex:'',hint:'🙏',color:'#86efac'},
+'到之前':{jp:'〜までに',mean:'在...之前',ex:'',hint:'⏰',color:'#94a3b8'},
+'到直到':{jp:'〜まで',mean:'到...為止',ex:'',hint:'🏁',color:'#94a3b8'},
+'之後從':{jp:'〜てから',mean:'之後',ex:'',hint:'⏭️',color:'#86efac'},
+'由':{jp:'に',mean:'被動的施動者',ex:'母に読まれた→「被媽媽讀了」',hint:'被動',color:'#fda4af'},
+'之中':{jp:'',mean:'某個範圍中',ex:'',hint:'📍',color:'#94a3b8'},
+'比':{jp:'より',mean:'比較',ex:'A より B→「比A」',hint:'⚖️',color:'#94a3b8'},
+'各':{jp:'ずつ',mean:'各...',ex:'',hint:'📦',color:'#94a3b8'},
+'只':{jp:'だけ / しか',mean:'只有',ex:'',hint:'1️⃣',color:'#94a3b8'},
+'光':{jp:'ばかり',mean:'光是',ex:'',hint:'💫',color:'#94a3b8'},
+'也':{jp:'も',mean:'也',ex:'',hint:'➕',color:'#94a3b8'},
+'樣':{jp:'よう / ように',mean:'樣子 / 為了',ex:'',hint:'🎭',color:'#86efac'},
+'期間':{jp:'',mean:'期間',ex:'',hint:'⏱️',color:'#94a3b8'},
+'反問':{jp:'',mean:'反問語氣',ex:'',hint:'❓',color:'#f0abfc'}};
+function showTagPopup(tag,evt){
+if(evt){evt.stopPropagation();}
+const info=TAG_INFO[tag];
+let html='<div class="tag-pop"><button class="tag-pop-close" onclick="closeTagPopup()">×</button>';
+html+='<div class="tag-pop-tag" style="color:'+(info?info.color:'#fff')+'">['+tag+']</div>';
+if(info){
+if(info.jp)html+='<div class="tag-pop-jp">日文：<b>'+info.jp+'</b></div>';
+html+='<div class="tag-pop-mean">意思：'+info.mean+'</div>';
+if(info.ex)html+='<div class="tag-pop-ex">範例：'+info.ex+'</div>';
+html+='<div class="tag-pop-hint">'+info.hint+'</div>';
+}else{html+='<div class="tag-pop-mean">（這個標籤還沒收錄說明，請告訴 Claude 補上）</div>';}
+html+='</div>';
+let mask=document.getElementById('tag-mask');
+if(!mask){mask=document.createElement('div');mask.id='tag-mask';mask.onclick=function(e){if(e.target===mask)closeTagPopup();};document.body.appendChild(mask);}
+mask.innerHTML=html;mask.style.display='flex';}
+function closeTagPopup(){const m=document.getElementById('tag-mask');if(m)m.style.display='none';}
+function renderLiteralWithTags(text){
+return text.replace(/\[([^\]]+)\]/g,function(m,tag){
+const info=TAG_INFO[tag];
+const color=info?info.color:'#c4b5fd';
+return '<span class="lit-tag" style="background:'+color+'33;border-color:'+color+'66;color:'+color+'" onclick="showTagPopup(\''+tag.replace(/'/g,"\\'")+'\',event)">['+tag+']</span>';});}
 function sp(t,l){sy.cancel();const speakText=l==='jp'?kanjiToKana(t):t;const u=new SpeechSynthesisUtterance(speakText);u.lang=l==='jp'?'ja-JP':'en-US';u.rate=0.8;if(l==='jp'&&jv)u.voice=jv;if(l==='en'&&ev)u.voice=ev;sy.speak(u);}
 document.addEventListener('click',function _unlock(){const u=new SpeechSynthesisUtterance('');u.volume=0;sy.speak(u);document.removeEventListener('click',_unlock);},{once:true});
 function lU(){try{return JSON.parse(localStorage.getItem('tl_'+cu)||'{}');}catch{return {};}}
@@ -671,7 +789,7 @@ bh+='<div class="bk bk-'+md+' r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\
 bh+='</div><div style="text-align:center;padding:4px 0 2px"><button class="sf" onclick="sp(\''+d.s.replace(/'/g,"\\'")+'\',\''+md+'\')">🔊 '+(md==='jp'?furi(eH(d.s)):eH(d.s))+'</button></div>';
 const litField=md==='jp'?'lit_jp':'lit_en';const litText=r[litField]||'';
 if(litText.trim()){const flag=md==='jp'?'🇯🇵':'🇺🇸';const lbl=md==='jp'?'日文大腦直譯（語序：主→受→動）':'英文大腦直譯（語序：主→動→受）';
-bh+='<div class="xtbox show"><div class="xtlbl">'+flag+' '+lbl+'</div>'+eH(litText)+'</div>';}}}
+bh+='<div class="xtbox show"><div class="xtlbl">'+flag+' '+lbl+'</div>'+renderLiteralWithTags(eH(litText))+'</div>';}}}
 let ct='';if(r.ct&&(r.ct.cn_blindspot||r.ct.jp_insight||r.ct.en_insight)){ct='<div class="cb">';
 if(r.ct.cn_blindspot)ct+='<div><span class="cl" style="color:var(--cn)">🇹🇼 中文陷阱：</span>'+eH(r.ct.cn_blindspot)+'</div>';
 if((md==='jp'||md==='vs')&&r.ct.jp_insight)ct+='<div><span class="cl" style="color:var(--jp)">🇯🇵 日文邏輯：</span>'+eH(r.ct.jp_insight)+'</div>';
