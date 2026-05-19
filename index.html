@@ -506,21 +506,50 @@ function sM(m){if(edM)svEd();md=m;document.querySelectorAll('.lb').forEach(b=>b.
 if(m==='jp')bs[0].classList.add('a-jp');else if(m==='en')bs[1].classList.add('a-en');else bs[2].classList.add('a-vs');rn();}
 function jumpTo(val){const m=val.match(/(\d+)/);if(m){const n=parseInt(m[1]);if(n>=1&&n<=F.length){if(edM)svEd();ci=n-1;rn();}}document.getElementById('nc').blur();}
 function nv(d){if(edM)svEd();ci=Math.max(0,Math.min(F.length-1,ci+d));rn();}
-let aP=false;let aPTimer=null;
+let aP=false;let aPTimer=null;let silentAudio=null;
+/* === Layer 2: Silent audio keep-alive === */
+/* 0.5s silent WAV inline data URL: keeps audio session active in background */
+const SILENT_WAV='data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=';
+function ensureSilentAudio(){if(!silentAudio){silentAudio=new Audio(SILENT_WAV);silentAudio.loop=true;silentAudio.volume=0.001;}}
+function startKeepAlive(){ensureSilentAudio();silentAudio.play().catch(function(){});}
+function stopKeepAlive(){if(silentAudio){silentAudio.pause();}}
+/* === Layer 1: Media Session API === */
+function setupMediaSession(){if(!('mediaSession' in navigator))return;
+try{navigator.mediaSession.metadata=new MediaMetadata({title:'三語句型積木',artist:'Trilingual Lab',album:'句型學習',artwork:[{src:'icon-512.png',sizes:'512x512',type:'image/png'}]});
+navigator.mediaSession.setActionHandler('play',function(){if(!aP)startAutoPlay();});
+navigator.mediaSession.setActionHandler('pause',function(){if(aP)stopAutoPlay();});
+navigator.mediaSession.setActionHandler('nexttrack',function(){nv(1);if(aP){sy.cancel();aPTimer=setTimeout(playCurrentAndAdvance,200);}});
+navigator.mediaSession.setActionHandler('previoustrack',function(){nv(-1);if(aP){sy.cancel();aPTimer=setTimeout(playCurrentAndAdvance,200);}});
+}catch(e){}}
+function updateMediaSession(){if(!('mediaSession' in navigator))return;const r=F[ci];if(!r)return;
+try{navigator.mediaSession.metadata=new MediaMetadata({title:r.cn||'句子',artist:r.dim||'三語句型積木',album:'第 '+(ci+1)+' / '+F.length+' 句',artwork:[{src:'icon-512.png',sizes:'512x512',type:'image/png'}]});
+navigator.mediaSession.playbackState=aP?'playing':'paused';}catch(e){}}
+/* === Layer 4: Visibility/resume detection === */
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&aP&&!sy.speaking&&!sy.pending){aPTimer=setTimeout(playCurrentAndAdvance,300);}});
 function toggleAutoPlay(){if(aP){stopAutoPlay();}else{startAutoPlay();}}
-function startAutoPlay(){aP=true;const b=document.getElementById('ap');if(b){b.textContent='⏸';b.style.background='rgba(255,215,0,.2)';b.style.borderColor='var(--gold)';b.title='暫停自動播放';}
-playCurrentAndAdvance();}
-function stopAutoPlay(){aP=false;sy.cancel();if(aPTimer){clearTimeout(aPTimer);aPTimer=null;}const b=document.getElementById('ap');if(b){b.textContent='🔊';b.style.background='';b.style.borderColor='';b.title='自動播放（接續學習進度）';}}
+function startAutoPlay(){aP=true;setupMediaSession();startKeepAlive();
+const b=document.getElementById('ap');if(b){b.textContent='⏸';b.style.background='rgba(255,215,0,.2)';b.style.borderColor='var(--gold)';b.title='暫停自動播放';}
+updateMediaSession();playCurrentAndAdvance();}
+function stopAutoPlay(){aP=false;sy.cancel();stopKeepAlive();if(aPTimer){clearTimeout(aPTimer);aPTimer=null;}
+const b=document.getElementById('ap');if(b){b.textContent='🔊';b.style.background='';b.style.borderColor='';b.title='自動播放（接續學習進度）';}
+if('mediaSession' in navigator){try{navigator.mediaSession.playbackState='paused';}catch(e){}}}
 function playCurrentAndAdvance(){if(!aP)return;const r=F[ci];if(!r)return stopAutoPlay();
-mS(r.id);uP();
-const onEnd=function(){if(!aP)return;aPTimer=setTimeout(function(){if(!aP)return;if(ci>=F.length-1){stopAutoPlay();return;}ci++;rn();aPTimer=setTimeout(playCurrentAndAdvance,300);},800);};
+mS(r.id);uP();updateMediaSession();
+/* Layer 3: use onend chain, with silent utterance as pause bridge */
+const advance=function(){if(!aP)return;if(ci>=F.length-1){stopAutoPlay();return;}
+const pauseU=new SpeechSynthesisUtterance(' ');pauseU.volume=0;pauseU.rate=1;
+pauseU.onend=function(){if(!aP)return;ci++;rn();aPTimer=setTimeout(playCurrentAndAdvance,100);};
+pauseU.onerror=pauseU.onend;sy.speak(pauseU);};
 sy.cancel();
-if(md==='vs'){const jpData=r.jp,enData=r.en;if(!jpData&&!enData)return onEnd();
-let phase=0;const playNext=function(){if(!aP)return;if(phase===0&&jpData){phase=1;const u=new SpeechSynthesisUtterance(jpData.s);u.lang='ja-JP';u.rate=0.8;if(jv)u.voice=jv;u.onend=playNext;u.onerror=playNext;sy.speak(u);}else if(phase<=1&&enData){phase=2;const u=new SpeechSynthesisUtterance(enData.s);u.lang='en-US';u.rate=0.8;if(ev)u.voice=ev;u.onend=onEnd;u.onerror=onEnd;sy.speak(u);}else{onEnd();}};playNext();
-}else{const data=r[md];if(!data)return onEnd();
+if(md==='vs'){const jpData=r.jp,enData=r.en;if(!jpData&&!enData)return advance();
+let phase=0;const playNext=function(){if(!aP)return;
+if(phase===0&&jpData){phase=1;const u=new SpeechSynthesisUtterance(jpData.s);u.lang='ja-JP';u.rate=0.8;if(jv)u.voice=jv;u.onend=playNext;u.onerror=playNext;sy.speak(u);}
+else if(phase<=1&&enData){phase=2;const u=new SpeechSynthesisUtterance(enData.s);u.lang='en-US';u.rate=0.8;if(ev)u.voice=ev;u.onend=advance;u.onerror=advance;sy.speak(u);}
+else{advance();}};playNext();
+}else{const data=r[md];if(!data)return advance();
 const u=new SpeechSynthesisUtterance(data.s);u.lang=md==='jp'?'ja-JP':'en-US';u.rate=0.8;
 if(md==='jp'&&jv)u.voice=jv;if(md==='en'&&ev)u.voice=ev;
-u.onend=onEnd;u.onerror=onEnd;sy.speak(u);}}
+u.onend=advance;u.onerror=advance;sy.speak(u);}}
 function gT(i){if(edM)svEd();ci=i;rn();}
 function eH(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function nl2br(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
