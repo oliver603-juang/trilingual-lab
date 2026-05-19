@@ -61,7 +61,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 學校[向] 去 了",
+    "literal_en": "我 去 向 學校"
   },
   {
     "id": "uni_basic_sentence_002",
@@ -125,7 +127,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 老師[向] 問 了",
+    "literal_en": "我 問 [那] 老師"
   },
   {
     "id": "uni_basic_sentence_003",
@@ -185,7 +189,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 蘋果[受] 吃 了",
+    "literal_en": "我 吃 蘋果們"
   },
   {
     "id": "uni_basic_sentence_004",
@@ -244,7 +250,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 書[受] 讀 了",
+    "literal_en": "我 讀 書們"
   },
   {
     "id": "uni_basic_sentence_005",
@@ -304,7 +312,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 水[受] 喝 了",
+    "literal_en": "我 喝 水"
   },
   {
     "id": "uni_existence_006",
@@ -380,7 +390,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "桌子[的] 上[向] 書[主] 有",
+    "literal_en": "有 [一]本書 在上面 [那]桌子"
   },
   {
     "id": "uni_existence_007",
@@ -456,7 +468,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "公園[向] 貓[主] 在",
+    "literal_en": "有 [一]隻貓 在裡面 [那]公園"
   },
   {
     "id": "uni_existence_008",
@@ -532,7 +546,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "房間[向] 電視[主] 有",
+    "literal_en": "有 [一]台電視 在裡面 [那]房間"
   },
   {
     "id": "uni_existence_009",
@@ -608,7 +624,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "學校[向] 老師[主] 在",
+    "literal_en": "有 [一]位老師 在 [那]學校"
   },
   {
     "id": "uni_existence_010",
@@ -680,7 +698,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "包包[的] 裡[向] 錢[主] 有",
+    "literal_en": "有 錢 在裡面 [那]包包"
   },
   {
     "id": "uni_question_011",
@@ -744,7 +764,9 @@
         "morphology_load": 2,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "這[題] 書 是 嗎",
+    "literal_en": "是 這 [一]本書 嗎"
   },
   {
     "id": "uni_question_012",
@@ -816,7 +838,9 @@
         "morphology_load": 2,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "明天，學校[向] 去 嗎",
+    "literal_en": "是 你 將去 向 學校 明天 嗎"
   },
   {
     "id": "uni_question_013",
@@ -880,7 +904,9 @@
         "morphology_load": 2,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "貓[主] 喜歡 嗎",
+    "literal_en": "做 你 喜歡 貓們 嗎"
   },
   {
     "id": "uni_question_014",
@@ -944,7 +970,9 @@
         "morphology_load": 2,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "您的名字[題] 什麼 是 嗎",
+    "literal_en": "什麼 是 你的 名字"
   },
   {
     "id": "uni_question_015",
@@ -1004,7 +1032,9 @@
         "morphology_load": 2,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "日語[主] 懂 嗎",
+    "literal_en": "做 你 理解 日語 嗎"
   },
   {
     "id": "uni_be_adj_036",
@@ -1067,7 +1097,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "昨天[題] 熱 了 是",
+    "literal_en": "它 曾是 熱 昨天"
   },
   {
     "id": "uni_be_adj_037",
@@ -1134,7 +1166,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 書[題] 有趣 不 是",
+    "literal_en": "這 書 是 不 有趣的"
   },
   {
     "id": "uni_be_adj_038",
@@ -1197,7 +1231,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "昨天[的] 電影[題] 有趣 了 是",
+    "literal_en": "昨天的 電影 曾是 有趣的"
   },
   {
     "id": "uni_be_adj_039",
@@ -1260,7 +1296,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "今天[題] 冷 不 是",
+    "literal_en": "它 是 不 冷 今天"
   },
   {
     "id": "uni_be_adj_040",
@@ -1323,7 +1361,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "那 店[題] 貴 了 是",
+    "literal_en": "那 店 曾是 貴的"
   },
   {
     "id": "uni_modifier_034",
@@ -1390,7 +1430,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "日語[受] 教 [的] 老師",
+    "literal_en": "[一位]老師 [關係]誰 教 日語"
   },
   {
     "id": "uni_modifier_032",
@@ -1457,7 +1499,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "昨天 買 了 [的] 書",
+    "literal_en": "[一]本書 我 買 了 昨天"
   },
   {
     "id": "uni_modifier_033",
@@ -1524,7 +1568,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "朋友[主] 做 了 [的] 菜",
+    "literal_en": "[一]道菜 我的 朋友 做 了"
   },
   {
     "id": "uni_modifier_031",
@@ -1583,7 +1629,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "跑 [的] 人",
+    "literal_en": "[一個]人 [關係]誰 跑"
   },
   {
     "id": "uni_modifier_035",
@@ -1650,7 +1698,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "媽媽[主] 烤 了 [的] 蛋糕",
+    "literal_en": "[一]個蛋糕 [關係]那 媽媽 烤 了"
   },
   {
     "id": "uni_condition_021",
@@ -1722,7 +1772,9 @@
         "morphology_load": 2,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "雨[主] 下 了的話，去 不",
+    "literal_en": "如果 它 下雨，我 將不 去"
   },
   {
     "id": "uni_condition_022",
@@ -1790,7 +1842,9 @@
         "morphology_load": 2,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "便宜 了的話，買 了",
+    "literal_en": "如果 它 是 便宜的，我 將 買 它"
   },
   {
     "id": "uni_condition_023",
@@ -1866,7 +1920,9 @@
         "morphology_load": 2,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "時間[主] 有 了的話，玩[向] 來 請",
+    "literal_en": "如果 你 有 時間，請 來 拜訪"
   },
   {
     "id": "uni_condition_024",
@@ -1954,7 +2010,9 @@
         "morphology_load": 2,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "日本[向] 去 了的話，壽司[受] 吃 想 是",
+    "literal_en": "如果 我 去 向 日本，我 想 吃 壽司"
   },
   {
     "id": "uni_condition_025",
@@ -2026,7 +2084,9 @@
         "morphology_load": 2,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "空閒 了的話，電影[受] 看 吧",
+    "literal_en": "如果 你 是 有空，讓 我們 看 [一部]電影"
   },
   {
     "id": "uni_particle_system_051",
@@ -2089,7 +2149,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 學生 是",
+    "literal_en": "我 是 [一個] 學生"
   },
   {
     "id": "uni_particle_system_052",
@@ -2140,7 +2202,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "誰[主] 來 了 嗎",
+    "literal_en": "誰 來 了"
   },
   {
     "id": "uni_particle_system_053",
@@ -2191,7 +2255,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "田中[主] 來 了",
+    "literal_en": "田中 來 了"
   },
   {
     "id": "uni_particle_system_054",
@@ -2250,7 +2316,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "東京[題] 大 是",
+    "literal_en": "東京 是 大"
   },
   {
     "id": "uni_particle_system_055",
@@ -2309,7 +2377,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "啊，雨[主] 正下著",
+    "literal_en": "啊，它 正在 下雨"
   },
   {
     "id": "uni_particle_system_056",
@@ -2380,7 +2450,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "公車[用] 學校[向] 去 了",
+    "literal_en": "我 去 向 學校 用 公車"
   },
   {
     "id": "uni_particle_system_057",
@@ -2447,7 +2519,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "筷子[用] 飯[受] 吃 了",
+    "literal_en": "我 吃 飯 用 筷子"
   },
   {
     "id": "uni_particle_system_058",
@@ -2510,7 +2584,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "公園[在] 玩 了",
+    "literal_en": "我 玩 在裡面 [那]公園"
   },
   {
     "id": "uni_particle_system_059",
@@ -2569,7 +2645,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "日語[用] 說 了",
+    "literal_en": "我 說 用 日語"
   },
   {
     "id": "uni_particle_system_060",
@@ -2636,7 +2714,9 @@
         "morphology_load": 2,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "剪刀[用] 紙[受] 剪 了",
+    "literal_en": "我 剪 紙 用 剪刀"
   },
   {
     "id": "uni_quote_061",
@@ -2707,7 +2787,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "明天[題] 雨 是[引]覺得 了",
+    "literal_en": "我 覺得 它 將 下雨 明天"
   },
   {
     "id": "uni_quote_062",
@@ -2770,7 +2852,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "老師[題] 「安靜」[引] 說 了",
+    "literal_en": "[那] 老師 說 了 『安靜』"
   },
   {
     "id": "uni_quote_063",
@@ -2841,7 +2925,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "朋友[題] 不來[引] 說 了",
+    "literal_en": "我的 朋友 說 [他] 將 不 來"
   },
   {
     "id": "uni_quote_064",
@@ -2908,7 +2994,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "日語[題] 難[引] 覺得 了",
+    "literal_en": "我 覺得 日語 是 困難"
   },
   {
     "id": "uni_quote_065",
@@ -2971,7 +3059,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "媽媽[題] 「快去睡」[引] 說 了",
+    "literal_en": "媽媽 說 了 『早 去 睡』"
   },
   {
     "id": "uni_te_form_066",
@@ -3050,7 +3140,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "早上 起床、 飯[受] 吃 了",
+    "literal_en": "我 醒 在 [那]早上 和 吃 早餐"
   },
   {
     "id": "uni_te_form_067",
@@ -3121,7 +3213,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "書[受] 讀、 睡 了",
+    "literal_en": "我 讀 [一]本書 和 去 睡覺"
   },
   {
     "id": "uni_te_form_068",
@@ -3192,7 +3286,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "手[受] 洗、 吃 了",
+    "literal_en": "我 洗 我的 手 和 吃"
   },
   {
     "id": "uni_te_form_069",
@@ -3263,7 +3359,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "朋友[向] 見、 聊 了",
+    "literal_en": "我 見 [了][一個] 朋友 和 聊天 了"
   },
   {
     "id": "uni_te_form_070",
@@ -3334,7 +3432,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "淋浴[受] 洗、 出門 了",
+    "literal_en": "我 洗 [一個] 淋浴 和 出門"
   },
   {
     "id": "uni_giving_041",
@@ -3413,7 +3513,9 @@
         "morphology_load": 1,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 朋友[向] 書[受] 送出 了",
+    "literal_en": "我 給 [了] [一]本書 向 我的 朋友"
   },
   {
     "id": "uni_giving_042",
@@ -3488,7 +3590,9 @@
         "morphology_load": 1,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "朋友[主] 我[向] 禮物[受] 給(向我) 了",
+    "literal_en": "我的 朋友 給 了 我 [一個] 禮物"
   },
   {
     "id": "uni_giving_043",
@@ -3563,7 +3667,9 @@
         "morphology_load": 1,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "老師[主] 妹妹[向] 糖果[受] 給(向我們) 了",
+    "literal_en": "[那] 老師 給 了 我的 妹妹 糖果"
   },
   {
     "id": "uni_giving_044",
@@ -3634,7 +3740,9 @@
         "morphology_load": 1,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 媽媽[向] 花[受] 送出 了",
+    "literal_en": "我 給 了 花 向 媽媽"
   },
   {
     "id": "uni_giving_045",
@@ -3713,7 +3821,9 @@
         "morphology_load": 1,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "朋友[主] 弟弟[向] 書[受] 給(向我們) 了",
+    "literal_en": "我的 朋友 給 了 我的 弟弟 [一]本書"
   },
   {
     "id": "uni_giving_355",
@@ -3768,7 +3878,9 @@
       "cn_blindspot": "中文「收到」不分主動被動",
       "jp_insight": "もらう＝我伸手去接 🤲 主角是「收的人（我）」。跟 くれる 方向一樣，但主角不同！",
       "en_insight": "英文用 received from，不用區分是主動收還是被動給"
-    }
+    },
+    "literal_jp": "我[題] 朋友[從] 書[受] 收到 了",
+    "literal_en": "我 收到 了 [一]本書 從 我的 朋友"
   },
   {
     "id": "uni_giving_356",
@@ -3815,7 +3927,9 @@
       "cn_blindspot": "中文「她幫了我」聽不出親疏關係",
       "jp_insight": "🔍 偵探級洩漏：くれる 自帶「我很感謝」的心情，暴露了說話者跟她很親近！如果嫌疑犯對「不認識的人」用了くれた，偵探就知道他在說謊",
       "en_insight": "英文 helped me 完全中性，聽不出任何親疏關係"
-    }
+    },
+    "literal_jp": "她[主] 幫忙(向我) 了",
+    "literal_en": "她 幫 了 我"
   },
   {
     "id": "uni_passive_016",
@@ -3887,7 +4001,9 @@
         "morphology_load": 3,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "我[題] 老師[由] 被稱讚 了",
+    "literal_en": "我 曾 被 稱讚 由 [那] 老師"
   },
   {
     "id": "uni_passive_017",
@@ -3959,7 +4075,9 @@
         "morphology_load": 3,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "弟弟[由] 蛋糕[受] 被吃 了",
+    "literal_en": "我的 蛋糕 曾 被 吃 由 我的 弟弟"
   },
   {
     "id": "uni_passive_018",
@@ -4023,7 +4141,9 @@
         "morphology_load": 3,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "雨[由] 被淋 了",
+    "literal_en": "我 被 淋 在 雨中"
   },
   {
     "id": "uni_passive_019",
@@ -4095,7 +4215,9 @@
         "morphology_load": 3,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "媽媽[由] 日記[受] 被讀 了",
+    "literal_en": "我的 日記 曾 被 讀 由 我的 媽媽"
   },
   {
     "id": "uni_passive_020",
@@ -4167,7 +4289,9 @@
         "morphology_load": 3,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "電車[在] 腳[受] 被踩 了",
+    "literal_en": "我的 腳 曾 被 踩 上 在 [那] 電車"
   },
   {
     "id": "uni_passive_360",
@@ -4210,7 +4334,9 @@
       "cn_blindspot": "中文「被看了日記」只是描述事實",
       "jp_insight": "🔍 偵探級洩漏：迷惑受身（読まれた）自帶「我是受害者」的語氣！嫌疑犯用了迷惑受身 → 暴露了①他知道日記被看 ②他覺得自己是受害者 — 但沒人問他日記的事！",
       "en_insight": "英文 Someone read my diary 只是客觀描述，沒有日文那種「我被侵犯了」的受害感"
-    }
+    },
+    "literal_jp": "日記[受] 被讀 了",
+    "literal_en": "某人 讀 了 我的 日記"
   },
   {
     "id": "uni_continuous_026",
@@ -4262,7 +4388,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "飯[受] 正在吃",
+    "literal_en": "我 正在 吃"
   },
   {
     "id": "uni_continuous_027",
@@ -4326,7 +4454,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "書[受] 正在讀",
+    "literal_en": "我 正在 讀 [一]本書"
   },
   {
     "id": "uni_continuous_028",
@@ -4390,7 +4520,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "朋友[和] 正在說",
+    "literal_en": "我 正在 聊天 和 [一個] 朋友"
   },
   {
     "id": "uni_continuous_029",
@@ -4450,7 +4582,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "姐姐[題] 結婚 著(已婚)",
+    "literal_en": "我的 姐姐 是 已婚"
   },
   {
     "id": "uni_continuous_030",
@@ -4510,7 +4644,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 路[題] 彎 著",
+    "literal_en": "這 路 是 彎曲"
   },
   {
     "id": "uni_continuous_357",
@@ -4549,7 +4685,9 @@
       "cn_blindspot": "中文「門鎖著」不分現在狀態和過去狀態",
       "jp_insight": "🔍 偵探級洩漏：ていました（過去狀態）暴露了說話者當時在場！如果警方沒說過門鎖的事，嫌疑犯卻用了ていた → 你怎麼知道門當時是鎖著的？",
       "en_insight": "🔍 偵探級洩漏：was locked（過去式）也會洩漏！如果被害人還沒確認死亡，嫌疑犯卻說 She was kind → 你怎麼知道她已經死了？"
-    }
+    },
+    "literal_jp": "鎖[主] 鎖著 曾是",
+    "literal_en": "[那] 門 曾 是 鎖著的"
   },
   {
     "id": "uni_causative_081",
@@ -4620,7 +4758,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "媽媽[題] 我[向] 蔬菜[受] 讓...吃 了",
+    "literal_en": "媽媽 讓 我 吃 蔬菜"
   },
   {
     "id": "uni_causative_082",
@@ -4691,7 +4831,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "老師[題] 學生[受] 讓...站 了",
+    "literal_en": "[那] 老師 讓 [那] 學生 站起來"
   },
   {
     "id": "uni_causative_083",
@@ -4762,7 +4904,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "小孩[受] 自由地 讓...玩 了",
+    "literal_en": "我 讓 [那] 小孩們 玩 自由地"
   },
   {
     "id": "uni_causative_084",
@@ -4825,7 +4969,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我[向] 讓...去 請",
+    "literal_en": "請 讓 我 去"
   },
   {
     "id": "uni_causative_085",
@@ -4908,7 +5054,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "老師[題] 學生[向] 書[受] 讓...讀 了",
+    "literal_en": "[那] 老師 讓 [那] 學生 讀 [那]本書"
   },
   {
     "id": "uni_keigo_071",
@@ -4975,7 +5123,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "老師[題] 已經 (尊敬)回去 了",
+    "literal_en": "[那] 老師 已經 離開 了"
   },
   {
     "id": "uni_keigo_072",
@@ -5034,7 +5184,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "社長[主] (尊敬)在",
+    "literal_en": "[那] 社長 是 在這裡"
   },
   {
     "id": "uni_keigo_073",
@@ -5089,7 +5241,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[主] (謙讓)來",
+    "literal_en": "我 將 來"
   },
   {
     "id": "uni_keigo_074",
@@ -5144,7 +5298,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "老師[主] (尊敬)吃",
+    "literal_en": "[那] 老師 吃"
   },
   {
     "id": "uni_keigo_075",
@@ -5199,7 +5355,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[主] (謙讓)吃",
+    "literal_en": "我 謙虛地 吃"
   },
   {
     "id": "uni_keigo_358",
@@ -5246,7 +5404,9 @@
       "cn_blindspot": "中文不管對誰都用同一種說法",
       "jp_insight": "🔍 偵探級洩漏：對「陌生被害者」卻用了普通形（来た）而不是敬語（いらっしゃった）→ 暴露了其實認識！反過來，突然對被害者用尊敬語 → 暴露有上下級關係",
       "en_insight": "英文沒有敬語系統，came 對老闆和朋友都一樣，無法從語法判斷關係"
-    }
+    },
+    "literal_jp": "那個人，昨天 來 了[告]",
+    "literal_en": "那 人 來 了 昨天"
   },
   {
     "id": "uni_noni_096",
@@ -5321,7 +5481,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "讀了書 明明，考試[向] 落 了",
+    "literal_en": "即使 我 讀 了 書，我 沒通過 [那] 考試"
   },
   {
     "id": "uni_noni_097",
@@ -5400,7 +5562,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "約 了 明明，沒來 了",
+    "literal_en": "即使 我們 做 了 [一個] 約定，他 沒 來"
   },
   {
     "id": "uni_noni_098",
@@ -5475,7 +5639,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "貴 明明，不好吃 是",
+    "literal_en": "即使 它 是 貴的，它 嚐起來 不 好"
   },
   {
     "id": "uni_noni_099",
@@ -5558,7 +5724,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "藥[受] 喝了 明明，還 燒[主] 有",
+    "literal_en": "即使 我 吃 了 藥，我 仍然 有 [一個] 燒"
   },
   {
     "id": "uni_noni_100",
@@ -5629,7 +5797,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "星期天 是的 明明，工作[主] 有",
+    "literal_en": "即使 它 是 星期天，我 有 工作"
   },
   {
     "id": "uni_noni_359",
@@ -5672,7 +5842,9 @@
       "cn_blindspot": "中文「明明約好了」帶點不滿但不明顯",
       "jp_insight": "🔍 偵探級洩漏：のに 自帶強烈的「不滿/怨恨」情緒！嫌疑犯無意中說出のに → 暴露了①他知道有約定 ②他有期待落空的怨恨，這就是動機！",
       "en_insight": "英文 even though 比較中性，不像日文 のに 那樣帶有強烈的不滿情緒"
-    }
+    },
+    "literal_jp": "約 了 明明，沒來 了",
+    "literal_en": "即使 我們 答應 了，他 沒 來"
   },
   {
     "id": "uni_node_101",
@@ -5747,7 +5919,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "雨[主] 正下著 因為，傘[受] 帶著 去 了",
+    "literal_en": "它 正 下雨，所以 我 將 帶 [一]把傘"
   },
   {
     "id": "uni_node_102",
@@ -5826,7 +6000,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "明天 考試[主] 有 因為，讀書 了",
+    "literal_en": "有 [一個] 考試 明天，所以 我 將 讀書"
   },
   {
     "id": "uni_node_103",
@@ -5905,7 +6081,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "身體[的] 狀況[主] 壞 因為，請假 了",
+    "literal_en": "我 感覺 生病，所以 我 將 請 [那] 天 假"
   },
   {
     "id": "uni_node_104",
@@ -5984,7 +6162,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "電車[主] 遲了 因為，遲到 了",
+    "literal_en": "[那] 電車 曾 被 延誤，所以 我 曾 遲"
   },
   {
     "id": "uni_node_105",
@@ -6067,7 +6247,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "路[主] 塞著 因為，時間[主] 花 了",
+    "literal_en": "[那] 路 是 擁擠，所以 它 將 花 時間"
   },
   {
     "id": "uni_youni_091",
@@ -6150,7 +6332,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "日語[主] 能說 為了，每天 讀書 了",
+    "literal_en": "我 讀書 每 天 所以 我 能 說 日語"
   },
   {
     "id": "uni_youni_092",
@@ -6225,7 +6409,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "忘 不 為了，筆記 做 了",
+    "literal_en": "我 做 筆記 所以 我 不 忘記"
   },
   {
     "id": "uni_youni_093",
@@ -6304,7 +6490,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "早 能起 為了，早 睡 了",
+    "literal_en": "我 去 睡 早 所以 我 能 醒 早"
   },
   {
     "id": "uni_youni_094",
@@ -6383,7 +6571,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "聽得到 為了，大聲音[用] 說 了",
+    "literal_en": "我 說 大聲地 所以 人們 能 聽見 我"
   },
   {
     "id": "uni_youni_095",
@@ -6458,7 +6648,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "感冒[受] 不得 為了，小心 了",
+    "literal_en": "我 是 小心 不 去 得 [一個] 感冒"
   },
   {
     "id": "uni_tameni_111",
@@ -6525,7 +6717,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "大學[向] 進 為了，讀書 了",
+    "literal_en": "我 讀書 去 進入 大學"
   },
   {
     "id": "uni_tameni_112",
@@ -6592,7 +6786,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "旅行 做 為了，錢[受] 存 了",
+    "literal_en": "我 存 錢 去 旅行"
   },
   {
     "id": "uni_tameni_113",
@@ -6659,7 +6855,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "健康[的] 為了，運動 了",
+    "literal_en": "我 運動 為了 我的 健康"
   },
   {
     "id": "uni_tameni_114",
@@ -6726,7 +6924,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "家人[的] 為了，工作 了",
+    "literal_en": "我 工作 為了 我的 家人"
   },
   {
     "id": "uni_tameni_115",
@@ -6801,7 +7001,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "日本[向] 留學 做 為了，存錢 著",
+    "literal_en": "我 正在 存 錢 去 讀書 在 日本"
   },
   {
     "id": "uni_deshou_086",
@@ -6872,7 +7074,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "明天[題] 雨[主] 下 大概吧",
+    "literal_en": "它 將 大概 下雨 明天"
   },
   {
     "id": "uni_deshou_087",
@@ -6935,7 +7139,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[題] 不來 大概吧",
+    "literal_en": "他 大概 將不 來"
   },
   {
     "id": "uni_deshou_088",
@@ -7002,7 +7208,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 菜[題] 好吃 大概吧",
+    "literal_en": "這 菜 是 大概 好吃"
   },
   {
     "id": "uni_deshou_089",
@@ -7069,7 +7277,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "考試[題] 難 了 大概吧",
+    "literal_en": "[那] 考試 曾是 大概 困難"
   },
   {
     "id": "uni_deshou_090",
@@ -7136,7 +7346,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "那 電影[題] 有趣 大概吧",
+    "literal_en": "那 電影 是 大概 有趣"
   },
   {
     "id": "uni_hodo_106",
@@ -7207,7 +7419,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "哭 程度 辣 了 是",
+    "literal_en": "它 曾是 如此 辣 我 哭"
   },
   {
     "id": "uni_hodo_107",
@@ -7266,7 +7480,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "死 程度 累 了",
+    "literal_en": "我 是 死 累"
   },
   {
     "id": "uni_hodo_108",
@@ -7349,7 +7565,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "日語[題] 越讀越 有趣 是",
+    "literal_en": "[那] 越 你 讀 日語，[那] 越 有趣 它 變得"
   },
   {
     "id": "uni_hodo_109",
@@ -7428,7 +7646,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "今天 程度 開心 [的] 日[題] 沒有",
+    "literal_en": "沒 是 [一] 天 像 今天 開心"
   },
   {
     "id": "uni_hodo_110",
@@ -7487,7 +7707,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "嚇到 程度 便宜 是",
+    "literal_en": "它 是 驚人地 便宜"
   },
   {
     "id": "uni_kanji_trap_076",
@@ -7546,7 +7768,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "每天，讀書 著",
+    "literal_en": "我 讀書 每 天"
   },
   {
     "id": "uni_kanji_trap_077",
@@ -7605,7 +7829,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "信[受] 寫 了",
+    "literal_en": "我 寫 了 [一]封信"
   },
   {
     "id": "uni_kanji_trap_078",
@@ -7660,7 +7886,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "沒事 嗎",
+    "literal_en": "是 你 沒事 嗎"
   },
   {
     "id": "uni_kanji_trap_079",
@@ -7723,7 +7951,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "那 人[題] 健壯 是",
+    "literal_en": "那 人 是 健壯"
   },
   {
     "id": "uni_kanji_trap_080",
@@ -7786,7 +8016,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "女兒[題] 有精神 是",
+    "literal_en": "我的 女兒 是 有活力"
   },
   {
     "id": "uni_jita_046",
@@ -7841,7 +8073,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "門[主] 開 了",
+    "literal_en": "[那] 門 自己 開 了"
   },
   {
     "id": "uni_jita_047",
@@ -7904,7 +8138,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 門[受] 開 了",
+    "literal_en": "我 開 了 [那] 門"
   },
   {
     "id": "uni_jita_048",
@@ -7963,7 +8199,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "燈[主] 亮 了",
+    "literal_en": "[那] 燈 自己 亮 了"
   },
   {
     "id": "uni_jita_049",
@@ -8030,7 +8268,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "我[題] 燈[受] 開 了",
+    "literal_en": "我 開 了 [那] 燈"
   },
   {
     "id": "uni_jita_050",
@@ -8085,7 +8325,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "窗[主] 關 了",
+    "literal_en": "[那] 窗 自己 關 了"
   },
   {
     "id": "uni_prodrop_295",
@@ -8136,7 +8378,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "(省略主詞)開心 是",
+    "literal_en": "我 是 開心"
   },
   {
     "id": "uni_prodrop_296",
@@ -8195,7 +8439,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "(省略主詞)吃 嗎",
+    "literal_en": "做 你 想要 去 吃 嗎"
   },
   {
     "id": "uni_prodrop_297",
@@ -8254,7 +8500,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "(省略主詞)明天 去 了",
+    "literal_en": "我 將 去 明天"
   },
   {
     "id": "uni_prodrop_298",
@@ -8301,7 +8549,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "(省略主詞)知道 了",
+    "literal_en": "我 理解"
   },
   {
     "id": "uni_prodrop_299",
@@ -8352,7 +8602,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "(省略主詞)沒事 嗎",
+    "literal_en": "是 你 沒事 嗎"
   },
   {
     "id": "uni_gobi_300",
@@ -8399,7 +8651,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "吃 了(肯定)",
+    "literal_en": "我 吃"
   },
   {
     "id": "uni_gobi_301",
@@ -8450,7 +8704,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "吃 不(否定)",
+    "literal_en": "我 不 吃"
   },
   {
     "id": "uni_gobi_302",
@@ -8497,7 +8753,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "吃 了(過去)",
+    "literal_en": "我 吃 了"
   },
   {
     "id": "uni_gobi_303",
@@ -8552,7 +8810,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "吃 想 是(願望)",
+    "literal_en": "我 想要 吃"
   },
   {
     "id": "uni_gobi_304",
@@ -8599,7 +8859,9 @@
         "morphology_load": 2,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "吃 請(請求)",
+    "literal_en": "請 吃"
   },
   {
     "id": "uni_onomatope_316",
@@ -8662,7 +8924,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "心臟[主] 噗通噗通 做",
+    "literal_en": "我的 心臟 正在 跳動"
   },
   {
     "id": "uni_onomatope_317",
@@ -8717,7 +8981,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "興奮 一邊 等",
+    "literal_en": "等著 興奮地"
   },
   {
     "id": "uni_onomatope_318",
@@ -8776,7 +9042,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "雨[主] 嘩啦嘩啦 下",
+    "literal_en": "它 正在 下雨 重重地"
   },
   {
     "id": "uni_onomatope_319",
@@ -8827,7 +9095,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "笑嘻嘻 著",
+    "literal_en": "正笑著 開心地"
   },
   {
     "id": "uni_onomatope_320",
@@ -8886,7 +9156,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "悶熱黏膩 著",
+    "literal_en": "它 是 熱 和 潮濕"
   },
   {
     "cn": "我們已經更新了軟體。",
@@ -8947,7 +9219,9 @@
         "new_concept": 6
       }
     },
-    "chinese": "我們已經更新軟體了。"
+    "chinese": "我們已經更新軟體了。",
+    "literal_jp": "我們[題] 軟體[受] 更新 了",
+    "literal_en": "我們 已經 更新 了 [那] 軟體"
   },
   {
     "cn": "她在這家公司工作了五年。",
@@ -9016,7 +9290,9 @@
         "new_concept": 6
       }
     },
-    "chinese": "她在這家公司工作五年了。"
+    "chinese": "她在這家公司工作五年了。",
+    "literal_jp": "她[題] 這 公司[在] 五年[期間] 工作 著",
+    "literal_en": "她 已 工作 在 這 公司 為 五 年"
   },
   {
     "cn": "自從二月以來，銷售額一直在增長。",
@@ -9077,7 +9353,9 @@
         "new_concept": 6
       }
     },
-    "chinese": "從二月開始銷售額一直在增加。"
+    "chinese": "從二月開始銷售額一直在增加。",
+    "literal_jp": "二月[從] 銷售額[主] 持續增加 著",
+    "literal_en": "銷售額 已 正在 增加 從 二月 以來"
   },
   {
     "cn": "你最近讀過這本報告嗎？",
@@ -9146,7 +9424,9 @@
         "new_concept": 6
       }
     },
-    "chinese": "你最近讀過這份報告嗎？"
+    "chinese": "你最近讀過這份報告嗎？",
+    "literal_jp": "最近 這 報告書[受] 讀 了 嗎",
+    "literal_en": "已 你 讀 過 這 報告 最近 嗎"
   },
   {
     "cn": "我已經寄出邀請函了。",
@@ -9211,7 +9491,9 @@
         "new_concept": 6
       }
     },
-    "chinese": "我已經寄出邀請函了。"
+    "chinese": "我已經寄出邀請函了。",
+    "literal_jp": "我[題] 邀請函[受] 已 寄 了",
+    "literal_en": "我 已經 寄 了 [那] 邀請函"
   },
   {
     "cn": "我到達時，會議已經開始了。",
@@ -9284,7 +9566,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "我到達時，會議已經開始了。"
+    "chinese": "我到達時，會議已經開始了。",
+    "literal_jp": "我[主] 到達 了 時，會議[題] 已 開始 著 了",
+    "literal_en": "[那] 會議 曾已經 開始 了 當 我 到達"
   },
   {
     "cn": "因為沒有預約，他們不讓我進去。",
@@ -9357,7 +9641,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "因為我沒預約，他們不讓我進去。"
+    "chinese": "因為我沒預約，他們不讓我進去。",
+    "literal_jp": "預約 沒做 因為，進入 不 了",
+    "literal_en": "因為 我 曾未 做 [一個] 預約，他們 不讓 我 進入"
   },
   {
     "cn": "在他退休之前，他已經訓練好了接班人。",
@@ -9430,7 +9716,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "他退休前，已經培訓好接班人了。"
+    "chinese": "他退休前，已經培訓好接班人了。",
+    "literal_jp": "退職 做 之前，他[題] 接班人[受] 養成 著 了",
+    "literal_en": "之前 他 退休，他 曾已 訓練 他的 接班人"
   },
   {
     "cn": "她告訴我她已經交了報告。",
@@ -9503,7 +9791,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "她告訴我她已經提交報告了。"
+    "chinese": "她告訴我她已經提交報告了。",
+    "literal_jp": "她[題] 報告書[受] 已 提交 了[引] 說 了",
+    "literal_en": "她 告訴 我 她 曾已 提交 [那] 報告"
   },
   {
     "cn": "到截止日期時，我們將已經完成了專案。",
@@ -9568,7 +9858,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "在截止日期前，我們將會完成這個專案。"
+    "chinese": "在截止日期前，我們將會完成這個專案。",
+    "literal_jp": "截止日期[到之前]，專案[受] 完了 著 大概吧",
+    "literal_en": "在...之前 [那] 截止日期，我們 將 已經 完成 [那] 專案"
   },
   {
     "cn": "因為想省錢，湯姆走路上班。",
@@ -9641,7 +9933,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "因為想省錢，Tom 走路上班。"
+    "chinese": "因為想省錢，Tom 走路上班。",
+    "literal_jp": "錢[受] 節約 想 因為，Tom[題] 走著 通勤 著",
+    "literal_en": "想 去 存 錢，Tom 走 向 工作"
   },
   {
     "cn": "附在這封信裡的報告是機密的。",
@@ -9710,7 +10004,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "這封信附加的報告是機密的。"
+    "chinese": "這封信附加的報告是機密的。",
+    "literal_jp": "這 電子郵件[向] 被附加 了 [的] 報告書[題] 機密 是",
+    "literal_en": "[那] 報告 被附加 向 這 電子郵件 是 機密"
   },
   {
     "cn": "寫完報告後，她離開了辦公室。",
@@ -9783,7 +10079,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "寫完報告後，她離開了辦公室。"
+    "chinese": "寫完報告後，她離開了辦公室。",
+    "literal_jp": "報告書[受] 寫完 之後從，她[題] 辦公室[受] 出 了",
+    "literal_en": "已 完成 [那] 報告，她 離開 了 [那] 辦公室"
   },
   {
     "cn": "如果正確使用的話，這個工具可以省很多時間。",
@@ -9860,7 +10158,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "如果正確使用，這個工具可以節省很多時間。"
+    "chinese": "如果正確使用，這個工具可以節省很多時間。",
+    "literal_jp": "正確地 使用 如果，這 工具[題] 時間[受] 大幅 節約 能",
+    "literal_en": "被用 正確地，這 工具 能 省 大量 [的] 時間"
   },
   {
     "cn": "預計下週會下雨，活動改到室內。",
@@ -9937,7 +10237,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "因為下週預報有雨，活動改到室內舉行。"
+    "chinese": "因為下週預報有雨，活動改到室內舉行。",
+    "literal_jp": "下週[題] 雨[的] 預報 是 因為，活動[題] 室內[向] 變更 被了",
+    "literal_en": "雨 正被 預期 下 週，[那] 活動 曾 被 移 室內"
   },
   {
     "id": "uni_aimai_305",
@@ -9992,7 +10294,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "有點 困難 是[感]",
+    "literal_en": "那 是 [一]點 困難..."
   },
   {
     "id": "uni_aimai_306",
@@ -10047,7 +10351,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "考慮 讓...做 請",
+    "literal_en": "讓 我 想 關於 它..."
   },
   {
     "id": "uni_aimai_307",
@@ -10098,7 +10404,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "那[題] 有點...",
+    "literal_en": "嗯，那 是..."
   },
   {
     "id": "uni_aimai_308",
@@ -10153,7 +10461,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "盡量 努力 了",
+    "literal_en": "我 將 試 我的 最佳..."
   },
   {
     "id": "uni_uchisoto_309",
@@ -10212,7 +10522,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "社長[題] 外出 著 (謙讓)",
+    "literal_en": "我們的 社長 是 出去"
   },
   {
     "id": "uni_uchisoto_310",
@@ -10271,7 +10583,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "(謙讓)拿 做",
+    "literal_en": "讓 我 拿 它 為 你"
   },
   {
     "id": "uni_uchisoto_311",
@@ -10330,7 +10644,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "部長[主] 會議 是[告]",
+    "literal_en": "[那] 老闆 說 [那] 有 [一個] 會議"
   },
   {
     "id": "uni_gendered_312",
@@ -10381,7 +10697,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "厲害 [女感]",
+    "literal_en": "那 是 驚人"
   },
   {
     "id": "uni_gendered_313",
@@ -10432,7 +10750,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "厲害 [男感]",
+    "literal_en": "那 是 驚人"
   },
   {
     "id": "uni_gendered_314",
@@ -10487,7 +10807,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "知道 著[女問]",
+    "literal_en": "做 你 知道 嗎"
   },
   {
     "id": "uni_gendered_315",
@@ -10542,7 +10864,9 @@
         "morphology_load": 0,
         "new_concept": 0
       }
-    }
+    },
+    "literal_jp": "知道 著[男問]",
+    "literal_en": "做 你 知道 嗎"
   },
   {
     "id": "uni_kuuki_321",
@@ -10597,7 +10921,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "心意[只] 就 十分 是",
+    "literal_en": "不 謝謝，我 是 好"
   },
   {
     "id": "uni_kuuki_322",
@@ -10652,7 +10978,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "差不多 失禮 做",
+    "literal_en": "我 應該 走 著"
   },
   {
     "id": "uni_kuuki_323",
@@ -10707,7 +11035,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "再一點 檢討 做",
+    "literal_en": "我 將 想 關於 它"
   },
   {
     "id": "uni_kuuki_324",
@@ -10766,7 +11096,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "那[題] 怎樣 大概吧",
+    "literal_en": "什麼 做 你 覺得"
   },
   {
     "id": "uni_present_simple_116",
@@ -10825,7 +11157,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我[題] 蘋果[主] 喜歡 是",
+    "literal_en": "我 喜歡 蘋果們"
   },
   {
     "id": "uni_present_simple_117",
@@ -10884,7 +11218,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[題] 貓[主] 喜歡 是",
+    "literal_en": "她 喜歡 貓們"
   },
   {
     "id": "uni_articles_118",
@@ -10947,7 +11283,9 @@
         "morphology_load": 1,
         "new_concept": 5
       }
-    }
+    },
+    "literal_jp": "我[題] 香蕉[受] 拿著 著",
+    "literal_en": "我 有 [一]根香蕉"
   },
   {
     "id": "uni_articles_119",
@@ -11010,7 +11348,9 @@
         "morphology_load": 1,
         "new_concept": 5
       }
-    }
+    },
+    "literal_jp": "我[題] 蛋[受] 拿著 著",
+    "literal_en": "我 有 [一]顆蛋"
   },
   {
     "id": "uni_can_120",
@@ -11065,7 +11405,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我[題] 能游 著",
+    "literal_en": "我 能 游泳"
   },
   {
     "id": "uni_be_adj_121",
@@ -11120,7 +11462,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "它[題] 大 是",
+    "literal_en": "它 是 大"
   },
   {
     "id": "uni_this_is_122",
@@ -11179,7 +11523,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這[題] 狗 是",
+    "literal_en": "這 是 [一]隻狗"
   },
   {
     "id": "uni_this_is_287",
@@ -11238,7 +11584,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "那[題] 貓 是",
+    "literal_en": "那 是 [一]隻貓"
   },
   {
     "id": "uni_this_is_288",
@@ -11301,7 +11649,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "這些[題] 我[的] 書 是",
+    "literal_en": "這些 是 我的 書們"
   },
   {
     "id": "uni_this_is_289",
@@ -11356,7 +11706,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "那[題] 什麼 是 嗎",
+    "literal_en": "什麼 是 那"
   },
   {
     "id": "uni_question_123",
@@ -11419,7 +11771,9 @@
         "morphology_load": 2,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "你[題] 狗[主] 喜歡 嗎",
+    "literal_en": "做 你 喜歡 狗們 嗎"
   },
   {
     "id": "uni_question_127",
@@ -11482,7 +11836,9 @@
         "morphology_load": 2,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "她[題] 貓[主] 喜歡 嗎",
+    "literal_en": "做 她 喜歡 貓們 嗎"
   },
   {
     "id": "uni_want_to_124",
@@ -11545,7 +11901,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我[題] 什麼[主] 吃 想 是",
+    "literal_en": "我 想要 吃"
   },
   {
     "id": "uni_there_is_125",
@@ -11604,7 +11962,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "貓[主] 在",
+    "literal_en": "有 [一]隻貓"
   },
   {
     "id": "uni_there_is_290",
@@ -11683,7 +12043,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "桌子[的] 上[向] 書[主] 三冊 有",
+    "literal_en": "有 三 本書 在上面 [那] 桌子"
   },
   {
     "id": "uni_there_is_291",
@@ -11758,7 +12120,9 @@
         "morphology_load": 1,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "冰箱[向] 牛奶[主] 沒有",
+    "literal_en": "有 不 牛奶 在裡面 [那] 冰箱"
   },
   {
     "id": "uni_negative_126",
@@ -11821,7 +12185,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我[題] 蛇[主] 喜歡 不 是",
+    "literal_en": "我 不 喜歡 蛇們"
   },
   {
     "id": "uni_negative_130",
@@ -11884,7 +12250,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[題] 蛇[主] 喜歡 不 是",
+    "literal_en": "她 不 喜歡 蛇們"
   },
   {
     "id": "uni_imperative_128",
@@ -11939,7 +12307,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "門[受] 開 請",
+    "literal_en": "開 [那] 門"
   },
   {
     "id": "uni_imperative_129",
@@ -11986,7 +12356,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "跑 不 請",
+    "literal_en": "不 跑"
   },
   {
     "id": "uni_past_tense_131",
@@ -12057,7 +12429,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我[題] 昨天 球[受] 踢 了",
+    "literal_en": "我 踢 了 [一] 球 昨天"
   },
   {
     "id": "uni_past_tense_132",
@@ -12116,7 +12490,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[題] 午飯[受] 吃 了",
+    "literal_en": "她 吃 了 午餐"
   },
   {
     "id": "uni_future_tense_133",
@@ -12175,7 +12551,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[題] 明天 去 大概吧",
+    "literal_en": "他 將 去"
   },
   {
     "id": "uni_present_continuous_134",
@@ -12230,7 +12608,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我[題] 正在吃",
+    "literal_en": "我 正在 吃"
   },
   {
     "id": "uni_present_continuous_135",
@@ -12289,7 +12669,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[題] 書[受] 正在讀",
+    "literal_en": "她 正在 讀"
   },
   {
     "id": "uni_passive_136",
@@ -12360,7 +12742,9 @@
         "morphology_load": 3,
         "new_concept": 2
       }
-    }
+    },
+    "literal_jp": "蛋糕[題] 媽媽[由] 被做 了",
+    "literal_en": "[那] 蛋糕 是 做 被 媽媽"
   },
   {
     "id": "uni_comparative_137",
@@ -12431,7 +12815,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[題] 我[比] 背[主] 高 是",
+    "literal_en": "她 是 更高 比 我"
   },
   {
     "id": "uni_comparative_138",
@@ -12498,7 +12884,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[主] 一番 背[主] 高 是",
+    "literal_en": "他 是 [那] 最高"
   },
   {
     "id": "uni_relative_139",
@@ -12569,7 +12957,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "跑著的 男孩[題] Tom 是",
+    "literal_en": "[那] 男孩 [關係]誰 跑 是 Tom"
   },
   {
     "id": "uni_relative_292",
@@ -12648,7 +13038,9 @@
         "morphology_load": 2,
         "new_concept": 4
       }
-    }
+    },
+    "literal_jp": "歌[受] 能唱[的] 女孩[受] 知道 著",
+    "literal_en": "我 知道 [那] 女孩 [關係]誰 能 唱"
   },
   {
     "id": "uni_relative_293",
@@ -12735,7 +13127,9 @@
         "morphology_load": 2,
         "new_concept": 4
       }
-    }
+    },
+    "literal_jp": "這[題] 我[主] 昨天 買 了[的] 書 是",
+    "literal_en": "這 是 [那] 書 [關係]那 我 買 了 昨天"
   },
   {
     "id": "uni_relative_294",
@@ -12814,7 +13208,9 @@
         "morphology_load": 2,
         "new_concept": 4
       }
-    }
+    },
+    "literal_jp": "隔壁[向] 住著[的] 人[題] 親切 是",
+    "literal_en": "[那] 人 [關係]誰 住 在隔壁 是 親切"
   },
   {
     "id": "uni_conditional_140",
@@ -12885,7 +13281,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "雨[主] 下 了的話，留下 了",
+    "literal_en": "如果 它 下雨 我 將 留"
   },
   {
     "id": "uni_adv_141",
@@ -12961,7 +13359,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[題] 什麼都 拖延[向] 做[的] 傾向 有",
+    "literal_en": "他 傾向 去 拖延 在 一切"
   },
   {
     "id": "uni_adv_142",
@@ -13037,7 +13437,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[題] 事物[受] 悲觀的[向] 思考[的] 傾向 有",
+    "literal_en": "她 傾向 去 想 悲觀地"
   },
   {
     "id": "uni_adv_143",
@@ -13117,7 +13519,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "年輕人[題] 努力[受] 避[的] 傾向 有",
+    "literal_en": "年輕 人 傾向 去 避 辛苦 工作"
   },
   {
     "id": "uni_adv_144",
@@ -13197,7 +13601,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 地區[題] 災害[主] 多[的] 傾向 有",
+    "literal_en": "這 地區 傾向 去 有 許多 災害"
   },
   {
     "id": "uni_adv_145",
@@ -13281,7 +13687,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "人[題] 自己[的] 失敗[受] 不承認[的] 傾向 有",
+    "literal_en": "人們 傾向 不 去 承認 自己的 錯誤"
   },
   {
     "id": "uni_adv_146",
@@ -13353,7 +13761,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "今年[題] 好事[盡是] 是 了",
+    "literal_en": "這 年 曾是 充滿 [的] 好 事"
   },
   {
     "id": "uni_adv_147",
@@ -13429,7 +13839,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "一身黑[的] 男[主] 站 著 了",
+    "literal_en": "[一個] 男人 穿著 全部 [在] 黑 曾是 站著 那裡"
   },
   {
     "id": "uni_adv_148",
@@ -13505,7 +13917,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "破例[盡是的] 大會 是 了",
+    "literal_en": "它 曾是 [一個] 大會 充滿 [的] 例外"
   },
   {
     "id": "uni_adv_149",
@@ -13585,7 +13999,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這個月[題] 加班[盡是][用] 累 了",
+    "literal_en": "這 月 曾是 沒有 但是 加班；我 是 精疲力盡"
   },
   {
     "id": "uni_adv_150",
@@ -13665,7 +14081,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "第一次[盡是][的] 旅行 是 了",
+    "literal_en": "它 曾是 [一個] 旅行 [的] 所有 第一次"
   },
   {
     "id": "uni_adv_151",
@@ -13733,7 +14151,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "今天[受] 限度，菸[受] 停 了",
+    "literal_en": "從 今天 起，我 戒 抽菸"
   },
   {
     "id": "uni_adv_152",
@@ -13809,7 +14229,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這次[受] 限度，協力[題] 做 不",
+    "literal_en": "之後 這 次，我 將 不再 合作"
   },
   {
     "id": "uni_adv_153",
@@ -13885,7 +14307,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "下個月[受] 限度，這 店[題] 關店 做",
+    "literal_en": "這 店 將 關 在 [那] 結束 [的] 下 月"
   },
   {
     "id": "uni_adv_154",
@@ -13957,7 +14381,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這學期[受] 限度，退學 做",
+    "literal_en": "我 將 退出 之後 這 學期"
   },
   {
     "id": "uni_adv_155",
@@ -14029,7 +14455,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 比賽[受] 限度，退役 做",
+    "literal_en": "我 將 退役 之後 這 比賽"
   },
   {
     "id": "uni_adv_156",
@@ -14097,7 +14525,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "現實[向] 即合[的] 教育[主] 必要 是",
+    "literal_en": "教育 建立 在 現實 是 需要的"
   },
   {
     "id": "uni_adv_157",
@@ -14169,7 +14599,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "法律[向] 即合 判斷 做",
+    "literal_en": "我 將 判斷 按照 [那] 法律"
   },
   {
     "id": "uni_adv_158",
@@ -14253,7 +14685,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "實情[向] 即合[的] 對策[受] 立",
+    "literal_en": "我們 將 制定 對策 適合 [那] 實際 情況"
   },
   {
     "id": "uni_adv_159",
@@ -14329,7 +14763,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "時代[向] 即合[的] 改革[主] 求 著",
+    "literal_en": "改革 適合 [那] 時代 是 被 呼籲"
   },
   {
     "id": "uni_adv_160",
@@ -14401,7 +14837,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "需求[向] 即合[的] 服務[受] 提供 做",
+    "literal_en": "我們 提供 服務 量身打造 向 需求"
   },
   {
     "id": "uni_adv_161",
@@ -14485,7 +14923,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "社長[到了]，責任[主] 重 是",
+    "literal_en": "當 你 變成 [一個] 執行長，[那] 責任 是 重"
   },
   {
     "id": "uni_adv_162",
@@ -14569,7 +15009,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "大學生[到了]，自己[在] 判斷 應該 是",
+    "literal_en": "作為 [一個] 大學 學生，你 應該 做 你的 自己的 決定"
   },
   {
     "id": "uni_adv_163",
@@ -14649,7 +15091,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "專家[到了]，技術[主] 不同 是",
+    "literal_en": "在 [那] 專業 級別，[那] 技術 是 不同"
   },
   {
     "id": "uni_adv_164",
@@ -14749,7 +15193,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "父母[到了]，孩子[的] 擔心[主] 不斷 是",
+    "literal_en": "一旦 你 變成 [一個] 父母，你 從不 停止 擔心 關於 你的 小孩們"
   },
   {
     "id": "uni_adv_165",
@@ -14817,7 +15263,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "夏[到了]，觀光客[主] 增加",
+    "literal_en": "當 夏天 來，觀光客 增加"
   },
   {
     "id": "uni_adv_166",
@@ -14893,7 +15341,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "教師[向] 不該有 [的] 發言 是",
+    "literal_en": "那 發言 是 不該的 [的] [一個] 老師"
   },
   {
     "id": "uni_adv_167",
@@ -14973,7 +15423,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "社會人 作為 不該有 [的] 行為 是",
+    "literal_en": "那 行為 是 不該的 [的] [一個] 工作 大人"
   },
   {
     "id": "uni_adv_168",
@@ -15041,7 +15493,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "原諒 不該 [的] 犯罪 是",
+    "literal_en": "它 是 [一個] 不可原諒 [的] 犯罪"
   },
   {
     "id": "uni_adv_169",
@@ -15117,7 +15571,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "醫生[向] 不該有 [的] 錯誤 是",
+    "literal_en": "那 錯誤 是 不該的 [的] [一個] 醫生"
   },
   {
     "id": "uni_adv_170",
@@ -15193,7 +15649,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "領導[向] 不該有 [的] 態度 是",
+    "literal_en": "那 態度 是 不該的 [的] [一個] 領導者"
   },
   {
     "id": "uni_adv_171",
@@ -15277,7 +15735,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 電影[受] 看 一就，哭 不[忍不住]",
+    "literal_en": "我 不能 幫 但 哭 當 我 看 這 電影"
   },
   {
     "id": "uni_adv_172",
@@ -15361,7 +15821,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[的] 笑話[受] 聽 一就，笑 不[忍不住]",
+    "literal_en": "我 不能 幫 但 笑 當 我 聽 他的 笑話們"
   },
   {
     "id": "uni_adv_173",
@@ -15441,7 +15903,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "那 事件[向] 憤怒[受] 感 不[忍不住]",
+    "literal_en": "我 不能 幫 但 感覺 憤怒 關於 那 事件"
   },
   {
     "id": "uni_adv_174",
@@ -15517,7 +15981,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 景色[受] 看 一就，感動 不[忍不住]",
+    "literal_en": "我 不能 幫 但 被 感動 由 這 景色"
   },
   {
     "id": "uni_adv_175",
@@ -15605,7 +16071,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[的] 話[受] 聽 一就，同情 不[忍不住]",
+    "literal_en": "我 不能 幫 但 感覺 同情 當 我 聽 她的 故事"
   },
   {
     "id": "uni_adv_176",
@@ -15689,7 +16157,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "事情[由]，參加 不得不",
+    "literal_en": "由於 情況，我 有 沒 選擇 但 去 參加"
   },
   {
     "id": "uni_adv_177",
@@ -15769,7 +16239,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[的] 意見[受] 承認 不得不",
+    "literal_en": "我 有 沒 選擇 但 去 承認 他的 意見"
   },
   {
     "id": "uni_adv_178",
@@ -15853,7 +16325,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "雨 因為，中止 不得不",
+    "literal_en": "因為 [的] [那] 雨，我們 有 沒 選擇 但 去 取消"
   },
   {
     "id": "uni_adv_179",
@@ -15945,7 +16419,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "證據[主] 有 以上，承認 不得不",
+    "literal_en": "鑒於 [那] 證據，我 有 沒 選擇 但 去 承認 它"
   },
   {
     "id": "uni_adv_180",
@@ -16041,7 +16517,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "預算[的] 關係[在]，計畫[受] 變更 不得不",
+    "literal_en": "由於 預算 限制，我們 有 沒 選擇 但 去 改變 [那] 計畫"
   },
   {
     "id": "uni_adv_181",
@@ -16121,7 +16599,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "受害者[的] 痛苦[題] 想像[向] 不難 是",
+    "literal_en": "它 是 不 困難 去 想像 [那] 受害者[的] 痛苦"
   },
   {
     "id": "uni_adv_182",
@@ -16197,7 +16677,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[的] 憤怒[題] 察覺[向] 不難 是",
+    "literal_en": "它 是 不 困難 去 感覺 他的 憤怒"
   },
   {
     "id": "uni_adv_183",
@@ -16273,7 +16755,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "那 結果[題] 預想[向] 不難 是",
+    "literal_en": "它 是 不 困難 去 預測 那 結果"
   },
   {
     "id": "uni_adv_184",
@@ -16353,7 +16837,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "父母[的] 心情[題] 理解[向] 不難 是",
+    "literal_en": "它 是 不 困難 去 理解 [一個] 父母[的] 心情"
   },
   {
     "id": "uni_adv_185",
@@ -16437,7 +16923,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "成功[的] 理由[題] 推測[向] 不難 是",
+    "literal_en": "它 是 不 困難 去 猜 [那] 理由 為了 成功"
   },
   {
     "id": "uni_adv_186",
@@ -16509,7 +16997,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "合格 做 為了，每天 讀書 了",
+    "literal_en": "我 讀書 每 天 為了 去 通過"
   },
   {
     "id": "uni_adv_187",
@@ -16597,7 +17087,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "問題[受] 解決 做 為了，會議[受] 開 了",
+    "literal_en": "我們 開 了 [一個] 會議 為了 去 解決 [那] 問題"
   },
   {
     "id": "uni_adv_188",
@@ -16681,7 +17173,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "夢[受] 叶 做 為了，上京 了",
+    "literal_en": "我 去 了 向 東京 為了 去 實現 我的 夢想"
   },
   {
     "id": "uni_adv_189",
@@ -16769,7 +17263,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "真實[受] 知 做 為了，調查[受] 開始 了",
+    "literal_en": "我 開始 了 [一個] 調查 去 找 [那] 真相"
   },
   {
     "id": "uni_adv_190",
@@ -16857,7 +17353,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "新記錄[受] 達成 做 為了，練習[受] 重 了",
+    "literal_en": "我 練習 反覆地 去 設 [一個] 新 紀錄"
   },
   {
     "id": "uni_adv_191",
@@ -16937,7 +17435,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "教師[受] 做 一邊，小說[受] 寫 著",
+    "literal_en": "他 教 一邊 也 寫 小說"
   },
   {
     "id": "uni_adv_192",
@@ -17029,7 +17529,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "公司[向] 上班 做 一邊，志工活動[受] 做 著",
+    "literal_en": "她 工作 在 [一] 公司 一邊 做 志工 活動"
   },
   {
     "id": "uni_adv_193",
@@ -17109,7 +17611,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "研究[受] 做 一邊，後輩[的] 指導[也] 做 著",
+    "literal_en": "他 做 研究 一邊 也 指導 後輩"
   },
   {
     "id": "uni_adv_194",
@@ -17193,7 +17697,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "育兒[的] 一邊，在家[在] 工作[受] 做 著",
+    "literal_en": "她 工作 從 家 一邊 養育 小孩"
   },
   {
     "id": "uni_adv_195",
@@ -17273,7 +17779,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "家事[的] 一邊，通信教育[受] 受 著",
+    "literal_en": "她 上 函授 課程 一邊 做 家事"
   },
   {
     "id": "uni_adv_196",
@@ -17349,7 +17857,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "家[向] 回 一就，睡 著 了",
+    "literal_en": "一就 他 得到 家，他 睡著 了"
   },
   {
     "id": "uni_adv_197",
@@ -17433,7 +17943,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[題] 門[受] 開 一就，跑出 了",
+    "literal_en": "[那] 瞬間 他 開 [那] 門，他 跑 出"
   },
   {
     "id": "uni_adv_198",
@@ -17525,7 +18037,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "小孩[題] 母親[受] 看 一就，哭 出 了",
+    "literal_en": "[那] 瞬間 [那] 小孩 看到 他的 母親，他 開始 哭"
   },
   {
     "id": "uni_adv_199",
@@ -17601,7 +18115,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "席[向] 到 一就，吃 開始 了",
+    "literal_en": "一就 他 坐下，他 開始 吃"
   },
   {
     "id": "uni_adv_200",
@@ -17673,7 +18189,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "電話[受] 切 一就，出門 了",
+    "literal_en": "[那] 瞬間 他 掛 上，他 走 出"
   },
   {
     "id": "uni_adv_201",
@@ -17749,7 +18267,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "記得[才剛] 忘 著 了",
+    "literal_en": "我 忘 事情 一就 我 記住 它們"
   },
   {
     "id": "uni_adv_202",
@@ -17821,7 +18341,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "整理[才剛] 弄亂 著",
+    "literal_en": "它 變得 亂 一就 我 整理"
   },
   {
     "id": "uni_adv_203",
@@ -17905,7 +18427,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "注意[才剛] 同樣的 錯誤[受] 做",
+    "literal_en": "他 做 [那] 同樣 錯誤 一就 我 提醒 他"
   },
   {
     "id": "uni_adv_204",
@@ -17977,7 +18501,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "做[才剛] 被吃 著 了",
+    "literal_en": "它 被 吃 一就 我 做 它"
   },
   {
     "id": "uni_adv_205",
@@ -18057,7 +18583,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "教[才剛] 錯",
+    "literal_en": "他 得到 它 錯 一就 我 教 他"
   },
   {
     "id": "uni_adv_206",
@@ -18121,7 +18649,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "早 說 如果好[偏不]",
+    "literal_en": "如果 只 他 曾 說 些什麼 早..."
   },
   {
     "id": "uni_adv_207",
@@ -18209,7 +18739,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "商量 如果好[偏不]，一人[在] 決定 了",
+    "literal_en": "他 應該 已經 商量 某人，但 他 決定 獨自"
   },
   {
     "id": "uni_adv_208",
@@ -18281,7 +18813,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "再一點 等 如果好[偏不]",
+    "literal_en": "如果 只 他 曾 等 [一] 點 更久..."
   },
   {
     "id": "uni_adv_209",
@@ -18349,7 +18883,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "乖乖 道歉 好[偏不]",
+    "literal_en": "他 應該 只是 道歉 誠實地"
   },
   {
     "id": "uni_adv_210",
@@ -18421,7 +18957,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "拒絕 如果好[偏不]，引き受け 著 了",
+    "literal_en": "他 應該 已經 拒絕，但 他 接受 了"
   },
   {
     "id": "uni_adv_211",
@@ -18497,7 +19035,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "專家[即使]，錯誤[受] 做[的] 事[題] 有",
+    "literal_en": "即使 [一個] 專家 能 做 錯誤"
   },
   {
     "id": "uni_adv_212",
@@ -18573,7 +19113,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "法律[即使]，完璧 不 是",
+    "literal_en": "即使 [那] 法律 是 不 完美"
   },
   {
     "id": "uni_adv_213",
@@ -18649,7 +19191,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "小孩[即使]，禮儀[題] 守 應該 是",
+    "literal_en": "即使 小孩們 應該 觀察 適當 禮儀"
   },
   {
     "id": "uni_adv_214",
@@ -18725,7 +19269,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "親友[即使]，原諒 不[的] 事[主] 有",
+    "literal_en": "即使 之間 親近 朋友們，有 不可原諒 事情"
   },
   {
     "id": "uni_adv_215",
@@ -18809,7 +19355,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "任何 理由[主] 有[即使]，暴力[題] 不被原諒 是",
+    "literal_en": "無論 [那] 理由，暴力 是 從不 可接受"
   },
   {
     "id": "uni_adv_216",
@@ -18881,7 +19429,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "小孩[題] 小孩 自己的方式[在] 想 著",
+    "literal_en": "小孩們 想 在 他們的 自己的 方式"
   },
   {
     "id": "uni_adv_217",
@@ -18957,7 +19507,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我 自己的方式[在] 努力 了",
+    "literal_en": "我 試 我的 最好 在 我的 自己的 方式"
   },
   {
     "id": "uni_adv_218",
@@ -19021,7 +19573,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他 自己的方式 [的] 理由[主] 有 大概吧",
+    "literal_en": "他 必須 有 他的 自己的 理由"
   },
   {
     "id": "uni_adv_219",
@@ -19101,7 +19655,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "外行人 自己的方式[在] 努力 了",
+    "literal_en": "即使 作為 [一個] 外行人，我 做 了 我的 最好"
   },
   {
     "id": "uni_adv_220",
@@ -19189,7 +19745,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "忙 自己的方式[在]，享受 著",
+    "literal_en": "儘管 是 忙，我 正在 享受 它 在 我的 自己的 方式"
   },
   {
     "id": "uni_adv_221",
@@ -19265,7 +19823,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "勝 為了，嚴苛 練習[受] 繼續 了",
+    "literal_en": "我 繼續 嚴苛 訓練 為了 去 勝"
   },
   {
     "id": "uni_adv_222",
@@ -19337,7 +19897,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "生 為了，什麼都 做 了",
+    "literal_en": "我 做 了 一切 去 生存"
   },
   {
     "id": "uni_adv_223",
@@ -19409,7 +19971,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "自由[受] 守 為了，戰 了",
+    "literal_en": "他們 戰 去 保護 自由"
   },
   {
     "id": "uni_adv_224",
@@ -19497,7 +20061,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "夢[受] 實現 為了，努力[受] 不惜",
+    "literal_en": "我 省 沒 努力 去 實現 我的 夢想"
   },
   {
     "id": "uni_adv_225",
@@ -19577,7 +20143,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "真實[受] 明 為了，立 上 了",
+    "literal_en": "我 站 起來 去 揭露 [那] 真相"
   },
   {
     "id": "uni_adv_226",
@@ -19665,7 +20233,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "小孩[從] 大人[向] 至 直到，誰都 能享受",
+    "literal_en": "每個人 從 小孩們 到 大人們 能 享受 它"
   },
   {
     "id": "uni_adv_227",
@@ -19745,7 +20315,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "細部[向] 至 直到，完璧[在] 仕上 了",
+    "literal_en": "它 曾 被 完美化 下 到 [那] 最小 細節"
   },
   {
     "id": "uni_adv_228",
@@ -19833,7 +20405,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "社長[從] 新員工[向] 至 直到，全員 參加 了",
+    "literal_en": "每個人 從 [那] 執行長 到 新 員工們 參加 了"
   },
   {
     "id": "uni_adv_229",
@@ -19917,7 +20491,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "服裝[從] 言葉遣[向] 至 直到，注意 了",
+    "literal_en": "我 曾 被 糾正 在 一切 從 穿著 到 語言"
   },
   {
     "id": "uni_adv_230",
@@ -20005,7 +20581,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "北海道[從] 沖繩[向] 至 直到，災害[主] 廣 了",
+    "literal_en": "[那] 損害 蔓延 從 北海道 全部 到 沖繩"
   },
   {
     "id": "uni_adv_231",
@@ -20093,7 +20671,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "鈴[主] 響 一就，學生們[題] 教室[受] 飛出 了",
+    "literal_en": "[那] 瞬間 [那] 鈴 響，[那] 學生們 衝 出"
   },
   {
     "id": "uni_adv_232",
@@ -20177,7 +20757,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "眼[主] 醒 一就，手機[受] 確認 了",
+    "literal_en": "[那] 瞬間 我 醒 起，我 檢查 了 我的 手機"
   },
   {
     "id": "uni_adv_233",
@@ -20261,7 +20843,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "門[主] 開 一就，貓[主] 飛出 了",
+    "literal_en": "[那] 瞬間 [那] 門 開，[那] 貓 衝 出"
   },
   {
     "id": "uni_adv_234",
@@ -20361,7 +20945,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "比賽[主] 終 一就，球迷[主] 場地[向] 進 了",
+    "literal_en": "[那] 瞬間 [那] 比賽 結束，[那] 球迷們 衝 上 [那] 場地"
   },
   {
     "id": "uni_adv_235",
@@ -20437,7 +21023,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[題] 坐 一就，說 開始 了",
+    "literal_en": "[那] 瞬間 他 坐下，他 開始 說"
   },
   {
     "id": "uni_adv_236",
@@ -20537,7 +21125,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "身體[向] 壞[引] 知 一邊，菸[受] 吸 著",
+    "literal_en": "儘管 知 它[是] 壞 為 我的 健康，我 仍然 抽菸"
   },
   {
     "id": "uni_adv_237",
@@ -20625,7 +21215,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[題] 涙[受] 流 一邊，笑顔[受] 露 了",
+    "literal_en": "她 露 [一個] 微笑 一邊 流 眼淚"
   },
   {
     "id": "uni_adv_238",
@@ -20697,7 +21289,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "申し訳[引] 思 一邊也，斷 了",
+    "literal_en": "儘管 感覺 抱歉，我 拒絕 了"
   },
   {
     "id": "uni_adv_239",
@@ -20781,7 +21375,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "減肥中[引] 言 一邊，蛋糕[受] 吃 了",
+    "literal_en": "一邊 聲稱 去 是 在 [一個] 減肥，她 吃 了 蛋糕"
   },
   {
     "id": "uni_adv_240",
@@ -20861,7 +21457,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "期待 一邊，結果[受] 等 著",
+    "literal_en": "我 正在 等 為 [那] 結果們 與 期待"
   },
   {
     "id": "uni_adv_241",
@@ -20945,7 +21543,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "買 雖然，一回也 使用 不 著",
+    "literal_en": "我 買 它，但 我 沒 用 它 一次"
   },
   {
     "id": "uni_adv_242",
@@ -21033,7 +21633,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "說明[受] 聽 雖然，好 不懂",
+    "literal_en": "我 聽 了 [那] 說明，但 我 仍然 不 理解"
   },
   {
     "id": "uni_adv_243",
@@ -21129,7 +21731,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "資格[題] 取 雖然，就職先[主] 找 不",
+    "literal_en": "我 得到 了 [那] 證照，但 我 不能 找 [一個] 工作"
   },
   {
     "id": "uni_adv_244",
@@ -21213,7 +21817,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "搬家 雖然，還 不習慣",
+    "literal_en": "我 搬 了，但 我 仍然 不 習慣 它"
   },
   {
     "id": "uni_adv_245",
@@ -21293,7 +21899,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "努力 雖然，結果[題] 出 沒",
+    "literal_en": "我 試 努力，但 得到 沒 結果"
   },
   {
     "id": "uni_adv_246",
@@ -21373,7 +21981,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "喜歡 因為才，嚴格 做",
+    "literal_en": "正因為 我 愛 你，我 是 嚴格"
   },
   {
     "id": "uni_adv_247",
@@ -21461,7 +22071,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "失敗 因為才，學 能 了",
+    "literal_en": "它 曾是 正因為 我 失敗 [那] 我 能 學"
   },
   {
     "id": "uni_adv_248",
@@ -21541,7 +22153,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "你 因為才，拜託 是",
+    "literal_en": "它 是 正因為 它 是 你 [那] 我 是 請求"
   },
   {
     "id": "uni_adv_249",
@@ -21641,7 +22255,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "努力 因為才，現在 自己[主] 有",
+    "literal_en": "它 是 正因為 我 工作 努力 [那] 我 是 誰 我 是"
   },
   {
     "id": "uni_adv_250",
@@ -21733,7 +22349,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "年輕 因為才，挑戰 能 是",
+    "literal_en": "它 是 正因為 你 是 年輕 [那] 你 能 接受 挑戰"
   },
   {
     "id": "uni_adv_251",
@@ -21797,7 +22415,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這[題] 推測[向] 只不過",
+    "literal_en": "這 是 僅僅 推測"
   },
   {
     "id": "uni_adv_252",
@@ -21865,7 +22485,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "我[題] 學生[向] 只不過 是",
+    "literal_en": "我 是 僅僅 [一個] 學生"
   },
   {
     "id": "uni_adv_253",
@@ -21937,7 +22559,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[的] 話[題] 謠言[向] 只不過",
+    "literal_en": "什麼 他 說 是 沒有 但 [一個] 謠言"
   },
   {
     "id": "uni_adv_254",
@@ -22005,7 +22629,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "那[題] 一個[的] 例[向] 只不過",
+    "literal_en": "那 是 沒有 更多 但 一 例子"
   },
   {
     "id": "uni_adv_255",
@@ -22065,7 +22691,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "藉口[向] 只不過",
+    "literal_en": "它 是 沒有 但 [一個] 藉口"
   },
   {
     "id": "uni_adv_256",
@@ -22141,7 +22769,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "成功[題] 努力[的] 結果[向] 正是 不外乎",
+    "literal_en": "成功 是 沒 其他 但 [那] 結果 [的] 努力"
   },
   {
     "id": "uni_adv_257",
@@ -22221,7 +22851,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這[題] 他[的] 努力[的] 賜物[向] 正是 不外乎",
+    "literal_en": "這 是 沒 其他 但 [那] 果實 [的] 他的 努力"
   },
   {
     "id": "uni_adv_258",
@@ -22293,7 +22925,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "環境問題[題] 人類[的] 責任[向] 正是 不外乎",
+    "literal_en": "環境 議題 是 沒 其他 但 人類 責任"
   },
   {
     "id": "uni_adv_259",
@@ -22369,7 +23003,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[主] 怒[的][題] 心配 著 因為[向] 正是 不外乎",
+    "literal_en": "她[是] 生氣 正因為 她[是] 擔心"
   },
   {
     "id": "uni_adv_260",
@@ -22449,7 +23085,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 結果[題] 練習不足[向] 正是 不外乎",
+    "literal_en": "這 結果 是 沒 其他 但 [一個] 缺乏 [的] 練習"
   },
   {
     "id": "uni_adv_261",
@@ -22521,7 +23159,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 問題[受] 圍繞，議論[主] 繼續 著",
+    "literal_en": "辯論 繼續 圍繞 這 議題"
   },
   {
     "id": "uni_adv_262",
@@ -22601,7 +23241,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "土地[的] 所有權[受] 圍繞，裁判[向] 變成 了",
+    "literal_en": "他們 去 了 向 法庭 關於 土地 所有權"
   },
   {
     "id": "uni_adv_263",
@@ -22681,7 +23323,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "新 法律[受] 圍繞，意見[主] 對立 著",
+    "literal_en": "意見 是 分裂 關於 [那] 新 法律"
   },
   {
     "id": "uni_adv_264",
@@ -22757,7 +23401,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "遺產[受] 圍繞，兄弟[主] 爭 著",
+    "literal_en": "[那] 兄弟 是 戰鬥 在 [那] 遺產"
   },
   {
     "id": "uni_adv_265",
@@ -22833,7 +23479,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "環境問題[受] 圍繞[的] 議論[題] 終 不",
+    "literal_en": "[那] 辯論 在 環境 議題 從不 結束"
   },
   {
     "id": "uni_adv_266",
@@ -22897,7 +23545,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這[題] 本物[向] 相違 不",
+    "literal_en": "這 是 無疑 真的"
   },
   {
     "id": "uni_adv_267",
@@ -22965,7 +23615,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[主] 犯人[向] 相違 不",
+    "literal_en": "他 是 無疑 [那] 犯人"
   },
   {
     "id": "uni_adv_268",
@@ -23033,7 +23685,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 計畫[題] 成功 做[向] 相違 不",
+    "literal_en": "這 計畫 將 無疑 成功"
   },
   {
     "id": "uni_adv_269",
@@ -23109,7 +23763,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "她[的] 話[題] 事實[向] 相違 不",
+    "literal_en": "什麼 她 說 是 無疑 [那] 真相"
   },
   {
     "id": "uni_adv_270",
@@ -23177,7 +23833,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "原因[題] 不注意[向] 相違 不",
+    "literal_en": "[那] 原因 是 無疑 不小心"
   },
   {
     "id": "uni_adv_271",
@@ -23245,7 +23903,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[的] 態度[題] 失禮 極まりない",
+    "literal_en": "他的 態度 是 極其 失禮"
   },
   {
     "id": "uni_adv_272",
@@ -23317,7 +23977,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "危險 極まりない 行為 是",
+    "literal_en": "它 是 [一個] 極其 危險 行為"
   },
   {
     "id": "uni_adv_273",
@@ -23389,7 +24051,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "不愉快 極まりない 經驗 是 了",
+    "literal_en": "它 曾是 [一個] 極其 不愉快 經驗"
   },
   {
     "id": "uni_adv_274",
@@ -23461,7 +24125,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "迷惑 極まりない 話 是",
+    "literal_en": "它 是 [一個] 極其 困擾 事"
   },
   {
     "id": "uni_adv_275",
@@ -23533,7 +24199,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "無責任 極まりない 發言 是",
+    "literal_en": "它 是 [一個] 極其 不負責任 發言"
   },
   {
     "id": "uni_adv_276",
@@ -23613,7 +24281,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "東京[受] 皮切り，全國 巡迴[主] 始 了",
+    "literal_en": "開始 用 東京，[一個] 全國 巡迴 開始 了"
   },
   {
     "id": "uni_adv_277",
@@ -23697,7 +24367,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這 店[的] 成功[受] 皮切り，連鎖 展開 了",
+    "literal_en": "開始 從 這 店[的] 成功，他們 擴展 進入 [一個] 連鎖"
   },
   {
     "id": "uni_adv_278",
@@ -23777,7 +24449,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "日本[受] 皮切り，亞洲 各國[在] 發售 了",
+    "literal_en": "開始 用 日本，它 曾 被 發售 跨越 亞洲"
   },
   {
     "id": "uni_adv_279",
@@ -23865,7 +24539,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "首勝[受] 皮切り，連勝[主] 繼續 了",
+    "literal_en": "開始 用 [那] 首 勝利，[一個] 勝利 連續 跟隨 了"
   },
   {
     "id": "uni_adv_280",
@@ -23937,7 +24613,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "他[的] 發言[受] 皮切り，批判[主] 相繼 了",
+    "literal_en": "開始 從 他的 發言，批評 倒 進 了"
   },
   {
     "id": "uni_adv_281",
@@ -24001,7 +24679,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "這裡[向] 進 不可",
+    "literal_en": "你 必須 不 進入 這裡"
   },
   {
     "id": "uni_adv_282",
@@ -24069,7 +24749,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "初心 忘 不可",
+    "literal_en": "你 必須 不 忘記 你的 原始 意圖"
   },
   {
     "id": "uni_adv_283",
@@ -24129,7 +24811,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "油斷 做 不可",
+    "literal_en": "你 必須 不 是 不小心"
   },
   {
     "id": "uni_adv_284",
@@ -24189,7 +24873,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "垃圾[受] 捨 不可",
+    "literal_en": "你 必須 不 丟 垃圾"
   },
   {
     "id": "uni_adv_285",
@@ -24249,7 +24935,9 @@
         "morphology_load": 1,
         "new_concept": 1
       }
-    }
+    },
+    "literal_jp": "謊言[受] 說 不可",
+    "literal_en": "你 必須 不 說謊"
   },
   {
     "cn": "雖然下雨了，活動還是很成功。",
@@ -24322,7 +25010,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "雖然下雨，活動仍然很成功。"
+    "chinese": "雖然下雨，活動仍然很成功。",
+    "literal_jp": "雨[主] 下 了 儘管，活動[題] 成功 了",
+    "literal_en": "雖然 它 下雨，[那] 活動 曾是 成功"
   },
   {
     "cn": "儘管下雨，活動還是很成功。",
@@ -24387,7 +25077,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "儘管下雨，活動仍然很成功。"
+    "chinese": "儘管下雨，活動仍然很成功。",
+    "literal_jp": "雨[向] 儘管，活動[題] 成功 了",
+    "literal_en": "儘管 [那] 雨，[那] 活動 曾是 成功"
   },
   {
     "cn": "因為暴風雨，航班延誤了。",
@@ -24452,7 +25144,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "由於暴風雨，航班延誤了。"
+    "chinese": "由於暴風雨，航班延誤了。",
+    "literal_jp": "暴風雨[的] 為了，航班[主] 遲延 了",
+    "literal_en": "由於 [那] 暴風雨，[那] 航班 曾 被 延誤"
   },
   {
     "cn": "因為暴風雨來了，航班延誤了。",
@@ -24517,7 +25211,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "因為暴風雨來襲，航班延誤了。"
+    "chinese": "因為暴風雨來襲，航班延誤了。",
+    "literal_jp": "暴風雨[主] 來 了 因為，航班[主] 遲延 了",
+    "literal_en": "因為 [那] 暴風雨 打擊，[那] 航班 曾 被 延誤"
   },
   {
     "cn": "除了價格以外，品質也很重要。",
@@ -24582,7 +25278,9 @@
         "new_concept": 7
       }
     },
-    "chinese": "除了價格之外，品質也很重要。"
+    "chinese": "除了價格之外，品質也很重要。",
+    "literal_jp": "價格[向] 除了，品質[也] 重要 是",
+    "literal_en": "除此之外 [那] 價格，品質 是 也 重要"
   },
   {
     "cn": "我從來沒有見過這麼好的產品。",
@@ -24647,7 +25345,9 @@
         "new_concept": 9
       }
     },
-    "chinese": "我從沒看過這麼棒的產品。"
+    "chinese": "我從沒看過這麼棒的產品。",
+    "literal_jp": "這麼 良い 製品[題] 看 [的] 事[主] 有 不",
+    "literal_en": "從不 已 我 看 這樣 [一個] 棒 產品"
   },
   {
     "cn": "他不僅完成了報告，還做了簡報。",
@@ -24724,7 +25424,9 @@
         "new_concept": 9
       }
     },
-    "chinese": "他不只完成了報告，還做了簡報。"
+    "chinese": "他不只完成了報告，還做了簡報。",
+    "literal_jp": "他[題] 報告書[受] 完成 了 不只，簡報[也] 做 了",
+    "literal_en": "不 只 做 他 完成 [那] 報告，但 他 也 簡報 了 它"
   },
   {
     "cn": "只有完成培訓後，員工才能操作機器。",
@@ -24797,7 +25499,9 @@
         "new_concept": 9
       }
     },
-    "chinese": "只有完成訓練後，員工才能操作機器。"
+    "chinese": "只有完成訓練後，員工才能操作機器。",
+    "literal_jp": "研修[受] 終 才，員工[題] 機械[受] 操作 能",
+    "literal_en": "只 之後 完成 [那] 訓練 能 員工 操作 [那] 機器"
   },
   {
     "cn": "如果我早知道截止日期，我就會做得更快。",
@@ -24870,7 +25574,9 @@
         "new_concept": 9
       }
     },
-    "chinese": "如果我早知道截止日期，我會做得更快。"
+    "chinese": "如果我早知道截止日期，我會做得更快。",
+    "literal_jp": "截止日期[受] 知 了的話，更 速 做著 了 明明",
+    "literal_en": "曾 我 知道 [那] 截止日期，我 將 已 工作 更快"
   },
   {
     "cn": "我一到辦公室就會通知你。",
@@ -24955,7 +25661,9 @@
         "new_concept": 9
       }
     },
-    "chinese": "我一到辦公室就會通知你。"
+    "chinese": "我一到辦公室就會通知你。",
+    "literal_jp": "辦公室[向] 到 了的話，立刻 通知 做",
+    "literal_en": "沒有 更早 將 我 到達 在 [那] 辦公室 比 我 將 通知 你"
   },
   {
     "cn": "如果我是經理，我會雇用他。",
@@ -25036,7 +25744,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "如果我是經理，我會錄用他。"
+    "chinese": "如果我是經理，我會錄用他。",
+    "literal_jp": "如果 我[主] 經理 如果，他[受] 雇 大概吧",
+    "literal_en": "如果 我 曾是 [那] 經理，我 將 雇 他"
   },
   {
     "cn": "如果她有更多時間，她會去旅行。",
@@ -25117,7 +25827,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "如果她有更多時間，她會去旅行。"
+    "chinese": "如果她有更多時間，她會去旅行。",
+    "literal_jp": "如果 她[向] 更多 時間[主] 有 如果，旅行[向] 行 大概吧",
+    "literal_en": "如果 她 有 更多 時間，她 將 旅行"
   },
   {
     "cn": "如果我昨天有讀書，我就會通過考試了。",
@@ -25198,7 +25910,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "如果我昨天有讀書，我就會通過考試了。"
+    "chinese": "如果我昨天有讀書，我就會通過考試了。",
+    "literal_jp": "如果 昨天 讀書 著 了的話，試驗[向] 合格 著 了 大概吧",
+    "literal_en": "如果 我 曾 讀書 昨天，我 將 已 通過 [那] 考試"
   },
   {
     "cn": "我希望我能說流利的英文。",
@@ -25263,7 +25977,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "我希望我能流暢地說英文。"
+    "chinese": "我希望我能流暢地說英文。",
+    "literal_jp": "英語[主] 流暢[在] 話 能 了的話 好[偏不]",
+    "literal_en": "我 希望 我 能 說 英語 流暢地"
   },
   {
     "cn": "經理建議我們提早準備。",
@@ -25336,7 +26052,9 @@
         "new_concept": 8
       }
     },
-    "chinese": "經理建議我們提早準備。"
+    "chinese": "經理建議我們提早準備。",
+    "literal_jp": "經理[題] 早めに 準備 做 樣 提案 了",
+    "literal_en": "[那] 經理 建議 那 我們 準備 早"
   },
   {
     "id": "uni_detective_361",
@@ -25383,7 +26101,9 @@
       "cn_blindspot": "中文「她是好人」不分現在式和過去式，不會洩漏",
       "jp_insight": "🔍 でした（過去式）洩漏了說話者認為她已經不在了！如果警方還沒公布死訊，嫌疑犯卻用了でした → 你怎麼知道？",
       "en_insight": "🔍 was（過去式）是經典偵探陷阱！She was kind ← 為什麼用過去式？你已經知道她死了？"
-    }
+    },
+    "literal_jp": "她[題] 親切 [的] 人 是 了",
+    "literal_en": "她 曾是 [一個] 親切 人"
   },
   {
     "id": "uni_detective_362",
@@ -25434,7 +26154,9 @@
       "cn_blindspot": "中文「住在哪裡」不分時態",
       "jp_insight": "🔍 住んでいる（現在持續）vs 住んでいた（過去持續）：用了「いる」表示說話者認為她現在還在住 → 暴露他知道她還活著或最近的狀況",
       "en_insight": "🔍 lives（現在式）vs lived（過去式）：偵探會注意嫌疑犯用哪個時態來判斷他知道多少"
-    }
+    },
+    "literal_jp": "她[主] 哪[向] 住 著 嗎 知 不",
+    "literal_en": "我 不 知道 哪裡 她 住"
   },
   {
     "id": "uni_detective_363",
@@ -25481,7 +26203,9 @@
       "cn_blindspot": "中文「照顧我」聽不出感情深度",
       "jp_insight": "🔍 お世話になりました 是很正式的感謝，但如果嫌疑犯對「不認識的人」說出這麼深的感謝 → 暴露了其實受過很大恩惠，有更深的關係",
       "en_insight": "🔍 took care of me 在英文很中性，但如果加了 always 或 really → 暴露了長期親密關係"
-    }
+    },
+    "literal_jp": "那 方[向] 照顧 受 了",
+    "literal_en": "那 人 照顧 了 我"
   },
   {
     "id": "uni_detective_364",
@@ -25532,7 +26256,9 @@
       "cn_blindspot": "中文「要是在場就好了」聽起來像遺憾",
       "jp_insight": "🔍 のに 結尾洩漏了強烈的遺憾和悔恨！但偵探會想：你怎麼知道「那個時間」「那個地點」發生了事？沒人告訴你啊！",
       "en_insight": "🔍 had been（過去完成式假設）暴露了嫌疑犯知道「過去某個時間點發生了什麼」，而且他不在場 — 但他怎麼知道具體時間？"
-    }
+    },
+    "literal_jp": "那 時 那裡[向] 在 如果好[偏不]",
+    "literal_en": "如果 只 我 曾 已 在 那裡 在 那 時"
   },
   {
     "id": "uni_detective_365",
@@ -25579,7 +26305,9 @@
       "cn_blindspot": "中文「不會做那種事」像是在辯護",
       "jp_insight": "🔍 はずがない（不可能）洩漏了說話者非常了解她的為人！偵探會問：你怎麼這麼確定？你們到底什麼關係？為什麼還沒調查你就急著否定？",
       "en_insight": "🔍 would do（假設語氣）暴露了說話者在替嫌疑人辯護，而且用了 no way 這麼強烈的否定 → 關係不一般"
-    }
+    },
+    "literal_jp": "她[主] 那樣 事[受] 做 [的] 道理[主] 不",
+    "literal_en": "有 沒 路 她 將 做 些什麼 像 那"
   },
   {
     "id": "uni_verb_366",
@@ -25639,7 +26367,9 @@
         "morphology_load": 4,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "每天 早飯[受] 吃。→ 早飯[受] 吃 不",
+    "literal_en": "我 吃 早餐 每 天。→ 我 不 吃 早餐"
   },
   {
     "id": "uni_verb_367",
@@ -25699,7 +26429,9 @@
         "morphology_load": 4,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "每天 水[受] 喝。→ 昨天 水[受] 喝 了",
+    "literal_en": "我 喝 水 每 天。→ 我 喝 了 水 昨天"
   },
   {
     "id": "uni_verb_368",
@@ -25755,7 +26487,9 @@
         "morphology_load": 4,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "本[受] 買 了。→ 水[受] 喝 了。→ 信[受] 寫 了",
+    "literal_en": "我 買 了 [一]本書。我 喝 了 水。我 寫 了 [一] 封信"
   },
   {
     "id": "uni_verb_369",
@@ -25811,7 +26545,9 @@
         "morphology_load": 4,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "宿題[受] 做。→ 朋友[主] 來 了",
+    "literal_en": "我 做 功課。→ 我的 朋友 來 了"
   },
   {
     "id": "uni_verb_370",
@@ -25867,7 +26603,9 @@
         "morphology_load": 4,
         "new_concept": 3
       }
-    }
+    },
+    "literal_jp": "這[受] 買 不。→ 酒[受] 飲 不",
+    "literal_en": "我 不 買 這。→ 我 不 喝 酒"
   },
   {
     "cn": "我會說日語。",
@@ -25924,7 +26662,9 @@
         "new_concept": 2
       }
     },
-    "chinese": "我會說日語。"
+    "chinese": "我會說日語。",
+    "literal_jp": "日語[主] 話 能 是",
+    "literal_en": "我 能 說 日語"
   },
   {
     "cn": "這裡看得到富士山。",
@@ -25989,7 +26729,9 @@
         "new_concept": 2
       }
     },
-    "chinese": "從這裡可以看到富士山。"
+    "chinese": "從這裡可以看到富士山。",
+    "literal_jp": "這裡[從] 富士山[主] 見 能 是",
+    "literal_en": "你 能 看 富士 山 從 這裡"
   },
   {
     "cn": "小孩不能喝酒。",
@@ -26050,7 +26792,9 @@
         "new_concept": 2
       }
     },
-    "chinese": "小孩子不能喝酒。"
+    "chinese": "小孩子不能喝酒。",
+    "literal_jp": "小孩[題] 酒[主] 飲 能 不",
+    "literal_en": "小孩們 不能 喝 酒"
   },
   {
     "cn": "我們一起吃飯吧！",
@@ -26111,7 +26855,9 @@
         "new_concept": 2
       }
     },
-    "chinese": "一起吃飯吧！"
+    "chinese": "一起吃飯吧！",
+    "literal_jp": "一起[在] 飯[受] 吃 吧",
+    "literal_en": "讓 我們 吃 一起"
   },
   {
     "cn": "明天早點起床吧。",
@@ -26176,7 +26922,9 @@
         "new_concept": 2
       }
     },
-    "chinese": "明天早點起床吧。"
+    "chinese": "明天早點起床吧。",
+    "literal_jp": "明天[題] 早 起 吧",
+    "literal_en": "讓 我們 醒 早 明天"
   },
   {
     "cn": "去看電影吧！",
@@ -26237,7 +26985,9 @@
         "new_concept": 2
       }
     },
-    "chinese": "去看電影吧！"
+    "chinese": "去看電影吧！",
+    "literal_jp": "電影[受] 見[向] 行 吧",
+    "literal_en": "讓 我們 去 看 [一部] 電影"
   },
   {
     "cn": "快跑！（緊急）",
@@ -26282,7 +27032,9 @@
         "new_concept": 1
       }
     },
-    "chinese": "快跑！"
+    "chinese": "快跑！",
+    "literal_jp": "跑！",
+    "literal_en": "跑！"
   },
   {
     "cn": "不准進來！",
@@ -26331,7 +27083,9 @@
         "new_concept": 1
       }
     },
-    "chinese": "不要進來！"
+    "chinese": "不要進來！",
+    "literal_jp": "進 不！",
+    "literal_en": "不 來 進來！"
   },
   {
     "cn": "給我安靜！",
@@ -26384,6 +27138,8 @@
         "new_concept": 1
       }
     },
-    "chinese": "安靜！"
+    "chinese": "安靜！",
+    "literal_jp": "安靜 做！",
+    "literal_en": "是 安靜！"
   }
 ]
