@@ -43,12 +43,7 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .r-主角{border-left:3px solid #ff6b6b}.r-動作{border-left:3px solid #4ecdc4}.r-對象{border-left:3px solid #ffd93d}.r-修飾{border-left:3px solid #a78bfa}.r-連接{border-left:3px solid #888}.r-場景{border-left:3px solid #66bb6a}.r-目標{border-left:3px solid #ff9800}.r-時間{border-left:3px solid #42a5f5}.r-語氣{border-left:3px solid #ef5350}
 .fm{text-align:center;padding:2px 10px 6px;font-size:.78rem;color:var(--dim);font-family:monospace}
 .sf{border:1px solid var(--border);background:var(--surface);color:var(--dim);font-family:inherit;font-size:.75rem;padding:4px 12px;border-radius:9px;cursor:pointer}
-.xtbar{text-align:center;padding:2px 0 8px}
-.xtbtn{border:1px solid rgba(196,181,253,.3);background:rgba(196,181,253,.08);color:#c4b5fd;font-family:inherit;font-size:.65rem;padding:3px 10px;border-radius:9px;cursor:pointer;font-weight:600}
-.xtbtn:hover{background:rgba(196,181,253,.18)}
-.xtbtn.on{background:rgba(196,181,253,.25);border-color:#c4b5fd}
-.xtbox{display:none;margin-top:6px;padding:8px 12px;background:rgba(196,181,253,.06);border:1px dashed rgba(196,181,253,.25);border-radius:8px;font-size:.78rem;color:#e0d4ff;text-align:center;font-weight:600;line-height:1.6}
-.xtbox.show{display:block}
+.xtbox{margin:6px auto 8px;max-width:90%;padding:8px 12px;background:rgba(196,181,253,.06);border:1px dashed rgba(196,181,253,.25);border-radius:8px;font-size:.78rem;color:#e0d4ff;text-align:center;font-weight:600;line-height:1.6}
 .xtbox .xtlbl{font-size:.55rem;color:rgba(196,181,253,.7);margin-bottom:3px;font-weight:500;letter-spacing:0.5px}
 .vc{display:grid;grid-template-columns:1fr 1fr}.vs{padding:8px 10px}.vs.js{border-right:1px solid var(--border)}
 .vl{font-size:.62rem;font-weight:900;margin-bottom:5px;text-align:center}.vl.jp{color:var(--jp)}.vl.en{color:var(--en)}
@@ -592,7 +587,10 @@ function rn(){if(!F.length){document.getElementById('app').innerHTML='<div class
 const r=F[ci];mS(r.id);uP();const hk=!!KD[r.dim]||(md==='en'&&!!EK[r.dim]);let bh='';
 if(md==='vs'){bh=rVS(r);}else{const d=r[md];if(!d){bh='<div style="text-align:center;padding:14px;color:var(--dim)">此句無'+(md==='jp'?'日文':'英文')+'資料</div>';}
 else{bh='<div class="br">';d.b.forEach(([t,rl])=>{bh+='<div class="bk bk-'+md+' r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\',\''+md+'\')">'+(md==='jp'?furi(t):t)+'<span class="bk-r">'+rl+'</span></div>';});
-bh+='</div><div style="text-align:center;padding:4px 0 2px"><button class="sf" onclick="sp(\''+d.s.replace(/'/g,"\\'")+'\',\''+md+'\')">🔊 '+(md==='jp'?furi(eH(d.s)):eH(d.s))+'</button></div><div class="xtbar" id="xtbar-'+r.id+'"><button class="xtbtn" onclick="xtToggle(\''+r.id+'\',\''+md+'\')">🧠 大腦直譯</button><div class="xtbox" id="xt-'+r.id+'"></div></div>';}}
+bh+='</div><div style="text-align:center;padding:4px 0 2px"><button class="sf" onclick="sp(\''+d.s.replace(/'/g,"\\'")+'\',\''+md+'\')">🔊 '+(md==='jp'?furi(eH(d.s)):eH(d.s))+'</button></div>';
+const litField=md==='jp'?'lit_jp':'lit_en';const litText=r[litField]||'';
+if(litText.trim()){const flag=md==='jp'?'🇯🇵':'🇺🇸';const lbl=md==='jp'?'日文大腦直譯（語序：主→受→動）':'英文大腦直譯（語序：主→動→受）';
+bh+='<div class="xtbox show"><div class="xtlbl">'+flag+' '+lbl+'</div>'+eH(litText)+'</div>';}}}
 let ct='';if(r.ct&&(r.ct.cn_blindspot||r.ct.jp_insight||r.ct.en_insight)){ct='<div class="cb">';
 if(r.ct.cn_blindspot)ct+='<div><span class="cl" style="color:var(--cn)">🇹🇼 中文陷阱：</span>'+eH(r.ct.cn_blindspot)+'</div>';
 if((md==='jp'||md==='vs')&&r.ct.jp_insight)ct+='<div><span class="cl" style="color:var(--jp)">🇯🇵 日文邏輯：</span>'+eH(r.ct.jp_insight)+'</div>';
