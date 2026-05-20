@@ -72,6 +72,11 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .irr-name{font-size:1.1rem;font-weight:700;color:#ff9bd0;text-align:center;margin-bottom:4px}
 .irr-hint{font-size:.7rem;color:#c4b5fd;text-align:center;margin-bottom:6px}
 .irr-warn{background:rgba(255,107,107,.15);border-left:3px solid #ff6b6b;padding:6px 10px;font-size:.75rem;color:#ffb3b3;margin:10px 0;border-radius:4px}
+.ve-scene,.ve-inner,.ve-effect{font-size:.78rem;color:#e0d4ff;margin:8px 0;padding:8px 12px;border-radius:8px;line-height:1.6;border-left:3px solid}
+.ve-scene{background:rgba(125,211,252,.08);border-left-color:#7dd3fc}
+.ve-inner{background:rgba(196,181,253,.08);border-left-color:#c4b5fd}
+.ve-effect{background:rgba(134,239,172,.08);border-left-color:#86efac}
+.ve-h{font-size:.6rem;color:#94a3b8;font-weight:700;letter-spacing:0.5px;margin-bottom:3px;text-transform:uppercase}
 .irr-forms{margin-top:12px;display:flex;flex-direction:column;gap:6px}
 .irr-row{display:flex;align-items:center;gap:8px;padding:6px 10px;background:rgba(255,255,255,.04);border-radius:8px;font-size:.8rem;flex-wrap:wrap}
 .irr-row.irr-current{background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.4)}
@@ -570,33 +575,34 @@ if(/[ぁ-ん]る$/.test(text))return 'る';
 return null;}
 /* === 動詞尾巴解釋資料庫 === */
 const VERB_ENDINGS={
-'る':{name:'る (辭書形)',mean:'動詞的「原形 / 字典形」',explain:'動詞最基本的樣子，字典裡查得到的形式。',examples:[{form:'食べる',read:'たべる',meaning:'吃（原形）'},{form:'見る',read:'みる',meaning:'看（原形）'},{form:'考える',read:'かんがえる',meaning:'思考（原形）'}],warn:'⚠️ 這個「る」是動詞的尾巴，不是助詞！不能單獨拿掉。'},
-'える':{name:'える (動詞尾巴)',mean:'第二類動詞（一段動詞）的尾巴',explain:'「考える」「教える」「食べる」這類動詞，整體都是一個單字。「える」不是助詞，是動詞自己的尾巴！',examples:[{form:'考える',read:'かんがえる',meaning:'思考'},{form:'教える',read:'おしえる',meaning:'教導'},{form:'食べる',read:'たべる',meaning:'吃'}],warn:'⚠️ 「える」沒辦法拆開，不是助詞！整個「考える」是一個動詞單字。'},
-'ます':{name:'ます (禮貌語尾)',mean:'動詞的「禮貌形」',explain:'要對長輩、不熟的人、客戶說話時，動詞要變成這個禮貌形。日常和朋友說話可以不用。',examples:[{form:'食べます',read:'たべます',meaning:'吃（禮貌）'},{form:'行きます',read:'いきます',meaning:'去（禮貌）'},{form:'します',read:'します',meaning:'做（禮貌）'}],warn:'⚠️ 「ます」是動詞變形的尾巴，不是助詞！'},
-'ました':{name:'ました (禮貌過去式)',mean:'已經做了 + 禮貌',explain:'已經做完的事，加上禮貌語氣',examples:[{form:'食べました',read:'たべました',meaning:'吃了（禮貌）'},{form:'行きました',read:'いきました',meaning:'去了（禮貌）'}],warn:'⚠️ 整個「ました」是一個過去式禮貌尾巴'},
-'ません':{name:'ません (禮貌否定)',mean:'不做 + 禮貌',explain:'禮貌地表示「不做」',examples:[{form:'食べません',read:'たべません',meaning:'不吃（禮貌）'},{form:'行きません',read:'いきません',meaning:'不去（禮貌）'}],warn:'⚠️ 「ません」是一整組否定禮貌尾巴'},
-'ない':{name:'ない (否定)',mean:'不...',explain:'動詞變這樣表示「不...」（非禮貌）',examples:[{form:'食べない',read:'たべない',meaning:'不吃'},{form:'行かない',read:'いかない',meaning:'不去'},{form:'来ない',read:'こない',meaning:'不來'}],warn:'⚠️ 「ない」是否定尾巴'},
-'なかった':{name:'なかった (否定過去)',mean:'(過去)沒...',explain:'過去式 + 否定',examples:[{form:'食べなかった',read:'たべなかった',meaning:'沒吃'},{form:'来なかった',read:'こなかった',meaning:'沒來'}],warn:'⚠️ 「なかった」是一整組否定過去尾巴'},
-'た':{name:'た (過去形)',mean:'已經做了',explain:'動詞的過去式（非禮貌）',examples:[{form:'食べた',read:'たべた',meaning:'吃了'},{form:'買った',read:'かった',meaning:'買了'},{form:'見た',read:'みた',meaning:'看了'}],warn:'⚠️ 「た / だ / った / いた」都是過去式尾巴變形'},
-'て':{name:'て (連接形)',mean:'然後 / 並且',explain:'用來連接兩個動作，或請求別人做事',examples:[{form:'食べて',read:'たべて',meaning:'吃了然後...'},{form:'見て',read:'みて',meaning:'看了然後...'}],warn:'⚠️ 「て / で / って / いて」都是連接形尾巴'},
-'ている':{name:'ている (進行/狀態)',mean:'正在... / ...著',explain:'1️⃣ 正在做某動作 2️⃣ 處於某狀態',examples:[{form:'食べている',read:'たべている',meaning:'正在吃'},{form:'結婚している',read:'けっこんしている',meaning:'結婚著(已婚)'}],warn:'⚠️ 「ている」是進行式/狀態尾巴，不是 て+いる 兩個東西'},
-'ていた':{name:'ていた (過去進行)',mean:'(過去)正在做',explain:'過去某段時間正在做某事',examples:[{form:'食べていた',read:'たべていた',meaning:'(那時)正在吃'}],warn:'⚠️ 「ていた」是過去進行尾巴'},
-'たい':{name:'たい (願望)',mean:'想要做',explain:'表達「想做某事」的願望',examples:[{form:'食べたい',read:'たべたい',meaning:'想吃'},{form:'行きたい',read:'いきたい',meaning:'想去'}],warn:'⚠️ 「たい」是願望尾巴'},
-'たかった':{name:'たかった (過去願望)',mean:'(過去)曾經想做',explain:'',examples:[{form:'食べたかった',read:'たべたかった',meaning:'(那時)想吃'}],warn:''},
-'ましょう':{name:'ましょう (邀請/意向)',mean:'我們一起...吧',explain:'邀請對方一起做某事',examples:[{form:'食べましょう',read:'たべましょう',meaning:'一起吃吧'},{form:'行きましょう',read:'いきましょう',meaning:'一起去吧'}],warn:'⚠️ 「ましょう」是邀請尾巴'},
-'れる':{name:'れる (被動/可能)',mean:'被... / 能...',explain:'第一類動詞的被動形或可能形',examples:[{form:'読まれる',read:'よまれる',meaning:'被讀'},{form:'行ける',read:'いける',meaning:'能去'}],warn:'⚠️ 「れる」是被動或可能形尾巴'},
-'られる':{name:'られる (被動/可能/尊敬)',mean:'被... / 能... / (尊敬)',explain:'第二類動詞的被動形、可能形或尊敬語',examples:[{form:'食べられる',read:'たべられる',meaning:'被吃 / 能吃'},{form:'見られる',read:'みられる',meaning:'被看 / 能看'}],warn:'⚠️ 「られる」是一整組尾巴'},
-'させる':{name:'させる (使役)',mean:'讓...做',explain:'讓別人做某事',examples:[{form:'食べさせる',read:'たべさせる',meaning:'讓...吃'},{form:'行かせる',read:'いかせる',meaning:'讓...去'}],warn:'⚠️ 「させる」是使役尾巴'},
-'させられる':{name:'させられる (使役被動)',mean:'被迫做',explain:'被迫做某事（負面語氣）',examples:[{form:'食べさせられる',read:'たべさせられる',meaning:'被迫吃'}],warn:'⚠️ 「させられる」是「被+迫做」的長尾巴'},
-'てください':{name:'てください (請求)',mean:'請...',explain:'禮貌地請求別人做某事',examples:[{form:'食べてください',read:'たべてください',meaning:'請吃'},{form:'見てください',read:'みてください',meaning:'請看'}],warn:'⚠️ 「てください」是請求尾巴'},
-'ないで':{name:'ないで (否定請求)',mean:'請別... / 不...就',explain:'',examples:[{form:'食べないで',read:'たべないで',meaning:'別吃'}],warn:''}};
+'る':{name:'る (辭書形 / 普通講話)',scene:'😊 跟朋友、家人、自己心裡想事情',inner:'最基本的「做某事」',effect:'語氣輕鬆，**沒有時間感**（可能正要做、可能習慣做）',examples:[{form:'食べる',read:'たべる',meaning:'吃'},{form:'見る',read:'みる',meaning:'看'},{form:'寝る',read:'ねる',meaning:'睡覺'}],warn:'⚠️ 對長輩用會失禮，要改成「ます」'},
+'える':{name:'える (動詞語幹尾巴)',scene:'💡 不是場合，是「動詞單字的一部分」',inner:'這個「える」不是助詞，是動詞自己的尾巴',effect:'像中文「思考」不能拆字一樣，「考える」整個是一個動詞單字',examples:[{form:'考える',read:'かんがえる',meaning:'思考'},{form:'教える',read:'おしえる',meaning:'教導'},{form:'食べる',read:'たべる',meaning:'吃'}],warn:'⚠️ 不要把「考える」拆成「考」+「える」當助詞，整個是一個單字！'},
+'ます':{name:'ます (禮貌形 / 正式講話)',scene:'🎓 對老師、客戶、長輩、店員',inner:'同樣的動作，但用禮貌語氣',effect:'**馬上把氣氛變正式**、有禮貌、有距離感',examples:[{form:'食べます',read:'たべます',meaning:'吃（禮貌）'},{form:'行きます',read:'いきます',meaning:'去（禮貌）'},{form:'します',read:'します',meaning:'做（禮貌）'}],warn:'⚠️ 跟好朋友用太禮貌會顯得冷淡'},
+'ました':{name:'ました (禮貌過去式)',scene:'🎓 對長輩說「昨天做過了」「剛剛已經做完」',inner:'「做了 + 禮貌」',effect:'**禮貌地報告**已經完成的事',examples:[{form:'食べました',read:'たべました',meaning:'吃了（禮貌）'},{form:'行きました',read:'いきました',meaning:'去了（禮貌）'},{form:'勉強しました',read:'べんきょうしました',meaning:'念書了（禮貌）'}],warn:'⚠️ 跟朋友用 → 改成「食べた」就好'},
+'ません':{name:'ません (禮貌否定)',scene:'🎓 禮貌地拒絕、說不',inner:'「不做 + 禮貌」',effect:'**柔和地拒絕**對方，比「ない」客氣很多',examples:[{form:'食べません',read:'たべません',meaning:'不吃（禮貌）'},{form:'行きません',read:'いきません',meaning:'不去（禮貌）'},{form:'わかりません',read:'わかりません',meaning:'不懂（禮貌）'}],warn:'⚠️ 服務生問你要不要時，回「いりません」比「いらない」更禮貌'},
+'ない':{name:'ない (否定 / 朋友間)',scene:'😊 對朋友、家人說「不...」',inner:'最基本的「不做」',effect:'直接、輕鬆，**沒有禮貌感**',examples:[{form:'食べない',read:'たべない',meaning:'不吃'},{form:'行かない',read:'いかない',meaning:'不去'},{form:'来ない',read:'こない',meaning:'不來'}],warn:'⚠️ 對長輩說會顯得太隨便，要改用「ません」'},
+'なかった':{name:'なかった (過去沒做 / 朋友間)',scene:'😊 對朋友說「昨天沒做」「以前沒做」',inner:'「沒做 + 過去」',effect:'回想以前**沒做**的事情',examples:[{form:'食べなかった',read:'たべなかった',meaning:'沒吃'},{form:'来なかった',read:'こなかった',meaning:'沒來'},{form:'行かなかった',read:'いかなかった',meaning:'沒去'}],warn:'⚠️ 對長輩 → 改用「食べませんでした」'},
+'た':{name:'た (過去 / 朋友間)',scene:'😊 對朋友說「做過了」「已經做了」',inner:'最基本的「做了」',effect:'**確認已經完成**、自然的講話',examples:[{form:'食べた',read:'たべた',meaning:'吃了'},{form:'買った',read:'かった',meaning:'買了'},{form:'見た',read:'みた',meaning:'看了'}],warn:'⚠️ 對長輩 → 改用「食べました」'},
+'て':{name:'て (連接 / 順序動作)',scene:'🔗 一句話裡有「先做A 然後B」、或請求對方',inner:'動作的連接器',effect:'**把兩個動作串起來**，例：「起床、洗臉、吃飯」',examples:[{form:'食べて',read:'たべて',meaning:'吃了然後...'},{form:'起きて',read:'おきて',meaning:'起床然後...'},{form:'見て',read:'みて',meaning:'看一下！'}],warn:'⚠️ 「て」結尾單獨用 = 輕鬆地請求「幫我看一下」'},
+'ている':{name:'ている / ています (正在做 / 持續狀態)',scene:'⏱️ 兩種場合：① 此刻正在做 ② 已經完成且持續中',inner:'「動作正在進行」或「狀態還持續著」',effect:'① 正在吃／②已經結婚（狀態持續）<br>**ている = 朋友間、ています = 禮貌**',examples:[{form:'食べている',read:'たべている',meaning:'正在吃（普通）'},{form:'食べています',read:'たべています',meaning:'正在吃（禮貌）'},{form:'結婚しています',read:'けっこんしています',meaning:'結婚著（已婚的狀態）'},{form:'知っています',read:'しっています',meaning:'知道（這狀態還持續）'}],warn:'⚠️ 「結婚しています」不是「正在結婚」是「已婚」！這是「狀態」用法'},
+'ていた':{name:'ていた / ていました (那時候正在做)',scene:'⏪ 回憶過去某時間點「那時候在做」',inner:'過去某瞬間的進行狀態',effect:'**畫面停在過去某個正在做的瞬間**',examples:[{form:'食べていた',read:'たべていた',meaning:'(那時)正在吃（普通）'},{form:'食べていました',read:'たべていました',meaning:'(那時)正在吃（禮貌）'},{form:'雨が降っていました',read:'あめがふっていました',meaning:'(那時)正在下雨'}],warn:'⚠️ 「食べた」=已經吃完了；「食べていた」=那當下正在吃'},
+'たい':{name:'たい (我想做)',scene:'💭 表達「自己的願望」',inner:'「想要做...」',effect:'**只能用於自己**（不能用 たい 描述別人想做什麼）',examples:[{form:'食べたい',read:'たべたい',meaning:'我想吃'},{form:'行きたい',read:'いきたい',meaning:'我想去'},{form:'寝たい',read:'ねたい',meaning:'我想睡'}],warn:'⚠️ 描述別人想做 → 用「行きたがる」'},
+'たかった':{name:'たかった (那時想做)',scene:'💭 回想以前「曾經很想做」',inner:'「想做 + 過去」= 那時想做',effect:'**通常帶有遺憾**（沒做成、現在想想覺得當時想做）',examples:[{form:'食べたかった',read:'たべたかった',meaning:'(那時)想吃'},{form:'行きたかった',read:'いきたかった',meaning:'(那時)想去'}],warn:'⚠️ 常見搭配「行きたかったけど、…」=當時想去但...'},
+'ましょう':{name:'ましょう (一起做吧！)',scene:'👥 邀請對方「我們一起做某事」',inner:'「禮貌的邀請」',effect:'**主動發起共同行動**、語氣積極又有禮貌',examples:[{form:'食べましょう',read:'たべましょう',meaning:'一起吃吧'},{form:'行きましょう',read:'いきましょう',meaning:'一起去吧'},{form:'始めましょう',read:'はじめましょう',meaning:'我們開始吧'}],warn:'⚠️ 比「食べよう」更禮貌、適合對不熟的人說'},
+'れる':{name:'れる (被…/能…)',scene:'🎬 兩種：① 「被別人做」 ② 「能夠做」',inner:'被動或可能',effect:'① 被罵了→怒られる ② 會說中文→話せる<br>**第一類動詞用這個**',examples:[{form:'読まれる',read:'よまれる',meaning:'被讀'},{form:'怒られる',read:'おこられる',meaning:'被罵'},{form:'行ける',read:'いける',meaning:'能去'},{form:'話せる',read:'はなせる',meaning:'能說'}],warn:'⚠️ 「被」常常是不爽的事；「能」則是好事。看上下文判斷'},
+'られる':{name:'られる (被…/能…/(尊敬))',scene:'🎬 三種：① 被…  ② 能… ③ 尊敬語',inner:'被動 / 可能 / 尊敬',effect:'① 被吃 ② 能吃 ③ 對方「吃」的尊敬版<br>**第二類動詞用這個**',examples:[{form:'食べられる',read:'たべられる',meaning:'被吃 / 能吃'},{form:'見られる',read:'みられる',meaning:'被看 / 能看'},{form:'来られる',read:'こられる',meaning:'能來 / (尊敬)來'}],warn:'⚠️ 一個字三種意思，要看上下文判斷'},
+'させる':{name:'させる (讓別人做)',scene:'👨‍🏫 強迫或允許別人做某事',inner:'「使役」= 我讓他做',effect:'**主導者是我，動作是別人做**<br>例：老師讓學生背書、媽媽讓小孩吃菜',examples:[{form:'食べさせる',read:'たべさせる',meaning:'讓...吃'},{form:'行かせる',read:'いかせる',meaning:'讓...去'},{form:'勉強させる',read:'べんきょうさせる',meaning:'讓...念書'}],warn:'⚠️ 上對下使用，例：父母→小孩、老闆→員工'},
+'させられる':{name:'させられる (被迫做)',scene:'😩 被別人強迫做不想做的事',inner:'「使役 + 被動」= 被迫做',effect:'**強烈的負面情緒**、抱怨語氣<br>例：被媽媽逼著吃青菜',examples:[{form:'食べさせられる',read:'たべさせられる',meaning:'被迫吃'},{form:'勉強させられる',read:'べんきょうさせられる',meaning:'被迫念書'}],warn:'⚠️ 這是日文中表達「不爽被迫做」的標準說法'},
+'てください':{name:'てください (請…)',scene:'🙏 禮貌地請別人做某事',inner:'「請求 + 禮貌」',effect:'**對方比較容易答應**、不會覺得被命令',examples:[{form:'食べてください',read:'たべてください',meaning:'請吃'},{form:'見てください',read:'みてください',meaning:'請看'},{form:'待ってください',read:'まってください',meaning:'請等等'}],warn:'⚠️ 朋友間 → 用「食べて」就好（去掉ください）'},
+'ないで':{name:'ないで (請別…)',scene:'🚫 禮貌地請對方「不要做」',inner:'「請求別做 + 柔和」',effect:'**柔和地阻止**對方，比直接命令好聽很多',examples:[{form:'食べないで',read:'たべないで',meaning:'別吃'},{form:'来ないで',read:'こないで',meaning:'別來'},{form:'泣かないで',read:'なかないで',meaning:'別哭'}],warn:'⚠️ 加 ください 更禮貌：「食べないでください」'}};
 function showVerbEndingPopup(endingKey,sourceText){
 const v=VERB_ENDINGS[endingKey];if(!v)return;
 let html='<div class="irr-pop"><button class="irr-close" onclick="closeIrregularPopup()">×</button>';
 html+='<div class="irr-title">🦊 Iggy 的動詞尾巴透視鏡</div>';
 html+='<div class="irr-name">🔍 '+v.name+'</div>';
-html+='<div class="irr-hint">'+v.mean+'</div>';
-if(v.explain)html+='<div style="font-size:.78rem;color:#e0d4ff;margin:10px 0;padding:8px 12px;background:rgba(196,181,253,.1);border-radius:8px;line-height:1.6">'+v.explain+'</div>';
+if(v.scene)html+='<div class="ve-scene"><div class="ve-h">什麼時候用</div>'+v.scene+'</div>';
+if(v.inner)html+='<div class="ve-inner"><div class="ve-h">代表的意思</div>'+v.inner+'</div>';
+if(v.effect)html+='<div class="ve-effect"><div class="ve-h">用了會怎樣</div>'+v.effect+'</div>';
 if(v.warn)html+='<div class="irr-warn">'+v.warn+'</div>';
 html+='<div class="irr-forms">';
 for(const f of v.examples){
@@ -919,7 +925,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=29').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=31').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
