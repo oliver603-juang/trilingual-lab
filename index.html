@@ -236,7 +236,7 @@ const TAG_INFO={
 '往':{jp:'へ (e)',mean:'往哪個方向',ex:'東京へ行く→「往東京（去）」',hint:'➡️ 方向（比 に 更廣）',color:'#7eeae0'},
 '的':{jp:'の (no)',mean:'誰的 / 連接',ex:'私の本→「我的書」',hint:'🔗 連接所有格',color:'#94a3b8'},
 '或':{jp:'や (ya)',mean:'或之類（列舉不完）',ex:'本やペン→「書啦筆啦…」',hint:'📚 列舉一部份',color:'#94a3b8'},
-'引':{jp:'と (to)',mean:'引用（說…）',ex:'「来る」と言った→「說『會來』」',hint:'💬 引號的箭頭',color:'#fbbf24'},
+'引':{jp:'と (to) / って (tte)',mean:'引用別人說的話',ex:'「来る」と言った→「說『會來』」<br>会議だって→「（聽說）要開會」',hint:'💬 把別人的話夾在引號裡',color:'#fbbf24'},
 '感':{jp:'ね (ne)',mean:'尋求認同',ex:'いいですね→「不錯吧～」',hint:'😊 期待對方點頭',color:'#f0abfc'},
 '告':{jp:'よ (yo)',mean:'告訴你哦',ex:'危ないよ→「危險哦！」',hint:'📢 告知對方',color:'#f0abfc'},
 '女':{jp:'わ (wa)',mean:'女性語氣',ex:'素敵だわ→「真棒呀」',hint:'👩 女性說話',color:'#f0abfc'},
@@ -306,7 +306,18 @@ const TAG_INFO={
 '也':{jp:'も',mean:'也',ex:'',hint:'➕',color:'#94a3b8'},
 '樣':{jp:'よう / ように',mean:'樣子 / 為了',ex:'',hint:'🎭',color:'#86efac'},
 '期間':{jp:'',mean:'期間',ex:'',hint:'⏱️',color:'#94a3b8'},
-'反問':{jp:'',mean:'反問語氣',ex:'',hint:'❓',color:'#f0abfc'}};
+'反問':{jp:'',mean:'反問語氣',ex:'',hint:'❓',color:'#f0abfc'},
+/* === 英文冠詞細分變體 === */
+'一個':{jp:'a / an',mean:'一個（不特定）',ex:'a teacher→[一個]老師',hint:'🎲 隨便一個',color:'#94a3b8'},
+'一位':{jp:'a / an',mean:'一位（人物用）',ex:'a teacher→[一位]老師',hint:'🎲 客氣的「一個人」',color:'#94a3b8'},
+'一部':{jp:'a / an',mean:'一部（電影/車）',ex:'a movie→[一部]電影',hint:'🎲',color:'#94a3b8'},
+/* === 日文「で」的細分 === */
+'在':{jp:'で (de)',mean:'動作發生的場所',ex:'公園で遊ぶ→「[在]公園玩」',hint:'🏠 在哪裡做',color:'#a78bfa'},
+'用':{jp:'で (de)',mean:'用的工具/手段',ex:'箸で食べる→「[用]筷子吃」',hint:'🔧 用什麼做',color:'#a78bfa'},
+/* === 其他輔助標籤 === */
+'是':{jp:'',mean:'肯定語氣補強',ex:'',hint:'✅',color:'#94a3b8'},
+'了':{jp:'',mean:'完成/已發生',ex:'',hint:'⏪',color:'#86efac'},
+'他':{jp:'',mean:'代詞還原（直譯時補上的主詞）',ex:'',hint:'👤',color:'#94a3b8'}};
 function showTagPopup(tag,evt){
 if(evt){evt.stopPropagation();}
 const info=TAG_INFO[tag];
