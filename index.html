@@ -60,6 +60,8 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .tag-pop-hint{font-size:.85rem;color:#94a3b8;text-align:center;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(196,181,253,.2)}
 /* 不規則動詞透視鏡 popup */
 .bk-irr{position:absolute;top:-6px;right:-6px;background:#ff6b6b;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:.6rem;cursor:pointer;z-index:5;border:2px solid var(--bg);box-shadow:0 0 0 1px #ff6b6b}
+.bk-end{position:absolute;top:-6px;left:-6px;background:#60a5fa;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:.55rem;cursor:pointer;z-index:5;border:2px solid var(--bg);box-shadow:0 0 0 1px #60a5fa}
+.bk-end:hover{transform:scale(1.15)}
 .bk-irr:hover{transform:scale(1.15)}
 .bk{position:relative}
 #irr-mask{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:99999;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
@@ -542,6 +544,73 @@ if(/行(く|きま|かな|った|って|こう|ける|かれ|かせ)/.test(text)
 if(/^(する|します|しません|しました|しない|した|して|しよう|される|させる|できる|できます)/.test(text))return 'する';
 if(/[\u4e00-\u9fff](する|します|しません|しました)/.test(text))return 'する';
 return null;}
+/* === 規則動詞尾巴偵測 === */
+function detectVerbEnding(text){
+/* 偵測順序：長尾巴優先 (させられる > られる > れる > せる) */
+if(/[ぁ-んァ-ヴ\u4e00-\u9fff]させられる/.test(text))return 'させられる';
+if(/[ぁ-んァ-ヴ\u4e00-\u9fff]させる/.test(text))return 'させる';
+if(/[ぁ-んァ-ヴ\u4e00-\u9fff]られる/.test(text))return 'られる';
+if(/[ぁ-んァ-ヴ\u4e00-\u9fff]れる/.test(text))return 'れる';
+if(/てください$/.test(text))return 'てください';
+if(/ています$|ている$/.test(text))return 'ている';
+if(/ていました$|ていた$/.test(text))return 'ていた';
+if(/ましょう$/.test(text))return 'ましょう';
+if(/ません$|ませんでした$/.test(text))return 'ません';
+if(/ました$/.test(text))return 'ました';
+if(/たい$|たいです$/.test(text))return 'たい';
+if(/たかった$/.test(text))return 'たかった';
+if(/なかった$/.test(text))return 'なかった';
+if(/ないで$/.test(text))return 'ないで';
+if(/ない$/.test(text))return 'ない';
+if(/ます$/.test(text))return 'ます';
+if(/って$|いて$|んで$|して$|きて$/.test(text)&&!/[来行]/.test(text))return 'て';
+if(/った$|いた$|んだ$|した$|きた$/.test(text)&&!/[来行]/.test(text))return 'た';
+if(/える$|ける$|げる$|せる$|てる$|でる$|ねる$|べる$|める$|れる$/.test(text))return 'える';
+if(/[ぁ-ん]る$/.test(text))return 'る';
+return null;}
+/* === 動詞尾巴解釋資料庫 === */
+const VERB_ENDINGS={
+'る':{name:'る (辭書形)',mean:'動詞的「原形 / 字典形」',explain:'動詞最基本的樣子，字典裡查得到的形式。',examples:[{form:'食べる',read:'たべる',meaning:'吃（原形）'},{form:'見る',read:'みる',meaning:'看（原形）'},{form:'考える',read:'かんがえる',meaning:'思考（原形）'}],warn:'⚠️ 這個「る」是動詞的尾巴，不是助詞！不能單獨拿掉。'},
+'える':{name:'える (動詞尾巴)',mean:'第二類動詞（一段動詞）的尾巴',explain:'「考える」「教える」「食べる」這類動詞，整體都是一個單字。「える」不是助詞，是動詞自己的尾巴！',examples:[{form:'考える',read:'かんがえる',meaning:'思考'},{form:'教える',read:'おしえる',meaning:'教導'},{form:'食べる',read:'たべる',meaning:'吃'}],warn:'⚠️ 「える」沒辦法拆開，不是助詞！整個「考える」是一個動詞單字。'},
+'ます':{name:'ます (禮貌語尾)',mean:'動詞的「禮貌形」',explain:'要對長輩、不熟的人、客戶說話時，動詞要變成這個禮貌形。日常和朋友說話可以不用。',examples:[{form:'食べます',read:'たべます',meaning:'吃（禮貌）'},{form:'行きます',read:'いきます',meaning:'去（禮貌）'},{form:'します',read:'します',meaning:'做（禮貌）'}],warn:'⚠️ 「ます」是動詞變形的尾巴，不是助詞！'},
+'ました':{name:'ました (禮貌過去式)',mean:'已經做了 + 禮貌',explain:'已經做完的事，加上禮貌語氣',examples:[{form:'食べました',read:'たべました',meaning:'吃了（禮貌）'},{form:'行きました',read:'いきました',meaning:'去了（禮貌）'}],warn:'⚠️ 整個「ました」是一個過去式禮貌尾巴'},
+'ません':{name:'ません (禮貌否定)',mean:'不做 + 禮貌',explain:'禮貌地表示「不做」',examples:[{form:'食べません',read:'たべません',meaning:'不吃（禮貌）'},{form:'行きません',read:'いきません',meaning:'不去（禮貌）'}],warn:'⚠️ 「ません」是一整組否定禮貌尾巴'},
+'ない':{name:'ない (否定)',mean:'不...',explain:'動詞變這樣表示「不...」（非禮貌）',examples:[{form:'食べない',read:'たべない',meaning:'不吃'},{form:'行かない',read:'いかない',meaning:'不去'},{form:'来ない',read:'こない',meaning:'不來'}],warn:'⚠️ 「ない」是否定尾巴'},
+'なかった':{name:'なかった (否定過去)',mean:'(過去)沒...',explain:'過去式 + 否定',examples:[{form:'食べなかった',read:'たべなかった',meaning:'沒吃'},{form:'来なかった',read:'こなかった',meaning:'沒來'}],warn:'⚠️ 「なかった」是一整組否定過去尾巴'},
+'た':{name:'た (過去形)',mean:'已經做了',explain:'動詞的過去式（非禮貌）',examples:[{form:'食べた',read:'たべた',meaning:'吃了'},{form:'買った',read:'かった',meaning:'買了'},{form:'見た',read:'みた',meaning:'看了'}],warn:'⚠️ 「た / だ / った / いた」都是過去式尾巴變形'},
+'て':{name:'て (連接形)',mean:'然後 / 並且',explain:'用來連接兩個動作，或請求別人做事',examples:[{form:'食べて',read:'たべて',meaning:'吃了然後...'},{form:'見て',read:'みて',meaning:'看了然後...'}],warn:'⚠️ 「て / で / って / いて」都是連接形尾巴'},
+'ている':{name:'ている (進行/狀態)',mean:'正在... / ...著',explain:'1️⃣ 正在做某動作 2️⃣ 處於某狀態',examples:[{form:'食べている',read:'たべている',meaning:'正在吃'},{form:'結婚している',read:'けっこんしている',meaning:'結婚著(已婚)'}],warn:'⚠️ 「ている」是進行式/狀態尾巴，不是 て+いる 兩個東西'},
+'ていた':{name:'ていた (過去進行)',mean:'(過去)正在做',explain:'過去某段時間正在做某事',examples:[{form:'食べていた',read:'たべていた',meaning:'(那時)正在吃'}],warn:'⚠️ 「ていた」是過去進行尾巴'},
+'たい':{name:'たい (願望)',mean:'想要做',explain:'表達「想做某事」的願望',examples:[{form:'食べたい',read:'たべたい',meaning:'想吃'},{form:'行きたい',read:'いきたい',meaning:'想去'}],warn:'⚠️ 「たい」是願望尾巴'},
+'たかった':{name:'たかった (過去願望)',mean:'(過去)曾經想做',explain:'',examples:[{form:'食べたかった',read:'たべたかった',meaning:'(那時)想吃'}],warn:''},
+'ましょう':{name:'ましょう (邀請/意向)',mean:'我們一起...吧',explain:'邀請對方一起做某事',examples:[{form:'食べましょう',read:'たべましょう',meaning:'一起吃吧'},{form:'行きましょう',read:'いきましょう',meaning:'一起去吧'}],warn:'⚠️ 「ましょう」是邀請尾巴'},
+'れる':{name:'れる (被動/可能)',mean:'被... / 能...',explain:'第一類動詞的被動形或可能形',examples:[{form:'読まれる',read:'よまれる',meaning:'被讀'},{form:'行ける',read:'いける',meaning:'能去'}],warn:'⚠️ 「れる」是被動或可能形尾巴'},
+'られる':{name:'られる (被動/可能/尊敬)',mean:'被... / 能... / (尊敬)',explain:'第二類動詞的被動形、可能形或尊敬語',examples:[{form:'食べられる',read:'たべられる',meaning:'被吃 / 能吃'},{form:'見られる',read:'みられる',meaning:'被看 / 能看'}],warn:'⚠️ 「られる」是一整組尾巴'},
+'させる':{name:'させる (使役)',mean:'讓...做',explain:'讓別人做某事',examples:[{form:'食べさせる',read:'たべさせる',meaning:'讓...吃'},{form:'行かせる',read:'いかせる',meaning:'讓...去'}],warn:'⚠️ 「させる」是使役尾巴'},
+'させられる':{name:'させられる (使役被動)',mean:'被迫做',explain:'被迫做某事（負面語氣）',examples:[{form:'食べさせられる',read:'たべさせられる',meaning:'被迫吃'}],warn:'⚠️ 「させられる」是「被+迫做」的長尾巴'},
+'てください':{name:'てください (請求)',mean:'請...',explain:'禮貌地請求別人做某事',examples:[{form:'食べてください',read:'たべてください',meaning:'請吃'},{form:'見てください',read:'みてください',meaning:'請看'}],warn:'⚠️ 「てください」是請求尾巴'},
+'ないで':{name:'ないで (否定請求)',mean:'請別... / 不...就',explain:'',examples:[{form:'食べないで',read:'たべないで',meaning:'別吃'}],warn:''}};
+function showVerbEndingPopup(endingKey,sourceText){
+const v=VERB_ENDINGS[endingKey];if(!v)return;
+let html='<div class="irr-pop"><button class="irr-close" onclick="closeIrregularPopup()">×</button>';
+html+='<div class="irr-title">🦊 Iggy 的動詞尾巴透視鏡</div>';
+html+='<div class="irr-name">🔍 '+v.name+'</div>';
+html+='<div class="irr-hint">'+v.mean+'</div>';
+if(v.explain)html+='<div style="font-size:.78rem;color:#e0d4ff;margin:10px 0;padding:8px 12px;background:rgba(196,181,253,.1);border-radius:8px;line-height:1.6">'+v.explain+'</div>';
+if(v.warn)html+='<div class="irr-warn">'+v.warn+'</div>';
+html+='<div class="irr-forms">';
+for(const f of v.examples){
+const isCurrent=sourceText&&sourceText.includes(f.form);
+html+='<div class="irr-row'+(isCurrent?' irr-current':'')+'">';
+html+='<span class="irr-form" onclick="sp(\''+f.form+'\',\'jp\')">'+f.form+' 🔊</span>';
+html+='<span class="irr-read">('+f.read+')</span>';
+html+='<span class="irr-label" style="margin-left:auto;color:#94a3b8">'+f.meaning+'</span>';
+if(isCurrent)html+='<span class="irr-here">👈</span>';
+html+='</div>';}
+html+='</div></div>';
+let mask=document.getElementById('irr-mask');
+if(!mask){mask=document.createElement('div');mask.id='irr-mask';mask.onclick=function(e){if(e.target===mask)closeIrregularPopup();};document.body.appendChild(mask);}
+mask.innerHTML=html;mask.style.display='flex';}
 function showIrregularPopup(verbKey,sourceText){
 const v=IRREGULAR_VERBS[verbKey];if(!v)return;
 let html='<div class="irr-pop"><button class="irr-close" onclick="closeIrregularPopup()">×</button>';
@@ -815,7 +884,9 @@ if(md==='vs'){bh=rVS(r);}else{const d=r[md];if(!d){bh='<div style="text-align:ce
 else{bh='<div class="br">';d.b.forEach(([t,rl])=>{
 const irrKey=md==='jp'?detectIrregular(t):null;
 const irrBtn=irrKey?'<span class="bk-irr" onclick="event.stopPropagation();showIrregularPopup(\''+irrKey+'\',\''+t.replace(/'/g,"\\'")+'\')" title="不規則動詞變形提示">⚡</span>':'';
-bh+='<div class="bk bk-'+md+' r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\',\''+md+'\')">'+irrBtn+(md==='jp'?furi(t):t)+'<span class="bk-r">'+rl+'</span></div>';});
+const endKey=md==='jp'&&!irrKey?detectVerbEnding(t):null;
+const endBtn=endKey?'<span class="bk-end" onclick="event.stopPropagation();showVerbEndingPopup(\''+endKey+'\',\''+t.replace(/'/g,"\\'")+'\')" title="動詞尾巴解釋">🔍</span>':'';
+bh+='<div class="bk bk-'+md+' r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\',\''+md+'\')">'+irrBtn+endBtn+(md==='jp'?furi(t):t)+'<span class="bk-r">'+rl+'</span></div>';});
 bh+='</div><div style="text-align:center;padding:4px 0 2px"><button class="sf" onclick="sp(\''+d.s.replace(/'/g,"\\'")+'\',\''+md+'\')">🔊 '+(md==='jp'?furi(eH(d.s)):eH(d.s))+'</button></div>';
 const litField=md==='jp'?'lit_jp':'lit_en';const litText=r[litField]||'';
 if(litText.trim()){const flag=md==='jp'?'🇯🇵':'🇺🇸';const lbl=md==='jp'?'日文大腦直譯（語序：主→受→動）':'英文大腦直譯（語序：主→動→受）';
@@ -848,7 +919,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=28').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=29').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
