@@ -237,6 +237,7 @@ const TAG_INFO={
 '往':{jp:'へ (e)',mean:'往哪個方向',ex:'東京へ行く→「往東京（去）」',hint:'➡️ 方向（比 に 更廣）',color:'#7eeae0'},
 '的':{jp:'の (no)',mean:'誰的 / 連接',ex:'私の本→「我的書」',hint:'🔗 連接所有格',color:'#94a3b8'},
 '飾':{jp:'(無對應助詞)',mean:'動詞/形容詞 直接修飾名詞（連體形）',ex:'買った本→「買的書」（日文沒有「の」，直接用動詞過去式接名詞）<br>走る人→「跑的人」',hint:'✨ 中文要加「的」，但日文不用',color:'#fbbf24'},
+'修':{jp:'(日文獨有，無助詞)',mean:'⭐ 重要！日文獨有觀念：「連體形修飾」',ex:'<b>觀念：動詞或形容詞，可以直接放在名詞前面，當「形容詞」用！</b><br><br>🇯🇵 考える + きらい = 考える <b>きらい</b><br>　　（思考的 + 傾向 = 思考的傾向）<br><br>🇯🇵 買った + 本 = 買った <b>本</b><br>　　（買的 + 書 = 買的書）<br><br>🇯🇵 走る + 人 = 走る <b>人</b><br>　　（跑的 + 人 = 跑的人）',hint:'🇹🇼 中文要加「的」字才通順<br>🇯🇵 日文什麼都不用加，直接擺在一起就好！<br>這是日文最厲害的招：動詞當形容詞用',color:'#fbbf24'},
 '或':{jp:'や (ya)',mean:'或之類（列舉不完）',ex:'本やペン→「書啦筆啦…」',hint:'📚 列舉一部份',color:'#94a3b8'},
 '引':{jp:'と (to) / って (tte)',mean:'引用別人說的話',ex:'「来る」と言った→「說『會來』」<br>会議だって→「（聽說）要開會」',hint:'💬 把別人的話夾在引號裡',color:'#fbbf24'},
 '感':{jp:'ね (ne)',mean:'尋求認同',ex:'いいですね→「不錯吧～」',hint:'😊 期待對方點頭',color:'#f0abfc'},
@@ -341,7 +342,7 @@ const TAG_TO_JP_EMOJI={
 '題':'は🎤','主':'が👈','受':'を🎯','向':'に➡️',
 '在/用':'で🏠','在':'で🏠','用':'で🔧','變':'に🔄',
 '和':'と👥','從':'から🚀','到':'まで🏁','往':'へ➡️',
-'的':'の🔗','飾':'✨修飾','或':'や📚','引':'と💬','由':'に🎬',
+'的':'の🔗','修':'✨修飾','或':'や📚','引':'と💬','由':'に🎬',
 '感':'ね😊','告':'よ📢','女':'わ👩','男':'ぞ👨','問':'か❓',
 '女感':'わ👩','男感':'ぞ👨','女問':'の👩❓','男問':'の👨❓',
 '一':'a🎲','一個':'a🎲','一位':'a🎲','一部':'a🎲','那':'the👆',
@@ -847,7 +848,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=27').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=28').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
