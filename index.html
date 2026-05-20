@@ -228,7 +228,8 @@ const TAG_INFO={
 '題':{jp:'は (wa)',mean:'說到○○嘛…',ex:'私は…→「說到我啊…」',hint:'🎤 拿麥克風的人（要講的話題）',color:'#ff9bd0'},
 '主':{jp:'が (ga)',mean:'就是這個！',ex:'雨が降る→「就是雨在下」',hint:'👈 用手指出來的（強調是誰）',color:'#ffd700'},
 '受':{jp:'を (o)',mean:'被處理的東西',ex:'本を読む→「處理書（讀）」',hint:'🎯 動作的目標物',color:'#ffd93d'},
-'向':{jp:'に (ni)',mean:'朝向／在某時／給某人',ex:'学校に行く→「往學校（去）」',hint:'➡️ 箭頭指的方向',color:'#7eeae0'},
+'向':{jp:'に (ni)',mean:'多功能助詞（5 種主要用法）',ex:'1️⃣ 方向：学校に行く → 往學校<br>2️⃣ 時間：7時に起きる → 在7點<br>3️⃣ 對象：友達にあげる → 給朋友<br>4️⃣ 變成：静かにする → 弄成安靜<br>5️⃣ 被動：母に読まれた → 被媽媽',hint:'➡️ に 是日文最忙的助詞，看上下文判斷',color:'#7eeae0'},
+'變':{jp:'に (ni)',mean:'「變成 / 弄成」（に + する／なる）',ex:'静かにする → 弄成安靜<br>先延ばしにする → 弄成拖延（拖延）<br>裁判になった → 變成訴訟',hint:'🔄 名詞 に + する=主動弄成，になる=自然變成',color:'#7eeae0'},
 '在/用':{jp:'で (de)',mean:'在這裡做 / 用這個',ex:'公園で遊ぶ→「在公園（玩）」',hint:'🏠 動作發生的場所/工具',color:'#a78bfa'},
 '和':{jp:'と (to)',mean:'和...一起 / 引用',ex:'友達と話す→「和朋友（聊）」',hint:'👥 同伴或引號',color:'#fbbf24'},
 '從':{jp:'から (kara)',mean:'從這裡開始 / 因為',ex:'家から学校まで→「從家到學校」',hint:'🚀 起點',color:'#fb923c'},
@@ -338,7 +339,7 @@ function closeTagPopup(){const m=document.getElementById('tag-mask');if(m)m.styl
 /* === 標籤 → 日文助詞 + emoji 顯示對應 === */
 const TAG_TO_JP_EMOJI={
 '題':'は🎤','主':'が👈','受':'を🎯','向':'に➡️',
-'在/用':'で🏠','在':'で🏠','用':'で🔧',
+'在/用':'で🏠','在':'で🏠','用':'で🔧','變':'に🔄',
 '和':'と👥','從':'から🚀','到':'まで🏁','往':'へ➡️',
 '的':'の🔗','飾':'✨修飾','或':'や📚','引':'と💬','由':'に🎬',
 '感':'ね😊','告':'よ📢','女':'わ👩','男':'ぞ👨','問':'か❓',
@@ -846,7 +847,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=26').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=27').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
