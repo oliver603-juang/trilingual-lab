@@ -334,11 +334,27 @@ let mask=document.getElementById('tag-mask');
 if(!mask){mask=document.createElement('div');mask.id='tag-mask';mask.onclick=function(e){if(e.target===mask)closeTagPopup();};document.body.appendChild(mask);}
 mask.innerHTML=html;mask.style.display='flex';}
 function closeTagPopup(){const m=document.getElementById('tag-mask');if(m)m.style.display='none';}
+/* === 標籤 → 日文助詞 + emoji 顯示對應 === */
+const TAG_TO_JP_EMOJI={
+'題':'は🎤','主':'が👈','受':'を🎯','向':'に➡️',
+'在/用':'で🏠','在':'で🏠','用':'で🔧',
+'和':'と👥','從':'から🚀','到':'まで🏁','往':'へ➡️',
+'的':'の🔗','或':'や📚','引':'と💬','由':'に🎬',
+'感':'ね😊','告':'よ📢','女':'わ👩','男':'ぞ👨','問':'か❓',
+'女感':'わ👩','男感':'ぞ👨','女問':'の👩❓','男問':'の👨❓',
+'一':'a🎲','一個':'a🎲','一位':'a🎲','一部':'a🎲','那':'the👆',
+'關係':'who🔗',
+'比':'より⚖️','也':'も➕','只':'だけ1️⃣',
+'偏不':'ものを😒','到了':'ともなると📈','忍不住':'ずに😤',
+'才剛':'そばから🔁','即使':'といえども⚖️',
+'盡是':'ずくめ🎨','盡是的':'ずくめの🎨',
+'是':'✅','了':'⏪','他':'👤','期間':'⏱️','到之前':'までに⏰'};
 function renderLiteralWithTags(text){
 return text.replace(/\[([^\]]+)\]/g,function(m,tag){
 const info=TAG_INFO[tag];
 const color=info?info.color:'#c4b5fd';
-return '<span class="lit-tag" style="background:'+color+'33;border-color:'+color+'66;color:'+color+'" onclick="showTagPopup(\''+tag.replace(/'/g,"\\'")+'\',event)">['+tag+']</span>';});}
+const display=TAG_TO_JP_EMOJI[tag]||tag;
+return '<span class="lit-tag" style="background:'+color+'33;border-color:'+color+'66;color:'+color+'" onclick="showTagPopup(\''+tag.replace(/'/g,"\\'")+'\',event)">['+display+']</span>';});}
 function sp(t,l){sy.cancel();const speakText=l==='jp'?kanjiToKana(t):t;const u=new SpeechSynthesisUtterance(speakText);u.lang=l==='jp'?'ja-JP':'en-US';u.rate=0.8;if(l==='jp'&&jv)u.voice=jv;if(l==='en'&&ev)u.voice=ev;sy.speak(u);}
 document.addEventListener('click',function _unlock(){const u=new SpeechSynthesisUtterance('');u.volume=0;sy.speak(u);document.removeEventListener('click',_unlock);},{once:true});
 function lU(){try{return JSON.parse(localStorage.getItem('tl_'+cu)||'{}');}catch{return {};}}
@@ -829,7 +845,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=24').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=25').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
