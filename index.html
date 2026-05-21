@@ -621,8 +621,12 @@ if(/って$|いて$|んで$|して$|きて$/.test(text)&&!/[来行]/.test(text))
 if(/った$|いた$|んだ$|した$|きた$/.test(text)&&!/[来行]/.test(text))return 'た';
 if(/える$|ける$|げる$|せる$|てる$|でる$|ねる$|べる$|める$|れる$/.test(text))return 'える';
 if(/[ぁ-ん]る$/.test(text))return 'る';
-/* u-動詞辭書形：泣く/書く/読む/話す/買う 等 */
-if(/[ぁ-ん\u4e00-\u9fff][くぐむぶぬつすう]$/.test(text)&&!/^(来|行)/.test(text))return 'u形';
+/* い形容詞+です（禮貌版的「便宜」「貴」等，先於 u形 偵測） */
+if(/いです$/.test(text))return 'いです';
+/* い形容詞原形（單獨「安い」「高い」等） */
+if(/[\u4e00-\u9fff]い$/.test(text)&&!/[来食買]い$/.test(text))return 'い形';
+/* u-動詞辭書形：泣く/書く/読む/話す/買う 等（排除「いです」結尾） */
+if(/[ぁ-ん\u4e00-\u9fff][くぐむぶぬつすう]$/.test(text)&&!/^(来|行)/.test(text)&&!/いです$/.test(text))return 'u形';
 return null;}
 /* === 動詞尾巴解釋資料庫 === */
 const VERB_ENDINGS={
@@ -646,6 +650,8 @@ const VERB_ENDINGS={
 'させられる':{name:'させられる (被迫做)',scene:'😩 被別人強迫做不想做的事',inner:'「使役 + 被動」= 被迫做',effect:'**強烈的負面情緒**、抱怨語氣<br>例：被媽媽逼著吃青菜',examples:[{form:'食べさせられる',read:'たべさせられる',meaning:'被迫吃'},{form:'勉強させられる',read:'べんきょうさせられる',meaning:'被迫念書'}],warn:'⚠️ 這是日文中表達「不爽被迫做」的標準說法'},
 'てください':{name:'てください (請…)',scene:'🙏 禮貌地請別人做某事',inner:'「請求 + 禮貌」',effect:'**對方比較容易答應**、不會覺得被命令',examples:[{form:'食べてください',read:'たべてください',meaning:'請吃'},{form:'見てください',read:'みてください',meaning:'請看'},{form:'待ってください',read:'まってください',meaning:'請等等'}],warn:'⚠️ 朋友間 → 用「食べて」就好（去掉ください）'},
 'ないで':{name:'ないで (請別…)',scene:'🚫 禮貌地請對方「不要做」',inner:'「請求別做 + 柔和」',effect:'**柔和地阻止**對方，比直接命令好聽很多',examples:[{form:'食べないで',read:'たべないで',meaning:'別吃'},{form:'来ないで',read:'こないで',meaning:'別來'},{form:'泣かないで',read:'なかないで',meaning:'別哭'}],warn:'⚠️ 加 ください 更禮貌：「食べないでください」'},
+'い形':{name:'〜い (い形容詞 原形)',scene:'😊 跟朋友、家人形容某個東西',inner:'這是<b>い形容詞</b>的原形（字典形），<br>結尾是「い」。',effect:'這個形容詞還沒變身！<br><br>🎯 在這句裡的角色：<br>i形容詞可以「直接修飾名詞」（不用 の）<br>赤い車 = 紅色的車<br>安い店 = 便宜的店<br><br>🦎 變身規則（變過去/否定時要先「切い」）：<br>① 過去式 → 切い + かった：安い → 安<u>かった</u><br>② 否定 → 切い + くない：安い → 安<u>くない</u><br>③ 禮貌 → 直接加 です：安い → 安<u>いです</u><br>④ 副詞化 → 切い + く：安い → 安<u>く</u>',examples:[{form:'安い',read:'やすい',meaning:'便宜的（原形）'},{form:'高い',read:'たかい',meaning:'貴的/高的（原形）'},{form:'寒い',read:'さむい',meaning:'冷的（原形）'},{form:'楽しい',read:'たのしい',meaning:'有趣的（原形）'},{form:'美味しい',read:'おいしい',meaning:'好吃的（原形）'}],warn:'⚠️ い形容詞 vs な形容詞：い形容詞結尾是「い」（安い、高い）；な形容詞結尾是「な」或「だ」（静かな、便利な）。變化方式不同！'},
+'いです':{name:'〜いです (い形容詞 + 禮貌)',scene:'🎓 對長輩/客戶/老師客氣地形容某個東西',inner:'這是<b>い形容詞 + です</b>（禮貌版）。<br>不是動詞！',effect:'🦎 い形容詞變禮貌很簡單：<br>直接在原形後面加「です」<br><br>例子拆解：<br>安い（便宜）→ 安い<u>です</u>（便宜，禮貌）<br>高い（貴）→ 高い<u>です</u>（貴，禮貌）<br><br>📢 講出口的效果：<br>說「安い」= 跟朋友說「便宜啦」（隨意）<br>說「安いです」= 跟老師說「便宜的」（禮貌）<br><br>⚠️ 注意：い形容詞跟な形容詞不一樣！<br>🇯🇵 安い+です ✅（い直接接です）<br>🇯🇵 静か+です ✅（な形容詞也加です）<br>🇯🇵 静かい+です ❌（不存在這種寫法）',examples:[{form:'安いです',read:'やすいです',meaning:'便宜的（禮貌）'},{form:'高いです',read:'たかいです',meaning:'貴的（禮貌）'},{form:'寒いです',read:'さむいです',meaning:'冷的（禮貌）'},{form:'美味しいです',read:'おいしいです',meaning:'好吃的（禮貌）'}],warn:'⚠️ 「いです」是「い形容詞 + 禮貌語尾」，不是動詞！整個尾巴的「です」是禮貌標記，不是 u-動詞的「す」結尾。'},
 'u形':{name:'う / く / ぐ / す / つ / ぬ / ぶ / む (動詞辭書形)',scene:'😊 動詞最基本的樣子（字典裡查到的）',inner:'這是<b>第一類動詞（u-動詞）</b>的辭書形，<br>結尾是 u 段音（く / む / す / つ 等等）。',effect:'這個動詞還沒變身！是最原始的樣子。<br><br>🎯 在這句裡的角色：<br>「泣く」直接接後面的名詞，當「形容詞」用！<br>泣く + ほど = 「哭那種程度的」<br>就像 [✨修飾] 標籤的功能！<br><br>🦎 變身規則：<br>「く」段 → 變到 い 段（敬語）：泣く → 泣<u>き</u>ます<br>「く」段 → 變到 あ 段（否定）：泣く → 泣<u>か</u>ない<br>「く」段 → 變到 え 段（能力）：泣く → 泣<u>け</u>る',examples:[{form:'泣く',read:'なく',meaning:'哭（原形）'},{form:'書く',read:'かく',meaning:'寫（原形）'},{form:'読む',read:'よむ',meaning:'讀（原形）'},{form:'話す',read:'はなす',meaning:'說（原形）'},{form:'買う',read:'かう',meaning:'買（原形）'}],warn:'⚠️ 這個尾巴的「く / む / す」是動詞自己的尾巴，不是助詞！整個「泣く」是一個動詞單字。'},
 'ば形':{name:'〜ば (條件形 / 假設)',scene:'🌧️ 想說「如果...的話」',inner:'這是動詞/形容詞的<b>條件形</b>，<br>表達「假設條件」（如果...）',effect:'🦎 變身規則：<br>① 字尾滑到 え 段<br>② 加「ば」<br><br>例子拆解：<br>勉強する → すれ + ば = <u>勉強すれば</u>（如果讀書）<br>食べる → 食べれ + ば = <u>食べれば</u>（如果吃）<br>行く → 行け + ば = <u>行けば</u>（如果去）<br>飲む → 飲め + ば = <u>飲めば</u>（如果喝）<br><br>📢 講出口的效果：<br>✅ 一般用途：表達「如果」（比 たら 正式）<br>✅ 特殊用途：跟「ほど」配合 → 「越...越...」<br>　例：勉強すればするほど = 越讀越',examples:[{form:'勉強すれば',read:'べんきょうすれば',meaning:'如果讀書'},{form:'食べれば',read:'たべれば',meaning:'如果吃'},{form:'行けば',read:'いけば',meaning:'如果去'},{form:'飲めば',read:'のめば',meaning:'如果喝'},{form:'安ければ',read:'やすければ',meaning:'如果便宜'}],warn:'⚠️ 「ば」是條件形尾巴，跟「ほど」一起用會變成「越...越...」！'},
 '越':{name:'〜ば〜ほど (越...越... 複合句型)',scene:'📈 想說「越...越...」的效果',inner:'⚠️ 重要！「越來越」<b>不是一個日文字</b>，<br>是 3 個元素夾擊產生的<b>複合句型</b>！',effect:'📐 完整公式（3 件套）：<br>① 動詞 ば形（如果做）<br>② 同動詞 原形<br>③ ほど（程度標記）<br><br>例子拆解（例句 109）：<br>勉強<b>すれば</b>（如果讀）+ <b>する</b>（讀）+ <b>ほど</b>（程度）<br>= 越讀越...<br><br>📢 講出口的效果：<br>學生說「<b>勉強すればするほど</b>面白い」<br>= 自動產生「越學越有趣」的<b>中文語感</b><br><br>📋 更多例子：<br>食べ<b>れば</b>食べる<b>ほど</b>美味しい = 越吃越好吃<br>知<b>れば</b>知る<b>ほど</b>面白い = 越了解越有趣<br>高<b>ければ</b>高い<b>ほど</b>いい = 越貴越好',examples:[{form:'勉強すればするほど',read:'べんきょうすればするほど',meaning:'越讀越'},{form:'食べれば食べるほど',read:'たべればたべるほど',meaning:'越吃越'},{form:'知れば知るほど',read:'しればしるほど',meaning:'越了解越'}],warn:'⚠️ 學生最常犯：以為「越」對應某個日文字！其實是「ば+原形+ほど」三件套合力產生的效果。少一個元素就會失敗！'},
@@ -982,7 +988,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=40').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=41').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
