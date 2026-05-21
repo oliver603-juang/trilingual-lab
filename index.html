@@ -59,6 +59,11 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .tag-pop-mean{font-size:1rem;color:#e0d4ff;text-align:center;font-weight:600;margin-bottom:10px;background:rgba(196,181,253,.1);padding:8px 12px;border-radius:8px}
 .tag-pop-ex{font-size:.8rem;color:#ffd700;text-align:center;margin:10px 0;font-style:italic}
 .tag-pop-hint{font-size:.85rem;color:#94a3b8;text-align:center;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(196,181,253,.2)}
+.tag-pop-order{margin-top:12px;padding:10px 12px;background:linear-gradient(135deg,rgba(125,211,252,.08),rgba(196,181,253,.08));border:1px solid rgba(125,211,252,.25);border-radius:10px}
+.ord-title{font-size:.78rem;font-weight:700;color:#7dd3fc;margin-bottom:6px;letter-spacing:0.5px}
+.ord-body{font-size:.78rem;color:#e0d4ff;line-height:1.5;margin-bottom:8px}
+.ord-rules{font-size:.75rem;color:#fbbf24;background:rgba(251,191,36,.08);border-left:3px solid #fbbf24;padding:6px 10px;border-radius:4px;line-height:1.55;margin-bottom:8px}
+.ord-emphasis{font-size:.78rem;color:#86efac;text-align:center;font-weight:700;margin-top:4px}
 /* 不規則動詞透視鏡 popup */
 .bk-irr{position:absolute;top:-6px;right:-6px;background:#ff6b6b;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:.6rem;cursor:pointer;z-index:5;border:2px solid var(--bg);box-shadow:0 0 0 1px #ff6b6b}
 .bk-end{position:absolute;top:-6px;left:-6px;background:#60a5fa;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:.55rem;cursor:pointer;z-index:5;border:2px solid var(--bg);box-shadow:0 0 0 1px #60a5fa}
@@ -233,21 +238,21 @@ sy.onvoiceschanged=iV;iV();
 function kanjiToKana(t){let r='',i=0;const keys=Object.keys(KJ).sort((a,b)=>b.length-a.length);while(i<t.length){let m=false;for(const k of keys){if(i+k.length<=t.length&&t.substring(i,i+k.length)===k){r+=KJ[k];i+=k.length;m=true;break;}}if(!m){r+=t[i];i++;}}return r;}
 /* === 直譯標籤資料庫 === */
 const TAG_INFO={
-'題':{jp:'は (wa)',mean:'說到○○嘛…（大主題）',ex:'<b>單純主題</b>：<br>私は学生→「說到我，是學生」<br><br><b>形容詞句</b>有兩種情況：<br><br>✅ <b>沒歧義，直接形容</b>：<br>あの店は高い→那家店貴（店+貴=價格）<br>山は高い→山很高（山+高=高度）<br>富士山は美しい→富士山美<br><br>⚠️ <b>有歧義，要補小焦點</b>：<br>彼女は<u>背が</u>高い→「身高才是高的」<br>象は<u>鼻が</u>長い→「鼻子才是長的」<br>私は<u>頭が</u>痛い→「頭才是痛的」<br><br>💡 判斷規則：<br>主語+形容詞，會不會問「高什麼/長什麼/痛什麼？」<br>有 → 補小焦點が<br>沒 → 直接形容',hint:'🎤 設定話題的「大主題」<br>📌 有歧義才需要小焦點が',color:'#ff9bd0'},
-'主':{jp:'が (ga)',mean:'就是這個！（小焦點）',ex:'<b>動作主語</b>：<br>雨が降る→「就是雨在下」<br>誰が来た？→「誰來了？」<br><br><b>形容詞句的焦點</b>（重要！）：<br>背が高い→「身高才是高的」<br>鼻が長い→「鼻子才是長的」<br>頭が痛い→「頭才是痛的」',hint:'👈 用手指出來「具體什麼」<br>📌 形容詞句裡：標示哪個屬性才是被形容的',color:'#ffd700'},
-'受':{jp:'を (o)',mean:'被處理的東西',ex:'本を読む→「處理書（讀）」',hint:'🎯 動作的目標物',color:'#ffd93d'},
-'向':{jp:'に (ni)',mean:'多功能助詞（5 種主要用法）',ex:'1️⃣ 方向：学校に行く → 往學校<br>2️⃣ 時間：7時に起きる → 在7點<br>3️⃣ 對象：友達にあげる → 給朋友<br>4️⃣ 變成：静かにする → 弄成安靜<br>5️⃣ 被動：母に読まれた → 被媽媽',hint:'➡️ に 是日文最忙的助詞，看上下文判斷',color:'#7eeae0'},
-'變':{jp:'に (ni)',mean:'「變成 / 弄成」（に + する／なる）',ex:'静かにする → 弄成安靜<br>先延ばしにする → 弄成拖延（拖延）<br>裁判になった → 變成訴訟',hint:'🔄 名詞 に + する=主動弄成，になる=自然變成',color:'#7eeae0'},
+'題':{jp:'は (wa)',mean:'說到○○嘛…（大主題）',ex:'<b>單純主題</b>：<br>私は学生→「說到我，是學生」<br><br><b>形容詞句</b>有兩種情況：<br><br>✅ <b>沒歧義，直接形容</b>：<br>あの店は高い→那家店貴（店+貴=價格）<br>山は高い→山很高（山+高=高度）<br>富士山は美しい→富士山美<br><br>⚠️ <b>有歧義，要補小焦點</b>：<br>彼女は<u>背が</u>高い→「身高才是高的」<br>象は<u>鼻が</u>長い→「鼻子才是長的」<br>私は<u>頭が</u>痛い→「頭才是痛的」<br><br>💡 判斷規則：<br>主語+形容詞，會不會問「高什麼/長什麼/痛什麼？」<br>有 → 補小焦點が<br>沒 → 直接形容',hint:'🎤 設定話題的「大主題」<br>📌 有歧義才需要小焦點が',color:'#ff9bd0',particle:true,orderHint:'「は」是大主題標記，貼著前面的字走，順序可以重排。<br>例：彼女は私より背が高い ≒ 私より彼女は背が高い ≒ 背が彼女は私より高い'},
+'主':{jp:'が (ga)',mean:'就是這個！（小焦點）',ex:'<b>動作主語</b>：<br>雨が降る→「就是雨在下」<br>誰が来た？→「誰來了？」<br><br><b>形容詞句的焦點</b>（重要！）：<br>背が高い→「身高才是高的」<br>鼻が長い→「鼻子才是長的」<br>頭が痛い→「頭才是痛的」',hint:'👈 用手指出來「具體什麼」<br>📌 形容詞句裡：標示哪個屬性才是被形容的',color:'#ffd700',particle:true,orderHint:'「が」是小焦點標記，貼著前面的字走，順序可以重排。<br>例：誰が来た ≒ 来たのは誰'},
+'受':{jp:'を (o)',mean:'被處理的東西',ex:'本を読む→「處理書（讀）」',hint:'🎯 動作的目標物',color:'#ffd93d',particle:true,orderHint:'「を」是受詞標記，貼著「被動作的東西」。<br>例：✅ 母に日記を読まれた<br>✅ 日記を母に読まれた  ← 順序對換意思一樣！'},
+'向':{jp:'に (ni)',mean:'多功能助詞（5 種主要用法）',ex:'1️⃣ 方向：学校に行く → 往學校<br>2️⃣ 時間：7時に起きる → 在7點<br>3️⃣ 對象：友達にあげる → 給朋友<br>4️⃣ 變成：静かにする → 弄成安靜<br>5️⃣ 被動：母に読まれた → 被媽媽',hint:'➡️ に 是日文最忙的助詞，看上下文判斷',color:'#7eeae0',particle:true,orderHint:'「に」是方向/時間/對象標記，貼著前面的字走，順序可以重排。<br>例：学校に午後行く ≒ 午後学校に行く ≒ 午後に学校へ行く'},
+'變':{jp:'に (ni)',mean:'「變成 / 弄成」（に + する／なる）',ex:'静かにする → 弄成安靜<br>先延ばしにする → 弄成拖延（拖延）<br>裁判になった → 變成訴訟',hint:'🔄 名詞 に + する=主動弄成，になる=自然變成',color:'#7eeae0',particle:true,orderHint:'「に」標示「變成什麼」，貼著被變成的東西走。'},
 '在/用':{jp:'で (de)',mean:'在這裡做 / 用這個',ex:'公園で遊ぶ→「在公園（玩）」',hint:'🏠 動作發生的場所/工具',color:'#a78bfa'},
-'和':{jp:'と (to)',mean:'和...一起 / 引用',ex:'友達と話す→「和朋友（聊）」',hint:'👥 同伴或引號',color:'#fbbf24'},
-'從':{jp:'から (kara)',mean:'從這裡開始 / 因為',ex:'家から学校まで→「從家到學校」',hint:'🚀 起點',color:'#fb923c'},
-'到':{jp:'まで (made)',mean:'到這裡為止',ex:'5時まで待つ→「等到5點」',hint:'🏁 終點',color:'#fb923c'},
-'往':{jp:'へ (e)',mean:'往哪個方向',ex:'東京へ行く→「往東京（去）」',hint:'➡️ 方向（比 に 更廣）',color:'#7eeae0'},
+'和':{jp:'と (to)',mean:'和...一起 / 引用',ex:'友達と話す→「和朋友（聊）」',hint:'👥 同伴或引號',color:'#fbbf24',particle:true,orderHint:'「と」是同伴/引用標記，貼著前面的字走。<br>例：友達とカフェに行く ≒ カフェに友達と行く'},
+'從':{jp:'から (kara)',mean:'從這裡開始 / 因為',ex:'家から学校まで→「從家到學校」',hint:'🚀 起點',color:'#fb923c',particle:true,orderHint:'「から」是起點標記，貼著起點走。<br>例：家から学校まで歩く ≒ 学校まで家から歩く'},
+'到':{jp:'まで (made)',mean:'到這裡為止',ex:'5時まで待つ→「等到5點」',hint:'🏁 終點',color:'#fb923c',particle:true,orderHint:'「まで」是終點標記，貼著終點走。'},
+'往':{jp:'へ (e)',mean:'往哪個方向',ex:'東京へ行く→「往東京（去）」',hint:'➡️ 方向（比 に 更廣）',color:'#7eeae0',particle:true,orderHint:'「へ」是方向標記，貼著方向走，順序可以重排。'},
 '的':{jp:'の (no)',mean:'誰的 / 連接',ex:'私の本→「我的書」',hint:'🔗 連接所有格',color:'#94a3b8'},
 '飾':{jp:'(無對應助詞)',mean:'動詞/形容詞 直接修飾名詞（連體形）',ex:'買った本→「買的書」（日文沒有「の」，直接用動詞過去式接名詞）<br>走る人→「跑的人」',hint:'✨ 中文要加「的」，但日文不用',color:'#fbbf24'},
 '修':{jp:'(日文獨有，無助詞)',mean:'⭐ 重要！日文獨有觀念：「連體形修飾」',ex:'<b>觀念：動詞或形容詞，可以直接放在名詞前面，當「形容詞」用！</b><br><br>🇯🇵 考える + きらい = 考える <b>きらい</b><br>　　（思考的 + 傾向 = 思考的傾向）<br><br>🇯🇵 買った + 本 = 買った <b>本</b><br>　　（買的 + 書 = 買的書）<br><br>🇯🇵 走る + 人 = 走る <b>人</b><br>　　（跑的 + 人 = 跑的人）',hint:'🇹🇼 中文要加「的」字才通順<br>🇯🇵 日文什麼都不用加，直接擺在一起就好！<br>這是日文最厲害的招：動詞當形容詞用',color:'#fbbf24'},
 '或':{jp:'や (ya)',mean:'或之類（列舉不完）',ex:'本やペン→「書啦筆啦…」',hint:'📚 列舉一部份',color:'#94a3b8'},
-'引':{jp:'と (to) / って (tte)',mean:'引用別人說的話',ex:'「来る」と言った→「說『會來』」<br>会議だって→「（聽說）要開會」',hint:'💬 把別人的話夾在引號裡',color:'#fbbf24'},
+'引':{jp:'と (to) / って (tte)',mean:'引用別人說的話',ex:'「来る」と言った→「說『會來』」<br>会議だって→「（聽說）要開會」',hint:'💬 把別人的話夾在引號裡',color:'#fbbf24',particle:true,orderHint:'「と / って」是引用標記，貼著被引用的話走。'},
 '感':{jp:'ね (ne)',mean:'尋求認同',ex:'いいですね→「不錯吧～」',hint:'😊 期待對方點頭',color:'#f0abfc'},
 '告':{jp:'よ (yo)',mean:'告訴你哦',ex:'危ないよ→「危險哦！」',hint:'📢 告知對方',color:'#f0abfc'},
 '女':{jp:'わ (wa)',mean:'女性語氣',ex:'素敵だわ→「真棒呀」',hint:'👩 女性說話',color:'#f0abfc'},
@@ -308,9 +313,9 @@ const TAG_INFO={
 '到之前':{jp:'〜までに',mean:'在...之前',ex:'',hint:'⏰',color:'#94a3b8'},
 '到直到':{jp:'〜まで',mean:'到...為止',ex:'',hint:'🏁',color:'#94a3b8'},
 '之後從':{jp:'〜てから',mean:'之後',ex:'',hint:'⏭️',color:'#86efac'},
-'由':{jp:'に',mean:'被動的施動者',ex:'母に読まれた→「被媽媽讀了」',hint:'被動',color:'#fda4af'},
+'由':{jp:'に',mean:'被動的施動者',ex:'母に読まれた→「被媽媽讀了」',hint:'被動',color:'#fda4af',particle:true,orderHint:'「に」標示「被誰做的」（被動句裡的施動者），順序可以重排。<br>例：✅ 母に日記を読まれた<br>✅ 日記を母に読まれた ← 順序對換意思一樣！'},
 '之中':{jp:'',mean:'某個範圍中',ex:'',hint:'📍',color:'#94a3b8'},
-'比':{jp:'より',mean:'比較',ex:'A より B→「比A」',hint:'⚖️',color:'#94a3b8'},
+'比':{jp:'より',mean:'比較',ex:'A より B→「比A」',hint:'⚖️',color:'#94a3b8',particle:true,orderHint:'「より」是比較標記，貼著被比較對象走。<br>例：私より背が高い ≒ 背が私より高い'},
 '各':{jp:'ずつ',mean:'各...',ex:'',hint:'📦',color:'#94a3b8'},
 '只':{jp:'だけ / しか',mean:'只有',ex:'',hint:'1️⃣',color:'#94a3b8'},
 '光':{jp:'ばかり',mean:'光是',ex:'',hint:'💫',color:'#94a3b8'},
@@ -323,8 +328,8 @@ const TAG_INFO={
 '一位':{jp:'a / an',mean:'一位（人物用）',ex:'a teacher→[一位]老師',hint:'🎲 客氣的「一個人」',color:'#94a3b8'},
 '一部':{jp:'a / an',mean:'一部（電影/車）',ex:'a movie→[一部]電影',hint:'🎲',color:'#94a3b8'},
 /* === 日文「で」的細分 === */
-'在':{jp:'で (de)',mean:'動作發生的場所',ex:'公園で遊ぶ→「[在]公園玩」',hint:'🏠 在哪裡做',color:'#a78bfa'},
-'用':{jp:'で (de)',mean:'用的工具/手段',ex:'箸で食べる→「[用]筷子吃」',hint:'🔧 用什麼做',color:'#a78bfa'},
+'在':{jp:'で (de)',mean:'動作發生的場所',ex:'公園で遊ぶ→「[在]公園玩」',hint:'🏠 在哪裡做',color:'#a78bfa',particle:true,orderHint:'「で」是場所標記，貼著場所走，順序可以重排。<br>例：公園で友達と遊ぶ ≒ 友達と公園で遊ぶ'},
+'用':{jp:'で (de)',mean:'用的工具/手段',ex:'箸で食べる→「[用]筷子吃」',hint:'🔧 用什麼做',color:'#a78bfa',particle:true,orderHint:'「で」是工具標記，貼著工具走，順序可以重排。<br>例：箸でご飯を食べる ≒ ご飯を箸で食べる'},
 /* === 其他輔助標籤 === */
 '是':{jp:'',mean:'肯定語氣補強',ex:'',hint:'✅',color:'#94a3b8'},
 '了':{jp:'',mean:'完成/已發生',ex:'',hint:'⏪',color:'#86efac'},
@@ -339,6 +344,14 @@ if(info.jp)html+='<div class="tag-pop-jp">日文：<b>'+info.jp+'</b></div>';
 html+='<div class="tag-pop-mean">意思：'+info.mean+'</div>';
 if(info.ex)html+='<div class="tag-pop-ex">範例：'+info.ex+'</div>';
 html+='<div class="tag-pop-hint">'+info.hint+'</div>';
+/* === 語序自由度提示（針對真正的助詞） === */
+if(info.particle){
+html+='<div class="tag-pop-order">';
+html+='<div class="ord-title">🔀 語序自由度</div>';
+html+='<div class="ord-body">'+(info.orderHint||'這個助詞像「貼紙」黏著前面的字。順序可以重新排，意思不變。')+'</div>';
+html+='<div class="ord-rules"><b>🚨 但有 2 個鐵則：</b><br>① 動詞永遠在最後<br>② 助詞要黏著它的字，不能分開</div>';
+html+='<div class="ord-emphasis">💡 越前面 = 越強調</div>';
+html+='</div>';}
 }else{html+='<div class="tag-pop-mean">（這個標籤還沒收錄說明，請告訴 Claude 補上）</div>';}
 html+='</div>';
 let mask=document.getElementById('tag-mask');
@@ -938,7 +951,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=35').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=36').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
