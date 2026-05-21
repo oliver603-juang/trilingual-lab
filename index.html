@@ -443,7 +443,7 @@ if(k.startsWith('KD_')&&KD[k.slice(3)]){const d=KD[k.slice(3)];if(v.cn)d.cn=v.cn
 if(k.startsWith('EK_')&&EK[k.slice(3)]){const d=EK[k.slice(3)];if(v.cn)d.cn=v.cn;if(v.br)d.br=v.br;if(v.tp)d.tp=v.tp;}}
 if(edits._contrast){for(const[id,ct] of Object.entries(edits._contrast)){const rule=R.find(r=>r.id===id);if(rule)rule.ct=ct;}}
 }catch{}}
-function mS(id){const d=lU();if(!d.seen)d.seen={};d.seen[id]=Date.now();sV(d);}
+function mS(id){const d=lU();if(!d.seen)d.seen={};d.seen[id]=Date.now();d.lastIdx=ci;d.lastId=id;sV(d);}
 function iS(id){const d=lU();return d.seen&&d.seen[id];}
 function gS(){const d=lU();return Object.keys(d.seen||{}).length;}
 function diyKey(dim){return 'diy_'+dim+'_'+md;}
@@ -894,7 +894,7 @@ h+='<div class="diy-body"><div class="diy-tr '+lc+'">'+disp+'</div><div class="d
 h+='<button class="diy-btn del" onclick="delDIY(\''+dim.replace(/'/g,"\\'")+'\','+idx+')">✕</button></div>';});
 h+='</div>';}
 h+='</div>';return h;}
-function sU(u){cu=u;const names={iggy:'Iggy',yoyo:'Yoyo',yofarn:'Yofarn',oliver:'Oliver'};document.querySelectorAll('.ub').forEach(b=>{b.classList.toggle('a',b.textContent.includes(names[u]||''));});fbSync().then(()=>{uP();rn();});}
+function sU(u){cu=u;const names={iggy:'Iggy',yoyo:'Yoyo',yofarn:'Yofarn',oliver:'Oliver'};document.querySelectorAll('.ub').forEach(b=>{b.classList.toggle('a',b.textContent.includes(names[u]||''));});fbSync().then(()=>{const d=lU();let targetCi=0;if(d.lastId){const idx=F.findIndex(r=>r.id===d.lastId);if(idx>=0)targetCi=idx;}else if(typeof d.lastIdx==='number'&&d.lastIdx<F.length){targetCi=d.lastIdx;}ci=targetCi;uP();rn();});}
 function uP(){document.getElementById('pb').textContent='✅ '+gS();}
 async function lD(){try{const r=await fetch('unified-rules.json');if(!r.ok)throw 0;const d=await r.json();
 R=d.map(r=>({id:r.id,dim:r.dimension_label||r.dimension,cn:r.chinese,lv:r.jlpt||'',
@@ -1005,7 +1005,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=47').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=48').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
