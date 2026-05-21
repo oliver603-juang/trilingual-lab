@@ -597,13 +597,19 @@ const IRREGULAR_VERBS={
 };
 /* 偵測積木包含哪個不規則動詞 */
 function detectIrregular(text){
+/* 排除常見慣用語 — できるだけ「盡量」、できれば「如果可以的話」等 */
+if(/できるだけ|できれば|できるかぎり/.test(text))return null;
 if(/来(ない|なかった|る|た|て|よう|られ|させ|ます|ません|ました)/.test(text))return '来る';
 if(/行(く|きま|かな|った|って|こう|ける|かれ|かせ)/.test(text))return '行く';
-if(/^(する|します|しません|しました|しない|した|して|しよう|される|させる|できる|できます)/.test(text))return 'する';
-if(/[\u4e00-\u9fff](する|します|しません|しました)/.test(text))return 'する';
+if(/^(する|します|しません|しました|しない|した|して|しよう|される|させる)$/.test(text))return 'する';
+if(/^(できる|できます|できません|できた|できました|できない)$/.test(text))return 'する';
+if(/[\u4e00-\u9fff](する|します|しません|しました|して|しよう|させる|される|したい|しない|した|している|しています)/.test(text))return 'する';
 return null;}
 /* === 規則動詞尾巴偵測 === */
 function detectVerbEnding(text){
+/* 慣用語優先偵測（避免被其他規則誤判） */
+if(/^できるだけ$/.test(text))return 'できるだけ';
+if(/^できれば$/.test(text))return 'できれば';
 /* い形容詞優先（避免誤判：高かった ≠ 動詞た形） */
 if(/くなかったです$|くありませんでした$/.test(text))return 'くなかった';
 if(/くなかった$/.test(text))return 'くなかった';
@@ -667,6 +673,8 @@ const VERB_ENDINGS={
 'させられる':{name:'させられる (被迫做)',scene:'😩 被別人強迫做不想做的事',inner:'「使役 + 被動」= 被迫做',effect:'**強烈的負面情緒**、抱怨語氣<br>例：被媽媽逼著吃青菜',examples:[{form:'食べさせられる',read:'たべさせられる',meaning:'被迫吃'},{form:'勉強させられる',read:'べんきょうさせられる',meaning:'被迫念書'}],warn:'⚠️ 這是日文中表達「不爽被迫做」的標準說法'},
 'てください':{name:'てください (請…)',scene:'🙏 禮貌地請別人做某事',inner:'「請求 + 禮貌」',effect:'**對方比較容易答應**、不會覺得被命令',examples:[{form:'食べてください',read:'たべてください',meaning:'請吃'},{form:'見てください',read:'みてください',meaning:'請看'},{form:'待ってください',read:'まってください',meaning:'請等等'}],warn:'⚠️ 朋友間 → 用「食べて」就好（去掉ください）'},
 'ないで':{name:'ないで (請別…)',scene:'🚫 禮貌地請對方「不要做」',inner:'「請求別做 + 柔和」',effect:'**柔和地阻止**對方，比直接命令好聽很多',examples:[{form:'食べないで',read:'たべないで',meaning:'別吃'},{form:'来ないで',read:'こないで',meaning:'別來'},{form:'泣かないで',read:'なかないで',meaning:'別哭'}],warn:'⚠️ 加 ください 更禮貌：「食べないでください」'},
+'できるだけ':{name:'できるだけ (慣用語：盡量 / 盡可能)',scene:'🤝 想表達「我會盡量做」（但不保證能成功）',inner:'這是<b>慣用語</b>（固定組合），<br>不是 する 動詞的變形！<br><br>📐 字面拆解：<br>できる（能做）+ だけ（程度範圍）<br>= 「能做的範圍內」<br>= 「盡量、盡可能」',effect:'🇯🇵 文化關鍵：<br>「できるだけ」是日文超常見的<b>禮貌軟性表達</b>。<br><br>📢 講出口的效果：<br>說「<b>できるだけ頑張ります</b>」<br>= 字面：盡量努力<br>= 真實語感：「<b>我會盡力，但不保證成功</b>」<br>= 中文：「盡量啦…」（曖昧拒絕）<br><br>🇯🇵 vs 🇹🇼 文化差異：<br>🇹🇼「我會努力做」= 通常會做到<br>🇯🇵「できるだけやります」= 可能做不到（軟拒絕）<br><br>📋 同類禮貌軟性表達：<br>できれば → 如果可以的話（暗示有難度）<br>なるべく → 盡量（同義詞）<br>努力します → 會努力（也常是軟拒絕）<br><br>⚠️ 中文母語者陷阱：<br>聽到「できるだけやります」千萬不要當作「會做到」！<br>日文常用這個來<b>禮貌地暗示「可能做不到」</b>。',examples:[{form:'できるだけ頑張ります',read:'できるだけがんばります',meaning:'盡量努力 (≈做不到的軟拒絕)'},{form:'できるだけ早く',read:'できるだけはやく',meaning:'盡量早一點'},{form:'できるだけ多く',read:'できるだけおおく',meaning:'盡量多一些'},{form:'できれば行きたい',read:'できればいきたい',meaning:'如果可以的話想去 (暗示可能去不了)'}],warn:'⚠️ 「できるだけ」是慣用語，不是 する 的變形！<br>⚠️ 在日本職場/社交場合常是<b>禮貌的拒絕</b>，不要當作「會做到」！'},
+'できれば':{name:'できれば (慣用語：如果可以的話)',scene:'🤔 想表達「如果可能就...，但有困難」',inner:'<b>慣用語</b>（できる + ば形 + ば）<br>= 「如果能做的話」',effect:'📢 講出口的效果：<br>說「<b>できれば行きたい</b>」<br>= 字面：如果能去就想去<br>= 真實語感：「<b>很想去，但可能去不了</b>」<br><br>跟「できるだけ」一樣是<b>軟拒絕</b>家族！<br><br>📋 對比：<br>🇯🇵 行きたい = 想去（直接）<br>🇯🇵 できれば行きたい = 如果可以就想去（軟）<br>🇯🇵 できるだけ行く = 盡量去（可能去不了）',examples:[{form:'できれば行きたい',read:'できればいきたい',meaning:'如果可以就想去'},{form:'できれば手伝いたい',read:'できればてつだいたい',meaning:'如果可以想幫忙'}],warn:'⚠️ 「できれば」是慣用語！<br>常表達禮貌的猶豫或軟拒絕'},
 'い形':{name:'〜い (い形容詞 原形)',scene:'😊 跟朋友、家人形容某個東西',inner:'這是<b>い形容詞</b>的原形（字典形），<br>結尾是「い」。',effect:'這個形容詞還沒變身！<br><br>🎯 在這句裡的角色：<br>i形容詞可以「直接修飾名詞」（不用 の）<br>赤い車 = 紅色的車<br>安い店 = 便宜的店<br><br>🦎 變身規則（變過去/否定時要先「切い」）：<br>① 過去式 → 切い + かった：安い → 安<u>かった</u><br>② 否定 → 切い + くない：安い → 安<u>くない</u><br>③ 禮貌 → 直接加 です：安い → 安<u>いです</u><br>④ 副詞化 → 切い + く：安い → 安<u>く</u>',examples:[{form:'安い',read:'やすい',meaning:'便宜的（原形）'},{form:'高い',read:'たかい',meaning:'貴的/高的（原形）'},{form:'寒い',read:'さむい',meaning:'冷的（原形）'},{form:'楽しい',read:'たのしい',meaning:'有趣的（原形）'},{form:'美味しい',read:'おいしい',meaning:'好吃的（原形）'}],warn:'⚠️ い形容詞 vs な形容詞：い形容詞結尾是「い」（安い、高い）；な形容詞結尾是「な」或「だ」（静かな、便利な）。變化方式不同！'},
 'し形':{name:'〜しながら / 〜しました (擬聲詞 + する 變動詞)',scene:'🎵 想用擬聲詞/擬態詞當動作（如：興奮地、心跳地、笑著）',inner:'⚠️ 重要！<b>「し」是 する 的變身</b>，不是擬聲詞的一部分！<br><br>📐 完整公式：<br>擬聲詞 + する = 變成動詞',effect:'🎯 為什麼需要這個 し？<br>因為「ながら / ます / た」必須接<b>動詞連用形</b>，<br>而 ワクワク（擬聲詞）不是動詞！<br><br>所以日文母語者腦內：<br>① ワクワク（擬聲詞，不能直接接尾巴）<br>② ワクワク + する → 變成動詞「興奮著」<br>③ する 變連用形「し」→ ワクワクし<br>④ 接 ながら → <u>ワクワクしながら</u>（一邊興奮著）<br><br>🦎 する 變身規則：<br>する → <u>し</u>ます（禮貌）<br>する → <u>し</u>ながら（一邊...）<br>する → <u>し</u>ない（不做）<br>する → <u>し</u>た（做了）<br><br>📋 同類常用例子：<br>ドキドキ + する = 心跳加速<br>イライラ + する = 焦躁<br>ニコニコ + する = 笑咪咪<br>キラキラ + する = 閃閃發亮<br>勉強 + する = 讀書<br>運動 + する = 運動',examples:[{form:'ワクワクしながら',read:'わくわくしながら',meaning:'一邊興奮著'},{form:'ドキドキしながら',read:'どきどきしながら',meaning:'一邊心跳著'},{form:'勉強しながら',read:'べんきょうしながら',meaning:'一邊讀書著'},{form:'ニコニコしながら',read:'にこにこしながら',meaning:'一邊笑著'}],warn:'⚠️ 「し」是 する 的連用形變身，不是擬聲詞 ワクワク 的一部分！中文母語者最常搞混的點！'},
 'いです':{name:'〜いです (い形容詞 + 禮貌)',scene:'🎓 對長輩/客戶/老師客氣地形容某個東西',inner:'這是<b>い形容詞 + です</b>（禮貌版）。<br>不是動詞！',effect:'🦎 い形容詞變禮貌很簡單：<br>直接在原形後面加「です」<br><br>例子拆解：<br>安い（便宜）→ 安い<u>です</u>（便宜，禮貌）<br>高い（貴）→ 高い<u>です</u>（貴，禮貌）<br><br>📢 講出口的效果：<br>說「安い」= 跟朋友說「便宜啦」（隨意）<br>說「安いです」= 跟老師說「便宜的」（禮貌）<br><br>⚠️ 注意：い形容詞跟な形容詞不一樣！<br>🇯🇵 安い+です ✅（い直接接です）<br>🇯🇵 静か+です ✅（な形容詞也加です）<br>🇯🇵 静かい+です ❌（不存在這種寫法）',examples:[{form:'安いです',read:'やすいです',meaning:'便宜的（禮貌）'},{form:'高いです',read:'たかいです',meaning:'貴的（禮貌）'},{form:'寒いです',read:'さむいです',meaning:'冷的（禮貌）'},{form:'美味しいです',read:'おいしいです',meaning:'好吃的（禮貌）'}],warn:'⚠️ 「いです」是「い形容詞 + 禮貌語尾」，不是動詞！整個尾巴的「です」是禮貌標記，不是 u-動詞的「す」結尾。'},
@@ -1008,7 +1016,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=49').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=50').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
