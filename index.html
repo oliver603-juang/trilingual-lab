@@ -956,8 +956,10 @@ if(md==='vs'){bh=rVS(r);}else{const d=r[md];if(!d){bh='<div style="text-align:ce
 else{bh='<div class="br">';d.b.forEach(([t,rl])=>{
 const irrKey=md==='jp'?detectIrregular(t):null;
 const irrBtn=irrKey?'<span class="bk-irr" onclick="event.stopPropagation();showIrregularPopup(\''+irrKey+'\',\''+t.replace(/'/g,"\\'")+'\')" title="不規則動詞變形提示">⚡</span>':'';
-const endKey=md==='jp'&&!irrKey?detectVerbEnding(t):null;
-const endBtn=endKey?'<span class="bk-end" onclick="event.stopPropagation();showVerbEndingPopup(\''+endKey+'\',\''+t.replace(/'/g,"\\'")+'\')" title="動詞尾巴解釋">🔍</span>':'';
+/* 🔍 通常只在沒有 ⚡ 時顯示，但「ている家族」是 て+いる 複合句型，比起 する 變形更重要，所以即使有 ⚡ 也並存 */
+const endKey=md==='jp'?detectVerbEnding(t):null;
+const showEnd=endKey&&(!irrKey||/ています$|ている$|ていました$|ていた$|てください$|させられる$|させる$|られる$|ましょう$/.test(t));
+const endBtn=showEnd?'<span class="bk-end" onclick="event.stopPropagation();showVerbEndingPopup(\''+endKey+'\',\''+t.replace(/'/g,"\\'")+'\')" title="動詞尾巴解釋">🔍</span>':'';
 bh+='<div class="bk bk-'+md+' r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\',\''+md+'\')">'+irrBtn+endBtn+(md==='jp'?furi(t):t)+'<span class="bk-r">'+rl+'</span></div>';});
 bh+='</div><div style="text-align:center;padding:4px 0 2px"><button class="sf" onclick="sp(\''+d.s.replace(/'/g,"\\'")+'\',\''+md+'\')">🔊 '+(md==='jp'?furi(eH(d.s)):eH(d.s))+'</button></div>';
 const litField=md==='jp'?'lit_jp':'lit_en';const litText=r[litField]||'';
@@ -991,7 +993,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=44').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=45').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
