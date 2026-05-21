@@ -426,6 +426,9 @@ for(const k of allKeys){const la=localDiy[k]||[];const ra=remoteDiy[k]||[];
 const byKey=new Map();la.forEach(s=>byKey.set(s.cn+'_'+s.ts,s));ra.forEach(s=>byKey.set(s.cn+'_'+s.ts,s));
 mergedDiy[k]=[...byKey.values()].sort((a,b)=>a.ts-b.ts);}
 merged.diy=mergedDiy;
+/* 保留 lastIdx/lastId（本機優先，因為這是最即時的位置）*/
+if(typeof local.lastIdx==='number'){merged.lastIdx=local.lastIdx;}else if(typeof remote.lastIdx==='number'){merged.lastIdx=remote.lastIdx;}
+if(local.lastId){merged.lastId=local.lastId;}else if(remote.lastId){merged.lastId=remote.lastId;}
 try{localStorage.setItem('tl_'+cu,JSON.stringify(merged));}catch{}
 fbPush(cu,merged);
 }catch{}}
@@ -1005,7 +1008,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=48').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=49').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
