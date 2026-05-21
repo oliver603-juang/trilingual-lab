@@ -361,13 +361,15 @@ const TAG_TO_JP_EMOJI={
 '盡是':'ずくめ🎨','盡是的':'ずくめの🎨',
 '是':'✅','了':'⏪','他':'👤','期間':'⏱️','到之前':'までに⏰'};
 function renderLiteralWithTags(text){
-let out=text.replace(/\[([^\]]+)\]/g,function(m,tag){
+/* Process (annotation) FIRST via placeholders to avoid conflict with onclick="...('x',event)" */
+let out=text.replace(/\(([^)（）]+)\)/g,'\u0001ANNO\u0001$1\u0001ENDA\u0001');
+out=out.replace(/\[([^\]]+)\]/g,function(m,tag){
 const info=TAG_INFO[tag];
 const color=info?info.color:'#c4b5fd';
 const display=TAG_TO_JP_EMOJI[tag]||tag;
 return '<span class="lit-tag" style="background:'+color+'33;border-color:'+color+'66;color:'+color+'" onclick="showTagPopup(\''+tag.replace(/'/g,"\\'")+'\',event)">['+display+']</span>';});
-/* Convert (註解) into soft hint chips */
-out=out.replace(/\(([^)（）]+)\)/g,'<span class="lit-anno">$1</span>');
+/* Now replace placeholders with anno spans */
+out=out.replace(/\u0001ANNO\u0001([\s\S]*?)\u0001ENDA\u0001/g,'<span class="lit-anno">$1</span>');
 return out;}
 function sp(t,l){sy.cancel();const speakText=l==='jp'?kanjiToKana(t):t;const u=new SpeechSynthesisUtterance(speakText);u.lang=l==='jp'?'ja-JP':'en-US';u.rate=0.8;if(l==='jp'&&jv)u.voice=jv;if(l==='en'&&ev)u.voice=ev;sy.speak(u);}
 document.addEventListener('click',function _unlock(){const u=new SpeechSynthesisUtterance('');u.volume=0;sy.speak(u);document.removeEventListener('click',_unlock);},{once:true});
@@ -929,7 +931,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=33').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=34').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
