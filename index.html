@@ -600,8 +600,8 @@ if(/くない$/.test(text))return 'くない';
 /* ば形（條件形）— 在 u形 之前偵測 */
 if(/[えけげせてねべめれ]ば$/.test(text))return 'ば形';
 if(/[えけげせてねべめれ]ば.+ほど/.test(text))return '越';
-/* 偵測 し + 尾巴 = する 連用形（カタカナ + しながら/しました/します 等） */
-if(/[ァ-ヴーぁ-ん\u4e00-\u9fff]しながら$/.test(text))return 'し形';
+/* 偵測 し + 尾巴 = する 連用形（如「しながら」「しました」「します」） */
+if(/^しながら$|[ァ-ヴーぁ-ん\u4e00-\u9fff]しながら$/.test(text))return 'し形';
 /* 偵測順序：長尾巴優先 (させられる > られる > れる > せる) */
 if(/[ぁ-んァ-ヴ\u4e00-\u9fff]させられる/.test(text))return 'させられる';
 if(/[ぁ-んァ-ヴ\u4e00-\u9fff]させる/.test(text))return 'させる';
@@ -991,7 +991,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=42').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=43').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
