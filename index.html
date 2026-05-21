@@ -287,6 +287,7 @@ const TAG_INFO={
 '如':{jp:'〜たら / 〜ば / 〜なら',mean:'如果... / 要是...',ex:'雨が降っ<b>たら</b>行かない→「如果下雨，就不去」',hint:'🌧️ 假設條件',color:'#7dd3fc',compress:'🇯🇵 <b>たら/ば/なら</b>（1 個字）<br>= 🇹🇼 <b>如果...就...</b>（2 個字對偶）<br>= 🇹🇼 <b>要是...就...</b>（2 個字對偶）<br><br>🇯🇵 雨が降っ<b>たら</b>、行かない<br>🇹🇼 <b>如果</b>下雨，<b>就</b>不去<br>🇺🇸 <b>If</b> it rains, I will not go'},
 '邊':{jp:'〜ながら',mean:'一邊…一邊…',ex:'食べ<b>ながら</b>話す→「一邊吃，一邊講」',hint:'🔁 兩個動作同時做',color:'#a78bfa',compress:'🇯🇵 <b>ながら</b>（1 個字）<br>= 🇹🇼 <b>一邊...一邊...</b>（2 個字對偶）<br>= 🇹🇼 <b>一面...一面...</b>（2 個字對偶）<br><br>🇯🇵 音楽を聞き<b>ながら</b>勉強する<br>🇹🇼 <b>一邊</b>聽音樂，<b>一邊</b>讀書<br>🇺🇸 <b>While</b> listening to music, I study'},
 '不只':{jp:'〜だけでなく / 〜ばかりか',mean:'不只… 還… / 不僅… 而且…',ex:'報告書<b>だけでなく</b>プレゼンもした→「不只完成報告，還做了簡報」',hint:'➕ 升級加碼',color:'#f472b6',compress:'🇯🇵 <b>だけでなく</b>（1 個字）<br>= 🇹🇼 <b>不只...還...</b>（2 個字對偶）<br>= 🇹🇼 <b>不僅...而且...</b>（2 個字對偶）<br><br>🇯🇵 彼は英語<b>だけでなく</b>、日本語もできる<br>🇹🇼 他<b>不只</b>會英文，<b>還</b>會日文<br>🇺🇸 He speaks <b>not only</b> English <b>but also</b> Japanese'},
+'越':{jp:'〜ば〜ほど (複合句型)',mean:'越…越… (用 3 個元素夾擊產生)',ex:'<b>勉強すれば</b>+<b>する</b>+<b>ほど</b>面白い<br>→「越讀越有趣」',hint:'📈 條件 + 程度 = 越來越的效果',color:'#fb923c',compress:'⚠️ 注意！「越…越…」<b>不是單一日文字</b>，<br>是 3 個元素夾擊產生的<b>複合句型</b>！<br><br>📐 完整公式：<br>① 動詞變「ば形」（如果做） →勉強<u>すれば</u><br>② 同動詞「原形」 →す<u>る</u><br>③ ほど（程度標記）→ <u>ほど</u><br>④ 形容詞（結果）→ 面白い<br><br>🇯🇵 勉強すれば する ほど 面白い<br>　　　如果讀　＋　讀　＋程度＋有趣<br>🇹🇼 <b>越</b>讀<b>越</b>有趣<br>🇺🇸 The more I study, the more interesting<br><br>📋 更多範例：<br>食べ<b>れば</b>食べる<b>ほど</b>美味しい → 越吃越好吃<br>知<b>れば</b>知る<b>ほど</b>面白い → 越了解越有趣<br>高<b>ければ</b>高い<b>ほど</b>いい → 越貴越好<br><br>💡 關鍵領悟：<br>中文的「越來越」效果 = <br>日文「條件形 + 原形 + ほど」三件套<br>少一個都不行！'},
 '即使':{jp:'〜といえども',mean:'即使是…',ex:'',hint:'⚖️',color:'#ddd6fe'},
 '自己的方式':{jp:'〜なりに',mean:'按自己的方式',ex:'',hint:'🎒',color:'#ddd6fe'},
 '之後不再':{jp:'〜を限りに',mean:'從某點之後不再',ex:'',hint:'🚫',color:'#ddd6fe'},
@@ -387,7 +388,7 @@ const TAG_TO_JP_EMOJI={
 '一':'a🎲','一個':'a🎲','一位':'a🎲','一部':'a🎲','那':'the👆',
 '關係':'who🔗',
 '比':'より⚖️','也':'も➕','只':'だけ1️⃣',
-'偏不':'ものを😒','偏':'のに😒','因':'から🔥','為':'ために🎯','望':'ように🌟','如':'たら🌧️','邊':'ながら🔁','不只':'だけでなく➕',
+'偏不':'ものを😒','偏':'のに😒','因':'から🔥','為':'ために🎯','望':'ように🌟','如':'たら🌧️','邊':'ながら🔁','不只':'だけでなく➕','越':'ば+原形+ほど📈',
 '到了':'ともなると📈','忍不住':'ずに😤',
 '才剛':'そばから🔁','即使':'といえども⚖️',
 '盡是':'ずくめ🎨','盡是的':'ずくめの🎨',
@@ -596,6 +597,9 @@ if(/かったです$/.test(text))return 'かった';
 if(/かった$/.test(text)&&!/たかった$/.test(text))return 'かった';
 if(/くないです$|くありません$/.test(text))return 'くない';
 if(/くない$/.test(text))return 'くない';
+/* ば形（條件形）— 在 u形 之前偵測 */
+if(/[えけげせてねべめれ]ば$/.test(text))return 'ば形';
+if(/[えけげせてねべめれ]ば.+ほど/.test(text))return '越';
 /* 偵測順序：長尾巴優先 (させられる > られる > れる > せる) */
 if(/[ぁ-んァ-ヴ\u4e00-\u9fff]させられる/.test(text))return 'させられる';
 if(/[ぁ-んァ-ヴ\u4e00-\u9fff]させる/.test(text))return 'させる';
@@ -643,6 +647,8 @@ const VERB_ENDINGS={
 'てください':{name:'てください (請…)',scene:'🙏 禮貌地請別人做某事',inner:'「請求 + 禮貌」',effect:'**對方比較容易答應**、不會覺得被命令',examples:[{form:'食べてください',read:'たべてください',meaning:'請吃'},{form:'見てください',read:'みてください',meaning:'請看'},{form:'待ってください',read:'まってください',meaning:'請等等'}],warn:'⚠️ 朋友間 → 用「食べて」就好（去掉ください）'},
 'ないで':{name:'ないで (請別…)',scene:'🚫 禮貌地請對方「不要做」',inner:'「請求別做 + 柔和」',effect:'**柔和地阻止**對方，比直接命令好聽很多',examples:[{form:'食べないで',read:'たべないで',meaning:'別吃'},{form:'来ないで',read:'こないで',meaning:'別來'},{form:'泣かないで',read:'なかないで',meaning:'別哭'}],warn:'⚠️ 加 ください 更禮貌：「食べないでください」'},
 'u形':{name:'う / く / ぐ / す / つ / ぬ / ぶ / む (動詞辭書形)',scene:'😊 動詞最基本的樣子（字典裡查到的）',inner:'這是<b>第一類動詞（u-動詞）</b>的辭書形，<br>結尾是 u 段音（く / む / す / つ 等等）。',effect:'這個動詞還沒變身！是最原始的樣子。<br><br>🎯 在這句裡的角色：<br>「泣く」直接接後面的名詞，當「形容詞」用！<br>泣く + ほど = 「哭那種程度的」<br>就像 [✨修飾] 標籤的功能！<br><br>🦎 變身規則：<br>「く」段 → 變到 い 段（敬語）：泣く → 泣<u>き</u>ます<br>「く」段 → 變到 あ 段（否定）：泣く → 泣<u>か</u>ない<br>「く」段 → 變到 え 段（能力）：泣く → 泣<u>け</u>る',examples:[{form:'泣く',read:'なく',meaning:'哭（原形）'},{form:'書く',read:'かく',meaning:'寫（原形）'},{form:'読む',read:'よむ',meaning:'讀（原形）'},{form:'話す',read:'はなす',meaning:'說（原形）'},{form:'買う',read:'かう',meaning:'買（原形）'}],warn:'⚠️ 這個尾巴的「く / む / す」是動詞自己的尾巴，不是助詞！整個「泣く」是一個動詞單字。'},
+'ば形':{name:'〜ば (條件形 / 假設)',scene:'🌧️ 想說「如果...的話」',inner:'這是動詞/形容詞的<b>條件形</b>，<br>表達「假設條件」（如果...）',effect:'🦎 變身規則：<br>① 字尾滑到 え 段<br>② 加「ば」<br><br>例子拆解：<br>勉強する → すれ + ば = <u>勉強すれば</u>（如果讀書）<br>食べる → 食べれ + ば = <u>食べれば</u>（如果吃）<br>行く → 行け + ば = <u>行けば</u>（如果去）<br>飲む → 飲め + ば = <u>飲めば</u>（如果喝）<br><br>📢 講出口的效果：<br>✅ 一般用途：表達「如果」（比 たら 正式）<br>✅ 特殊用途：跟「ほど」配合 → 「越...越...」<br>　例：勉強すればするほど = 越讀越',examples:[{form:'勉強すれば',read:'べんきょうすれば',meaning:'如果讀書'},{form:'食べれば',read:'たべれば',meaning:'如果吃'},{form:'行けば',read:'いけば',meaning:'如果去'},{form:'飲めば',read:'のめば',meaning:'如果喝'},{form:'安ければ',read:'やすければ',meaning:'如果便宜'}],warn:'⚠️ 「ば」是條件形尾巴，跟「ほど」一起用會變成「越...越...」！'},
+'越':{name:'〜ば〜ほど (越...越... 複合句型)',scene:'📈 想說「越...越...」的效果',inner:'⚠️ 重要！「越來越」<b>不是一個日文字</b>，<br>是 3 個元素夾擊產生的<b>複合句型</b>！',effect:'📐 完整公式（3 件套）：<br>① 動詞 ば形（如果做）<br>② 同動詞 原形<br>③ ほど（程度標記）<br><br>例子拆解（例句 109）：<br>勉強<b>すれば</b>（如果讀）+ <b>する</b>（讀）+ <b>ほど</b>（程度）<br>= 越讀越...<br><br>📢 講出口的效果：<br>學生說「<b>勉強すればするほど</b>面白い」<br>= 自動產生「越學越有趣」的<b>中文語感</b><br><br>📋 更多例子：<br>食べ<b>れば</b>食べる<b>ほど</b>美味しい = 越吃越好吃<br>知<b>れば</b>知る<b>ほど</b>面白い = 越了解越有趣<br>高<b>ければ</b>高い<b>ほど</b>いい = 越貴越好',examples:[{form:'勉強すればするほど',read:'べんきょうすればするほど',meaning:'越讀越'},{form:'食べれば食べるほど',read:'たべればたべるほど',meaning:'越吃越'},{form:'知れば知るほど',read:'しればしるほど',meaning:'越了解越'}],warn:'⚠️ 學生最常犯：以為「越」對應某個日文字！其實是「ば+原形+ほど」三件套合力產生的效果。少一個元素就會失敗！'},
 'かった':{name:'かった / かったです (い形容詞 過去式)',scene:'⏰ 描述「過去」的狀態：「以前是...的」',inner:'這是<b>い形容詞</b>的過去式，不是動詞！<br><br>兩種形式都是同個尾巴：<br>🇯🇵 <b>かった</b> = 普通版（跟朋友）<br>🇯🇵 <b>かったです</b> = 禮貌版（對長輩，加です）',effect:'🦎 い形容詞變身 SOP：<br>① 把「い」切掉<br>② 加「かった」（普通版）<br>③ 想禮貌 → 再加「です」<br><br>例子拆解：<br>辛い → 切い → 辛 + かった → <u>辛かった</u>（朋友間）<br>辛かった + です → <u>辛かったです</u>（禮貌）<br><br>📢 講出口的效果：<br>說 <b>辛い</b> = 現在很辣<br>說 <b>辛かった</b> = 那時候很辣（已經過去）<br>說 <b>辛くない</b> = 不辣<br>說 <b>辛くなかった</b> = 那時候不辣',examples:[{form:'辛かった',read:'からかった',meaning:'(那時)很辣（普通）'},{form:'辛かったです',read:'からかったです',meaning:'(那時)很辣（禮貌）'},{form:'高かった',read:'たかかった',meaning:'(以前)很高/貴'},{form:'寒かった',read:'さむかった',meaning:'(以前)很冷'},{form:'楽しかった',read:'たのしかった',meaning:'(以前)很開心'}],warn:'⚠️ 「かった」是い形容詞的尾巴，不是動詞！な形容詞用「でした」(静かでした)'},
 'くない':{name:'くない (い形容詞 否定)',scene:'❌ 對朋友說「不是...的」',inner:'這是<b>い形容詞</b>的否定，不是動詞！<br>い形容詞的「い」變成「くない」',effect:'い形容詞變身規則：<br>🦎 切い ＋ くない<br>高い → 高<u>くない</u>（不貴）<br>寒い → 寒<u>くない</u>（不冷）',examples:[{form:'高くない',read:'たかくない',meaning:'不貴/不高'},{form:'寒くない',read:'さむくない',meaning:'不冷'},{form:'おいしくない',read:'おいしくない',meaning:'不好吃'}],warn:'⚠️ 「くない」是い形容詞否定！な形容詞用「じゃない」(静かじゃない)'},
 'くなかった':{name:'くなかった (い形容詞 過去否定)',scene:'⏰❌ 對朋友說「以前不是...的」',inner:'這是<b>い形容詞</b>的過去否定，不是動詞！<br>= くない（否定）+ かった（過去）',effect:'い形容詞變身規則：<br>🦎 切い ＋ くなかった<br>高い → 高<u>くなかった</u>（以前不貴）<br>寒い → 寒<u>くなかった</u>（以前不冷）',examples:[{form:'高くなかった',read:'たかくなかった',meaning:'(以前)不貴'},{form:'寒くなかった',read:'さむくなかった',meaning:'(以前)不冷'},{form:'おいしくなかった',read:'おいしくなかった',meaning:'(以前)不好吃'}],warn:'⚠️ 「くなかった」是い形容詞過去否定，不是動詞！'}};
@@ -976,7 +982,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=39').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=40').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
