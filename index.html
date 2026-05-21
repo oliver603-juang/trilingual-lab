@@ -557,6 +557,10 @@ if(/[\u4e00-\u9fff](する|します|しません|しました)/.test(text))retu
 return null;}
 /* === 規則動詞尾巴偵測 === */
 function detectVerbEnding(text){
+/* い形容詞優先（避免誤判：高かった ≠ 動詞た形） */
+if(/くなかった$/.test(text))return 'くなかった';
+if(/かった$/.test(text)&&!/たかった$/.test(text))return 'かった';
+if(/くない$/.test(text))return 'くない';
 /* 偵測順序：長尾巴優先 (させられる > られる > れる > せる) */
 if(/[ぁ-んァ-ヴ\u4e00-\u9fff]させられる/.test(text))return 'させられる';
 if(/[ぁ-んァ-ヴ\u4e00-\u9fff]させる/.test(text))return 'させる';
@@ -600,7 +604,10 @@ const VERB_ENDINGS={
 'させる':{name:'させる (讓別人做)',scene:'👨‍🏫 強迫或允許別人做某事',inner:'「使役」= 我讓他做',effect:'**主導者是我，動作是別人做**<br>例：老師讓學生背書、媽媽讓小孩吃菜',examples:[{form:'食べさせる',read:'たべさせる',meaning:'讓...吃'},{form:'行かせる',read:'いかせる',meaning:'讓...去'},{form:'勉強させる',read:'べんきょうさせる',meaning:'讓...念書'}],warn:'⚠️ 上對下使用，例：父母→小孩、老闆→員工'},
 'させられる':{name:'させられる (被迫做)',scene:'😩 被別人強迫做不想做的事',inner:'「使役 + 被動」= 被迫做',effect:'**強烈的負面情緒**、抱怨語氣<br>例：被媽媽逼著吃青菜',examples:[{form:'食べさせられる',read:'たべさせられる',meaning:'被迫吃'},{form:'勉強させられる',read:'べんきょうさせられる',meaning:'被迫念書'}],warn:'⚠️ 這是日文中表達「不爽被迫做」的標準說法'},
 'てください':{name:'てください (請…)',scene:'🙏 禮貌地請別人做某事',inner:'「請求 + 禮貌」',effect:'**對方比較容易答應**、不會覺得被命令',examples:[{form:'食べてください',read:'たべてください',meaning:'請吃'},{form:'見てください',read:'みてください',meaning:'請看'},{form:'待ってください',read:'まってください',meaning:'請等等'}],warn:'⚠️ 朋友間 → 用「食べて」就好（去掉ください）'},
-'ないで':{name:'ないで (請別…)',scene:'🚫 禮貌地請對方「不要做」',inner:'「請求別做 + 柔和」',effect:'**柔和地阻止**對方，比直接命令好聽很多',examples:[{form:'食べないで',read:'たべないで',meaning:'別吃'},{form:'来ないで',read:'こないで',meaning:'別來'},{form:'泣かないで',read:'なかないで',meaning:'別哭'}],warn:'⚠️ 加 ください 更禮貌：「食べないでください」'}};
+'ないで':{name:'ないで (請別…)',scene:'🚫 禮貌地請對方「不要做」',inner:'「請求別做 + 柔和」',effect:'**柔和地阻止**對方，比直接命令好聽很多',examples:[{form:'食べないで',read:'たべないで',meaning:'別吃'},{form:'来ないで',read:'こないで',meaning:'別來'},{form:'泣かないで',read:'なかないで',meaning:'別哭'}],warn:'⚠️ 加 ください 更禮貌：「食べないでください」'},
+'かった':{name:'かった (い形容詞 過去式)',scene:'⏰ 描述「過去」的狀態：「以前是...的」',inner:'這是<b>い形容詞</b>的過去式，不是動詞！<br>い形容詞的「い」變成「かった」',effect:'い形容詞變身規則：<br>🦎 切い ＋ かった<br>高い → 高<u>かった</u>（以前很貴）<br>寒い → 寒<u>かった</u>（以前很冷）<br>楽しい → 楽し<u>かった</u>（以前很開心）',examples:[{form:'高かった',read:'たかかった',meaning:'(以前)很高/貴'},{form:'寒かった',read:'さむかった',meaning:'(以前)很冷'},{form:'楽しかった',read:'たのしかった',meaning:'(以前)很開心'},{form:'おいしかった',read:'おいしかった',meaning:'(以前)很好吃'}],warn:'⚠️ 「かった」是い形容詞的尾巴，不是動詞！な形容詞用「でした」(静かでした)'},
+'くない':{name:'くない (い形容詞 否定)',scene:'❌ 對朋友說「不是...的」',inner:'這是<b>い形容詞</b>的否定，不是動詞！<br>い形容詞的「い」變成「くない」',effect:'い形容詞變身規則：<br>🦎 切い ＋ くない<br>高い → 高<u>くない</u>（不貴）<br>寒い → 寒<u>くない</u>（不冷）',examples:[{form:'高くない',read:'たかくない',meaning:'不貴/不高'},{form:'寒くない',read:'さむくない',meaning:'不冷'},{form:'おいしくない',read:'おいしくない',meaning:'不好吃'}],warn:'⚠️ 「くない」是い形容詞否定！な形容詞用「じゃない」(静かじゃない)'},
+'くなかった':{name:'くなかった (い形容詞 過去否定)',scene:'⏰❌ 對朋友說「以前不是...的」',inner:'這是<b>い形容詞</b>的過去否定，不是動詞！<br>= くない（否定）+ かった（過去）',effect:'い形容詞變身規則：<br>🦎 切い ＋ くなかった<br>高い → 高<u>くなかった</u>（以前不貴）<br>寒い → 寒<u>くなかった</u>（以前不冷）',examples:[{form:'高くなかった',read:'たかくなかった',meaning:'(以前)不貴'},{form:'寒くなかった',read:'さむくなかった',meaning:'(以前)不冷'},{form:'おいしくなかった',read:'おいしくなかった',meaning:'(以前)不好吃'}],warn:'⚠️ 「くなかった」是い形容詞過去否定，不是動詞！'}};
 function showVerbEndingPopup(endingKey,sourceText){
 const v=VERB_ENDINGS[endingKey];if(!v)return;
 let html='<div class="irr-pop"><button class="irr-close" onclick="closeIrregularPopup()">×</button>';
@@ -931,7 +938,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=34').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=35').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
