@@ -561,12 +561,23 @@ const IRREGULAR_VERBS={
 {form:'来た',read:'きた',label:'過去形'},{form:'来て',read:'きて',label:'て形'},
 {form:'来よう',read:'こよう',label:'意向形'},{form:'来られる',read:'こられる',label:'被動/可能'},
 {form:'来させる',read:'こさせる',label:'使役'}]},
-'する':{name:'する (做)',hint:'第三類動詞 (不規則魔王)',warn:'⚠️ 跟「来る」一樣是不規則王！',forms:[
-{form:'する',read:'する',label:'辭書形'},{form:'します',read:'します',label:'ます形'},
-{form:'しない',read:'しない',label:'否定形'},{form:'した',read:'した',label:'過去形'},
-{form:'して',read:'して',label:'て形'},{form:'しよう',read:'しよう',label:'意向形'},
-{form:'される',read:'される',label:'被動形'},{form:'させる',read:'させる',label:'使役形'},
-{form:'できる',read:'できる',label:'可能形(獨立)'}]},
+'する':{name:'する (做) - 萬能造動詞',hint:'第三類動詞 (不規則魔王) + 「名詞+する」造動詞神器',warn:'⚠️ 重要！「する」是日文最強造詞工具：<br>📐 <b>名詞 + する = 變動詞</b><br><br>很多中英文的「動詞」，在日文裡其實是名詞！<br>🇯🇵 更新（名詞）+ する = 更新する（更新動作）<br>🇯🇵 勉強（名詞）+ する = 勉強する（唸書動作）<br>🇯🇵 結婚（名詞）+ する = 結婚する（結婚動作）<br><br>💡 要表達「做了 + 禮貌」就用 <b>しました</b>（對長輩/客戶）<br>💡 要表達「做了 + 朋友隨意」就用 <b>した</b>（跟朋友）<br>用錯場合會顯得太隨便或太冷淡',forms:[
+{form:'する',read:'する',label:'辭書形 (原形)'},
+{form:'します',read:'します',label:'ます形 (禮貌・未來)'},
+{form:'した',read:'した',label:'過去形 (朋友隨意)'},
+{form:'しました',read:'しました',label:'過去禮貌 (對長輩/客戶) ⭐'},
+{form:'しない',read:'しない',label:'否定形 (朋友)'},
+{form:'しません',read:'しません',label:'否定禮貌'},
+{form:'しなかった',read:'しなかった',label:'過去否定 (朋友)'},
+{form:'しませんでした',read:'しませんでした',label:'過去否定禮貌'},
+{form:'して',read:'して',label:'て形 (連接/請求)'},
+{form:'している',read:'している',label:'進行/狀態 (朋友)'},
+{form:'しています',read:'しています',label:'進行/狀態 (禮貌)'},
+{form:'しよう',read:'しよう',label:'意向形 (一起做吧)'},
+{form:'しましょう',read:'しましょう',label:'意向形 (禮貌邀請)'},
+{form:'される',read:'される',label:'被動形 (被做)'},
+{form:'させる',read:'させる',label:'使役形 (讓...做)'},
+{form:'できる',read:'できる',label:'可能形 (能做・獨立字)'}]},
 '行く':{name:'行く (去)',hint:'第一類動詞 (但有特殊て形)',warn:'⚠️ て形不規則：是「行って」不是「行いて」！',forms:[
 {form:'行く',read:'いく',label:'辭書形'},{form:'行きます',read:'いきます',label:'ます形'},
 {form:'行かない',read:'いかない',label:'否定形'},{form:'行った',read:'いった',label:'過去形 (特殊)'},
@@ -994,7 +1005,7 @@ document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.c
 lD();
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=46').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=47').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
