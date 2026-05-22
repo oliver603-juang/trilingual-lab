@@ -608,8 +608,12 @@ const IRREGULAR_VERBS={
 };
 /* 偵測積木包含哪個不規則動詞 */
 function detectIrregular(text){
-/* 排除常見慣用語 — できるだけ「盡量」、できれば「如果可以的話」等 */
+/* 排除固定句型（不是 する 的變形） */
 if(/できるだけ|できれば|できるかぎり/.test(text))return null;
+if(/に即し|に即した|に即して/.test(text))return null;
+if(/きらいがある/.test(text))return null;
+if(/ざるを得ない/.test(text))return null;
+if(/にほかならない|にすぎない|に相違ない/.test(text))return null;
 if(/来(ない|なかった|る|た|て|よう|られ|させ|ます|ません|ました)/.test(text))return '来る';
 if(/行(く|きま|かな|った|って|こう|ける|かれ|かせ)/.test(text))return '行く';
 if(/^(する|します|しません|しました|しない|した|して|しよう|される|させる)$/.test(text))return 'する';
@@ -626,7 +630,7 @@ if(/ざるを得ない$/.test(text))return 'ざるを得ない';
 if(/にほかならない$/.test(text))return 'にほかならない';
 if(/にすぎない$/.test(text))return 'にすぎない';
 if(/に相違ない$/.test(text))return 'に相違ない';
-if(/に即して$/.test(text))return 'に即して';
+if(/に即して|に即した/.test(text))return 'に即して';
 /* 口語傳聞だって（避免被誤判為 て形動詞） */
 if(/だって$/.test(text))return 'だって';
 /* い形容詞優先（避免誤判：高かった ≠ 動詞た形） */
@@ -701,7 +705,7 @@ const VERB_ENDINGS={
 'にほかならない':{name:'〜にほかならない (正是... / 無非是...)',scene:'💯 想強調「就是這個原因，沒有別的」',inner:'固定句型 = <b>正是...</b>、無非是...<br><br>📐 拆解：<br>に = 對於<br>ほか = 其他<br>ならない = 不成立<br>= 「不可能是其他的」= 正是這個',effect:'📢 講出口的效果：<br>「努力の結果<b>にほかならない</b>」<br>= 「正是努力的結果」（強調）',examples:[{form:'努力の結果にほかならない',read:'どりょくのけっかにほかならない',meaning:'正是努力的結果'}],warn:'⚠️ 固定句型，不是動詞！'},
 'にすぎない':{name:'〜にすぎない (只不過是...)',scene:'🤷 想說「沒什麼大不了，只是...」',inner:'固定句型 = <b>只不過是...</b>、僅僅是...<br><br>📐 拆解：<br>に = 對於<br>すぎない = 不超過<br>= 「不超過這個程度」= 只是',effect:'📢 講出口的效果：<br>「推測<b>にすぎない</b>」<br>= 「只不過是推測」（降低重要性）',examples:[{form:'推測にすぎない',read:'すいそくにすぎない',meaning:'只不過是推測'}],warn:'⚠️ 固定句型，不是動詞！'},
 'に相違ない':{name:'〜に相違ない (一定是... / 肯定是...)',scene:'💪 非常確信地說「絕對是這樣」',inner:'固定句型 = <b>一定是...</b>（很正式的確信）<br><br>📐 拆解：<br>に = 對於<br>相違 = 差異<br>ない = 沒有<br>= 「沒有差異」= 一定是',effect:'📢 講出口的效果：<br>語氣非常正式、像法官在宣判<br>比「に違いない」更書面',examples:[{form:'彼の仕業に相違ない',read:'かれのしわざにそういない',meaning:'一定是他做的'}],warn:'⚠️ 固定句型，不是動詞！非常正式書面用語'},
-'に即して':{name:'〜に即して (根據... / 按照...)',scene:'📋 想說「按照某個標準或規則」',inner:'固定句型 = <b>根據...</b>、按照...<br><br>📐 拆解：<br>に = 對於<br>即して = 依據<br>= 「依據某個基準」',effect:'📢 講出口的效果：<br>「現実<b>に即して</b>考える」<br>= 「根據現實來思考」',examples:[{form:'現実に即して',read:'げんじつにそくして',meaning:'根據現實'}],warn:'⚠️ 「に即して」不是て形動詞！是固定句型「按照...」'},
+'に即して':{name:'〜に即して / に即した (根據... / 按照...)',scene:'📋 想說「按照某個標準或規則」',inner:'⚠️ 這<b>不是 する 的變形</b>！<br>是「即す」（そくす）這個獨立動詞的固定用法。<br><br>📐 兩種寫法：<br>に即<b>して</b> = 接動詞（根據...來做）<br>に即<b>した</b> = 接名詞（根據...的○○）',effect:'🎯 拆解（例句 215）：<br>現実<b>に即した</b>教育<br>= 根據現實<b>的</b>教育<br>= 貼近現實的教育<br><br>📋 兩種用法對比：<br>現実に即<b>して</b>考える = 根據現實<b>來思考</b>（接動詞）<br>現実に即<b>した</b>教育 = 根據現實<b>的教育</b>（接名詞）<br><br>❓ 為什麼不是 する？<br>「即す」（そくす）是一個獨立動詞，意思是「符合、依據」<br>它的「した」= 即す 的過去形（不是 する 的 した！）<br>它的「して」= 即す 的 て 形（不是 する 的 して！）<br><br>⚠️ 中文母語者陷阱：<br>看到「即した」會以為是「即（名詞）+ した（する）」<br>但其實整個「即す」是一個動詞！',examples:[{form:'現実に即した教育',read:'げんじつにそくしたきょういく',meaning:'貼近現實的教育'},{form:'現実に即して考える',read:'げんじつにそくしてかんがえる',meaning:'根據現實來思考'},{form:'法律に即した判断',read:'ほうりつにそくしたはんだん',meaning:'依法律的判斷'}],warn:'⚠️ 「即した」不是 する 的變形！<br>⚠️ 「即す（そくす）」是獨立動詞 = 符合、依據<br>⚠️ 即した = 即す的た形，即して = 即す的て形'},
 'できるだけ':{name:'できるだけ (慣用語：盡量 / 盡可能)',scene:'🤝 想表達「我會盡量做」（但不保證能成功）',inner:'這是<b>慣用語</b>（固定組合），<br>不是 する 動詞的變形！<br><br>📐 字面拆解：<br>できる（能做）+ だけ（程度範圍）<br>= 「能做的範圍內」<br>= 「盡量、盡可能」',effect:'🇯🇵 文化關鍵：<br>「できるだけ」是日文超常見的<b>禮貌軟性表達</b>。<br><br>📢 講出口的效果：<br>說「<b>できるだけ頑張ります</b>」<br>= 字面：盡量努力<br>= 真實語感：「<b>我會盡力，但不保證成功</b>」<br>= 中文：「盡量啦…」（曖昧拒絕）<br><br>🇯🇵 vs 🇹🇼 文化差異：<br>🇹🇼「我會努力做」= 通常會做到<br>🇯🇵「できるだけやります」= 可能做不到（軟拒絕）<br><br>📋 同類禮貌軟性表達：<br>できれば → 如果可以的話（暗示有難度）<br>なるべく → 盡量（同義詞）<br>努力します → 會努力（也常是軟拒絕）<br><br>⚠️ 中文母語者陷阱：<br>聽到「できるだけやります」千萬不要當作「會做到」！<br>日文常用這個來<b>禮貌地暗示「可能做不到」</b>。',examples:[{form:'できるだけ頑張ります',read:'できるだけがんばります',meaning:'盡量努力 (≈做不到的軟拒絕)'},{form:'できるだけ早く',read:'できるだけはやく',meaning:'盡量早一點'},{form:'できるだけ多く',read:'できるだけおおく',meaning:'盡量多一些'},{form:'できれば行きたい',read:'できればいきたい',meaning:'如果可以的話想去 (暗示可能去不了)'}],warn:'⚠️ 「できるだけ」是慣用語，不是 する 的變形！<br>⚠️ 在日本職場/社交場合常是<b>禮貌的拒絕</b>，不要當作「會做到」！'},
 'できれば':{name:'できれば (慣用語：如果可以的話)',scene:'🤔 想表達「如果可能就...，但有困難」',inner:'<b>慣用語</b>（できる + ば形 + ば）<br>= 「如果能做的話」',effect:'📢 講出口的效果：<br>說「<b>できれば行きたい</b>」<br>= 字面：如果能去就想去<br>= 真實語感：「<b>很想去，但可能去不了</b>」<br><br>跟「できるだけ」一樣是<b>軟拒絕</b>家族！<br><br>📋 對比：<br>🇯🇵 行きたい = 想去（直接）<br>🇯🇵 できれば行きたい = 如果可以就想去（軟）<br>🇯🇵 できるだけ行く = 盡量去（可能去不了）',examples:[{form:'できれば行きたい',read:'できればいきたい',meaning:'如果可以就想去'},{form:'できれば手伝いたい',read:'できればてつだいたい',meaning:'如果可以想幫忙'}],warn:'⚠️ 「できれば」是慣用語！<br>常表達禮貌的猶豫或軟拒絕'},
 'として':{name:'〜として (作為... / 身為...)',scene:'🎭 想表達「以某個身份/角色」',inner:'⚠\ufe0f 重要！這<b>不是 て 形動詞</b>！<br>是固定表達「<b>作為...</b>」，標示身份或角色。<br><br>\ud83d\udcd0 公式：<br>名詞 + として = 作為○○',effect:'\ud83c\udfaf 在這句裡的角色（例句 226）：<br>社会人<b>として</b> = <b>作為</b>社會人<br>= 「以社會人的身份來看」<br><br>\u2753 為什麼要加「として」？<br>因為日文要明確標示「<b>用什麼身份在說話</b>」。<br>中文只說「身為社會人」，<br>日文要用「として」這個標記把身份框起來。<br><br>\ud83d\udce2 講出口的效果：<br>說「社会人<b>として</b>あるまじき行為」<br>= 「<b>以社會人的立場來看</b>，不該有的行為」<br><br>\ud83d\udccb 更多例子：<br>\ud83d\udd39 教師<b>として</b> = <b>作為</b>老師<br>\ud83d\udd39 日本人<b>として</b> = <b>作為</b>日本人<br>\ud83d\udd39 親<b>として</b> = <b>作為</b>父母<br>\ud83d\udd39 友人<b>として</b> = <b>作為</b>朋友<br>\ud83d\udd39 会社<b>として</b> = <b>作為</b>公司（代表公司立場）<br><br>\ud83d\udca1 中文母語者注意：<br>\ud83c\uddf9\ud83c\uddfc 中文「身為」「作為」放在名詞<b>前面</b><br>\ud83c\uddef\ud83c\uddf5 日文「として」放在名詞<b>後面</b><br>\ud83c\uddf9\ud83c\uddfc <b>身為</b>社會人 ← 前面<br>\ud83c\uddef\ud83c\uddf5 社会人<b>として</b> \u2190 後面',examples:[{form:'\u793e\u4f1a\u4eba\u3068\u3057\u3066',read:'\u3057\u3083\u304b\u3044\u3058\u3093\u3068\u3057\u3066',meaning:'\u4f5c\u70ba\u793e\u6703\u4eba'},{form:'\u6559\u5e2b\u3068\u3057\u3066',read:'\u304d\u3087\u3046\u3057\u3068\u3057\u3066',meaning:'\u4f5c\u70ba\u8001\u5e2b'},{form:'\u65e5\u672c\u4eba\u3068\u3057\u3066',read:'\u306b\u307b\u3093\u3058\u3093\u3068\u3057\u3066',meaning:'\u4f5c\u70ba\u65e5\u672c\u4eba'},{form:'\u89aa\u3068\u3057\u3066',read:'\u304a\u3084\u3068\u3057\u3066',meaning:'\u4f5c\u70ba\u7236\u6bcd'},{form:'\u53cb\u4eba\u3068\u3057\u3066',read:'\u3086\u3046\u3058\u3093\u3068\u3057\u3066',meaning:'\u4f5c\u70ba\u670b\u53cb'}],warn:'\u26a0\ufe0f \u300c\u3068\u3057\u3066\u300d\u4e0d\u662f\u3066\u5f62\u52d5\u8a5e\uff01\u662f\u56fa\u5b9a\u8868\u9054\u300c\u4f5c\u70ba...\u300d\u3002<br>\u26a0\ufe0f \u4e2d\u6587\u300c\u8eab\u70ba\u300d\u653e\u524d\u9762\uff0c\u65e5\u6587\u300c\u3068\u3057\u3066\u300d\u653e\u5f8c\u9762\uff01'},
@@ -1144,7 +1148,7 @@ if(document.body.classList.contains('immersive'))toggleImmersive();
 });
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=59').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=60').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
