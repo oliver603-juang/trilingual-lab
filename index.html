@@ -92,6 +92,7 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .irr-hint{font-size:.7rem;color:#c4b5fd;text-align:center;margin-bottom:6px}
 .irr-warn{background:rgba(255,107,107,.15);border-left:3px solid #ff6b6b;padding:6px 10px;font-size:.75rem;color:#ffb3b3;margin:10px 0;border-radius:4px}
 .ve-scene,.ve-inner,.ve-effect{font-size:.78rem;color:#e0d4ff;margin:8px 0;padding:8px 12px;border-radius:8px;line-height:1.6;border-left:3px solid}
+.ve-context{margin:8px 12px;padding:10px 14px;background:linear-gradient(135deg,rgba(251,191,36,.1),rgba(244,114,182,.08));border:1px solid rgba(251,191,36,.3);border-radius:10px;font-size:.82rem;line-height:1.6;color:#fde68a}
 .ve-scene{background:rgba(125,211,252,.08);border-left-color:#7dd3fc}
 .ve-inner{background:rgba(196,181,253,.08);border-left-color:#c4b5fd}
 .ve-effect{background:rgba(134,239,172,.08);border-left-color:#86efac}
@@ -697,7 +698,7 @@ const VERB_ENDINGS={
 'し形':{name:'〜しながら / 〜しました (擬聲詞 + する 變動詞)',scene:'🎵 想用擬聲詞/擬態詞當動作（如：興奮地、心跳地、笑著）',inner:'⚠️ 重要！<b>「し」是 する 的變身</b>，不是擬聲詞的一部分！<br><br>📐 完整公式：<br>擬聲詞 + する = 變成動詞',effect:'🎯 為什麼需要這個 し？<br>因為「ながら / ます / た」必須接<b>動詞連用形</b>，<br>而 ワクワク（擬聲詞）不是動詞！<br><br>所以日文母語者腦內：<br>① ワクワク（擬聲詞，不能直接接尾巴）<br>② ワクワク + する → 變成動詞「興奮著」<br>③ する 變連用形「し」→ ワクワクし<br>④ 接 ながら → <u>ワクワクしながら</u>（一邊興奮著）<br><br>🦎 する 變身規則：<br>する → <u>し</u>ます（禮貌）<br>する → <u>し</u>ながら（一邊...）<br>する → <u>し</u>ない（不做）<br>する → <u>し</u>た（做了）<br><br>📋 同類常用例子：<br>ドキドキ + する = 心跳加速<br>イライラ + する = 焦躁<br>ニコニコ + する = 笑咪咪<br>キラキラ + する = 閃閃發亮<br>勉強 + する = 讀書<br>運動 + する = 運動',examples:[{form:'ワクワクしながら',read:'わくわくしながら',meaning:'一邊興奮著'},{form:'ドキドキしながら',read:'どきどきしながら',meaning:'一邊心跳著'},{form:'勉強しながら',read:'べんきょうしながら',meaning:'一邊讀書著'},{form:'ニコニコしながら',read:'にこにこしながら',meaning:'一邊笑著'}],warn:'⚠️ 「し」是 する 的連用形變身，不是擬聲詞 ワクワク 的一部分！中文母語者最常搞混的點！'},
 'いです':{name:'〜いです (い形容詞 + 禮貌)',scene:'🎓 對長輩/客戶/老師客氣地形容某個東西',inner:'這是<b>い形容詞 + です</b>（禮貌版）。<br>不是動詞！',effect:'🦎 い形容詞變禮貌很簡單：<br>直接在原形後面加「です」<br><br>例子拆解：<br>安い（便宜）→ 安い<u>です</u>（便宜，禮貌）<br>高い（貴）→ 高い<u>です</u>（貴，禮貌）<br><br>📢 講出口的效果：<br>說「安い」= 跟朋友說「便宜啦」（隨意）<br>說「安いです」= 跟老師說「便宜的」（禮貌）<br><br>⚠️ 注意：い形容詞跟な形容詞不一樣！<br>🇯🇵 安い+です ✅（い直接接です）<br>🇯🇵 静か+です ✅（な形容詞也加です）<br>🇯🇵 静かい+です ❌（不存在這種寫法）',examples:[{form:'安いです',read:'やすいです',meaning:'便宜的（禮貌）'},{form:'高いです',read:'たかいです',meaning:'貴的（禮貌）'},{form:'寒いです',read:'さむいです',meaning:'冷的（禮貌）'},{form:'美味しいです',read:'おいしいです',meaning:'好吃的（禮貌）'}],warn:'⚠️ 「いです」是「い形容詞 + 禮貌語尾」，不是動詞！整個尾巴的「です」是禮貌標記，不是 u-動詞的「す」結尾。'},
 'なです':{name:'〜です (名詞 / な形容詞 + 禮貌)',scene:'🎓 禮貌地說「是...」或「很...」',inner:'⚠️ 重要！這<b>不是動詞</b>！<br>是<b>名詞</b>或<b>な形容詞</b>後面接「です」表禮貌。<br><br>📐 公式：<br>名詞 + です = 「是XX」<br>な形容詞（去掉な）+ です = 「很XX」（禮貌）',effect:'🎯 在這句裡的角色（例句 163）：<br>「<b>十分</b>」=「足夠/充分」（な形容詞）<br>「<b>十分です</b>」=「足夠了」（禮貌完整句）<br><br>📋 例句 163 文化關鍵：<br>「お気持ちだけで十分です」<br>=「您的心意我已經很夠了」<br>= <b>禮貌地拒絕</b>對方的好意（不要實物）<br><br>🦎 三大類詞的 + です：<br>① <b>名詞</b> + です：<br>　学生<b>です</b>（是學生）<br>　日本人<b>です</b>（是日本人）<br>② <b>な形容詞</b>（去な）+ です：<br>　静か<u>な</u> → 静か<b>です</b>（很安靜）<br>　便利<u>な</u> → 便利<b>です</b>（很方便）<br>　十分<u>な</u> → 十分<b>です</b>（足夠了）<br>③ <b>い形容詞</b> + です（不同！）：<br>　安<u>い</u> → 安<u>い</u><b>です</b>（い不切，直接加です）<br><br>📢 講出口的效果：<br>說「<b>十分</b>」= 「夠了啦」（朋友間）<br>說「<b>十分です</b>」= 「足夠了」（禮貌）<br>說「<b>十分でした</b>」= 「（剛剛）足夠了」（過去禮貌）<br><br>🦎 變身規則：<br>名詞/な形容詞 + です（現在）<br>名詞/な形容詞 + でした（過去）<br>名詞/な形容詞 + じゃない（否定）<br>名詞/な形容詞 + じゃありません（禮貌否定）',examples:[{form:'十分です',read:'じゅうぶんです',meaning:'足夠了（禮貌）'},{form:'便利です',read:'べんりです',meaning:'很方便（禮貌）'},{form:'静かです',read:'しずかです',meaning:'很安靜（禮貌）'},{form:'学生です',read:'がくせいです',meaning:'是學生（禮貌）'},{form:'日本人です',read:'にほんじんです',meaning:'是日本人（禮貌）'}],warn:'⚠️ 「です」不是動詞！<br>⚠️ な形容詞要去掉「な」再加です：<br>　❌ 便利な + です（錯）<br>　⭕ 便利 + です（對）<br>⚠️ い形容詞不一樣：直接加です（不切い）<br>　⭕ 安い + です（對）'},
-'u形':{name:'う / く / ぐ / す / つ / ぬ / ぶ / む (動詞辭書形)',scene:'😊 動詞最基本的樣子（字典裡查到的）',inner:'這是<b>第一類動詞（u-動詞）</b>的辭書形，<br>結尾是 u 段音（く / む / す / つ 等等）。',effect:'這個動詞還沒變身！是最原始的樣子。<br><br>🎯 在這句裡的角色：<br>「泣く」直接接後面的名詞，當「形容詞」用！<br>泣く + ほど = 「哭那種程度的」<br>就像 [✨修飾] 標籤的功能！<br><br>🦎 變身規則：<br>「く」段 → 變到 い 段（敬語）：泣く → 泣<u>き</u>ます<br>「く」段 → 變到 あ 段（否定）：泣く → 泣<u>か</u>ない<br>「く」段 → 變到 え 段（能力）：泣く → 泣<u>け</u>る',examples:[{form:'泣く',read:'なく',meaning:'哭（原形）'},{form:'書く',read:'かく',meaning:'寫（原形）'},{form:'読む',read:'よむ',meaning:'讀（原形）'},{form:'話す',read:'はなす',meaning:'說（原形）'},{form:'買う',read:'かう',meaning:'買（原形）'}],warn:'⚠️ 這個尾巴的「く / む / す」是動詞自己的尾巴，不是助詞！整個「泣く」是一個動詞單字。'},
+'u形':{name:'う / く / ぐ / す / つ / ぬ / ぶ / む (動詞辭書形)',scene:'😊 動詞最基本的樣子（字典裡查到的）',inner:'這是<b>第一類動詞（u-動詞）</b>的辭書形，<br>結尾是 u 段音（く / む / す / つ 等等）。',effect:'這個動詞還沒變身！是最原始的樣子。<br><br>📋 辭書形可以做很多事：<br><br>① <b>直接修飾名詞</b>（當形容詞用）：<br>泣く + ほど = 「哭那種程度的」<br>走る + 人 = 「跑步的人」<br><br>② <b>接 まじき</b>（不該○○的）：<br>許す + まじき = 「不該原諒的」<br>ある + まじき = 「不該有的」<br>忘れる + まじき = 「不該忘記的」<br>→ まじき 是寄生蟲🐛，需要動詞辭書形當宿主！<br><br>③ <b>接其他文法</b>：<br>泣く + ことがある = 「有時候會哭」<br>読む + ために = 「為了讀」<br><br>🦎 變身規則：<br>「く」段 → 變到 い 段（敬語）：泣く → 泣<u>き</u>ます<br>「く」段 → 變到 あ 段（否定）：泣く → 泣<u>か</u>ない<br>「く」段 → 變到 え 段（能力）：泣く → 泣<u>け</u>る',examples:[{form:'泣く',read:'なく',meaning:'哭（原形）'},{form:'許す',read:'ゆるす',meaning:'原諒（原形）'},{form:'書く',read:'かく',meaning:'寫（原形）'},{form:'読む',read:'よむ',meaning:'讀（原形）'},{form:'話す',read:'はなす',meaning:'說（原形）'},{form:'買う',read:'かう',meaning:'買（原形）'}],warn:'⚠️ 這個尾巴的「く / む / す」是動詞自己的尾巴，不是助詞！整個字是一個動詞單字。<br>⚠️ 接 まじき 時：動詞辭書形是「寄生蟲🐛的宿主」，提供「什麼不該」的語意。'},
 'ば形':{name:'〜ば (條件形 / 假設)',scene:'🌧️ 想說「如果...的話」',inner:'這是動詞/形容詞的<b>條件形</b>，<br>表達「假設條件」（如果...）',effect:'🦎 變身規則：<br>① 字尾滑到 え 段<br>② 加「ば」<br><br>例子拆解：<br>勉強する → すれ + ば = <u>勉強すれば</u>（如果讀書）<br>食べる → 食べれ + ば = <u>食べれば</u>（如果吃）<br>行く → 行け + ば = <u>行けば</u>（如果去）<br>飲む → 飲め + ば = <u>飲めば</u>（如果喝）<br><br>📢 講出口的效果：<br>✅ 一般用途：表達「如果」（比 たら 正式）<br>✅ 特殊用途：跟「ほど」配合 → 「越...越...」<br>　例：勉強すればするほど = 越讀越',examples:[{form:'勉強すれば',read:'べんきょうすれば',meaning:'如果讀書'},{form:'食べれば',read:'たべれば',meaning:'如果吃'},{form:'行けば',read:'いけば',meaning:'如果去'},{form:'飲めば',read:'のめば',meaning:'如果喝'},{form:'安ければ',read:'やすければ',meaning:'如果便宜'}],warn:'⚠️ 「ば」是條件形尾巴，跟「ほど」一起用會變成「越...越...」！'},
 '越':{name:'〜ば〜ほど (越...越... 複合句型)',scene:'📈 想說「越...越...」的效果',inner:'⚠️ 重要！「越來越」<b>不是一個日文字</b>，<br>是 3 個元素夾擊產生的<b>複合句型</b>！',effect:'📐 完整公式（3 件套）：<br>① 動詞 ば形（如果做）<br>② 同動詞 原形<br>③ ほど（程度標記）<br><br>例子拆解（例句 109）：<br>勉強<b>すれば</b>（如果讀）+ <b>する</b>（讀）+ <b>ほど</b>（程度）<br>= 越讀越...<br><br>📢 講出口的效果：<br>學生說「<b>勉強すればするほど</b>面白い」<br>= 自動產生「越學越有趣」的<b>中文語感</b><br><br>📋 更多例子：<br>食べ<b>れば</b>食べる<b>ほど</b>美味しい = 越吃越好吃<br>知<b>れば</b>知る<b>ほど</b>面白い = 越了解越有趣<br>高<b>ければ</b>高い<b>ほど</b>いい = 越貴越好',examples:[{form:'勉強すればするほど',read:'べんきょうすればするほど',meaning:'越讀越'},{form:'食べれば食べるほど',read:'たべればたべるほど',meaning:'越吃越'},{form:'知れば知るほど',read:'しればしるほど',meaning:'越了解越'}],warn:'⚠️ 學生最常犯：以為「越」對應某個日文字！其實是「ば+原形+ほど」三件套合力產生的效果。少一個元素就會失敗！'},
 'かった':{name:'かった / かったです (い形容詞 過去式)',scene:'⏰ 描述「過去」的狀態：「以前是...的」',inner:'這是<b>い形容詞</b>的過去式，不是動詞！<br><br>兩種形式都是同個尾巴：<br>🇯🇵 <b>かった</b> = 普通版（跟朋友）<br>🇯🇵 <b>かったです</b> = 禮貌版（對長輩，加です）',effect:'🦎 い形容詞變身 SOP：<br>① 把「い」切掉<br>② 加「かった」（普通版）<br>③ 想禮貌 → 再加「です」<br><br>例子拆解：<br>辛い → 切い → 辛 + かった → <u>辛かった</u>（朋友間）<br>辛かった + です → <u>辛かったです</u>（禮貌）<br><br>📢 講出口的效果：<br>說 <b>辛い</b> = 現在很辣<br>說 <b>辛かった</b> = 那時候很辣（已經過去）<br>說 <b>辛くない</b> = 不辣<br>說 <b>辛くなかった</b> = 那時候不辣',examples:[{form:'辛かった',read:'からかった',meaning:'(那時)很辣（普通）'},{form:'辛かったです',read:'からかったです',meaning:'(那時)很辣（禮貌）'},{form:'高かった',read:'たかかった',meaning:'(以前)很高/貴'},{form:'寒かった',read:'さむかった',meaning:'(以前)很冷'},{form:'楽しかった',read:'たのしかった',meaning:'(以前)很開心'}],warn:'⚠️ 「かった」是い形容詞的尾巴，不是動詞！な形容詞用「でした」(静かでした)'},
@@ -705,9 +706,78 @@ const VERB_ENDINGS={
 'くなかった':{name:'くなかった (い形容詞 過去否定)',scene:'⏰❌ 對朋友說「以前不是...的」',inner:'這是<b>い形容詞</b>的過去否定，不是動詞！<br>= くない（否定）+ かった（過去）',effect:'い形容詞變身規則：<br>🦎 切い ＋ くなかった<br>高い → 高<u>くなかった</u>（以前不貴）<br>寒い → 寒<u>くなかった</u>（以前不冷）',examples:[{form:'高くなかった',read:'たかくなかった',meaning:'(以前)不貴'},{form:'寒くなかった',read:'さむくなかった',meaning:'(以前)不冷'},{form:'おいしくなかった',read:'おいしくなかった',meaning:'(以前)不好吃'}],warn:'⚠️ 「くなかった」是い形容詞過去否定，不是動詞！'}};
 function showVerbEndingPopup(endingKey,sourceText){
 const v=VERB_ENDINGS[endingKey];if(!v)return;
+/* === 根據當前例句自動產生客製化說明 === */
+let contextNote='';
+const r=F[ci];
+if(r){
+const jp=r.jp.s;const cn=r.cn;const blocks=r.jp.b;
+const blockTexts=blocks.map(b=>b[0]);
+const blockIdx=blockTexts.indexOf(sourceText);
+const nextBlock=blockIdx>=0&&blockIdx<blocks.length-1?blocks[blockIdx+1][0]:'';
+const prevBlock=blockIdx>0?blocks[blockIdx-1][0]:'';
+const allText=blockTexts.join('');
+/* u形：根據後面接什麼給不同說明 */
+if(endingKey==='u形'){
+if(nextBlock.includes('まじき')||allText.includes('まじき'))contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「'+sourceText+'」是「まじき」的<b>宿主動詞</b>🐛<br>'+sourceText+' + まじき = 不該'+cn.replace(/。$/,'')+'<br>（まじき 需要動詞辭書形當宿主才能活！）';
+else if(nextBlock.includes('ほど')||allText.includes('ほど'))contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「'+sourceText+'」修飾後面的「ほど」（程度）<br>'+sourceText+' + ほど = '+sourceText+'到那種程度';
+else if(nextBlock||allText)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「'+sourceText+'」是動詞原形，直接修飾後面的名詞<br>中文：'+cn;
+}
+/* かった/いです/なです/くない 等形容詞：顯示原形→變形過程 */
+if(endingKey==='かった'){
+const base=sourceText.replace(/かったです$|かった$/,'');
+if(base)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>原形：<b>'+base+'い</b>（現在）<br>→ 切掉「い」+ かった<br>→ <b>'+sourceText+'</b>（過去）<br>中文：'+cn;
+}
+if(endingKey==='いです'){
+const base=sourceText.replace(/いです$/,'');
+if(base)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>原形：<b>'+base+'い</b>（朋友版）<br>→ 加上 です（禮貌語尾）<br>→ <b>'+sourceText+'</b>（禮貌版）<br>中文：'+cn;
+}
+if(endingKey==='なです'){
+const base=sourceText.replace(/です$/,'');
+if(base)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「<b>'+base+'</b>」是名詞或な形容詞<br>→ 加上 です = 禮貌<br>→ <b>'+sourceText+'</b><br>中文：'+cn;
+}
+if(endingKey==='くない'){
+const base=sourceText.replace(/くないです$|くない$/,'');
+if(base)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>原形：<b>'+base+'い</b>（肯定）<br>→ 切掉「い」+ くない<br>→ <b>'+sourceText+'</b>（否定）<br>中文：'+cn;
+}
+/* ている：根據前面有沒有擬聲詞 */
+if(endingKey==='ている'){
+if(prevBlock&&/^[ァ-ヴー]{2,}$/.test(prevBlock))contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>'+prevBlock+'（擬聲詞）+ する → して + いる<br>= '+prevBlock+'的<b>狀態持續中</b><br>中文：'+cn;
+else{const stem=sourceText.replace(/ています$|ている$/,'');if(stem)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>'+stem+'て（做了）+ いる（持續）<br>= <b>正在'+cn.replace(/。$/,'')+'</b>';}
+}
+/* ました：提取名詞+する結構 */
+if(endingKey==='ました'){
+const stem=sourceText.replace(/しました$/,'');
+if(stem&&/[\u4e00-\u9fff]{2,}/.test(stem))contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「<b>'+stem+'</b>」（名詞）+ しました（做了，禮貌）<br>= '+stem+'（名詞）+ する 變動詞 → 過去禮貌形<br>中文：'+cn;
+}
+/* として */
+if(endingKey==='として'){
+const base=sourceText.replace(/として$/,'');
+if(base)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「<b>'+base+'</b>」+ として = <b>作為'+base+'</b><br>中文：'+cn;
+}
+/* だって */
+if(endingKey==='だって'){
+const base=sourceText.replace(/だって$/,'');
+if(base)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「<b>'+base+'</b>」+ だって = （聽說）'+base+'<br>= 口語版傳聞引用<br>中文：'+cn;
+}
+/* し形 */
+if(endingKey==='し形'){
+const stem=sourceText.replace(/しながら$/,'');
+if(stem)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>'+stem+'（擬聲詞/名詞）+ する → し（連用形）+ ながら<br>= <b>一邊'+cn.replace(/。$/,'')+'</b>';
+}
+/* できるだけ */
+if(endingKey==='できるだけ')contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「できるだけ」= 盡量、盡可能<br>中文：'+cn;
+/* ば形 */
+if(endingKey==='ば形'){
+contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「'+sourceText+'」是動詞的條件形（如果...）<br>中文：'+cn;
+}
+/* 通用 fallback */
+if(!contextNote&&cn)contextNote='🎯 <b>在例句 '+(ci+1)+' 裡</b>：<br>「'+sourceText+'」→ '+cn;
+}
 let html='<div class="irr-pop"><button class="irr-close" onclick="closeIrregularPopup()">×</button>';
 html+='<div class="irr-title">🦊 Iggy 的動詞尾巴透視鏡</div>';
 html+='<div class="irr-name">🔍 '+v.name+'</div>';
+/* 客製化說明區塊（如果有） */
+if(contextNote)html+='<div class="ve-context">'+contextNote+'</div>';
 if(v.scene)html+='<div class="ve-scene"><div class="ve-h">什麼時候用</div>'+v.scene+'</div>';
 if(v.inner)html+='<div class="ve-inner"><div class="ve-h">代表的意思</div>'+v.inner+'</div>';
 if(v.effect)html+='<div class="ve-effect"><div class="ve-h">用了會怎樣</div>'+v.effect+'</div>';
@@ -1062,7 +1132,7 @@ if(document.body.classList.contains('immersive'))toggleImmersive();
 });
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=56').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=58').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
