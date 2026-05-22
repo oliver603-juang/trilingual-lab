@@ -16,6 +16,15 @@
 :root{--bg:#0c0c1a;--surface:#151528;--card:#1c1c35;--border:#2a2a4a;--text:#e8e6f0;--dim:#8888aa;--jp:#ff6b6b;--en:#4ecdc4;--gold:#ffd700;--cn:#ffa94d}
 *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);-webkit-user-select:text;user-select:text}
 .header{padding:10px 14px 6px;display:flex;align-items:center;gap:6px;position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);flex-wrap:wrap}
+/* === 沉浸模式 Immersive Mode === */
+body.immersive .header,body.immersive .dt{display:none!important}
+body.immersive #app{padding:8px 12px}
+.immerse-btn{position:fixed;bottom:52px;right:12px;z-index:50;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);color:var(--dim);width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:.2s;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.immerse-btn:hover{background:rgba(255,255,255,.2);transform:scale(1.1)}
+.immerse-btn:active{transform:scale(.9)}
+body.immersive .immerse-btn{background:var(--jp);color:#fff;border-color:var(--jp)}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#fff;padding:8px 20px;border-radius:20px;font-size:13px;z-index:200;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
 .logo{font-size:1rem;font-weight:900;background:linear-gradient(135deg,var(--jp),var(--en));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sw,.lt{display:flex;background:var(--surface);border-radius:18px;border:1px solid var(--border);overflow:hidden}
 .ub,.lb{padding:4px 10px;border:none;background:transparent;color:var(--dim);font-family:inherit;font-size:.72rem;font-weight:700;cursor:pointer}
@@ -192,7 +201,7 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 </head>
 <body>
 <div class="header">
-<div class="logo">三語句型積木</div>
+<div class="logo" onclick="toggleImmersive()" style="cursor:pointer" title="點擊進入沉浸模式">三語句型積木</div>
 <div class="sw"><button class="ub a" onclick="sU('iggy')">🐱 Iggy</button><button class="ub" onclick="sU('yoyo')">🐸 Yoyo</button><button class="ub" onclick="sU('yofarn')">🦉 Yofarn</button><button class="ub" onclick="sU('oliver')">🦊 Oliver</button></div>
 <div class="hn" id="hn"><button class="nb" onclick="nv(-1)">◀</button><input class="nc" id="nc" value="1/1" onclick="this.select()" onkeydown="if(event.key==='Enter')jumpTo(this.value)"><button class="nb" onclick="nv(1)">▶</button><button class="nb" id="ap" onclick="toggleAutoPlay()" title="自動播放（接續學習進度）">🔊</button></div>
 <div class="lt"><button class="lb a-jp" onclick="sM('jp')">🇯🇵 日文</button><button class="lb" onclick="sM('en')">🇺🇸 英文</button><button class="lb" onclick="sM('vs')">⚡ 對比</button></div>
@@ -201,6 +210,7 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 </div>
 <div class="dt" id="dt"></div>
 <div id="app"><div class="ld-c"><div class="sp"></div><div class="ld-t">載入中…</div></div></div>
+<button class="immerse-btn" id="immerseBtn" onclick="toggleImmersive()" title="沉浸模式">🔭</button>
 <div class="ko" id="ko" onclick="if(event.target===this)cK()"><div class="kp" id="kpp"></div></div>
 <div class="set-overlay" id="setOv" onclick="if(event.target===this)closeSet()">
 <div class="set-box">
@@ -1015,14 +1025,41 @@ const isJP=d.th==='jp',bc=isJP?'bj':'be',bl=isJP?'🇯🇵 日文大腦怎麼想
 document.getElementById('kpp').innerHTML='<div class="kh"><span class="ms">'+d.m+'</span><div class="pt">'+d.m+' '+d.t+' 的'+(isJP?'日文':'英文')+'魔法教室</div><div class="mt '+(isJP?'jt':'et')+'">'+d.mt+'</div></div><div class="bs bc"><span class="bf">🇹🇼 中文大腦怎麼想</span>'+nl2br(d.cn)+'</div><div class="bs '+bc+'"><span class="bf">'+bl+'</span>'+nl2br(d.br)+'</div><div class="mi">'+nl2br(d.tp)+'</div><button class="kc" onclick="cK()">知道了！✨</button>';
 document.getElementById('ko').classList.add('op');}
 function cK(){document.getElementById('ko').classList.remove('op');}
-document.addEventListener('keydown',e=>{const t=e.target;if(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable)return;if(e.key==='ArrowLeft')nv(-1);if(e.key==='ArrowRight')nv(1);if(e.key===' '||e.code==='Space'){e.preventDefault();e.stopPropagation();const r=F[ci];if(!r)return;if(md==='vs'){if(r.jp)sp(r.jp.s,'jp');setTimeout(()=>{if(r.en)sp(r.en.s,'en');},2000);}else{const d=r[md];if(d)sp(d.s,md);}return;}if(e.key==='1')sM('jp');if(e.key==='2')sM('en');if(e.key==='3')sM('vs');if(e.key==='Escape')cK();},true);
+document.addEventListener('keydown',e=>{const t=e.target;if(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable)return;if(e.key==='ArrowLeft')nv(-1);if(e.key==='ArrowRight')nv(1);if(e.key===' '||e.code==='Space'){e.preventDefault();e.stopPropagation();const r=F[ci];if(!r)return;if(md==='vs'){if(r.jp)sp(r.jp.s,'jp');setTimeout(()=>{if(r.en)sp(r.en.s,'en');},2000);}else{const d=r[md];if(d)sp(d.s,md);}return;}if(e.key==='1')sM('jp');if(e.key==='2')sM('en');if(e.key==='3')sM('vs');if(e.key==='F11'){e.preventDefault();toggleImmersive();return;}if(e.key==='Escape'){const ko=document.getElementById('ko');if(ko&&ko.classList.contains('show')){cK();}else if(document.body.classList.contains('immersive')){toggleImmersive();}else{cK();}return;}},true);
 let wT=0;document.addEventListener('wheel',e=>{if(e.target.closest('.ki')||e.target.closest('.cb')||e.target.closest('.diy')||e.target.closest('[contenteditable]'))return;const now=Date.now();if(now-wT<300)return;wT=now;if(e.deltaY<0)nv(1);else if(e.deltaY>0)nv(-1);e.preventDefault();},{passive:false});
 let tX=0;document.addEventListener('touchstart',e=>{tX=e.touches[0].clientX;});
 document.addEventListener('touchend',e=>{if(e.target.closest('.tab')||e.target.closest('.ub')||e.target.closest('.lb')||e.target.closest('.nb')||e.target.closest('.hn')||e.target.closest('.diy')||e.target.closest('.ki')||e.target.closest('.verb-modal')||e.target.closest('button')||e.target.closest('input'))return;const d=e.changedTouches[0].clientX-tX;if(Math.abs(d)>60)nv(d>0?-1:1);});
 lD();
+// === IMMERSIVE MODE ===
+function toggleImmersive(){
+const on=document.body.classList.toggle('immersive');
+const btn=document.getElementById('immerseBtn');
+if(btn){btn.textContent=on?'🔙':'🔭';btn.title=on?'退出沉浸模式':'沉浸模式';}
+showToast(on?'沉浸模式 ON — 雙擊畫面可退出':'已退出沉浸模式');
+if(typeof fixDtSticky==='function')setTimeout(fixDtSticky,50);
+}
+function showToast(msg){
+let t=document.getElementById('toast');
+if(!t){t=document.createElement('div');t.id='toast';document.body.appendChild(t);}
+t.textContent=msg;t.className='toast show';
+setTimeout(()=>t.className='toast',1800);
+}
+// 雙擊主內容區退出（手機）
+let _lastTap=0;
+document.getElementById('app').addEventListener('touchend',e=>{
+if(e.target.closest('button')||e.target.closest('input')||e.target.closest('[contenteditable]')||e.target.closest('.ki')||e.target.closest('.cb'))return;
+const now=Date.now();
+if(now-_lastTap<300&&document.body.classList.contains('immersive')){toggleImmersive();e.preventDefault();}
+_lastTap=now;
+},{passive:false});
+// 雙擊退出（桌面）
+document.getElementById('app').addEventListener('dblclick',e=>{
+if(e.target.closest('button')||e.target.closest('input')||e.target.closest('[contenteditable]')||e.target.closest('.ki')||e.target.closest('.cb'))return;
+if(document.body.classList.contains('immersive'))toggleImmersive();
+});
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=52').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=53').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
