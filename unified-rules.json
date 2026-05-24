@@ -27517,5 +27517,2765 @@
     "chinese": "安靜！",
     "literal_jp": "安靜 做！",
     "literal_en": "是 安靜！"
+  },
+  {
+    "id": "anime_501",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (名偵探柯南)",
+    "chinese": "真相永遠只有一個！",
+    "jp": {
+      "sentence": "真実はいつも一つ！",
+      "blocks": [
+        {
+          "text": "真実は",
+          "role": "主角"
+        },
+        {
+          "text": "いつも",
+          "role": "時間"
+        },
+        {
+          "text": "一つ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "There is always only one truth!",
+      "blocks": [
+        {
+          "text": "There is",
+          "role": "動作"
+        },
+        {
+          "text": "always",
+          "role": "時間"
+        },
+        {
+          "text": "only one",
+          "role": "修飾"
+        },
+        {
+          "text": "truth",
+          "role": "主角"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文直接說「真相只有一個」，把真相當一般主詞",
+      "jp_insight": "日文用「は」設定大主題：「說到真相嘛...」，最後才揭曉「一つ（一個）」，語尾決定論起手式",
+      "en_insight": "英文用 There is 存在句"
+    },
+    "metrics": {},
+    "literal_jp": "真相[題] 總是 一個",
+    "literal_en": "there is always only one truth"
+  },
+  {
+    "id": "anime_502",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (灌籃高手)",
+    "chinese": "現在放棄的話，比賽就結束了喔。",
+    "jp": {
+      "sentence": "あきらめたらそこで試合終了ですよ。",
+      "blocks": [
+        {
+          "text": "あきらめたら",
+          "role": "連接"
+        },
+        {
+          "text": "そこで",
+          "role": "場景"
+        },
+        {
+          "text": "試合終了",
+          "role": "動作"
+        },
+        {
+          "text": "ですよ",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "If you give up now, the game is over.",
+      "blocks": [
+        {
+          "text": "If",
+          "role": "連接"
+        },
+        {
+          "text": "you give up",
+          "role": "動作"
+        },
+        {
+          "text": "the game",
+          "role": "主角"
+        },
+        {
+          "text": "is over",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文要在前面大聲講「如果/要是...」",
+      "jp_insight": "日文用壓縮魔法把「如果」藏在動詞尾巴「たら」，最後貼上「よ」溫柔提醒",
+      "en_insight": "英文也把 if 放前面"
+    },
+    "metrics": {},
+    "literal_jp": "放棄了的話(たら) 在那裡 比賽結束 是(よ)",
+    "literal_en": "if you give up the game is over"
+  },
+  {
+    "id": "anime_503",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (鬼滅之刃)",
+    "chinese": "全集中！水之呼吸！",
+    "jp": {
+      "sentence": "全集中！水の呼吸！",
+      "blocks": [
+        {
+          "text": "全集中",
+          "role": "動作"
+        },
+        {
+          "text": "水の",
+          "role": "修飾"
+        },
+        {
+          "text": "呼吸",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Total Concentration! Water Breathing!",
+      "blocks": [
+        {
+          "text": "Total",
+          "role": "修飾"
+        },
+        {
+          "text": "Concentration",
+          "role": "動作"
+        },
+        {
+          "text": "Water",
+          "role": "修飾"
+        },
+        {
+          "text": "Breathing",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文可以直接把兩個名詞疊在一起（水呼吸）",
+      "jp_insight": "日文名詞跟名詞中間一定要用「の」這條隱形繩子綁住",
+      "en_insight": "英文也直接並排"
+    },
+    "metrics": {},
+    "literal_jp": "全集中！ 水[の] 呼吸",
+    "literal_en": "total concentration water breathing"
+  },
+  {
+    "id": "anime_504",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (航海王)",
+    "chinese": "我是要成為海賊王的男人！",
+    "jp": {
+      "sentence": "海賊王に俺はなる！",
+      "blocks": [
+        {
+          "text": "海賊王に",
+          "role": "目標"
+        },
+        {
+          "text": "俺は",
+          "role": "主角"
+        },
+        {
+          "text": "なる",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I will become the Pirate King!",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "will become",
+          "role": "動作"
+        },
+        {
+          "text": "the Pirate King",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文語序固定，一定要講「我是...的男人」",
+      "jp_insight": "路飛把大目標「海賊王に」提到最前面大聲喊，因為有角色貼紙，順序自由！動詞「なる」在最後",
+      "en_insight": "英文也是固定語序 SVO"
+    },
+    "metrics": {},
+    "literal_jp": "海賊王[向] 我[題] 成為！",
+    "literal_en": "I will become the Pirate King"
+  },
+  {
+    "id": "anime_505",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (火影忍者)",
+    "chinese": "這就是我的忍道！",
+    "jp": {
+      "sentence": "これが俺の忍道だ！",
+      "blocks": [
+        {
+          "text": "これが",
+          "role": "主角"
+        },
+        {
+          "text": "俺の",
+          "role": "修飾"
+        },
+        {
+          "text": "忍道だ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "This is my ninja way!",
+      "blocks": [
+        {
+          "text": "This",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "my ninja way",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「這就是...」聽不出強烈排他的決心",
+      "jp_insight": "鳴人用「が」不用「は」！意思是：除了這個，其他都不算！沒有別的，這才是唯一的忍道",
+      "en_insight": "英文用 This is 簡單處理"
+    },
+    "metrics": {},
+    "literal_jp": "就是這個[主] 我[の] 忍道 是也！",
+    "literal_en": "this is my ninja way"
+  },
+  {
+    "id": "anime_506",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (咒術迴戰)",
+    "chinese": "沒關係，因為我很強。",
+    "jp": {
+      "sentence": "大丈夫だよ、僕最強だから。",
+      "blocks": [
+        {
+          "text": "大丈夫だよ",
+          "role": "語氣"
+        },
+        {
+          "text": "僕",
+          "role": "主角"
+        },
+        {
+          "text": "最強だから",
+          "role": "連接"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "It is fine, because I am the strongest.",
+      "blocks": [
+        {
+          "text": "It is fine",
+          "role": "動作"
+        },
+        {
+          "text": "because",
+          "role": "連接"
+        },
+        {
+          "text": "I am",
+          "role": "主角"
+        },
+        {
+          "text": "the strongest",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文一定先講「因為...所以...」",
+      "jp_insight": "五條老師先講結論，再把原因「だから」丟在最後面，語尾決定論 + 倒裝法，超自信",
+      "en_insight": "英文用 because 連接"
+    },
+    "metrics": {},
+    "literal_jp": "沒關係(よ)、我 最強 因為",
+    "literal_en": "it is fine because I am the strongest"
+  },
+  {
+    "id": "anime_507",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (進擊的巨人)",
+    "chinese": "我要把他們全部驅逐！一個不留！",
+    "jp": {
+      "sentence": "駆逐してやる！一匹残らず！",
+      "blocks": [
+        {
+          "text": "駆逐して",
+          "role": "動作"
+        },
+        {
+          "text": "やる",
+          "role": "動作"
+        },
+        {
+          "text": "一匹残らず",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I will destroy every last one of them!",
+      "blocks": [
+        {
+          "text": "I will destroy",
+          "role": "動作"
+        },
+        {
+          "text": "every last one",
+          "role": "對象"
+        },
+        {
+          "text": "of them",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「驅逐」就是一個普通動作",
+      "jp_insight": "艾連用了恩惠動詞「してやる」的變形，不是要對巨人好，而是把恩惠流向變成強行施加的暴力",
+      "en_insight": "英文直接用 destroy"
+    },
+    "metrics": {},
+    "literal_jp": "驅逐 幫他做(やる)！一隻不留！",
+    "literal_en": "I will destroy every last one"
+  },
+  {
+    "id": "anime_508",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (葬送的芙莉蓮)",
+    "chinese": "不過是人類壽命的十分之一而已。",
+    "jp": {
+      "sentence": "人間の寿命の十分の一に過ぎない。",
+      "blocks": [
+        {
+          "text": "人間の",
+          "role": "修飾"
+        },
+        {
+          "text": "寿命の",
+          "role": "修飾"
+        },
+        {
+          "text": "十分の一に",
+          "role": "對象"
+        },
+        {
+          "text": "過ぎない",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "It is merely one-tenth of a human lifespan.",
+      "blocks": [
+        {
+          "text": "It is merely",
+          "role": "動作"
+        },
+        {
+          "text": "one-tenth",
+          "role": "修飾"
+        },
+        {
+          "text": "of a human",
+          "role": "修飾"
+        },
+        {
+          "text": "lifespan",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文把「不過是」放在句子最前面開頭",
+      "jp_insight": "日文的語尾決定論：一整串講完，最後才補上「過ぎない」（不超過），精靈與人類時間感的落差",
+      "en_insight": "英文用 merely 放前面"
+    },
+    "metrics": {},
+    "literal_jp": "人類[の] 壽命[の] 十分之一[向] 不超過",
+    "literal_en": "merely one tenth of a human lifespan"
+  },
+  {
+    "id": "anime_509",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (排球少年)",
+    "chinese": "眼前是一道很高很高的牆。",
+    "jp": {
+      "sentence": "目の前に立ちふさがる、高い高い壁。",
+      "blocks": [
+        {
+          "text": "目の前に",
+          "role": "場景"
+        },
+        {
+          "text": "立ちふさがる",
+          "role": "修飾"
+        },
+        {
+          "text": "高い高い",
+          "role": "修飾"
+        },
+        {
+          "text": "壁",
+          "role": "主角"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "A very tall wall stands before my eyes.",
+      "blocks": [
+        {
+          "text": "A very tall",
+          "role": "修飾"
+        },
+        {
+          "text": "wall",
+          "role": "主角"
+        },
+        {
+          "text": "stands",
+          "role": "動作"
+        },
+        {
+          "text": "before my eyes",
+          "role": "場景"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文習慣說「眼前的牆壁很高」",
+      "jp_insight": "日文可以直接把整個動作「立ちふさがる」當成一個巨大的修飾貼紙，直接抱住後面的名詞「壁」",
+      "en_insight": "英文語序類似中文"
+    },
+    "metrics": {},
+    "literal_jp": "眼睛前方[向] 擋著的 很高很高的 牆壁",
+    "literal_en": "a very tall wall stands before my eyes"
+  },
+  {
+    "id": "anime_510",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (新世紀福音戰士)",
+    "chinese": "不能逃避，不能逃避，不能逃避！",
+    "jp": {
+      "sentence": "逃げちゃダメだ、逃げちゃダメだ、逃げちゃダメだ！",
+      "blocks": [
+        {
+          "text": "逃げちゃ",
+          "role": "連接"
+        },
+        {
+          "text": "ダメだ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I must not run away!",
+      "blocks": [
+        {
+          "text": "I must not",
+          "role": "動作"
+        },
+        {
+          "text": "run away",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用開頭的「不能」來禁止動作",
+      "jp_insight": "日文把「逃跑」黏起來，加上「ちゃ」（如果做了這件事），最後才拍板定案「ダメだ」（不行）",
+      "en_insight": "英文用 must not 放動詞前面"
+    },
+    "metrics": {},
+    "literal_jp": "逃跑這件事的話 是不行的！",
+    "literal_en": "I must not run away"
+  },
+  {
+    "id": "anime_511",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (SPY FAMILY)",
+    "chinese": "安妮亞喜歡花生！",
+    "jp": {
+      "sentence": "アーニャ、ピーナッツが好き！",
+      "blocks": [
+        {
+          "text": "アーニャ",
+          "role": "主角"
+        },
+        {
+          "text": "ピーナッツが",
+          "role": "對象"
+        },
+        {
+          "text": "好き",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Anya likes peanuts!",
+      "blocks": [
+        {
+          "text": "Anya",
+          "role": "主角"
+        },
+        {
+          "text": "likes",
+          "role": "動作"
+        },
+        {
+          "text": "peanuts",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文把「喜歡」當動詞，花生當受詞",
+      "jp_insight": "日文的「喜歡」是一種狀態。安妮亞用「が」指著花生：我就只想要花生，別的不要！",
+      "en_insight": "英文用 likes 動詞處理"
+    },
+    "metrics": {},
+    "literal_jp": "安妮亞、花生[主] 喜歡！",
+    "literal_en": "Anya likes peanuts"
+  },
+  {
+    "id": "anime_512",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (獵人)",
+    "chinese": "沒關係了，因為已經結束了。",
+    "jp": {
+      "sentence": "もういいんだ、これで終わりだから。",
+      "blocks": [
+        {
+          "text": "もういいんだ",
+          "role": "語氣"
+        },
+        {
+          "text": "これで",
+          "role": "場景"
+        },
+        {
+          "text": "終わりだから",
+          "role": "連接"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "It is fine now, because this is the end.",
+      "blocks": [
+        {
+          "text": "It is fine",
+          "role": "動作"
+        },
+        {
+          "text": "because",
+          "role": "連接"
+        },
+        {
+          "text": "this is",
+          "role": "動作"
+        },
+        {
+          "text": "the end",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文直接說「用這個結束」",
+      "jp_insight": "日文用工具貼紙「で」黏住「これ」，代表「以此為界線」。原因「だから」放最後，倒裝語氣",
+      "en_insight": "英文用 because 連接"
+    },
+    "metrics": {},
+    "literal_jp": "已經可以了、用這個[で] 結束 因為",
+    "literal_en": "it is fine because this is the end"
+  },
+  {
+    "id": "anime_513",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (鋼之鍊金術師)",
+    "chinese": "人若不付出犧牲，就什麼也得不到。",
+    "jp": {
+      "sentence": "人は何かの犠牲なしに何も得ることはできない。",
+      "blocks": [
+        {
+          "text": "人は",
+          "role": "主角"
+        },
+        {
+          "text": "犠牲なしに",
+          "role": "場景"
+        },
+        {
+          "text": "何も",
+          "role": "對象"
+        },
+        {
+          "text": "得ることは",
+          "role": "主角"
+        },
+        {
+          "text": "できない",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "One cannot gain without sacrifice.",
+      "blocks": [
+        {
+          "text": "One",
+          "role": "主角"
+        },
+        {
+          "text": "cannot gain",
+          "role": "動作"
+        },
+        {
+          "text": "without",
+          "role": "連接"
+        },
+        {
+          "text": "sacrifice",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文把「得不到」直接當動詞片語",
+      "jp_insight": "日文要把「得到」黏上名詞化積木「こと」變成一件事，再用「できない」結尾，層層精密",
+      "en_insight": "英文用 cannot 簡單否定"
+    },
+    "metrics": {},
+    "literal_jp": "人[題] 犧牲 沒有[向] 任何事 得到這件事[題] 做不到",
+    "literal_en": "one cannot gain without sacrifice"
+  },
+  {
+    "id": "anime_514",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (一拳超人)",
+    "chinese": "我只是個憑興趣當英雄的人。",
+    "jp": {
+      "sentence": "趣味でヒーローをやっている者だ。",
+      "blocks": [
+        {
+          "text": "趣味で",
+          "role": "場景"
+        },
+        {
+          "text": "ヒーローを",
+          "role": "對象"
+        },
+        {
+          "text": "やっている",
+          "role": "修飾"
+        },
+        {
+          "text": "者だ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I am just a hero for fun.",
+      "blocks": [
+        {
+          "text": "I am",
+          "role": "主角"
+        },
+        {
+          "text": "just a hero",
+          "role": "對象"
+        },
+        {
+          "text": "for fun",
+          "role": "場景"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文講「當英雄」是一次性的動作",
+      "jp_insight": "埼玉用「ている」代表他長期處於一直當英雄的狀態中，配上工具貼紙「で」，完美表達鹹魚隨意感",
+      "en_insight": "英文用 for fun 表達隨意"
+    },
+    "metrics": {},
+    "literal_jp": "以興趣為工具[で] 英雄[受] 正做著(ている) 人 是也",
+    "literal_en": "I am just a hero for fun"
+  },
+  {
+    "id": "anime_515",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (美少女戰士)",
+    "chinese": "我要代替月亮懲罰你！",
+    "jp": {
+      "sentence": "月に代わって、お仕置きよ！",
+      "blocks": [
+        {
+          "text": "月に",
+          "role": "目標"
+        },
+        {
+          "text": "代わって",
+          "role": "連接"
+        },
+        {
+          "text": "お仕置き",
+          "role": "動作"
+        },
+        {
+          "text": "よ",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "In the name of the moon, I will punish you!",
+      "blocks": [
+        {
+          "text": "In the name of",
+          "role": "場景"
+        },
+        {
+          "text": "the moon",
+          "role": "修飾"
+        },
+        {
+          "text": "I will punish",
+          "role": "動作"
+        },
+        {
+          "text": "you",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「懲罰你」一定要有「你」（受詞）",
+      "jp_insight": "這裡用了主語與受語雙重省略！日文大腦自動讀空氣，最後貼上少女俏皮宣誓的「よ」",
+      "en_insight": "英文需要明確寫出 you"
+    },
+    "metrics": {},
+    "literal_jp": "月亮[向] 代替[て] 懲罰(よ)！",
+    "literal_en": "in the name of the moon I will punish you"
+  },
+  {
+    "id": "anime_516",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (JOJO的奇妙冒險)",
+    "chinese": "我不當人類啦！JOJO！",
+    "jp": {
+      "sentence": "人間をやめるぞ！ジョジョ！",
+      "blocks": [
+        {
+          "text": "人間を",
+          "role": "對象"
+        },
+        {
+          "text": "やめる",
+          "role": "動作"
+        },
+        {
+          "text": "ぞ",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I reject my humanity, JOJO!",
+      "blocks": [
+        {
+          "text": "I reject",
+          "role": "動作"
+        },
+        {
+          "text": "my humanity",
+          "role": "對象"
+        },
+        {
+          "text": "JOJO",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「啦」表示隨意或無奈",
+      "jp_insight": "DIO 在語尾加上極度強烈的「ぞ」心情貼紙，代表毫無動搖的宣言，力量感爆棚",
+      "en_insight": "英文用 reject 正式動詞"
+    },
+    "metrics": {},
+    "literal_jp": "把人類[受] 辭掉(ぞ)！",
+    "literal_en": "I reject my humanity JOJO"
+  },
+  {
+    "id": "anime_517",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (黑子的籃球)",
+    "chinese": "我是影子。",
+    "jp": {
+      "sentence": "僕は影です。",
+      "blocks": [
+        {
+          "text": "僕は",
+          "role": "主角"
+        },
+        {
+          "text": "影です",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I am a shadow.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "am",
+          "role": "動作"
+        },
+        {
+          "text": "a shadow",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「我是影子」，我跟影子是相等的",
+      "jp_insight": "日文用「は」只是在設定背景：說到我這個話題嘛，後面的特徵是影子喔。低調的邏輯",
+      "en_insight": "英文用 I am 等號"
+    },
+    "metrics": {},
+    "literal_jp": "我[題] 影子 是",
+    "literal_en": "I am a shadow"
+  },
+  {
+    "id": "anime_518",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (死神)",
+    "chinese": "你從什麼時候開始以為我沒有使用鏡花水月？",
+    "jp": {
+      "sentence": "一体いつから鏡花水月を使っていないと錯覚していた？",
+      "blocks": [
+        {
+          "text": "いつから",
+          "role": "時間"
+        },
+        {
+          "text": "鏡花水月を",
+          "role": "對象"
+        },
+        {
+          "text": "使っていないと",
+          "role": "連接"
+        },
+        {
+          "text": "錯覚していた",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Since when did you think I was not using it?",
+      "blocks": [
+        {
+          "text": "Since when",
+          "role": "時間"
+        },
+        {
+          "text": "did you think",
+          "role": "動作"
+        },
+        {
+          "text": "I was not using",
+          "role": "動作"
+        },
+        {
+          "text": "it",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文說「產生錯覺」是一時的動作",
+      "jp_insight": "藍染連續用了兩個「ている」（使っていない + していた），代表敵人長時間維持在被欺騙的狀態中",
+      "en_insight": "英文用過去進行式"
+    },
+    "metrics": {},
+    "literal_jp": "從什麼時候 鏡花水月[受] 沒在用(ている)[引] 錯覺 持續著(ている)？",
+    "literal_en": "since when did you think I was not using it"
+  },
+  {
+    "id": "anime_519",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (七龍珠)",
+    "chinese": "戰鬥力居然有53萬？！",
+    "jp": {
+      "sentence": "戦闘力…53万か？！",
+      "blocks": [
+        {
+          "text": "戦闘力",
+          "role": "主角"
+        },
+        {
+          "text": "53万",
+          "role": "動作"
+        },
+        {
+          "text": "か",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "His power level is 530000?!",
+      "blocks": [
+        {
+          "text": "His power level",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "530000",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文靠驚嘆號來表達驚訝",
+      "jp_insight": "日文在數量詞後面塞入一個「か」，本來是問號，這裡代表「真的假的？」的自我動搖與世界觀崩潰",
+      "en_insight": "英文用問號語調"
+    },
+    "metrics": {},
+    "literal_jp": "戰鬥力... 53萬(嗎)?！",
+    "literal_en": "his power level is 530000"
+  },
+  {
+    "id": "anime_520",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (五等分的新娘)",
+    "chinese": "你要負起責任喔。",
+    "jp": {
+      "sentence": "責任、取ってね。",
+      "blocks": [
+        {
+          "text": "責任",
+          "role": "對象"
+        },
+        {
+          "text": "取って",
+          "role": "動作"
+        },
+        {
+          "text": "ね",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Take responsibility, okay?",
+      "blocks": [
+        {
+          "text": "Take",
+          "role": "動作"
+        },
+        {
+          "text": "responsibility",
+          "role": "對象"
+        },
+        {
+          "text": "okay",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「喔」語氣較為生硬",
+      "jp_insight": "日文用「て形」結尾代表輕柔的命令，加上共鳴貼紙「ね」：你也是這麼想的對吧？讓人無法拒絕",
+      "en_insight": "英文用 okay 確認"
+    },
+    "metrics": {},
+    "literal_jp": "責任 拿取[て](ね)",
+    "literal_en": "take responsibility okay"
+  },
+  {
+    "id": "anime_521",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (我的英雄學院)",
+    "chinese": "已經沒事了！因為我來了！",
+    "jp": {
+      "sentence": "もう大丈夫だ！私が来た！",
+      "blocks": [
+        {
+          "text": "もう",
+          "role": "時間"
+        },
+        {
+          "text": "大丈夫だ",
+          "role": "動作"
+        },
+        {
+          "text": "私が",
+          "role": "主角"
+        },
+        {
+          "text": "来た",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "It is fine now! Because I am here!",
+      "blocks": [
+        {
+          "text": "It is fine",
+          "role": "動作"
+        },
+        {
+          "text": "now",
+          "role": "時間"
+        },
+        {
+          "text": "Because",
+          "role": "連接"
+        },
+        {
+          "text": "I am here",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文說「我來了」聽不出英雄登場的震撼感",
+      "jp_insight": "歐爾麥特用「が」！大聲宣布：不用再找別人了！唯一能拯救你們的焦點，就是我！",
+      "en_insight": "英文用 Because I am here"
+    },
+    "metrics": {},
+    "literal_jp": "已經 沒事了！ 我[主] 來了！",
+    "literal_en": "it is fine now because I am here"
+  },
+  {
+    "id": "anime_522",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (神隱少女)",
+    "chinese": "不能忘記自己的名字喔。",
+    "jp": {
+      "sentence": "自分の名前を忘れてはいけないよ。",
+      "blocks": [
+        {
+          "text": "自分の",
+          "role": "修飾"
+        },
+        {
+          "text": "名前を",
+          "role": "對象"
+        },
+        {
+          "text": "忘れては",
+          "role": "連接"
+        },
+        {
+          "text": "いけないよ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "You must not forget your name.",
+      "blocks": [
+        {
+          "text": "You",
+          "role": "主角"
+        },
+        {
+          "text": "must not forget",
+          "role": "動作"
+        },
+        {
+          "text": "your name",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文在前面用「不能」來禁止",
+      "jp_insight": "日文把「忘記」黏上主題「は」，最後加上「いけない（不行）」與「よ」，用層層堆疊的溫柔保護千尋",
+      "en_insight": "英文用 must not"
+    },
+    "metrics": {},
+    "literal_jp": "自己[の] 名字[受] 忘記的話[題] 不可以(よ)",
+    "literal_en": "you must not forget your name"
+  },
+  {
+    "id": "anime_523",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (銀魂)",
+    "chinese": "天然捲的人都不是壞人。",
+    "jp": {
+      "sentence": "天然パーマに悪い奴はいない。",
+      "blocks": [
+        {
+          "text": "天然パーマに",
+          "role": "場景"
+        },
+        {
+          "text": "悪い奴は",
+          "role": "主角"
+        },
+        {
+          "text": "いない",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "People with natural perms are not bad.",
+      "blocks": [
+        {
+          "text": "People with",
+          "role": "主角"
+        },
+        {
+          "text": "natural perms",
+          "role": "修飾"
+        },
+        {
+          "text": "are not bad",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「都不是」當固定等號判斷",
+      "jp_insight": "日文把天然捲當成一個空間「に」，宣布大主題「壞人は」，最後用活物不存在「いない」結尾",
+      "en_insight": "英文直接說 are not bad"
+    },
+    "metrics": {},
+    "literal_jp": "天然捲[向] 壞傢伙[題] 不存在",
+    "literal_en": "people with natural perms are not bad"
+  },
+  {
+    "id": "anime_524",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (名偵探柯南)",
+    "chinese": "物品會映照出製作者的心。",
+    "jp": {
+      "sentence": "物は作った人の心を映すのよ。",
+      "blocks": [
+        {
+          "text": "物は",
+          "role": "主角"
+        },
+        {
+          "text": "作った人の",
+          "role": "修飾"
+        },
+        {
+          "text": "心を",
+          "role": "對象"
+        },
+        {
+          "text": "映すのよ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Objects reflect the heart of their maker.",
+      "blocks": [
+        {
+          "text": "Objects",
+          "role": "主角"
+        },
+        {
+          "text": "reflect",
+          "role": "動作"
+        },
+        {
+          "text": "the heart",
+          "role": "對象"
+        },
+        {
+          "text": "of their maker",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「喔」無法區分說話者的性別或溫和感",
+      "jp_insight": "灰原用了「のよ」：「の」將整件事變成軟性客觀事實，「よ」再溫柔地遞給對方，帶著知性美的心情調色盤",
+      "en_insight": "英文無法表達這種語氣差異"
+    },
+    "metrics": {},
+    "literal_jp": "物品[題] 做了的人[の] 心[受] 反映(のよ)",
+    "literal_en": "objects reflect the heart of their maker"
+  },
+  {
+    "id": "anime_525",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (排球少年)",
+    "chinese": "結束時覺得「好開心」就好了。",
+    "jp": {
+      "sentence": "終わった時、楽しかったと思えばいい。",
+      "blocks": [
+        {
+          "text": "終わった時",
+          "role": "時間"
+        },
+        {
+          "text": "楽しかった",
+          "role": "對象"
+        },
+        {
+          "text": "と",
+          "role": "連接"
+        },
+        {
+          "text": "思えば",
+          "role": "連接"
+        },
+        {
+          "text": "いい",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I hope I feel it was fun when it ends.",
+      "blocks": [
+        {
+          "text": "I hope",
+          "role": "動作"
+        },
+        {
+          "text": "I feel",
+          "role": "動作"
+        },
+        {
+          "text": "it was fun",
+          "role": "對象"
+        },
+        {
+          "text": "when it ends",
+          "role": "時間"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文說「要是...就好了」，把要是放前面",
+      "jp_insight": "研磨用了い形容詞過去式「かった」代表以前很開心，再把如果縮進動詞尾巴「思えば」",
+      "en_insight": "英文用 I hope 表達願望"
+    },
+    "metrics": {},
+    "literal_jp": "結束了的時間 好開心(過去蜥蜴) [引] 如果想(ば) 就好",
+    "literal_en": "I hope I feel it was fun when it ends"
+  },
+  {
+    "id": "anime_526",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (精靈寶可夢)",
+    "chinese": "皮卡丘，就決定是你了！",
+    "jp": {
+      "sentence": "ピカチュウ、君に決めた！",
+      "blocks": [
+        {
+          "text": "ピカチュウ",
+          "role": "主角"
+        },
+        {
+          "text": "君に",
+          "role": "目標"
+        },
+        {
+          "text": "決めた",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Pikachu, I choose you!",
+      "blocks": [
+        {
+          "text": "Pikachu",
+          "role": "主角"
+        },
+        {
+          "text": "I choose",
+          "role": "動作"
+        },
+        {
+          "text": "you",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文會說「決定是你」，你是決定出來的結果",
+      "jp_insight": "日文把選擇對象當成箭頭的終點，用目標貼紙「に」：我的心意已經砸在你身上了！充滿信賴感",
+      "en_insight": "英文用 choose you"
+    },
+    "metrics": {},
+    "literal_jp": "皮卡丘、你[向] 決定了！",
+    "literal_en": "Pikachu I choose you"
+  },
+  {
+    "id": "anime_527",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (幽遊白書)",
+    "chinese": "你以為你還能看到明天的太陽嗎？",
+    "jp": {
+      "sentence": "明日の太陽が見られると思うなよ。",
+      "blocks": [
+        {
+          "text": "明日の太陽が",
+          "role": "主角"
+        },
+        {
+          "text": "見られると",
+          "role": "連接"
+        },
+        {
+          "text": "思うな",
+          "role": "動作"
+        },
+        {
+          "text": "よ",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Do not think you can see the sun tomorrow.",
+      "blocks": [
+        {
+          "text": "Do not think",
+          "role": "動作"
+        },
+        {
+          "text": "you can see",
+          "role": "動作"
+        },
+        {
+          "text": "the sun",
+          "role": "對象"
+        },
+        {
+          "text": "tomorrow",
+          "role": "時間"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用問句「能看到嗎？」來表達威脅",
+      "jp_insight": "飛影在動詞後面加「な」發動強力禁止魔法，最後貼上「よ」威脅，比中文狠多了",
+      "en_insight": "英文用 Do not think"
+    },
+    "metrics": {},
+    "literal_jp": "明天[の]太陽[主] 能看見[引] 不准這樣想(よ)！",
+    "literal_en": "do not think you can see the sun tomorrow"
+  },
+  {
+    "id": "anime_528",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (文豪Stray Dogs)",
+    "chinese": "不要同情自己，否則人生會變成噩夢。",
+    "jp": {
+      "sentence": "自分を憐れむな、人生は終わりなき悪夢になる。",
+      "blocks": [
+        {
+          "text": "自分を",
+          "role": "對象"
+        },
+        {
+          "text": "憐れむな",
+          "role": "動作"
+        },
+        {
+          "text": "人生は",
+          "role": "主角"
+        },
+        {
+          "text": "悪夢に",
+          "role": "目標"
+        },
+        {
+          "text": "なる",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Do not pity yourself, or life becomes a nightmare.",
+      "blocks": [
+        {
+          "text": "Do not pity",
+          "role": "動作"
+        },
+        {
+          "text": "yourself",
+          "role": "對象"
+        },
+        {
+          "text": "or life",
+          "role": "主角"
+        },
+        {
+          "text": "becomes",
+          "role": "動作"
+        },
+        {
+          "text": "a nightmare",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文說「變成噩夢」，變成是動詞",
+      "jp_insight": "日文認為變化是「朝著某種狀態走過去」，一定要搭配目標貼紙「に」加上「なる」",
+      "en_insight": "英文用 becomes"
+    },
+    "metrics": {},
+    "literal_jp": "自己[受] 不准同情！ 人生[題] 噩夢[向] 變過去",
+    "literal_en": "do not pity yourself or life becomes a nightmare"
+  },
+  {
+    "id": "anime_529",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (蠟筆小新)",
+    "chinese": "弱小的人受苦，怎麼能裝作沒看見！",
+    "jp": {
+      "sentence": "弱い者が苦しんでいるのを、見捨てることなんてできない！",
+      "blocks": [
+        {
+          "text": "弱い者が",
+          "role": "主角"
+        },
+        {
+          "text": "苦しんでいる",
+          "role": "修飾"
+        },
+        {
+          "text": "のを",
+          "role": "對象"
+        },
+        {
+          "text": "見捨てることなんて",
+          "role": "對象"
+        },
+        {
+          "text": "できない",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I cannot ignore the weak who are suffering!",
+      "blocks": [
+        {
+          "text": "I cannot",
+          "role": "動作"
+        },
+        {
+          "text": "ignore",
+          "role": "動作"
+        },
+        {
+          "text": "the weak",
+          "role": "對象"
+        },
+        {
+          "text": "who are suffering",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文直接說「看見受苦」，受苦是動作",
+      "jp_insight": "廣志把「正在痛苦的人」用ている包起來，再用名詞化積木「の」包裝成大包裹，才能當受詞",
+      "en_insight": "英文用 who are suffering 關係子句"
+    },
+    "metrics": {},
+    "literal_jp": "弱小的人[主] 正痛苦著(ている) 這件事[受] 看不見這件事 做不到！",
+    "literal_en": "I cannot ignore the weak who are suffering"
+  },
+  {
+    "id": "anime_530",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (哆啦A夢)",
+    "chinese": "你受傷的時候，我也會覺得痛喔。",
+    "jp": {
+      "sentence": "君が傷つく時、僕も痛いんだよ。",
+      "blocks": [
+        {
+          "text": "君が",
+          "role": "主角"
+        },
+        {
+          "text": "傷つく時",
+          "role": "時間"
+        },
+        {
+          "text": "僕も",
+          "role": "主角"
+        },
+        {
+          "text": "痛いんだよ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "When you get hurt, I feel the pain too.",
+      "blocks": [
+        {
+          "text": "When you",
+          "role": "主角"
+        },
+        {
+          "text": "get hurt",
+          "role": "動作"
+        },
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "feel the pain too",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文直接說「覺得痛」",
+      "jp_insight": "哆啦A夢用了「んだよ」：「ん」代表真心想向你解釋，配上「よ」，把機器的冰冷感融化成好朋友的溫度",
+      "en_insight": "英文用 too 表達也"
+    },
+    "metrics": {},
+    "literal_jp": "你[主] 受傷的時間 我[也] 是很痛的(んだよ)",
+    "literal_en": "when you get hurt I feel the pain too"
+  },
+  {
+    "id": "anime_531",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (機動戰士鋼彈)",
+    "chinese": "連我爸爸都沒打過我！",
+    "jp": {
+      "sentence": "親父にもぶたれたことないのに！",
+      "blocks": [
+        {
+          "text": "親父にも",
+          "role": "主角"
+        },
+        {
+          "text": "ぶたれた",
+          "role": "動作"
+        },
+        {
+          "text": "ことない",
+          "role": "時間"
+        },
+        {
+          "text": "のに",
+          "role": "連接"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Even my father never hit me!",
+      "blocks": [
+        {
+          "text": "Even",
+          "role": "修飾"
+        },
+        {
+          "text": "my father",
+          "role": "主角"
+        },
+        {
+          "text": "never hit",
+          "role": "動作"
+        },
+        {
+          "text": "me",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文把「明明」放在句子最前面",
+      "jp_insight": "阿姆羅把委屈和生氣用壓縮魔法「のに」塞在最後一個字。被打用了受害者被動，極度不爽！",
+      "en_insight": "英文用 Even 放前面"
+    },
+    "metrics": {},
+    "literal_jp": "連爸爸[也] 被打(受身) 從來沒有 偏偏(のに)！",
+    "literal_en": "even my father never hit me"
+  },
+  {
+    "id": "anime_532",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (夏目友人帳)",
+    "chinese": "我想成為一個溫柔的人。",
+    "jp": {
+      "sentence": "優しくなりたい。",
+      "blocks": [
+        {
+          "text": "優しく",
+          "role": "修飾"
+        },
+        {
+          "text": "なりたい",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I want to become kind.",
+      "blocks": [
+        {
+          "text": "I want",
+          "role": "動作"
+        },
+        {
+          "text": "to become",
+          "role": "動作"
+        },
+        {
+          "text": "kind",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文要講「我想成為...」，主詞跟動詞很長",
+      "jp_insight": "夏目發動了主語省略，把「溫柔」斷尾蜥蜴切掉い變成「優しく」，黏上「なりたい」，七個字就講完了",
+      "en_insight": "英文也需要 I want to become"
+    },
+    "metrics": {},
+    "literal_jp": "溫柔地(蜥蜴變身) 想要成為",
+    "literal_en": "I want to become kind"
+  },
+  {
+    "id": "anime_533",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (獵人)",
+    "chinese": "因為我們是朋友啊。",
+    "jp": {
+      "sentence": "友達だからね。",
+      "blocks": [
+        {
+          "text": "友達",
+          "role": "主角"
+        },
+        {
+          "text": "だから",
+          "role": "連接"
+        },
+        {
+          "text": "ね",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Because we are friends.",
+      "blocks": [
+        {
+          "text": "Because",
+          "role": "連接"
+        },
+        {
+          "text": "we are",
+          "role": "動作"
+        },
+        {
+          "text": "friends",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文講「因為是朋友」，把原因放最前面",
+      "jp_insight": "奇犽把原因「だから」丟到最後面，再貼上共鳴貼紙「ね」：你也是這麼想的對吧？傲嬌恰到好處",
+      "en_insight": "英文用 Because 開頭"
+    },
+    "metrics": {},
+    "literal_jp": "朋友 是也 因為(ね)",
+    "literal_en": "because we are friends"
+  },
+  {
+    "id": "anime_534",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (刀劍神域)",
+    "chinese": "這雖然是遊戲，但可不是鬧著玩的。",
+    "jp": {
+      "sentence": "これはゲームであっても、遊びではない。",
+      "blocks": [
+        {
+          "text": "これは",
+          "role": "主角"
+        },
+        {
+          "text": "ゲームであっても",
+          "role": "場景"
+        },
+        {
+          "text": "遊びではない",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "This may be a game, but it is not just play.",
+      "blocks": [
+        {
+          "text": "This",
+          "role": "主角"
+        },
+        {
+          "text": "may be a game",
+          "role": "動作"
+        },
+        {
+          "text": "but",
+          "role": "連接"
+        },
+        {
+          "text": "it is not just play",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「雖然...但...」展開句子",
+      "jp_insight": "日文前半句用「であっても」壓縮，後半句用「ではない」層層否定堆疊在最後面，語氣非常嚴肅",
+      "en_insight": "英文用 but 連接"
+    },
+    "metrics": {},
+    "literal_jp": "這個[題] 即使是遊戲 好玩這件事[題] 不存在",
+    "literal_en": "this may be a game but it is not just play"
+  },
+  {
+    "id": "anime_535",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (死神)",
+    "chinese": "如果命運是齒輪，我們就是將其粉碎的沙礫。",
+    "jp": {
+      "sentence": "運命が歯車ならば、我々はそれを砕く砂だ。",
+      "blocks": [
+        {
+          "text": "運命が",
+          "role": "主角"
+        },
+        {
+          "text": "歯車ならば",
+          "role": "連接"
+        },
+        {
+          "text": "我々は",
+          "role": "主角"
+        },
+        {
+          "text": "それを",
+          "role": "對象"
+        },
+        {
+          "text": "砕く砂だ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "If fate is a gear, then we are the sand that grinds it.",
+      "blocks": [
+        {
+          "text": "If fate",
+          "role": "主角"
+        },
+        {
+          "text": "is a gear",
+          "role": "動作"
+        },
+        {
+          "text": "we are",
+          "role": "主角"
+        },
+        {
+          "text": "the sand",
+          "role": "對象"
+        },
+        {
+          "text": "that grinds it",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「如果」帶頭架起前後句",
+      "jp_insight": "日文把「如果」壓縮進名詞後面的「ならば」，後半句動詞直接修飾「砂」，中二帥氣結構",
+      "en_insight": "英文用 If 開頭"
+    },
+    "metrics": {},
+    "literal_jp": "命運[主] 如果是齒輪的話(ば) 我們[題] 那個[受] 粉碎的沙子 是也",
+    "literal_en": "if fate is a gear we are the sand"
+  },
+  {
+    "id": "anime_536",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (銀魂)",
+    "chinese": "我想吃醋昆布阿魯。",
+    "jp": {
+      "sentence": "酢昆布が食べたいアル。",
+      "blocks": [
+        {
+          "text": "酢昆布が",
+          "role": "對象"
+        },
+        {
+          "text": "食べたい",
+          "role": "動作"
+        },
+        {
+          "text": "アル",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I want to eat pickled kelp aru.",
+      "blocks": [
+        {
+          "text": "I want",
+          "role": "動作"
+        },
+        {
+          "text": "to eat",
+          "role": "動作"
+        },
+        {
+          "text": "pickled kelp",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的口癖只能放在前面",
+      "jp_insight": "日文在語尾確定完「食べたい」之後，神樂加上她專屬角色設定貼紙「アル」。語尾角色貼紙能瞬間讓角色立體起來",
+      "en_insight": "英文加 aru 模仿"
+    },
+    "metrics": {},
+    "literal_jp": "醋昆布[主] 想要吃(阿魯)！",
+    "literal_en": "I want to eat pickled kelp"
+  },
+  {
+    "id": "anime_537",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (海綿寶寶日配版)",
+    "chinese": "知識不能代替友誼，所以我寧願當傻瓜。",
+    "jp": {
+      "sentence": "知識は友情に代われない、だから僕はバカになりたい。",
+      "blocks": [
+        {
+          "text": "知識は",
+          "role": "主角"
+        },
+        {
+          "text": "友情に",
+          "role": "目標"
+        },
+        {
+          "text": "代われない",
+          "role": "動作"
+        },
+        {
+          "text": "だから",
+          "role": "連接"
+        },
+        {
+          "text": "バカになりたい",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Knowledge cannot replace friendship, so I want to be a fool.",
+      "blocks": [
+        {
+          "text": "Knowledge",
+          "role": "主角"
+        },
+        {
+          "text": "cannot replace",
+          "role": "動作"
+        },
+        {
+          "text": "friendship",
+          "role": "對象"
+        },
+        {
+          "text": "so I want",
+          "role": "動作"
+        },
+        {
+          "text": "to be a fool",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「不能代替」，不能放動詞前面",
+      "jp_insight": "日文用能力否定尾巴「代われない」放最後，後半句用「に」配上「なりたい」，派大星的哲學",
+      "en_insight": "英文用 cannot replace"
+    },
+    "metrics": {},
+    "literal_jp": "知識[題] 友情[向] 無法代替 因為 傻瓜[向] 想成為",
+    "literal_en": "knowledge cannot replace friendship so I want to be a fool"
+  },
+  {
+    "id": "anime_538",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (名偵探柯南)",
+    "chinese": "用推理把犯人逼到絕境，跟殺人沒兩樣。",
+    "jp": {
+      "sentence": "推理で犯人を追い詰めるのは、殺人と変わらない。",
+      "blocks": [
+        {
+          "text": "推理で",
+          "role": "場景"
+        },
+        {
+          "text": "犯人を",
+          "role": "對象"
+        },
+        {
+          "text": "追い詰めるのは",
+          "role": "主角"
+        },
+        {
+          "text": "殺人と",
+          "role": "連接"
+        },
+        {
+          "text": "変わらない",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Using logic to corner criminals is no different from murder.",
+      "blocks": [
+        {
+          "text": "Using logic",
+          "role": "場景"
+        },
+        {
+          "text": "to corner",
+          "role": "動作"
+        },
+        {
+          "text": "criminals",
+          "role": "對象"
+        },
+        {
+          "text": "is no different",
+          "role": "動作"
+        },
+        {
+          "text": "from murder",
+          "role": "連接"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「沒兩樣」是一個成語判斷",
+      "jp_insight": "新一把一整串「逼到絕境」用名詞化積木「の」打包，再貼上「は」變成大背景，最後用「変わらない」結尾",
+      "en_insight": "英文用 no different from"
+    },
+    "metrics": {},
+    "literal_jp": "推理[で] 犯人[受] 逼到絕境這件事[題] 殺人[と] 沒有改變",
+    "literal_en": "using logic to corner criminals is no different from murder"
+  },
+  {
+    "id": "anime_539",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (幽遊白書)",
+    "chinese": "你犯了兩個錯誤。",
+    "jp": {
+      "sentence": "お前は二つの過ちを犯した。",
+      "blocks": [
+        {
+          "text": "お前は",
+          "role": "主角"
+        },
+        {
+          "text": "二つの",
+          "role": "修飾"
+        },
+        {
+          "text": "過ちを",
+          "role": "對象"
+        },
+        {
+          "text": "犯した",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "You made two mistakes.",
+      "blocks": [
+        {
+          "text": "You",
+          "role": "主角"
+        },
+        {
+          "text": "made",
+          "role": "動作"
+        },
+        {
+          "text": "two",
+          "role": "修飾"
+        },
+        {
+          "text": "mistakes",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文可以直接用動作當結尾",
+      "jp_insight": "藏馬用名詞化積木「こと」把動作冷凍包裝成名詞，最後用「だ」做結尾，像宣判罪名一樣冷酷",
+      "en_insight": "英文用 made 過去式"
+    },
+    "metrics": {},
+    "literal_jp": "你[題] 兩個[の] 過錯[受] 犯了",
+    "literal_en": "you made two mistakes"
+  },
+  {
+    "id": "anime_540",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (航海王)",
+    "chinese": "背後受傷，是劍士的恥辱。",
+    "jp": {
+      "sentence": "背中の傷は剣士の恥だ。",
+      "blocks": [
+        {
+          "text": "背中の",
+          "role": "修飾"
+        },
+        {
+          "text": "傷は",
+          "role": "主角"
+        },
+        {
+          "text": "剣士の",
+          "role": "修飾"
+        },
+        {
+          "text": "恥だ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "A wound on the back is a swordsman's shame.",
+      "blocks": [
+        {
+          "text": "A wound",
+          "role": "主角"
+        },
+        {
+          "text": "on the back",
+          "role": "場景"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "a swordsman's shame",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文直接說「A是B」",
+      "jp_insight": "索隆先立起一個巨大的主題板子：「說到背後的傷口嘛」，然後狠狠砸下「是恥辱だ！」。用「は」來定罪",
+      "en_insight": "英文用 is 等號"
+    },
+    "metrics": {},
+    "literal_jp": "背部[の] 傷口[題] 劍士[の] 恥辱 是也！",
+    "literal_en": "a wound on the back is a swordsman shame"
+  },
+  {
+    "id": "anime_541",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (火影忍者)",
+    "chinese": "不管多強大，都不要一個人承擔一切。",
+    "jp": {
+      "sentence": "どんなに強くなっても、一人で全てを背負おうとするな。",
+      "blocks": [
+        {
+          "text": "強くなっても",
+          "role": "連接"
+        },
+        {
+          "text": "一人で",
+          "role": "場景"
+        },
+        {
+          "text": "全てを",
+          "role": "對象"
+        },
+        {
+          "text": "背負おうとするな",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "No matter how strong, never bear everything alone.",
+      "blocks": [
+        {
+          "text": "No matter",
+          "role": "連接"
+        },
+        {
+          "text": "how strong",
+          "role": "修飾"
+        },
+        {
+          "text": "never bear",
+          "role": "動作"
+        },
+        {
+          "text": "everything alone",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「不管/不要」開頭架構",
+      "jp_insight": "鼬用了壓縮魔法「ても」（即使），後半句在最末尾加「な」發動絕對禁止魔法，不到最後一字不知道答案",
+      "en_insight": "英文用 never"
+    },
+    "metrics": {},
+    "literal_jp": "即使變強了[て] 一個人[で] 全部[受] 不准企圖背負(な)！",
+    "literal_en": "no matter how strong never bear everything alone"
+  },
+  {
+    "id": "anime_542",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (齊木楠雄的災難)",
+    "chinese": "真是麻煩死了。",
+    "jp": {
+      "sentence": "やれやれ、面倒くさいな。",
+      "blocks": [
+        {
+          "text": "やれやれ",
+          "role": "語氣"
+        },
+        {
+          "text": "面倒くさい",
+          "role": "動作"
+        },
+        {
+          "text": "な",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Good grief, what a pain.",
+      "blocks": [
+        {
+          "text": "Good grief",
+          "role": "語氣"
+        },
+        {
+          "text": "what a pain",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「死了」來誇張化形容詞",
+      "jp_insight": "齊木用い形容詞「面倒くさい」結尾，加上自言自語貼紙「な」，超能力者內心碎碎唸的完美語氣",
+      "en_insight": "英文用 Good grief 感嘆"
+    },
+    "metrics": {},
+    "literal_jp": "哎呀呀 麻煩(な)",
+    "literal_en": "good grief what a pain"
+  },
+  {
+    "id": "anime_543",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (孤獨搖滾)",
+    "chinese": "今天也要努力讀空氣...",
+    "jp": {
+      "sentence": "今日も…空気を読まなきゃ…",
+      "blocks": [
+        {
+          "text": "今日も",
+          "role": "時間"
+        },
+        {
+          "text": "空気を",
+          "role": "對象"
+        },
+        {
+          "text": "読まなきゃ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I have to read the room today too...",
+      "blocks": [
+        {
+          "text": "I have to",
+          "role": "動作"
+        },
+        {
+          "text": "read the room",
+          "role": "動作"
+        },
+        {
+          "text": "today too",
+          "role": "時間"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文要講完「必須讀空氣」意思才完整",
+      "jp_insight": "小孤獨發動極致省略！日文的必須是「如果不做 + 就不行」，她講到「讀まなきゃ（如果不讀...）」後面就蒸發了，但大家都懂",
+      "en_insight": "英文用 have to"
+    },
+    "metrics": {},
+    "literal_jp": "今天[也]... 空氣[受] 不讀不行...",
+    "literal_en": "I have to read the room today too"
+  },
+  {
+    "id": "anime_544",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (天氣之子)",
+    "chinese": "比起藍天，我更想要陽菜！",
+    "jp": {
+      "sentence": "青空よりも、俺は陽菜がいいんだ！",
+      "blocks": [
+        {
+          "text": "青空よりも",
+          "role": "場景"
+        },
+        {
+          "text": "俺は",
+          "role": "主角"
+        },
+        {
+          "text": "陽菜が",
+          "role": "主角"
+        },
+        {
+          "text": "いいんだ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I want Hina more than any blue sky!",
+      "blocks": [
+        {
+          "text": "I want",
+          "role": "動作"
+        },
+        {
+          "text": "Hina",
+          "role": "對象"
+        },
+        {
+          "text": "more than",
+          "role": "連接"
+        },
+        {
+          "text": "any blue sky",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文說「我更想要某人」，想要是動詞",
+      "jp_insight": "日文不說想要，而是用「が」指著陽菜，配上形容詞「いい」和情緒尾巴「んだ」：全世界只要陽菜！",
+      "en_insight": "英文用 I want"
+    },
+    "metrics": {},
+    "literal_jp": "藍天 比起來 我[題] 陽菜[主] 才好(んだ)！",
+    "literal_en": "I want Hina more than any blue sky"
+  },
+  {
+    "id": "anime_545",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (夏目友人帳)",
+    "chinese": "饅頭加饅頭，就是雙倍好吃！",
+    "jp": {
+      "sentence": "饅頭に饅頭を足せば、二倍美味しいんだよ。",
+      "blocks": [
+        {
+          "text": "饅頭に",
+          "role": "目標"
+        },
+        {
+          "text": "饅頭を",
+          "role": "對象"
+        },
+        {
+          "text": "足せば",
+          "role": "連接"
+        },
+        {
+          "text": "二倍",
+          "role": "修飾"
+        },
+        {
+          "text": "美味しいんだよ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Add manju to manju and it is doubly delicious.",
+      "blocks": [
+        {
+          "text": "Add",
+          "role": "動作"
+        },
+        {
+          "text": "manju",
+          "role": "對象"
+        },
+        {
+          "text": "to manju",
+          "role": "目標"
+        },
+        {
+          "text": "doubly delicious",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「如果...就...」開頭",
+      "jp_insight": "貓咪老師把如果壓縮在動詞尾巴「足せば」，最後加上「んだよ」向小學生塞奶討糖吃，很有喜感",
+      "en_insight": "英文直接 Add 開頭"
+    },
+    "metrics": {},
+    "literal_jp": "饅頭[向] 饅頭[受] 如果加上去(ば) 雙倍 好吃(んだよ)",
+    "literal_en": "add manju to manju doubly delicious"
+  },
+  {
+    "id": "anime_546",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (獵人)",
+    "chinese": "青澀的果實總是看起來好好吃呢。",
+    "jp": {
+      "sentence": "青い果実はいつも美味しそうに見えるね。",
+      "blocks": [
+        {
+          "text": "青い果実は",
+          "role": "主角"
+        },
+        {
+          "text": "いつも",
+          "role": "時間"
+        },
+        {
+          "text": "美味しそうに",
+          "role": "修飾"
+        },
+        {
+          "text": "見える",
+          "role": "動作"
+        },
+        {
+          "text": "ね",
+          "role": "語氣"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Green fruit always looks so delicious.",
+      "blocks": [
+        {
+          "text": "Green fruit",
+          "role": "主角"
+        },
+        {
+          "text": "always looks",
+          "role": "動作"
+        },
+        {
+          "text": "so delicious",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文說「看起來很好吃」是主觀觀察",
+      "jp_insight": "西索用了「見える」（客觀自動映入眼簾），配上共鳴貼紙「ね」，輕鬆地盯著獵物，讓人毛骨悚然",
+      "en_insight": "英文用 looks"
+    },
+    "metrics": {},
+    "literal_jp": "青色蜥蜴的果實[題] 總是 好吃的樣子 自動映入眼簾(ね)",
+    "literal_en": "green fruit always looks so delicious"
+  },
+  {
+    "id": "anime_547",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (名偵探柯南)",
+    "chinese": "我相信新一一定會回來的。",
+    "jp": {
+      "sentence": "新一が絶対に戻ってくるって信じているから。",
+      "blocks": [
+        {
+          "text": "新一が",
+          "role": "主角"
+        },
+        {
+          "text": "絶対に",
+          "role": "修飾"
+        },
+        {
+          "text": "戻ってくるって",
+          "role": "連接"
+        },
+        {
+          "text": "信じている",
+          "role": "動作"
+        },
+        {
+          "text": "から",
+          "role": "連接"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Because I believe Shinichi will definitely come back.",
+      "blocks": [
+        {
+          "text": "Because",
+          "role": "連接"
+        },
+        {
+          "text": "I believe",
+          "role": "動作"
+        },
+        {
+          "text": "Shinichi",
+          "role": "主角"
+        },
+        {
+          "text": "will definitely",
+          "role": "修飾"
+        },
+        {
+          "text": "come back",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文把「因為」放在整句話最前面",
+      "jp_insight": "小蘭把巨大的心願講完，最後才在結尾補上一個「から」（因為），把深深的思念壓縮在句尾",
+      "en_insight": "英文用 Because 開頭"
+    },
+    "metrics": {},
+    "literal_jp": "新一[主] 絕對 回來[引] 正相信著(ている) 因為",
+    "literal_en": "because I believe Shinichi will definitely come back"
+  },
+  {
+    "id": "anime_548",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (鬼滅之刃)",
+    "chinese": "大哥沒有輸！",
+    "jp": {
+      "sentence": "兄貴は負けていない！",
+      "blocks": [
+        {
+          "text": "兄貴は",
+          "role": "主角"
+        },
+        {
+          "text": "負けていない",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Big brother did not lose!",
+      "blocks": [
+        {
+          "text": "Big brother",
+          "role": "主角"
+        },
+        {
+          "text": "did not lose",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「沒有輸」是一次性的過去事實",
+      "jp_insight": "炭治郎用了ている否定：大哥的精神和尊嚴，從過去到現在到未來，都絕對沒有維持著輸掉的狀態！超感人",
+      "en_insight": "英文用 did not lose"
+    },
+    "metrics": {},
+    "literal_jp": "大哥[題] 沒有維持著輸的狀態(ている否定)！",
+    "literal_en": "big brother did not lose"
+  },
+  {
+    "id": "anime_549",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (福音戰士)",
+    "chinese": "這個時候，微笑就可以了。",
+    "jp": {
+      "sentence": "こういう時は、笑えばいいと思うよ。",
+      "blocks": [
+        {
+          "text": "こういう時は",
+          "role": "時間"
+        },
+        {
+          "text": "笑えば",
+          "role": "連接"
+        },
+        {
+          "text": "いいと",
+          "role": "對象"
+        },
+        {
+          "text": "思うよ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "At times like this, I think smiling is enough.",
+      "blocks": [
+        {
+          "text": "At times like this",
+          "role": "時間"
+        },
+        {
+          "text": "smiling",
+          "role": "動作"
+        },
+        {
+          "text": "is enough",
+          "role": "動作"
+        },
+        {
+          "text": "I think",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文直接說「只要...就可以」",
+      "jp_insight": "綾波零把如果壓縮在尾巴「笑えば」，最後加上「と思うよ」，用極致溫柔與內斂的心情調色盤安慰真嗣",
+      "en_insight": "英文用 I think"
+    },
+    "metrics": {},
+    "literal_jp": "這種時候[題] 如果笑(ば) 就好[引] 我這樣想(よ)",
+    "literal_en": "at times like this smiling is enough I think"
+  },
+  {
+    "id": "anime_550",
+    "dimension": "動漫金句",
+    "dimension_label": "動漫金句 (航海王)",
+    "chinese": "請大家給我個面子。",
+    "jp": {
+      "sentence": "俺の顔を立ててもらおう。",
+      "blocks": [
+        {
+          "text": "俺の",
+          "role": "修飾"
+        },
+        {
+          "text": "顔を",
+          "role": "對象"
+        },
+        {
+          "text": "立てて",
+          "role": "動作"
+        },
+        {
+          "text": "もらおう",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Let me save face here.",
+      "blocks": [
+        {
+          "text": "Let me",
+          "role": "動作"
+        },
+        {
+          "text": "save face",
+          "role": "動作"
+        },
+        {
+          "text": "here",
+          "role": "場景"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文的「給我個面子」是一般的請求",
+      "jp_insight": "紅髮用了恩惠動詞「もらう」！意思是：請你們停戰，而我會隆重地把這個恩惠當成面子收下。最強霸王色的底層邏輯",
+      "en_insight": "英文用 Let me"
+    },
+    "metrics": {},
+    "literal_jp": "我[の] 臉[受] 立起來[て] 讓我收下這恩惠吧(もらう)！",
+    "literal_en": "let me save face here"
   }
 ]
