@@ -12889,6 +12889,354 @@
     "literal_en": "他 是 [那] 最高"
   },
   {
+    "id": "uni_double_subj_001",
+    "dimension": "雙主語（は+が）",
+    "dimension_label": "雙主語（は+が）",
+    "chinese": "我頭很痛。",
+    "literal_jp": "我[題] 頭(痛的部位)[主] 痛 是",
+    "literal_en": "I head hurts",
+    "jp": {
+      "sentence": "私は頭が痛いです。",
+      "blocks": [
+        [
+          "私は",
+          "主角"
+        ],
+        [
+          "頭が",
+          "主角"
+        ],
+        [
+          "痛いです",
+          "動作"
+        ]
+      ]
+    },
+    "en": {
+      "sentence": "I have a headache.",
+      "blocks": [
+        [
+          "I",
+          "主角"
+        ],
+        [
+          "have",
+          "動作"
+        ],
+        [
+          "a headache",
+          "對象"
+        ]
+      ]
+    },
+    "contrast": {
+      "cn_blindspot": "中文「我頭痛」一句搞定，不需要標記誰是大主題",
+      "jp_insight": "「私は」大主題（說到我），「頭が」小焦點（痛的是頭！）。人+痛い有歧義，必須補「頭が」",
+      "en_insight": "英文用 have a headache"
+    },
+    "metrics": {}
+  },
+  {
+    "id": "uni_double_subj_002",
+    "dimension": "雙主語（は+が）",
+    "dimension_label": "雙主語（は+が）",
+    "chinese": "大象鼻子很長。",
+    "literal_jp": "象[題] 鼻(長的部位)[主] 長 是",
+    "literal_en": "Elephants nose long",
+    "jp": {
+      "sentence": "象は鼻が長いです。",
+      "blocks": [
+        [
+          "象は",
+          "主角"
+        ],
+        [
+          "鼻が",
+          "主角"
+        ],
+        [
+          "長いです",
+          "動作"
+        ]
+      ]
+    },
+    "en": {
+      "sentence": "Elephants have long noses.",
+      "blocks": [
+        [
+          "Elephants",
+          "主角"
+        ],
+        [
+          "have",
+          "動作"
+        ],
+        [
+          "long",
+          "修飾"
+        ],
+        [
+          "noses",
+          "對象"
+        ]
+      ]
+    },
+    "contrast": {
+      "cn_blindspot": "中文「大象鼻子長」直接並排",
+      "jp_insight": "「象は」大主題，「鼻が」小焦點。動物+長い有歧義，必須補「鼻が」",
+      "en_insight": "英文用 have long noses"
+    },
+    "metrics": {}
+  },
+  {
+    "id": "uni_double_subj_003",
+    "dimension": "雙主語（は+が）",
+    "dimension_label": "雙主語（は+が）",
+    "chinese": "她眼睛很大。",
+    "literal_jp": "她[題] 眼睛(大的部位)[主] 大 是",
+    "literal_en": "She eyes big",
+    "jp": {
+      "sentence": "彼女は目が大きいです。",
+      "blocks": [
+        [
+          "彼女は",
+          "主角"
+        ],
+        [
+          "目が",
+          "主角"
+        ],
+        [
+          "大きいです",
+          "動作"
+        ]
+      ]
+    },
+    "en": {
+      "sentence": "She has big eyes.",
+      "blocks": [
+        [
+          "She",
+          "主角"
+        ],
+        [
+          "has",
+          "動作"
+        ],
+        [
+          "big",
+          "修飾"
+        ],
+        [
+          "eyes",
+          "對象"
+        ]
+      ]
+    },
+    "contrast": {
+      "cn_blindspot": "中文「她眼睛大」直接並排",
+      "jp_insight": "「彼女は」大主題，「目が」小焦點。人+大きい有歧義，必須補「目が」",
+      "en_insight": "英文用 has big eyes"
+    },
+    "metrics": {}
+  },
+  {
+    "id": "uni_double_subj_004",
+    "dimension": "雙主語（は+が）",
+    "dimension_label": "雙主語（は+が）",
+    "chinese": "他跑步很快。",
+    "literal_jp": "他[題] 腳(快的部位)[主] 快 是",
+    "literal_en": "He legs fast",
+    "jp": {
+      "sentence": "彼は足が速いです。",
+      "blocks": [
+        [
+          "彼は",
+          "主角"
+        ],
+        [
+          "足が",
+          "主角"
+        ],
+        [
+          "速いです",
+          "動作"
+        ]
+      ]
+    },
+    "en": {
+      "sentence": "He is a fast runner.",
+      "blocks": [
+        [
+          "He",
+          "主角"
+        ],
+        [
+          "is",
+          "動作"
+        ],
+        [
+          "a fast runner",
+          "修飾"
+        ]
+      ]
+    },
+    "contrast": {
+      "cn_blindspot": "中文「他跑很快」不需要提到「腳」",
+      "jp_insight": "「彼は」大主題，「足が」小焦點。日文用「足が速い」（腳快）表達跑得快",
+      "en_insight": "英文用 fast runner"
+    },
+    "metrics": {}
+  },
+  {
+    "id": "uni_double_subj_005",
+    "dimension": "雙主語（は+が）",
+    "dimension_label": "雙主語（は+が）",
+    "chinese": "她頭髮很長。",
+    "literal_jp": "她[題] 頭髮(長的部位)[主] 長 是",
+    "literal_en": "She hair long",
+    "jp": {
+      "sentence": "彼女は髪が長いです。",
+      "blocks": [
+        [
+          "彼女は",
+          "主角"
+        ],
+        [
+          "髪が",
+          "主角"
+        ],
+        [
+          "長いです",
+          "動作"
+        ]
+      ]
+    },
+    "en": {
+      "sentence": "She has long hair.",
+      "blocks": [
+        [
+          "She",
+          "主角"
+        ],
+        [
+          "has",
+          "動作"
+        ],
+        [
+          "long",
+          "修飾"
+        ],
+        [
+          "hair",
+          "對象"
+        ]
+      ]
+    },
+    "contrast": {
+      "cn_blindspot": "中文「她頭髮長」直接說",
+      "jp_insight": "「彼女は」大主題，「髪が」小焦點。人+長い有歧義，必須補「髪が」",
+      "en_insight": "英文用 has long hair"
+    },
+    "metrics": {}
+  },
+  {
+    "id": "uni_no_ambiguity_001",
+    "dimension": "雙主語（は+が）",
+    "dimension_label": "雙主語（は+が）",
+    "chinese": "那座山很高。",
+    "literal_jp": "那 山[題] 高 是",
+    "literal_en": "That mountain tall",
+    "jp": {
+      "sentence": "あの山は高いです。",
+      "blocks": [
+        [
+          "あの",
+          "修飾"
+        ],
+        [
+          "山は",
+          "主角"
+        ],
+        [
+          "高いです",
+          "動作"
+        ]
+      ]
+    },
+    "en": {
+      "sentence": "That mountain is tall.",
+      "blocks": [
+        [
+          "That",
+          "修飾"
+        ],
+        [
+          "mountain",
+          "主角"
+        ],
+        [
+          "is",
+          "動作"
+        ],
+        [
+          "tall",
+          "修飾"
+        ]
+      ]
+    },
+    "contrast": {
+      "cn_blindspot": "中文「山很高」直接說",
+      "jp_insight": "山+高い沒歧義（就是高度），不需要補「が」！跟「人+高い」不同（人要補「背が」才知道是身高）",
+      "en_insight": "英文也直接說 is tall"
+    },
+    "metrics": {}
+  },
+  {
+    "id": "uni_no_ambiguity_002",
+    "dimension": "雙主語（は+が）",
+    "dimension_label": "雙主語（は+が）",
+    "chinese": "富士山很美。",
+    "literal_jp": "富士山[題] 美麗 是",
+    "literal_en": "Mount Fuji beautiful",
+    "jp": {
+      "sentence": "富士山は美しいです。",
+      "blocks": [
+        [
+          "富士山は",
+          "主角"
+        ],
+        [
+          "美しいです",
+          "動作"
+        ]
+      ]
+    },
+    "en": {
+      "sentence": "Mount Fuji is beautiful.",
+      "blocks": [
+        [
+          "Mount Fuji",
+          "主角"
+        ],
+        [
+          "is",
+          "動作"
+        ],
+        [
+          "beautiful",
+          "修飾"
+        ]
+      ]
+    },
+    "contrast": {
+      "cn_blindspot": "中文「富士山很美」直接說",
+      "jp_insight": "富士山+美しい沒歧義（美就是整體美），不需要補「が」！",
+      "en_insight": "英文也直接說 is beautiful"
+    },
+    "metrics": {}
+  },
+  {
     "id": "uni_relative_139",
     "dimension": "relative",
     "dimension_label": "Relative",
