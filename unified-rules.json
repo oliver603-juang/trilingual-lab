@@ -7486,8 +7486,8 @@
   },
   {
     "id": "uni_hodo_108",
-    "dimension": "hodo",
-    "dimension_label": "ほど 程度",
+    "dimension": "hodo_ba",
+    "dimension_label": "〜ば〜ほど 越…越…",
     "chinese": "日語越學越有趣。",
     "jp": {
       "sentence": "日本語は勉強すればするほど面白いです。",
@@ -7498,18 +7498,22 @@
         },
         {
           "text": "勉強すれば",
-          "role": "修飾"
+          "role": "條件"
         },
         {
-          "text": "するほど",
-          "role": "連接"
+          "text": "する",
+          "role": "連動"
+        },
+        {
+          "text": "ほど",
+          "role": "程度"
         },
         {
           "text": "面白いです",
-          "role": "動作"
+          "role": "結果"
         }
       ],
-      "formula": "[日本語は] + [勉強すれば] + [するほど] + [面白いです]"
+      "formula": "[日本語は] + [勉強すれば] + [する] + [ほど] + [面白いです]"
     },
     "en": {
       "sentence": "The more you study Japanese, the more interesting it gets.",
@@ -7550,15 +7554,15 @@
       "formula": "[The more] + [you] + [study] + [Japanese] + [the more] + [interesting] + [it] + [gets]"
     },
     "contrast": {
-      "cn_blindspot": "中文「到…的程度」很長",
-      "jp_insight": "日文 ほど 一個詞搞定程度表達",
-      "en_insight": "英文不需要這個文法概念"
+      "cn_blindspot": "中文「越…越…」是兩個字對偶，日文是三塊積木組裝",
+      "jp_insight": "「ば形 + 原形 + ほど」三件套缺一不可，不是單一字",
+      "en_insight": "英文 The more...the more... 也是對偶結構"
     },
     "metrics": {
       "jp": {
-        "transform_distance": 3,
-        "morphology_load": 3,
-        "new_concept": 3
+        "transform_distance": 5,
+        "morphology_load": 5,
+        "new_concept": 4
       },
       "en": {
         "transform_distance": 2,
