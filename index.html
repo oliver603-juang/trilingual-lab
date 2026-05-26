@@ -146,6 +146,20 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .ki-fl{font-size:.58rem;display:block;margin-bottom:2px;opacity:.5}
 .ki-tp{margin:3px 10px 10px;padding:6px 12px;border-radius:9px;background:linear-gradient(135deg,rgba(255,215,0,.07),rgba(255,169,77,.04));border:1px solid rgba(255,215,0,.12);text-align:center;font-size:.85rem;font-weight:900;color:var(--gold)}
 .diy{margin:0 12px 12px;border-radius:14px;background:#1a1a35;border:1.5px solid rgba(255,215,0,.12);overflow:hidden;padding:10px 14px}
+.disc{margin:10px 0}
+.disc-btn{width:100%;padding:10px 16px;background:linear-gradient(135deg,rgba(59,139,212,.12),rgba(127,119,221,.08));border:1px solid rgba(59,139,212,.3);border-radius:10px;color:#7dd3fc;font-size:.85rem;font-weight:700;cursor:pointer;list-style:none;text-align:center}
+.disc-btn:hover{background:linear-gradient(135deg,rgba(59,139,212,.2),rgba(127,119,221,.15));border-color:rgba(59,139,212,.5)}
+.disc-details[open] .disc-btn{border-radius:10px 10px 0 0;border-bottom:none;color:#86efac}
+.disc-frame{border:1px solid rgba(59,139,212,.3);border-top:none;border-radius:0 0 10px 10px;overflow:hidden;background:#fff}
+.disc-iframe{width:100%;height:60vh;min-height:400px;border:none}
+.disc-empty{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(59,139,212,.05);border:1px dashed rgba(59,139,212,.2);border-radius:10px}
+.disc-label{font-size:.75rem;color:#7dd3fc;white-space:nowrap;font-weight:700}
+.disc-input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:6px 10px;font-size:.72rem;color:#e2e0d6;outline:none}
+.disc-input:focus{border-color:#7dd3fc;background:rgba(59,139,212,.08)}
+.disc-input::placeholder{color:#666}
+.disc-edit{display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.2);border-top:1px solid rgba(59,139,212,.15)}
+.disc-del{background:none;border:none;cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:4px}
+.disc-del:hover{background:rgba(255,107,107,.2)}
 .diy-h{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:8px}
 .diy-h span:first-child{font-size:1.1rem}.diy-h span:last-child{font-size:.75rem;font-weight:900;color:#ffd700}
 .diy-input{display:flex;gap:6px;margin-bottom:8px}
@@ -1047,9 +1061,9 @@ R=d.map(r=>({id:r.id,dim:r.dimension_label||r.dimension,cn:r.chinese,lv:r.jlpt||
 jp:r.jp?{s:r.jp.sentence,b:r.jp.blocks.map(b=>[b.text,b.role]),f:r.jp.formula||''}:null,
 en:r.en?{s:r.en.sentence,b:r.en.blocks.map(b=>[b.text,b.role]),f:r.en.formula||''}:null,
 lit_jp:r.literal_jp||'',lit_en:r.literal_en||'',
-ct:r.contrast||{}}));}catch{document.getElementById('app').innerHTML='<div class="ld-c"><div class="ld-t">請將 unified-rules.json 放在同目錄</div></div>';return;}
+ct:r.contrast||{},disc_url:r.discussion_url||'',disc_title:r.discussion_title||''}));}catch{document.getElementById('app').innerHTML='<div class="ld-c"><div class="ld-t">請將 unified-rules.json 放在同目錄</div></div>';return;}
 F=R;
-document.getElementById('nc').value='1/'+R.length;rDT();fbPullEdits().then(()=>fbSync()).then(()=>{uP();rn();});}
+document.getElementById('nc').value='1/'+R.length;rDT();fbPullDisc().then(()=>fbPullEdits()).then(()=>fbSync()).then(()=>{uP();rn();});}
 function rDT(){const ds={};R.forEach(r=>{ds[r.dim]=(ds[r.dim]||0)+1;});
 const seen=new Set();const ordered=[];R.forEach(r=>{if(!seen.has(r.dim)){seen.add(r.dim);ordered.push([r.dim,ds[r.dim]]);}});
 let h='<button class="tab a" onclick="fD(\'all\')">全部 '+R.length+'</button>';
@@ -1062,6 +1076,56 @@ if(m==='jp')bs[0].classList.add('a-jp');else if(m==='en')bs[1].classList.add('a-
 function jumpTo(val){const m=val.match(/(\d+)/);if(m){const n=parseInt(m[1]);if(n>=1&&n<=F.length){if(edM)svEd();ci=n-1;rn();}}document.getElementById('nc').blur();}
 function nv(d){if(edM)svEd();ci=Math.max(0,Math.min(F.length-1,ci+d));rn();}
 let aP=false;let aPTimer=null;let silentAudio=null;
+/* === 延伸討論（動態載入 Google Doc） === */
+function gDISC(r){
+const saved=window._discCache?.[r.id]||r.disc_url||'';
+const title=r.disc_title||'📝 延伸討論';
+let h='<div class="disc">';
+if(saved){
+h+='<details class="disc-details"><summary class="disc-btn">'+title+'</summary>';
+h+='<div class="disc-frame"><iframe src="'+saved+'" class="disc-iframe" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe></div>';
+h+='<div class="disc-edit"><input class="disc-input" value="'+saved+'" placeholder="貼上 Google Doc 發布連結..." onchange="saveDisc(\''+r.id+'\',this.value)"><button class="disc-del" onclick="delDisc(\''+r.id+'\')">🗑️</button></div>';
+h+='</details>';
+}else{
+h+='<div class="disc-empty"><span class="disc-label">📝 延伸討論</span>';
+h+='<input class="disc-input" placeholder="貼上 Google Doc 發布連結..." onchange="saveDisc(\''+r.id+'\',this.value)">';
+h+='</div>';
+}
+h+='</div>';
+return h;
+}
+/* 討論連結：Firebase 同步（所有帳號/裝置共用） */
+window._discCache={};
+function discFixUrl(url){
+let u=url.trim();
+if(u.includes('/edit'))u=u.replace(/\/edit.*$/,'/pub?embedded=true');
+if(u.includes('/pub')&&!u.includes('embedded=true'))u+=(u.includes('?')?'&':'?')+'embedded=true';
+return u;
+}
+function saveDisc(id,url){
+if(!url){delDisc(id);return;}
+const pubUrl=discFixUrl(url);
+window._discCache[id]=pubUrl;
+/* 存到 Firebase */
+const fbUrl=getFbUrl();
+if(fbUrl){fetch(fbUrl+'/discussions/'+id+'.json',{method:'PUT',body:JSON.stringify(pubUrl)}).then(()=>{
+const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 討論連結已同步 ☁️';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);
+}).catch(()=>{});}
+rn();
+}
+function delDisc(id){
+delete window._discCache[id];
+const fbUrl=getFbUrl();
+if(fbUrl){fetch(fbUrl+'/discussions/'+id+'.json',{method:'DELETE'}).catch(()=>{});}
+rn();
+}
+function fbPullDisc(){
+const fbUrl=getFbUrl();if(!fbUrl)return Promise.resolve();
+return fetch(fbUrl+'/discussions.json').then(r=>r.json()).then(data=>{
+if(data&&typeof data==='object'){window._discCache=data;}
+}).catch(()=>{});
+}
+
 /* === Layer 2: Silent audio keep-alive === */
 /* 0.5s silent WAV inline data URL: keeps audio session active in background */
 const SILENT_WAV='data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=';
@@ -1130,7 +1194,7 @@ if((md==='en'||md==='vs')&&r.ct.en_insight)ct+='<div><span class="cl" style="col
 const mx=Math.min(F.length,30);let dt='<div class="dr">';for(let i=0;i<mx;i++){const dc=i===ci?' a-'+md:'';const sn=iS(F[i].id)?' sn':'';dt+='<div class="d'+dc+sn+'" onclick="gT('+i+')"></div>';}
 if(F.length>mx)dt+='<span style="color:var(--dim);font-size:.48rem;align-self:center">+'+(F.length-mx)+'</span>';dt+='</div>';
 const lg='<div class="lg"><div class="li"><div class="ld" style="background:#ff6b6b"></div>主角</div><div class="li"><div class="ld" style="background:#4ecdc4"></div>動作</div><div class="li"><div class="ld" style="background:#ffd93d"></div>對象</div><div class="li"><div class="ld" style="background:#a78bfa"></div>修飾</div><div class="li"><div class="ld" style="background:#888"></div>連接</div><div class="li"><div class="ld" style="background:#66bb6a"></div>場景</div><div class="li"><div class="ld" style="background:#ff9800"></div>目標</div><div class="li"><div class="ld" style="background:#42a5f5"></div>時間</div><div class="li"><div class="ld" style="background:#ef5350"></div>語氣</div></div>';
-document.getElementById('app').innerHTML='<div class="mc m-'+md+'"><div class="ca"><div class="cs">'+eH(r.cn)+'</div><div class="cd">'+eH(r.dim)+(r.lv?' · '+r.lv:'')+'</div></div><div class="ba">'+bh+'</div>'+ct+lg+'</div>'+gKI(r)+gDIY(r);document.getElementById('nc').value=(ci+1)+'/'+F.length;var nb=document.querySelectorAll('.nb');if(nb[0])nb[0].disabled=ci===0;if(nb[1])nb[1].disabled=ci>=F.length-1;if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(function(el){el.contentEditable='true';el.addEventListener('blur',svEd);});}document.querySelectorAll('.tab').forEach(function(t){var td=t.textContent.replace(/\s*\d+$/,'').trim();t.classList.toggle('a',td===r.dim);});var at=document.querySelector('.tab.a');if(at)at.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}
+document.getElementById('app').innerHTML='<div class="mc m-'+md+'"><div class="ca"><div class="cs">'+eH(r.cn)+'</div><div class="cd">'+eH(r.dim)+(r.lv?' · '+r.lv:'')+'</div></div><div class="ba">'+bh+'</div>'+ct+lg+'</div>'+gKI(r)+gDIY(r)+gDISC(r);document.getElementById('nc').value=(ci+1)+'/'+F.length;var nb=document.querySelectorAll('.nb');if(nb[0])nb[0].disabled=ci===0;if(nb[1])nb[1].disabled=ci>=F.length-1;if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(function(el){el.contentEditable='true';el.addEventListener('blur',svEd);});}document.querySelectorAll('.tab').forEach(function(t){var td=t.textContent.replace(/\s*\d+$/,'').trim();t.classList.toggle('a',td===r.dim);});var at=document.querySelector('.tab.a');if(at)at.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}
 function gKI(r){if(md==='vs'){const jp=KD[r.dim],en=EK[r.dim];if(!jp&&!en)return '';let h='<div class="ki"><div style="padding:10px 14px 6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap"><span style="font-size:1.2rem">🦊</span><span style="font-size:1.2rem">🐸</span><span style="font-size:.75rem;font-weight:900;color:#ffd700">三語魔法教室</span></div>';const cn=jp?.cn||en?.cn||'';if(cn)h+='<div class="ki-b ki-cn"><span class="ki-fl">🇹🇼 中文大腦怎麼想</span>'+nl2br(cn)+'</div>';if(jp)h+='<div class="ki-b ki-jp"><span class="ki-fl">🇯🇵 日文大腦怎麼想</span>'+nl2br(jp.br)+'</div>';if(en)h+='<div class="ki-b ki-en"><span class="ki-fl">🇺🇸 英文大腦怎麼想</span>'+nl2br(en.br)+'</div>';if(jp?.tp)h+='<div class="ki-tp" style="margin-bottom:3px">'+nl2br(jp.tp)+'</div>';if(en?.tp)h+='<div class="ki-tp">'+nl2br(en.tp)+'</div>';h+='</div>';return h;}const d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)return '';const isJP=d.th==='jp',bc=isJP?'ki-jp':'ki-en',bl=isJP?'🇯🇵 日文大腦怎麼想':'🇺🇸 英文大腦怎麼想',tc=isJP?'color:#ff8a8a':'color:#7eeae0';return '<div class="ki"><button class="edit-toggle'+(edM?' active':'')+'" onclick="toggleEdit()">'+(edM?'🔒 關閉編輯':'✏️ 編輯')+'</button><div style="padding:10px 14px 6px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap"><span style="font-size:1.4rem">'+d.m+'</span><span style="font-size:.75rem;font-weight:900;color:#ffd700">'+d.m+' '+d.t+' 的'+(isJP?'日文':'英文')+'魔法教室</span><span style="font-size:1rem;font-weight:900;'+tc+'">'+d.mt+'</span></div><div class="ki-b ki-cn"><span class="ki-fl">🇹🇼 中文大腦怎麼想</span>'+nl2br(d.cn)+'</div><div class="ki-b '+bc+'"><span class="ki-fl">'+bl+'</span>'+nl2br(d.br)+'</div><div class="ki-tp">'+nl2br(d.tp)+'</div></div>';}
 function rVS(r){let h='<div class="vc"><div class="vs js"><div class="vl jp">🇯🇵 日文</div>';
 if(r.jp){r.jp.b.forEach(([t,rl])=>{h+='<div class="vb jp r-'+rl+'" onclick="sp(\''+t.replace(/'/g,"\\'")+'\',\'jp\')"><span>'+furi(t)+'</span><span class="vt">'+rl+'</span></div>';});h+='<div style="font-size:.52rem;color:var(--dim);margin-top:3px;text-align:center">'+''+'</div>';}
@@ -1178,7 +1242,7 @@ if(document.body.classList.contains('immersive'))toggleImmersive();
 });
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=71').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=73').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);const btn=document.querySelector('.edit-toggle');if(btn){btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
