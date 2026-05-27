@@ -153,13 +153,26 @@ ruby{ruby-align:center}ruby rt{font-size:.5rem;font-weight:400;opacity:.6;color:
 .disc-btn{width:100%;padding:10px 16px;background:linear-gradient(135deg,rgba(59,139,212,.12),rgba(127,119,221,.08));border:1px solid rgba(59,139,212,.3);border-radius:10px;color:#7dd3fc;font-size:.85rem;font-weight:700;cursor:pointer;list-style:none;text-align:center}
 .disc-btn:hover{background:linear-gradient(135deg,rgba(59,139,212,.2),rgba(127,119,221,.15));border-color:rgba(59,139,212,.5)}
 .disc-details[open] .disc-btn{border-radius:10px 10px 0 0;border-bottom:none;color:#86efac}
-.disc-frame{border:1px solid rgba(59,139,212,.3);border-top:none;border-radius:0 0 10px 10px;overflow:hidden;background:#fff}
-.disc-iframe{width:100%;height:60vh;min-height:400px;border:none;filter:invert(0.88) hue-rotate(180deg);background:#1a1a2e}
-.disc-empty{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(59,139,212,.05);border:1px dashed rgba(59,139,212,.2);border-radius:10px}
 .disc-label{font-size:.75rem;color:#7dd3fc;white-space:nowrap;font-weight:700}
 .disc-input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:6px 10px;font-size:.72rem;color:#e2e0d6;outline:none}
 .disc-input:focus{border-color:#7dd3fc;background:rgba(59,139,212,.08)}
 .disc-input::placeholder{color:#666}
+.bulletin-board{border:1px solid rgba(59,139,212,.3);border-top:none;border-radius:0 0 10px 10px;padding:12px;background:rgba(10,10,30,.5);max-height:60vh;overflow-y:auto}
+.bb-post{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+.bb-meta{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-size:.7rem}
+.bb-user{color:#86efac;font-weight:700}
+.bb-time{color:#666;flex:1}
+.bb-del{background:none;border:none;color:#555;cursor:pointer;font-size:.7rem;padding:2px 4px}
+.bb-del:hover{color:#f87171}
+.bb-text{color:#d1d5db;font-size:.8rem;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.bb-empty{text-align:center;padding:20px;color:#555;font-size:.8rem}
+.bb-input-area{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.bb-textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;font-size:.8rem;color:#e2e0d6;resize:vertical;min-height:60px;outline:none;font-family:inherit;line-height:1.5}
+.bb-textarea:focus{border-color:#7dd3fc;background:rgba(59,139,212,.08)}
+.bb-textarea::placeholder{color:#555}
+.bb-submit{align-self:flex-end;background:linear-gradient(135deg,#3b82f6,#6366f1);color:white;border:none;padding:8px 20px;border-radius:8px;font-weight:700;font-size:.8rem;cursor:pointer}
+.bb-submit:hover{filter:brightness(1.1)}
+.bb-submit:active{transform:scale(.96)}
 .disc-edit{display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.2);border-top:1px solid rgba(59,139,212,.15)}
 .disc-del{background:none;border:none;cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:4px}
 .disc-del:hover{background:rgba(255,107,107,.2)}
@@ -1083,53 +1096,75 @@ if(m==='jp')bs[0].classList.add('a-jp');else if(m==='en')bs[1].classList.add('a-
 function jumpTo(val){const m=val.match(/(\d+)/);if(m){const n=parseInt(m[1]);if(n>=1&&n<=F.length){if(edM)svEd();ci=n-1;rn();}}document.getElementById('nc').blur();}
 function nv(d){if(edM)svEd();ci=Math.max(0,Math.min(F.length-1,ci+d));rn();}
 let aP=false;let aPTimer=null;let silentAudio=null;
-/* === 延伸討論（動態載入 Google Doc） === */
+/* === 佈告欄（Firebase 即時同步） === */
 function gDISC(r){
-const saved=window._discCache?.[r.id]||r.disc_url||'';
-const title=r.disc_title||'📝 延伸討論';
+const id=r.id;
+const posts=window._bulletinCache?.[id]||[];
 let h='<div class="disc">';
-if(saved){
-h+='<details class="disc-details"><summary class="disc-btn">'+title+'</summary>';
-h+='<div class="disc-frame"><iframe src="'+saved+'" class="disc-iframe" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe></div>';
-h+='<div class="disc-edit"><input class="disc-input" value="'+saved+'" placeholder="貼上 Google Doc 發布連結..." onchange="saveDisc(\''+r.id+'\',this.value)"><button class="disc-del" onclick="delDisc(\''+r.id+'\')">🗑️</button></div>';
-h+='</details>';
+h+='<details class="disc-details" open>';
+h+='<summary class="disc-btn">📋 佈告欄'+(posts.length?' ('+posts.length+')':'')+'</summary>';
+h+='<div class="bulletin-board" id="bb-'+id+'">';
+if(posts.length){
+posts.forEach((p,i)=>{
+const time=p.ts?new Date(p.ts).toLocaleString('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}):'';
+const escapedText=eH(p.text||'').replace(/\n/g,'<br>');
+h+='<div class="bb-post">';
+h+='<div class="bb-meta"><span class="bb-user">'+eH(p.user||'匿名')+'</span><span class="bb-time">'+time+'</span>';
+h+='<button class="bb-del" onclick="delBulletin(\''+id+'\','+i+')" title="刪除">✕</button></div>';
+h+='<div class="bb-text">'+escapedText+'</div>';
+h+='</div>';
+});
 }else{
-h+='<div class="disc-empty"><span class="disc-label">📝 延伸討論</span>';
-h+='<input class="disc-input" placeholder="貼上 Google Doc 發布連結..." onchange="saveDisc(\''+r.id+'\',this.value)">';
-h+='</div>';
+h+='<div class="bb-empty">還沒有人留言，寫下你的文法筆記吧！</div>';
 }
+h+='<div class="bb-input-area">';
+h+='<textarea class="bb-textarea" id="bb-input-'+id+'" placeholder="在此貼上討論內容、文法筆記..." rows="3"></textarea>';
+h+='<button class="bb-submit" onclick="postBulletin(\''+id+'\')">📤 發佈</button>';
 h+='</div>';
+h+='</div></details></div>';
 return h;
 }
-/* 討論連結：Firebase 同步（所有帳號/裝置共用） */
-window._discCache={};
-function discFixUrl(url){
-let u=url.trim();
-if(u.includes('/edit'))u=u.replace(/\/edit.*$/,'/pub?embedded=true');
-if(u.includes('/pub')&&!u.includes('embedded=true'))u+=(u.includes('?')?'&':'?')+'embedded=true';
-return u;
-}
-function saveDisc(id,url){
-if(!url){delDisc(id);return;}
-const pubUrl=discFixUrl(url);
-window._discCache[id]=pubUrl;
+/* 佈告欄：Firebase 同步 */
+window._bulletinCache={};
+function postBulletin(sentId){
+const ta=document.getElementById('bb-input-'+sentId);
+if(!ta)return;
+const text=ta.value.trim();
+if(!text)return;
+const user=cU||'匿名';
+const post={user:user,text:text,ts:Date.now()};
+if(!window._bulletinCache[sentId])window._bulletinCache[sentId]=[];
+window._bulletinCache[sentId].push(post);
 /* 存到 Firebase */
 const fbUrl=getFbUrl();
-if(fbUrl){fetch(fbUrl+'/discussions/'+id+'.json',{method:'PUT',body:JSON.stringify(pubUrl)}).then(()=>{
-const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 討論連結已同步 ☁️';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);
+if(fbUrl){
+const idx=window._bulletinCache[sentId].length-1;
+fetch(fbUrl+'/bulletins/'+sentId+'/'+idx+'.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(post)}).then(r=>{
+if(r.ok){const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 已發佈到佈告欄 ☁️';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);}
 }).catch(()=>{});}
 rn();
 }
-function delDisc(id){
-delete window._discCache[id];
+function delBulletin(sentId,idx){
+if(!window._bulletinCache[sentId])return;
+if(!confirm('確定刪除這則留言？'))return;
+window._bulletinCache[sentId].splice(idx,1);
 const fbUrl=getFbUrl();
-if(fbUrl){fetch(fbUrl+'/discussions/'+id+'.json',{method:'DELETE'}).catch(()=>{});}
+if(fbUrl){
+/* 重寫整個句子的佈告欄 */
+const data=window._bulletinCache[sentId].length>0?window._bulletinCache[sentId]:null;
+fetch(fbUrl+'/bulletins/'+sentId+'.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(()=>{});}
 rn();
 }
 function fbPullDisc(){
 const fbUrl=getFbUrl();if(!fbUrl)return Promise.resolve();
-return fetch(fbUrl+'/discussions.json').then(r=>r.json()).then(data=>{
-if(data&&typeof data==='object'){window._discCache=data;}
+return fetch(fbUrl+'/bulletins.json').then(r=>r.json()).then(data=>{
+if(data&&typeof data==='object'){
+window._bulletinCache={};
+for(const[sentId,posts] of Object.entries(data)){
+if(Array.isArray(posts)){window._bulletinCache[sentId]=posts.filter(p=>p);}
+else if(posts&&typeof posts==='object'){window._bulletinCache[sentId]=Object.values(posts).filter(p=>p);}
+}
+}
 }).catch(()=>{});
 }
 
