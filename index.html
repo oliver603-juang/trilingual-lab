@@ -466,18 +466,21 @@ if(local.lastId){merged.lastId=local.lastId;}else if(remote.lastId){merged.lastI
 try{localStorage.setItem('tl_'+cu,JSON.stringify(merged));}catch{}
 fbPush(cu,merged);
 }catch{}}
+function fbSanitizeKey(k){return k.replace(/[.#$\[\]\/]/g,'｜');}
+function fbRestoreKey(k){return k.replace(/｜/g,'/');}
 function fbPushEdits(){const url=getFbUrl();if(!url)return;
 const edits={};
-for(const[k,v] of Object.entries(KD)){edits['KD_'+k]={cn:v.cn,br:v.br,tp:v.tp};}
-for(const[k,v] of Object.entries(EK)){edits['EK_'+k]={cn:v.cn,br:v.br,tp:v.tp};}
+for(const[k,v] of Object.entries(KD)){edits['KD_'+fbSanitizeKey(k)]={cn:v.cn,br:v.br,tp:v.tp};}
+for(const[k,v] of Object.entries(EK)){edits['EK_'+fbSanitizeKey(k)]={cn:v.cn,br:v.br,tp:v.tp};}
 const cbEdits={};R.forEach(r=>{if(r.ct){cbEdits[r.id]=r.ct;}});
 edits._contrast=cbEdits;edits._ts=Date.now();
 fetch(url.replace(/\/$/,'')+'/shared/edits.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(edits)}).catch(()=>{});}
 async function fbPullEdits(){const url=getFbUrl();if(!url)return;
 try{const r=await fetch(url.replace(/\/$/,'')+'/shared/edits.json');if(!r.ok)return;const edits=await r.json();if(!edits)return;
 for(const[k,v] of Object.entries(edits)){
-if(k.startsWith('KD_')&&KD[k.slice(3)]){const d=KD[k.slice(3)];if(v.cn)d.cn=v.cn;if(v.br)d.br=v.br;if(v.tp)d.tp=v.tp;}
-if(k.startsWith('EK_')&&EK[k.slice(3)]){const d=EK[k.slice(3)];if(v.cn)d.cn=v.cn;if(v.br)d.br=v.br;if(v.tp)d.tp=v.tp;}}
+const origKey=fbRestoreKey(k.slice(3));
+if(k.startsWith('KD_')&&KD[origKey]){const d=KD[origKey];if(v.cn)d.cn=v.cn;if(v.br)d.br=v.br;if(v.tp)d.tp=v.tp;}
+if(k.startsWith('EK_')&&EK[origKey]){const d=EK[origKey];if(v.cn)d.cn=v.cn;if(v.br)d.br=v.br;if(v.tp)d.tp=v.tp;}}
 if(edits._contrast){for(const[id,ct] of Object.entries(edits._contrast)){const rule=R.find(r=>r.id===id);if(rule)rule.ct=ct;}}
 }catch{}}
 function mS(id){const d=lU();if(!d.seen)d.seen={};d.seen[id]=Date.now();d.lastIdx=ci;d.lastId=id;sV(d);}
@@ -1192,9 +1195,9 @@ const litField=md==='jp'?'lit_jp':'lit_en';const litText=r[litField]||'';
 if(litText.trim()){const flag=md==='jp'?'🇯🇵':'🇺🇸';const lbl=md==='jp'?'日文大腦直譯（語序：主→受→動）':'英文大腦直譯（語序：主→動→受）';
 bh+='<div class="xtbox show"><div class="xtlbl">'+flag+' '+lbl+'</div>'+renderLiteralWithTags(eH(litText))+'</div>';}}}
 let ct='';if(r.ct&&(r.ct.cn_blindspot||r.ct.jp_insight||r.ct.en_insight)){ct='<div class="cb">';
-if(r.ct.cn_blindspot)ct+='<div><span class="cl" style="color:var(--cn)">🇹🇼 中文陷阱：</span>'+eH(r.ct.cn_blindspot)+'</div>';
-if((md==='jp'||md==='vs')&&r.ct.jp_insight)ct+='<div><span class="cl" style="color:var(--jp)">🇯🇵 日文邏輯：</span>'+eH(r.ct.jp_insight)+'</div>';
-if((md==='en'||md==='vs')&&r.ct.en_insight)ct+='<div><span class="cl" style="color:var(--en)">🇺🇸 英文邏輯：</span>'+eH(r.ct.en_insight)+'</div>';ct+='</div>';}
+if(r.ct.cn_blindspot)ct+='<div><span class="cl" style="color:var(--cn)">🇹🇼 中文陷阱：</span>'+eH(r.ct.cn_blindspot).replace(/\n/g,'<br>')+'</div>';
+if((md==='jp'||md==='vs')&&r.ct.jp_insight)ct+='<div><span class="cl" style="color:var(--jp)">🇯🇵 日文邏輯：</span>'+eH(r.ct.jp_insight).replace(/\n/g,'<br>')+'</div>';
+if((md==='en'||md==='vs')&&r.ct.en_insight)ct+='<div><span class="cl" style="color:var(--en)">🇺🇸 英文邏輯：</span>'+eH(r.ct.en_insight).replace(/\n/g,'<br>')+'</div>';ct+='</div>';}
 const mx=Math.min(F.length,30);let dt='<div class="dr">';for(let i=0;i<mx;i++){const dc=i===ci?' a-'+md:'';const sn=iS(F[i].id)?' sn':'';dt+='<div class="d'+dc+sn+'" onclick="gT('+i+')"></div>';}
 if(F.length>mx)dt+='<span style="color:var(--dim);font-size:.48rem;align-self:center">+'+(F.length-mx)+'</span>';dt+='</div>';
 const lg='<div class="lg"><div class="li"><div class="ld" style="background:#ff6b6b"></div>主角</div><div class="li"><div class="ld" style="background:#4ecdc4"></div>動作</div><div class="li"><div class="ld" style="background:#ffd93d"></div>對象</div><div class="li"><div class="ld" style="background:#a78bfa"></div>修飾</div><div class="li"><div class="ld" style="background:#888"></div>連接</div><div class="li"><div class="ld" style="background:#66bb6a"></div>場景</div><div class="li"><div class="ld" style="background:#ff9800"></div>目標</div><div class="li"><div class="ld" style="background:#42a5f5"></div>時間</div><div class="li"><div class="ld" style="background:#ef5350"></div>語氣</div></div>';
@@ -1251,7 +1254,7 @@ let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);document.querySelectorAll('.edit-toggle').forEach(btn=>{btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯模式';});const fab=document.getElementById('editFab');if(fab){fab.classList.toggle('active',edM);fab.textContent=edM?'🔒':'✏️';fab.title=edM?'關閉編輯':'編輯模式';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb,.xtbox').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
 function getEditText(el){if(!el)return '';let h=el.innerHTML;h=h.replace(/<span class="ki-fl">.*?<\/span>/gi,'');h=h.replace(/<br\s*\/?>/gi,'\n');h=h.replace(/<\/div>\s*<div>/gi,'\n');h=h.replace(/<div>/gi,'\n');h=h.replace(/<\/div>/gi,'');h=h.replace(/<[^>]+>/g,'');h=h.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ');return h.trim();}
-function svEd(){const r=F[ci];if(!r)return;const bs=document.querySelectorAll('.ki-b');const tp=document.querySelector('.ki-tp');let d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)d=(md==='en')?KD[r.dim]:EK[r.dim];/* 儲存直譯區編輯 */const lg=document.querySelector('.xtbox');if(lg){const lt=getEditText(lg).replace(/^🇯🇵.*?語序.*?\n?/,'').replace(/^🇺🇸.*?語序.*?\n?/,'').trim();if(lt){if(md==='en'){r.lit_en=lt;}else{r.lit_jp=lt;}}}if(!d)return;if(bs[0]){const t=getEditText(bs[0]).replace(/^🇹🇼 中文大腦怎麼想\n?/,'');if(t)d.cn=t;}if(bs[1]){const t=getEditText(bs[1]).replace(/^🇯🇵 日文大腦怎麼想\n?/,'').replace(/^🇺🇸 英文大腦怎麼想\n?/,'');if(t)d.br=t;}if(tp){const t=getEditText(tp);if(t)d.tp=t;}const cb=document.querySelector('.cb');if(cb&&r.ct){const cbt=getEditText(cb);const newCt={};cbt.split('\n').filter(l=>l.trim()).forEach(l=>{if(l.includes('中文陷阱：'))newCt.cn_blindspot=l.replace(/.*中文陷阱：\s*/,'');if(l.includes('日文邏輯：'))newCt.jp_insight=l.replace(/.*日文邏輯：\s*/,'');if(l.includes('英文邏輯：'))newCt.en_insight=l.replace(/.*英文邏輯：\s*/,'');});if(Object.keys(newCt).length>0){r.ct=Object.assign(r.ct||{},newCt);const dim=r.dim;R.filter(s=>s.dim===dim).forEach(s=>{s.ct=Object.assign(s.ct||{},newCt);});}}fbPushEdits();const dim=r.dim;const count=R.filter(s=>s.dim===dim).length;const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 已儲存 '+count+' 句（☁️ 已同步）';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);}
+function svEd(){const r=F[ci];if(!r)return;const bs=document.querySelectorAll('.ki-b');const tp=document.querySelector('.ki-tp');let d=(md==='en')?EK[r.dim]:KD[r.dim];if(!d)d=(md==='en')?KD[r.dim]:EK[r.dim];/* 儲存直譯區編輯 */const lg=document.querySelector('.xtbox');if(lg){const lt=getEditText(lg).replace(/^🇯🇵.*?語序.*?\n?/,'').replace(/^🇺🇸.*?語序.*?\n?/,'').trim();if(lt){if(md==='en'){r.lit_en=lt;}else{r.lit_jp=lt;}}}if(!d)return;if(bs[0]){const t=getEditText(bs[0]).replace(/^🇹🇼 中文大腦怎麼想\n?/,'');if(t)d.cn=t;}if(bs[1]){const t=getEditText(bs[1]).replace(/^🇯🇵 日文大腦怎麼想\n?/,'').replace(/^🇺🇸 英文大腦怎麼想\n?/,'');if(t)d.br=t;}if(tp){const t=getEditText(tp);if(t)d.tp=t;}const cb=document.querySelector('.cb');if(cb&&r.ct){const cbt=getEditText(cb);const newCt={};const secs=cbt.split(/(?=🇹🇼 中文陷阱：|🇯🇵 日文邏輯：|🇺🇸 英文邏輯：)/);secs.forEach(sec=>{const s=sec.trim();if(s.includes('中文陷阱：'))newCt.cn_blindspot=s.replace(/.*中文陷阱：\s*/s,'').trim();if(s.includes('日文邏輯：'))newCt.jp_insight=s.replace(/.*日文邏輯：\s*/s,'').trim();if(s.includes('英文邏輯：'))newCt.en_insight=s.replace(/.*英文邏輯：\s*/s,'').trim();});if(Object.keys(newCt).length>0){r.ct=Object.assign(r.ct||{},newCt);const dim=r.dim;R.filter(s=>s.dim===dim).forEach(s=>{s.ct=Object.assign(s.ct||{},newCt);});}}fbPushEdits();const dim=r.dim;const count=R.filter(s=>s.dim===dim).length;const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 已儲存 '+count+' 句（☁️ 已同步）';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);}
 window.exportEdits=function(){const d={KD,EK,rules:R.map(r=>({id:r.id,dim:r.dim,cn:r.cn,ct:r.ct}))};const b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='trilingual-edits-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(u);};
 </script>
 </body>
