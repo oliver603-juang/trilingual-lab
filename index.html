@@ -1118,13 +1118,32 @@ h+='</div>';
 h+='<div class="bb-empty">還沒有人留言，寫下你的文法筆記吧！</div>';
 }
 h+='<div class="bb-input-area">';
-h+='<textarea class="bb-textarea" id="bb-input-'+id+'" placeholder="在此貼上討論內容、文法筆記..." rows="3"></textarea>';
+h+='<textarea class="bb-textarea" id="bb-input-'+id+'" placeholder="在此貼上討論內容、文法筆記..." rows="5" onpaste="bbPaste(event)"></textarea>';
 h+='<button class="bb-submit" onclick="postBulletin(\''+id+'\')">📤 發佈</button>';
 h+='</div>';
 h+='</div></details></div>';
 return h;
 }
 /* 佈告欄：Firebase 同步 */
+/* 處理貼上：保留換行排版 */
+function bbPaste(e){
+e.preventDefault();
+const ta=e.target;
+let text='';
+const html=e.clipboardData.getData('text/html');
+if(html){
+const div=document.createElement('div');div.innerHTML=html;
+div.querySelectorAll('br').forEach(el=>el.replaceWith('\n'));
+div.querySelectorAll('p,div,h1,h2,h3,h4,h5,h6,tr,blockquote').forEach(el=>{el.insertBefore(document.createTextNode('\n'),el.firstChild);});
+div.querySelectorAll('li').forEach(el=>{el.insertBefore(document.createTextNode('\n• '),el.firstChild);});
+text=div.textContent.replace(/^\n+/,'').replace(/\n{3,}/g,'\n\n').replace(/\n• \n/g,'\n• ').trim();
+}
+if(!text)text=(e.clipboardData.getData('text/plain')||'').trim();
+const start=ta.selectionStart;const end=ta.selectionEnd;
+ta.value=ta.value.substring(0,start)+text+ta.value.substring(end);
+ta.selectionStart=ta.selectionEnd=start+text.length;
+ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';
+}
 window._bulletinCache={};
 function postBulletin(sentId){
 const ta=document.getElementById('bb-input-'+sentId);
