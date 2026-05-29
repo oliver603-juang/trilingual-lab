@@ -1083,9 +1083,10 @@ let aP=false;let aPTimer=null;let silentAudio=null;
 /* === 延伸討論（動態載入 Google Doc） === */
 function gDISC(r){
 const saved=window._discCache?.[r.id]||r.disc_url||'';
+const isValidUrl=saved&&saved.startsWith('http');
 const title=r.disc_title||'📝 延伸討論';
 let h='<div class="disc">';
-if(saved){
+if(isValidUrl){
 h+='<details class="disc-details"><summary class="disc-btn">'+title+'</summary>';
 h+='<div class="disc-frame"><iframe src="'+saved+'" class="disc-iframe" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe></div>';
 h+='<div class="disc-edit"><input class="disc-input" value="'+saved+'" placeholder="貼上 Google Doc 發布連結..." onchange="saveDisc(\''+r.id+'\',this.value)"><button class="disc-del" onclick="delDisc(\''+r.id+'\')">🗑️</button></div>';
@@ -1109,8 +1110,11 @@ return u;
 function saveDisc(id,url){
 if(!url){delDisc(id);return;}
 const pubUrl=discFixUrl(url);
+/* 驗證：必須是 http 開頭的合法 URL */
+if(!pubUrl.startsWith('http')){
+const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='⚠️ 請貼上 Google Doc 的發布連結（http 開頭）';fl.style.background='rgba(255,107,107,.15)';fl.style.color='#ff6b6b';document.body.appendChild(fl);setTimeout(()=>fl.remove(),2000);
+return;}
 window._discCache[id]=pubUrl;
-/* 存到 Firebase */
 const fbUrl=getFbUrl();
 if(fbUrl){fetch(fbUrl+'/discussions/'+id+'.json',{method:'PUT',body:JSON.stringify(pubUrl)}).then(()=>{
 const fl=document.createElement('div');fl.className='edit-saved';fl.textContent='✅ 討論連結已同步 ☁️';document.body.appendChild(fl);setTimeout(()=>fl.remove(),1500);
@@ -1126,7 +1130,15 @@ rn();
 function fbPullDisc(){
 const fbUrl=getFbUrl();if(!fbUrl)return Promise.resolve();
 return fetch(fbUrl+'/discussions.json').then(r=>r.json()).then(data=>{
-if(data&&typeof data==='object'){window._discCache=data;}
+if(data&&typeof data==='object'){
+/* 過濾：只保留 http 開頭的合法 URL，自動清除垃圾 */
+const clean={};
+Object.entries(data).forEach(([k,v])=>{
+if(typeof v==='string'&&v.startsWith('http')){clean[k]=v;}
+else{/* 自動從 Firebase 刪除垃圾資料 */
+fetch(fbUrl+'/discussions/'+k+'.json',{method:'DELETE'}).catch(()=>{});}
+});
+window._discCache=clean;}
 }).catch(()=>{});
 }
 
@@ -1246,7 +1258,7 @@ if(document.body.classList.contains('immersive'))toggleImmersive();
 });
 function fixDtSticky(){const h=document.querySelector('.header');const d=document.getElementById('dt');if(h&&d){d.style.top=h.offsetHeight+'px';}}
 fixDtSticky();window.addEventListener('resize',fixDtSticky);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=79').catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=80').catch(()=>{});}
 let edM=false;
 function toggleEdit(){edM=!edM;document.body.classList.toggle('edit-mode',edM);document.querySelectorAll('.edit-toggle').forEach(btn=>{btn.classList.toggle('active',edM);btn.textContent=edM?'🔒 關閉編輯':'✏️ 編輯模式';});const fab=document.getElementById('editFab');if(fab){fab.classList.toggle('active',edM);fab.textContent=edM?'🔒':'✏️';fab.title=edM?'關閉編輯':'編輯模式';}if(edM){document.querySelectorAll('.ki-b,.ki-tp,.cb,.xtbox').forEach(el=>{el.contentEditable='true';el.addEventListener('blur',svEd);});}else{document.querySelectorAll('[contenteditable]').forEach(el=>{el.contentEditable='false';});svEd();}}
 const gearBtn=document.getElementById('gearBtn');updGear();
