@@ -9161,6 +9161,500 @@
     "literal_en": "它 是 熱 和 潮濕"
   },
   {
+    "id": "uni_onomatope_321",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "軟綿綿的麵包。",
+    "jp": {
+      "sentence": "フワフワなパン。",
+      "blocks": [
+        {
+          "text": "フワフワな",
+          "role": "修飾"
+        },
+        {
+          "text": "パン",
+          "role": "主角"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Fluffy bread.",
+      "blocks": [
+        {
+          "text": "Fluffy",
+          "role": "修飾"
+        },
+        {
+          "text": "bread",
+          "role": "主角"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「軟綿綿的」直接加在名詞前面，不需要變形",
+      "jp_insight": "效果音要變身成形容詞修飾名詞時，加「な」變成な家族保鑣！フワフワ＋な＝軟綿綿的",
+      "en_insight": "英文直接用 fluffy 形容詞"
+    },
+    "metrics": {},
+    "literal_jp": "軟綿綿[な修飾] 麵包",
+    "literal_en": "fluffy bread"
+  },
+  {
+    "id": "uni_onomatope_322",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "亮晶晶的車子。",
+    "jp": {
+      "sentence": "ピカピカな車。",
+      "blocks": [
+        {
+          "text": "ピカピカな",
+          "role": "修飾"
+        },
+        {
+          "text": "車",
+          "role": "主角"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "A shiny car.",
+      "blocks": [
+        {
+          "text": "A shiny",
+          "role": "修飾"
+        },
+        {
+          "text": "car",
+          "role": "主角"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「亮晶晶的」是現成的疊字詞",
+      "jp_insight": "ピカピカ＋な＝閃亮亮的（形容詞化）。加上な就能直接抱住後面的名詞",
+      "en_insight": "英文用 shiny"
+    },
+    "metrics": {},
+    "literal_jp": "閃亮亮[な修飾] 車",
+    "literal_en": "a shiny car"
+  },
+  {
+    "id": "uni_onomatope_323",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "令人心跳加速的劇情。",
+    "jp": {
+      "sentence": "ドキドキの展開。",
+      "blocks": [
+        {
+          "text": "ドキドキの",
+          "role": "修飾"
+        },
+        {
+          "text": "展開",
+          "role": "主角"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "A thrilling plot.",
+      "blocks": [
+        {
+          "text": "A thrilling",
+          "role": "修飾"
+        },
+        {
+          "text": "plot",
+          "role": "主角"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文用「令人心跳加速的」一整串修飾",
+      "jp_insight": "效果音也能加「の」修飾名詞！な用於觸感外觀，の用於抽象感受。ドキドキ＋の＝心跳加速的",
+      "en_insight": "英文用 thrilling"
+    },
+    "metrics": {},
+    "literal_jp": "心跳加速[の修飾] 劇情",
+    "literal_en": "a thrilling plot"
+  },
+  {
+    "id": "uni_onomatope_324",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "肚子餓扁了。",
+    "jp": {
+      "sentence": "お腹がペコペコです。",
+      "blocks": [
+        {
+          "text": "お腹が",
+          "role": "主角"
+        },
+        {
+          "text": "ペコペコです",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "I am starving.",
+      "blocks": [
+        {
+          "text": "I",
+          "role": "主角"
+        },
+        {
+          "text": "am starving",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「餓扁了」是動詞＋補語",
+      "jp_insight": "效果音直接放句尾當結論！ペコペコ＋です＝現在是餓扁扁的狀態。不用動詞，效果音自己就是答案",
+      "en_insight": "英文用 I am starving"
+    },
+    "metrics": {},
+    "literal_jp": "肚子[主] 餓扁扁 是",
+    "literal_en": "I am starving"
+  },
+  {
+    "id": "uni_onomatope_325",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "這床棉被軟綿綿的。",
+    "jp": {
+      "sentence": "この布団はフワフワだ。",
+      "blocks": [
+        {
+          "text": "この",
+          "role": "修飾"
+        },
+        {
+          "text": "布団は",
+          "role": "主角"
+        },
+        {
+          "text": "フワフワだ",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "This futon is fluffy.",
+      "blocks": [
+        {
+          "text": "This futon",
+          "role": "主角"
+        },
+        {
+          "text": "is",
+          "role": "動作"
+        },
+        {
+          "text": "fluffy",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「軟綿綿的」放句尾只是普通描述",
+      "jp_insight": "フワフワ＋だ＝直接下結論！效果音當句尾述語，像法官拍槌蓋章：這東西就是軟綿綿狀態！",
+      "en_insight": "英文用 is fluffy"
+    },
+    "metrics": {},
+    "literal_jp": "這個[修] 棉被[題] 軟綿綿 是也",
+    "literal_en": "this futon is fluffy"
+  },
+  {
+    "id": "uni_onomatope_326",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "地板亮晶晶的。",
+    "jp": {
+      "sentence": "床がピカピカです。",
+      "blocks": [
+        {
+          "text": "床が",
+          "role": "主角"
+        },
+        {
+          "text": "ピカピカです",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "The floor is sparkling.",
+      "blocks": [
+        {
+          "text": "The floor",
+          "role": "主角"
+        },
+        {
+          "text": "is sparkling",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「亮晶晶的」是形容詞當句尾",
+      "jp_insight": "ピカピカ＋です＝地板現在處於閃亮亮的狀態。效果音＋です是超常用的日常句型",
+      "en_insight": "英文用 is sparkling"
+    },
+    "metrics": {},
+    "literal_jp": "地板[主] 閃亮亮 是",
+    "literal_en": "the floor is sparkling"
+  },
+  {
+    "id": "uni_onomatope_327",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "衣服變得破破爛爛的。",
+    "jp": {
+      "sentence": "服がボロボロになった。",
+      "blocks": [
+        {
+          "text": "服が",
+          "role": "主角"
+        },
+        {
+          "text": "ボロボロに",
+          "role": "目標"
+        },
+        {
+          "text": "なった",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "The clothes became tattered.",
+      "blocks": [
+        {
+          "text": "The clothes",
+          "role": "主角"
+        },
+        {
+          "text": "became",
+          "role": "動作"
+        },
+        {
+          "text": "tattered",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「變得破破爛爛」用「變得」＋形容詞",
+      "jp_insight": "效果音＋に＋なる＝朝著那個狀態變過去！ボロボロ是目的地，に是方向箭頭，なった是已經變了",
+      "en_insight": "英文用 became"
+    },
+    "metrics": {},
+    "literal_jp": "衣服[主] 破爛[向] 變了",
+    "literal_en": "the clothes became tattered"
+  },
+  {
+    "id": "uni_onomatope_328",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "杯子碎成粉末了。",
+    "jp": {
+      "sentence": "コップが粉々に砕けた。",
+      "blocks": [
+        {
+          "text": "コップが",
+          "role": "主角"
+        },
+        {
+          "text": "粉々に",
+          "role": "目標"
+        },
+        {
+          "text": "砕けた",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "The cup shattered into pieces.",
+      "blocks": [
+        {
+          "text": "The cup",
+          "role": "主角"
+        },
+        {
+          "text": "shattered",
+          "role": "動作"
+        },
+        {
+          "text": "into pieces",
+          "role": "目標"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「碎成粉末」用「成」連接結果",
+      "jp_insight": "粉々（碎碎碎效果音）＋に＝朝向碎成粉的狀態。砕けた是自動詞（自己碎的），不是誰打碎的",
+      "en_insight": "英文用 shattered into pieces"
+    },
+    "metrics": {},
+    "literal_jp": "杯子[主] 粉碎[向] 碎了",
+    "literal_en": "the cup shattered into pieces"
+  },
+  {
+    "id": "uni_onomatope_329",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "房間變得亂七八糟。",
+    "jp": {
+      "sentence": "部屋がグチャグチャになった。",
+      "blocks": [
+        {
+          "text": "部屋が",
+          "role": "主角"
+        },
+        {
+          "text": "グチャグチャに",
+          "role": "目標"
+        },
+        {
+          "text": "なった",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "The room became a mess.",
+      "blocks": [
+        {
+          "text": "The room",
+          "role": "主角"
+        },
+        {
+          "text": "became",
+          "role": "動作"
+        },
+        {
+          "text": "a mess",
+          "role": "對象"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「變得亂七八糟」用成語描述",
+      "jp_insight": "グチャグチャ＋に＋なった＝朝著亂糟糟的方向變過去了。效果音＋になる是萬用公式",
+      "en_insight": "英文用 became a mess"
+    },
+    "metrics": {},
+    "literal_jp": "房間[主] 亂糟糟[向] 變了",
+    "literal_en": "the room became a mess"
+  },
+  {
+    "id": "uni_onomatope_330",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "笑嘻嘻地笑著。",
+    "jp": {
+      "sentence": "ニコニコと笑う。",
+      "blocks": [
+        {
+          "text": "ニコニコと",
+          "role": "修飾"
+        },
+        {
+          "text": "笑う",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Smiling cheerfully.",
+      "blocks": [
+        {
+          "text": "Smiling",
+          "role": "動作"
+        },
+        {
+          "text": "cheerfully",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「笑嘻嘻地」直接修飾動詞",
+      "jp_insight": "效果音＋と＝把畫面框起來強調！加了と更生動，像把笑臉特寫放大。不加也通，但加了更有畫面感",
+      "en_insight": "英文用副詞 cheerfully"
+    },
+    "metrics": {},
+    "literal_jp": "笑嘻嘻[と強調] 笑",
+    "literal_en": "smiling cheerfully"
+  },
+  {
+    "id": "uni_onomatope_331",
+    "dimension": "onomatopoeia",
+    "dimension_label": "擬聲擬態語",
+    "chinese": "直盯盯地看著。",
+    "jp": {
+      "sentence": "じっと見る。",
+      "blocks": [
+        {
+          "text": "じっと",
+          "role": "修飾"
+        },
+        {
+          "text": "見る",
+          "role": "動作"
+        }
+      ],
+      "formula": ""
+    },
+    "en": {
+      "sentence": "Staring intently.",
+      "blocks": [
+        {
+          "text": "Staring",
+          "role": "動作"
+        },
+        {
+          "text": "intently",
+          "role": "修飾"
+        }
+      ],
+      "formula": ""
+    },
+    "contrast": {
+      "cn_blindspot": "中文「直盯盯地」是疊字詞修飾",
+      "jp_insight": "じっと＝一動不動地。短效果音＋と是超常用的組合，と把「凝視不動」的畫面凍結住",
+      "en_insight": "英文用 intently"
+    },
+    "metrics": {},
+    "literal_jp": "直盯盯[と強調] 看",
+    "literal_en": "staring intently"
+  },
+  {
     "cn": "我們已經更新了軟體。",
     "jp": {
       "sentence": "私たちはソフトウェアを更新しました。",
